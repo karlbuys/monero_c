@@ -27,7 +27,7 @@ Simplest example is this:
 ```dart
 final addr = w.address; 
 final height = await Isolate.run(() async {
-    return monero.lib.MONERO_Wallet_daemonBlockChainHeight(Pointer.fromAddress(addr));
+    return monero.lib.CWLWS_Wallet_daemonBlockChainHeight(Pointer.fromAddress(addr));
 });
 ```
 
@@ -43,7 +43,7 @@ final amount = txData.recipients!.first.amount.raw.toInt();
 final txPtrAddr = await Isolate.run(
     () {
         monero.lib ??= MoneroC(DynamicLibrary.open(monero.libPath));
-        final txPtr = monero.lib!.MONERO_Wallet_createTransaction(
+        final txPtr = monero.lib!.CWLWS_Wallet_createTransaction(
             Pointer.fromAddress(ptrAddr), 
             Pointer.fromAddress(dstAddrPtr).cast(), 
             Pointer.fromAddress(paymentAddrPtr).cast(), 
@@ -54,7 +54,7 @@ final txPtrAddr = await Isolate.run(
         // Nothing hits better than managing memory in GC language :)
         return txPtr.address;
     },
-    debugName: 'MONERO_Wallet_createTransaction',
+    debugName: 'CWLWS_Wallet_createTransaction',
 );
 
 final txPtr = Pointer.fromAddress(txPtrAddr).cast<Void>();

@@ -8,5 +8,5 @@ headers:
 exclude-all-by-default: true
 functions:
   include:
-    - "MONERO_.+"
+    - "CWLWS_.+"
     - "LWSF_.+"

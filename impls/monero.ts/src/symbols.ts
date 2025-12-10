@@ -1,19 +1,19 @@
 export const moneroSymbols = {
-  MONERO_PendingTransaction_status: {
+  CWLWS_PendingTransaction_status: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       pendingTx_ptr: "pointer",
     ],
   },
-  MONERO_PendingTransaction_errorString: {
+  CWLWS_PendingTransaction_errorString: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       pendingTx_ptr: "pointer",
     ],
   },
-  MONERO_PendingTransaction_commit: {
+  CWLWS_PendingTransaction_commit: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer", "bool"] as [
@@ -22,7 +22,7 @@ export const moneroSymbols = {
       overwrite: "bool",
     ],
   },
-  MONERO_PendingTransaction_commitUR: {
+  CWLWS_PendingTransaction_commitUR: {
     optional: true,
     nonblocking: true,
     result: "pointer",
@@ -31,28 +31,28 @@ export const moneroSymbols = {
       max_fragment_length: "i32",
     ],
   },
-  MONERO_PendingTransaction_amount: {
+  CWLWS_PendingTransaction_amount: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       pendingTx_ptr: "pointer",
     ],
   },
-  MONERO_PendingTransaction_dust: {
+  CWLWS_PendingTransaction_dust: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       pendingTx_ptr: "pointer",
     ],
   },
-  MONERO_PendingTransaction_fee: {
+  CWLWS_PendingTransaction_fee: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       pendingTx_ptr: "pointer",
     ],
   },
-  MONERO_PendingTransaction_txid: {
+  CWLWS_PendingTransaction_txid: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -60,14 +60,14 @@ export const moneroSymbols = {
       separator: "pointer",
     ],
   },
-  MONERO_PendingTransaction_txCount: {
+  CWLWS_PendingTransaction_txCount: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       pendingTx_ptr: "pointer",
     ],
   },
-  MONERO_PendingTransaction_subaddrAccount: {
+  CWLWS_PendingTransaction_subaddrAccount: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -75,7 +75,7 @@ export const moneroSymbols = {
       separator: "pointer",
     ],
   },
-  MONERO_PendingTransaction_subaddrIndices: {
+  CWLWS_PendingTransaction_subaddrIndices: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -83,21 +83,21 @@ export const moneroSymbols = {
       separator: "pointer",
     ],
   },
-  MONERO_PendingTransaction_multisigSignData: {
+  CWLWS_PendingTransaction_multisigSignData: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       pendingTx_ptr: "pointer",
     ],
   },
-  MONERO_PendingTransaction_signMultisigTx: {
+  CWLWS_PendingTransaction_signMultisigTx: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer"] as [
       pendingTx_ptr: "pointer",
     ],
   },
-  MONERO_PendingTransaction_signersKeys: {
+  CWLWS_PendingTransaction_signersKeys: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -105,7 +105,7 @@ export const moneroSymbols = {
       separator: "pointer",
     ],
   },
-  MONERO_PendingTransaction_hex: {
+  CWLWS_PendingTransaction_hex: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -113,7 +113,7 @@ export const moneroSymbols = {
       separator: "pointer",
     ],
   },
-  MONERO_PendingTransaction_txKey: {
+  CWLWS_PendingTransaction_txKey: {
     optional: true,
     nonblocking: true,
     result: "pointer",
@@ -122,21 +122,21 @@ export const moneroSymbols = {
       separator: "pointer",
     ],
   },
-  MONERO_UnsignedTransaction_status: {
+  CWLWS_UnsignedTransaction_status: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       unsignedTx_ptr: "pointer",
     ],
   },
-  MONERO_UnsignedTransaction_errorString: {
+  CWLWS_UnsignedTransaction_errorString: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       unsignedTx_ptr: "pointer",
     ],
   },
-  MONERO_UnsignedTransaction_amount: {
+  CWLWS_UnsignedTransaction_amount: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -144,7 +144,7 @@ export const moneroSymbols = {
       separator: "pointer",
     ],
   },
-  MONERO_UnsignedTransaction_fee: {
+  CWLWS_UnsignedTransaction_fee: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -152,7 +152,7 @@ export const moneroSymbols = {
       separator: "pointer",
     ],
   },
-  MONERO_UnsignedTransaction_mixin: {
+  CWLWS_UnsignedTransaction_mixin: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -160,14 +160,14 @@ export const moneroSymbols = {
       separator: "pointer",
     ],
   },
-  MONERO_UnsignedTransaction_confirmationMessage: {
+  CWLWS_UnsignedTransaction_confirmationMessage: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       unsignedTx_ptr: "pointer",
     ],
   },
-  MONERO_UnsignedTransaction_paymentId: {
+  CWLWS_UnsignedTransaction_paymentId: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -175,7 +175,7 @@ export const moneroSymbols = {
       separator: "pointer",
     ],
   },
-  MONERO_UnsignedTransaction_recipientAddress: {
+  CWLWS_UnsignedTransaction_recipientAddress: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -183,21 +183,21 @@ export const moneroSymbols = {
       separator: "pointer",
     ],
   },
-  MONERO_UnsignedTransaction_minMixinCount: {
+  CWLWS_UnsignedTransaction_minMixinCount: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       unsignedTx_ptr: "pointer",
     ],
   },
-  MONERO_UnsignedTransaction_txCount: {
+  CWLWS_UnsignedTransaction_txCount: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       unsignedTx_ptr: "pointer",
     ],
   },
-  MONERO_UnsignedTransaction_sign: {
+  CWLWS_UnsignedTransaction_sign: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer"] as [
@@ -205,7 +205,7 @@ export const moneroSymbols = {
       signedFileName: "pointer",
     ],
   },
-  MONERO_UnsignedTransaction_signUR: {
+  CWLWS_UnsignedTransaction_signUR: {
     optional: true,
     nonblocking: true,
     result: "pointer",
@@ -214,63 +214,63 @@ export const moneroSymbols = {
       max_fragment_length: "i32",
     ],
   },
-  MONERO_TransactionInfo_direction: {
+  CWLWS_TransactionInfo_direction: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       txInfo_ptr: "pointer",
     ],
   },
-  MONERO_TransactionInfo_isPending: {
+  CWLWS_TransactionInfo_isPending: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       txInfo_ptr: "pointer",
     ],
   },
-  MONERO_TransactionInfo_isFailed: {
+  CWLWS_TransactionInfo_isFailed: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       txInfo_ptr: "pointer",
     ],
   },
-  MONERO_TransactionInfo_isCoinbase: {
+  CWLWS_TransactionInfo_isCoinbase: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       txInfo_ptr: "pointer",
     ],
   },
-  MONERO_TransactionInfo_amount: {
+  CWLWS_TransactionInfo_amount: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       txInfo_ptr: "pointer",
     ],
   },
-  MONERO_TransactionInfo_fee: {
+  CWLWS_TransactionInfo_fee: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       txInfo_ptr: "pointer",
     ],
   },
-  MONERO_TransactionInfo_blockHeight: {
+  CWLWS_TransactionInfo_blockHeight: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       txInfo_ptr: "pointer",
     ],
   },
-  MONERO_TransactionInfo_description: {
+  CWLWS_TransactionInfo_description: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       txInfo_ptr: "pointer",
     ],
   },
-  MONERO_TransactionInfo_subaddrIndex: {
+  CWLWS_TransactionInfo_subaddrIndex: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -278,63 +278,63 @@ export const moneroSymbols = {
       separator: "pointer",
     ],
   },
-  MONERO_TransactionInfo_subaddrAccount: {
+  CWLWS_TransactionInfo_subaddrAccount: {
     nonblocking: true,
     result: "u32",
     parameters: ["pointer"] as [
       txInfo_ptr: "pointer",
     ],
   },
-  MONERO_TransactionInfo_label: {
+  CWLWS_TransactionInfo_label: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       txInfo_ptr: "pointer",
     ],
   },
-  MONERO_TransactionInfo_confirmations: {
+  CWLWS_TransactionInfo_confirmations: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       txInfo_ptr: "pointer",
     ],
   },
-  MONERO_TransactionInfo_unlockTime: {
+  CWLWS_TransactionInfo_unlockTime: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       txInfo_ptr: "pointer",
     ],
   },
-  MONERO_TransactionInfo_hash: {
+  CWLWS_TransactionInfo_hash: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       txInfo_ptr: "pointer",
     ],
   },
-  MONERO_TransactionInfo_timestamp: {
+  CWLWS_TransactionInfo_timestamp: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       txInfo_ptr: "pointer",
     ],
   },
-  MONERO_TransactionInfo_paymentId: {
+  CWLWS_TransactionInfo_paymentId: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       txInfo_ptr: "pointer",
     ],
   },
-  MONERO_TransactionInfo_transfers_count: {
+  CWLWS_TransactionInfo_transfers_count: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       txInfo_ptr: "pointer",
     ],
   },
-  MONERO_TransactionInfo_transfers_amount: {
+  CWLWS_TransactionInfo_transfers_amount: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer", "i32"] as [
@@ -342,7 +342,7 @@ export const moneroSymbols = {
       index: "i32",
     ],
   },
-  MONERO_TransactionInfo_transfers_address: {
+  CWLWS_TransactionInfo_transfers_address: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "i32"] as [
@@ -350,14 +350,14 @@ export const moneroSymbols = {
       index: "i32",
     ],
   },
-  MONERO_TransactionHistory_count: {
+  CWLWS_TransactionHistory_count: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       txHistory_ptr: "pointer",
     ],
   },
-  MONERO_TransactionHistory_transaction: {
+  CWLWS_TransactionHistory_transaction: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "i32"] as [
@@ -365,7 +365,7 @@ export const moneroSymbols = {
       index: "i32",
     ],
   },
-  MONERO_TransactionHistory_transactionById: {
+  CWLWS_TransactionHistory_transactionById: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -373,14 +373,14 @@ export const moneroSymbols = {
       id: "pointer",
     ],
   },
-  MONERO_TransactionHistory_refresh: {
+  CWLWS_TransactionHistory_refresh: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer"] as [
       txHistory_ptr: "pointer",
     ],
   },
-  MONERO_TransactionHistory_setTxNote: {
+  CWLWS_TransactionHistory_setTxNote: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "pointer", "pointer"] as [
@@ -389,49 +389,49 @@ export const moneroSymbols = {
       note: "pointer",
     ],
   },
-  MONERO_AddressBookRow_extra: {
+  CWLWS_AddressBookRow_extra: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       addressBookRow_ptr: "pointer",
     ],
   },
-  MONERO_AddressBookRow_getAddress: {
+  CWLWS_AddressBookRow_getAddress: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       addressBookRow_ptr: "pointer",
     ],
   },
-  MONERO_AddressBookRow_getDescription: {
+  CWLWS_AddressBookRow_getDescription: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       addressBookRow_ptr: "pointer",
     ],
   },
-  MONERO_AddressBookRow_getPaymentId: {
+  CWLWS_AddressBookRow_getPaymentId: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       addressBookRow_ptr: "pointer",
     ],
   },
-  MONERO_AddressBookRow_getRowId: {
+  CWLWS_AddressBookRow_getRowId: {
     nonblocking: true,
     result: "usize",
     parameters: ["pointer"] as [
       addressBookRow_ptr: "pointer",
     ],
   },
-  MONERO_AddressBook_getAll_size: {
+  CWLWS_AddressBook_getAll_size: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       addressBook_ptr: "pointer",
     ],
   },
-  MONERO_AddressBook_getAll_byIndex: {
+  CWLWS_AddressBook_getAll_byIndex: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "i32"] as [
@@ -439,7 +439,7 @@ export const moneroSymbols = {
       index: "i32",
     ],
   },
-  MONERO_AddressBook_addRow: {
+  CWLWS_AddressBook_addRow: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer", "pointer", "pointer"] as [
@@ -449,7 +449,7 @@ export const moneroSymbols = {
       description: "pointer",
     ],
   },
-  MONERO_AddressBook_deleteRow: {
+  CWLWS_AddressBook_deleteRow: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "usize"] as [
@@ -457,7 +457,7 @@ export const moneroSymbols = {
       rowId: "usize",
     ],
   },
-  MONERO_AddressBook_setDescription: {
+  CWLWS_AddressBook_setDescription: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "usize", "pointer"] as [
@@ -466,28 +466,28 @@ export const moneroSymbols = {
       description: "pointer",
     ],
   },
-  MONERO_AddressBook_refresh: {
+  CWLWS_AddressBook_refresh: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer"] as [
       addressBook_ptr: "pointer",
     ],
   },
-  MONERO_AddressBook_errorString: {
+  CWLWS_AddressBook_errorString: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       addressBook_ptr: "pointer",
     ],
   },
-  MONERO_AddressBook_errorCode: {
+  CWLWS_AddressBook_errorCode: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       addressBook_ptr: "pointer",
     ],
   },
-  MONERO_AddressBook_lookupPaymentID: {
+  CWLWS_AddressBook_lookupPaymentID: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer", "pointer"] as [
@@ -495,161 +495,161 @@ export const moneroSymbols = {
       payment_id: "pointer",
     ],
   },
-  MONERO_CoinsInfo_blockHeight: {
+  CWLWS_CoinsInfo_blockHeight: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_hash: {
+  CWLWS_CoinsInfo_hash: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_internalOutputIndex: {
+  CWLWS_CoinsInfo_internalOutputIndex: {
     nonblocking: true,
     result: "usize",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_globalOutputIndex: {
+  CWLWS_CoinsInfo_globalOutputIndex: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_spent: {
+  CWLWS_CoinsInfo_spent: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_frozen: {
+  CWLWS_CoinsInfo_frozen: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_spentHeight: {
+  CWLWS_CoinsInfo_spentHeight: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_amount: {
+  CWLWS_CoinsInfo_amount: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_rct: {
+  CWLWS_CoinsInfo_rct: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_keyImageKnown: {
+  CWLWS_CoinsInfo_keyImageKnown: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_pkIndex: {
+  CWLWS_CoinsInfo_pkIndex: {
     nonblocking: true,
     result: "usize",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_subaddrIndex: {
+  CWLWS_CoinsInfo_subaddrIndex: {
     nonblocking: true,
     result: "u32",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_subaddrAccount: {
+  CWLWS_CoinsInfo_subaddrAccount: {
     nonblocking: true,
     result: "u32",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_address: {
+  CWLWS_CoinsInfo_address: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_addressLabel: {
+  CWLWS_CoinsInfo_addressLabel: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_keyImage: {
+  CWLWS_CoinsInfo_keyImage: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_unlockTime: {
+  CWLWS_CoinsInfo_unlockTime: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_unlocked: {
+  CWLWS_CoinsInfo_unlocked: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_pubKey: {
+  CWLWS_CoinsInfo_pubKey: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_coinbase: {
+  CWLWS_CoinsInfo_coinbase: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_CoinsInfo_description: {
+  CWLWS_CoinsInfo_description: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       coinsInfo_ptr: "pointer",
     ],
   },
-  MONERO_Coins_count: {
+  CWLWS_Coins_count: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       coins_ptr: "pointer",
     ],
   },
-  MONERO_Coins_coin: {
+  CWLWS_Coins_coin: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "i32"] as [
@@ -657,14 +657,14 @@ export const moneroSymbols = {
       index: "i32",
     ],
   },
-  MONERO_Coins_getAll_size: {
+  CWLWS_Coins_getAll_size: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       coins_ptr: "pointer",
     ],
   },
-  MONERO_Coins_getAll_byIndex: {
+  CWLWS_Coins_getAll_byIndex: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "i32"] as [
@@ -672,14 +672,14 @@ export const moneroSymbols = {
       index: "i32",
     ],
   },
-  MONERO_Coins_refresh: {
+  CWLWS_Coins_refresh: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer"] as [
       coins_ptr: "pointer",
     ],
   },
-  MONERO_Coins_setFrozenByPublicKey: {
+  CWLWS_Coins_setFrozenByPublicKey: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "pointer"] as [
@@ -687,7 +687,7 @@ export const moneroSymbols = {
       public_key: "pointer",
     ],
   },
-  MONERO_Coins_setFrozen: {
+  CWLWS_Coins_setFrozen: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "i32"] as [
@@ -695,7 +695,7 @@ export const moneroSymbols = {
       index: "i32",
     ],
   },
-  MONERO_Coins_thaw: {
+  CWLWS_Coins_thaw: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "i32"] as [
@@ -703,7 +703,7 @@ export const moneroSymbols = {
       index: "i32",
     ],
   },
-  MONERO_Coins_thawByPublicKey: {
+  CWLWS_Coins_thawByPublicKey: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "pointer"] as [
@@ -711,7 +711,7 @@ export const moneroSymbols = {
       public_key: "pointer",
     ],
   },
-  MONERO_Coins_isTransferUnlocked: {
+  CWLWS_Coins_isTransferUnlocked: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "u64", "u64"] as [
@@ -720,7 +720,7 @@ export const moneroSymbols = {
       blockHeight: "u64",
     ],
   },
-  MONERO_Coins_setDescription: {
+  CWLWS_Coins_setDescription: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "pointer", "pointer"] as [
@@ -729,42 +729,42 @@ export const moneroSymbols = {
       description: "pointer",
     ],
   },
-  MONERO_SubaddressRow_extra: {
+  CWLWS_SubaddressRow_extra: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       subaddressRow_ptr: "pointer",
     ],
   },
-  MONERO_SubaddressRow_getAddress: {
+  CWLWS_SubaddressRow_getAddress: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       subaddressRow_ptr: "pointer",
     ],
   },
-  MONERO_SubaddressRow_getLabel: {
+  CWLWS_SubaddressRow_getLabel: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       subaddressRow_ptr: "pointer",
     ],
   },
-  MONERO_SubaddressRow_getRowId: {
+  CWLWS_SubaddressRow_getRowId: {
     nonblocking: true,
     result: "usize",
     parameters: ["pointer"] as [
       subaddressRow_ptr: "pointer",
     ],
   },
-  MONERO_Subaddress_getAll_size: {
+  CWLWS_Subaddress_getAll_size: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       subaddress_ptr: "pointer",
     ],
   },
-  MONERO_Subaddress_getAll_byIndex: {
+  CWLWS_Subaddress_getAll_byIndex: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "i32"] as [
@@ -772,7 +772,7 @@ export const moneroSymbols = {
       index: "i32",
     ],
   },
-  MONERO_Subaddress_addRow: {
+  CWLWS_Subaddress_addRow: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "u32", "pointer"] as [
@@ -781,7 +781,7 @@ export const moneroSymbols = {
       label: "pointer",
     ],
   },
-  MONERO_Subaddress_setLabel: {
+  CWLWS_Subaddress_setLabel: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "u32", "u32", "pointer"] as [
@@ -791,7 +791,7 @@ export const moneroSymbols = {
       label: "pointer",
     ],
   },
-  MONERO_Subaddress_refresh: {
+  CWLWS_Subaddress_refresh: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "u32"] as [
@@ -799,56 +799,56 @@ export const moneroSymbols = {
       accountIndex: "u32",
     ],
   },
-  MONERO_SubaddressAccountRow_extra: {
+  CWLWS_SubaddressAccountRow_extra: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       subaddressAccountRow_ptr: "pointer",
     ],
   },
-  MONERO_SubaddressAccountRow_getAddress: {
+  CWLWS_SubaddressAccountRow_getAddress: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       subaddressAccountRow_ptr: "pointer",
     ],
   },
-  MONERO_SubaddressAccountRow_getLabel: {
+  CWLWS_SubaddressAccountRow_getLabel: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       subaddressAccountRow_ptr: "pointer",
     ],
   },
-  MONERO_SubaddressAccountRow_getBalance: {
+  CWLWS_SubaddressAccountRow_getBalance: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       subaddressAccountRow_ptr: "pointer",
     ],
   },
-  MONERO_SubaddressAccountRow_getUnlockedBalance: {
+  CWLWS_SubaddressAccountRow_getUnlockedBalance: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       subaddressAccountRow_ptr: "pointer",
     ],
   },
-  MONERO_SubaddressAccountRow_getRowId: {
+  CWLWS_SubaddressAccountRow_getRowId: {
     nonblocking: true,
     result: "usize",
     parameters: ["pointer"] as [
       subaddressAccountRow_ptr: "pointer",
     ],
   },
-  MONERO_SubaddressAccount_getAll_size: {
+  CWLWS_SubaddressAccount_getAll_size: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       subaddressAccount_ptr: "pointer",
     ],
   },
-  MONERO_SubaddressAccount_getAll_byIndex: {
+  CWLWS_SubaddressAccount_getAll_byIndex: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "i32"] as [
@@ -856,7 +856,7 @@ export const moneroSymbols = {
       index: "i32",
     ],
   },
-  MONERO_SubaddressAccount_addRow: {
+  CWLWS_SubaddressAccount_addRow: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "pointer"] as [
@@ -864,7 +864,7 @@ export const moneroSymbols = {
       label: "pointer",
     ],
   },
-  MONERO_SubaddressAccount_setLabel: {
+  CWLWS_SubaddressAccount_setLabel: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "u32", "pointer"] as [
@@ -873,56 +873,56 @@ export const moneroSymbols = {
       label: "pointer",
     ],
   },
-  MONERO_SubaddressAccount_refresh: {
+  CWLWS_SubaddressAccount_refresh: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer"] as [
       subaddressAccount_ptr: "pointer",
     ],
   },
-  MONERO_MultisigState_isMultisig: {
+  CWLWS_MultisigState_isMultisig: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       multisigState_ptr: "pointer",
     ],
   },
-  MONERO_MultisigState_isReady: {
+  CWLWS_MultisigState_isReady: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       multisigState_ptr: "pointer",
     ],
   },
-  MONERO_MultisigState_threshold: {
+  CWLWS_MultisigState_threshold: {
     nonblocking: true,
     result: "u32",
     parameters: ["pointer"] as [
       multisigState_ptr: "pointer",
     ],
   },
-  MONERO_MultisigState_total: {
+  CWLWS_MultisigState_total: {
     nonblocking: true,
     result: "u32",
     parameters: ["pointer"] as [
       multisigState_ptr: "pointer",
     ],
   },
-  MONERO_DeviceProgress_progress: {
+  CWLWS_DeviceProgress_progress: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       deviceProgress_ptr: "pointer",
     ],
   },
-  MONERO_DeviceProgress_indeterminate: {
+  CWLWS_DeviceProgress_indeterminate: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       deviceProgress_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_seed: {
+  CWLWS_Wallet_seed: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -930,14 +930,14 @@ export const moneroSymbols = {
       seed_offset: "pointer",
     ],
   },
-  MONERO_Wallet_getSeedLanguage: {
+  CWLWS_Wallet_getSeedLanguage: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_setSeedLanguage: {
+  CWLWS_Wallet_setSeedLanguage: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "pointer"] as [
@@ -945,21 +945,21 @@ export const moneroSymbols = {
       arg: "pointer",
     ],
   },
-  MONERO_Wallet_status: {
+  CWLWS_Wallet_status: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_errorString: {
+  CWLWS_Wallet_errorString: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_setPassword: {
+  CWLWS_Wallet_setPassword: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer"] as [
@@ -967,14 +967,14 @@ export const moneroSymbols = {
       password: "pointer",
     ],
   },
-  MONERO_Wallet_getPassword: {
+  CWLWS_Wallet_getPassword: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_setDevicePin: {
+  CWLWS_Wallet_setDevicePin: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer"] as [
@@ -982,7 +982,7 @@ export const moneroSymbols = {
       pin: "pointer",
     ],
   },
-  MONERO_Wallet_setDevicePassphrase: {
+  CWLWS_Wallet_setDevicePassphrase: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer"] as [
@@ -990,7 +990,7 @@ export const moneroSymbols = {
       passphrase: "pointer",
     ],
   },
-  MONERO_Wallet_address: {
+  CWLWS_Wallet_address: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "u64", "u64"] as [
@@ -999,21 +999,21 @@ export const moneroSymbols = {
       addressIndex: "u64",
     ],
   },
-  MONERO_Wallet_path: {
+  CWLWS_Wallet_path: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_nettype: {
+  CWLWS_Wallet_nettype: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_integratedAddress: {
+  CWLWS_Wallet_integratedAddress: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -1021,49 +1021,49 @@ export const moneroSymbols = {
       payment_id: "pointer",
     ],
   },
-  MONERO_Wallet_secretViewKey: {
+  CWLWS_Wallet_secretViewKey: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_publicViewKey: {
+  CWLWS_Wallet_publicViewKey: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_secretSpendKey: {
+  CWLWS_Wallet_secretSpendKey: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_publicSpendKey: {
+  CWLWS_Wallet_publicSpendKey: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_publicMultisigSignerKey: {
+  CWLWS_Wallet_publicMultisigSignerKey: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_stop: {
+  CWLWS_Wallet_stop: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_store: {
+  CWLWS_Wallet_store: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer"] as [
@@ -1071,21 +1071,21 @@ export const moneroSymbols = {
       path: "pointer",
     ],
   },
-  MONERO_Wallet_filename: {
+  CWLWS_Wallet_filename: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_keysFilename: {
+  CWLWS_Wallet_keysFilename: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_init: {
+  CWLWS_Wallet_init: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer", "u64", "pointer", "pointer", "bool", "bool", "pointer"] as [
@@ -1099,7 +1099,7 @@ export const moneroSymbols = {
       proxy_address: "pointer",
     ],
   },
-  MONERO_Wallet_createWatchOnly: {
+  CWLWS_Wallet_createWatchOnly: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer", "pointer", "pointer"] as [
@@ -1109,7 +1109,7 @@ export const moneroSymbols = {
       language: "pointer",
     ],
   },
-  MONERO_Wallet_setRefreshFromBlockHeight: {
+  CWLWS_Wallet_setRefreshFromBlockHeight: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "u64"] as [
@@ -1117,14 +1117,14 @@ export const moneroSymbols = {
       refresh_from_block_height: "u64",
     ],
   },
-  MONERO_Wallet_getRefreshFromBlockHeight: {
+  CWLWS_Wallet_getRefreshFromBlockHeight: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_setRecoveringFromSeed: {
+  CWLWS_Wallet_setRecoveringFromSeed: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "bool"] as [
@@ -1132,7 +1132,7 @@ export const moneroSymbols = {
       recoveringFromSeed: "bool",
     ],
   },
-  MONERO_Wallet_setRecoveringFromDevice: {
+  CWLWS_Wallet_setRecoveringFromDevice: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "bool"] as [
@@ -1140,7 +1140,7 @@ export const moneroSymbols = {
       recoveringFromDevice: "bool",
     ],
   },
-  MONERO_Wallet_setSubaddressLookahead: {
+  CWLWS_Wallet_setSubaddressLookahead: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "u32", "u32"] as [
@@ -1149,21 +1149,21 @@ export const moneroSymbols = {
       minor: "u32",
     ],
   },
-  MONERO_Wallet_connectToDaemon: {
+  CWLWS_Wallet_connectToDaemon: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_connected: {
+  CWLWS_Wallet_connected: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_setTrustedDaemon: {
+  CWLWS_Wallet_setTrustedDaemon: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "bool"] as [
@@ -1171,14 +1171,14 @@ export const moneroSymbols = {
       arg: "bool",
     ],
   },
-  MONERO_Wallet_trustedDaemon: {
+  CWLWS_Wallet_trustedDaemon: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_setProxy: {
+  CWLWS_Wallet_setProxy: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer"] as [
@@ -1186,7 +1186,7 @@ export const moneroSymbols = {
       address: "pointer",
     ],
   },
-  MONERO_Wallet_balance: {
+  CWLWS_Wallet_balance: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer", "u32"] as [
@@ -1194,7 +1194,7 @@ export const moneroSymbols = {
       accountIndex: "u32",
     ],
   },
-  MONERO_Wallet_unlockedBalance: {
+  CWLWS_Wallet_unlockedBalance: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer", "u32"] as [
@@ -1202,7 +1202,7 @@ export const moneroSymbols = {
       accountIndex: "u32",
     ],
   },
-  MONERO_Wallet_viewOnlyBalance: {
+  CWLWS_Wallet_viewOnlyBalance: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer", "u32"] as [
@@ -1210,96 +1210,96 @@ export const moneroSymbols = {
       accountIndex: "u32",
     ],
   },
-  MONERO_Wallet_watchOnly: {
+  CWLWS_Wallet_watchOnly: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_isDeterministic: {
+  CWLWS_Wallet_isDeterministic: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_blockChainHeight: {
+  CWLWS_Wallet_blockChainHeight: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_approximateBlockChainHeight: {
+  CWLWS_Wallet_approximateBlockChainHeight: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_estimateBlockChainHeight: {
+  CWLWS_Wallet_estimateBlockChainHeight: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_daemonBlockChainHeight: {
+  CWLWS_Wallet_daemonBlockChainHeight: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_daemonBlockChainTargetHeight: {
+  CWLWS_Wallet_daemonBlockChainTargetHeight: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_synchronized: {
+  CWLWS_Wallet_synchronized: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_displayAmount: {
+  CWLWS_Wallet_displayAmount: {
     nonblocking: true,
     result: "pointer",
     parameters: ["u64"] as [
       amount: "u64",
     ],
   },
-  MONERO_Wallet_amountFromString: {
+  CWLWS_Wallet_amountFromString: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       amount: "pointer",
     ],
   },
-  MONERO_Wallet_amountFromDouble: {
+  CWLWS_Wallet_amountFromDouble: {
     nonblocking: true,
     result: "u64",
     parameters: ["f64"] as [
       amount: "f64",
     ],
   },
-  MONERO_Wallet_genPaymentId: {
+  CWLWS_Wallet_genPaymentId: {
     nonblocking: true,
     result: "pointer",
     parameters: [],
   },
-  MONERO_Wallet_paymentIdValid: {
+  CWLWS_Wallet_paymentIdValid: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       paiment_id: "pointer",
     ],
   },
-  MONERO_Wallet_addressValid: {
+  CWLWS_Wallet_addressValid: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "i32"] as [
@@ -1307,7 +1307,7 @@ export const moneroSymbols = {
       nettype: "i32",
     ],
   },
-  MONERO_Wallet_keyValid: {
+  CWLWS_Wallet_keyValid: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer", "bool", "i32"] as [
@@ -1317,7 +1317,7 @@ export const moneroSymbols = {
       nettype: "i32",
     ],
   },
-  MONERO_Wallet_keyValid_error: {
+  CWLWS_Wallet_keyValid_error: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer", "bool", "i32"] as [
@@ -1327,7 +1327,7 @@ export const moneroSymbols = {
       nettype: "i32",
     ],
   },
-  MONERO_Wallet_paymentIdFromAddress: {
+  CWLWS_Wallet_paymentIdFromAddress: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "i32"] as [
@@ -1335,12 +1335,12 @@ export const moneroSymbols = {
       nettype: "i32",
     ],
   },
-  MONERO_Wallet_maximumAllowedAmount: {
+  CWLWS_Wallet_maximumAllowedAmount: {
     nonblocking: true,
     result: "u64",
     parameters: [],
   },
-  MONERO_Wallet_init3: {
+  CWLWS_Wallet_init3: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "pointer", "pointer", "pointer", "bool"] as [
@@ -1351,7 +1351,7 @@ export const moneroSymbols = {
       console: "bool",
     ],
   },
-  MONERO_Wallet_getPolyseed: {
+  CWLWS_Wallet_getPolyseed: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -1359,56 +1359,56 @@ export const moneroSymbols = {
       passphrase: "pointer",
     ],
   },
-  MONERO_Wallet_createPolyseed: {
+  CWLWS_Wallet_createPolyseed: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       language: "pointer",
     ],
   },
-  MONERO_Wallet_startRefresh: {
+  CWLWS_Wallet_startRefresh: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_pauseRefresh: {
+  CWLWS_Wallet_pauseRefresh: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_refresh: {
+  CWLWS_Wallet_refresh: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_refreshAsync: {
+  CWLWS_Wallet_refreshAsync: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_rescanBlockchain: {
+  CWLWS_Wallet_rescanBlockchain: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_rescanBlockchainAsync: {
+  CWLWS_Wallet_rescanBlockchainAsync: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_setAutoRefreshInterval: {
+  CWLWS_Wallet_setAutoRefreshInterval: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "i32"] as [
@@ -1416,14 +1416,14 @@ export const moneroSymbols = {
       millis: "i32",
     ],
   },
-  MONERO_Wallet_autoRefreshInterval: {
+  CWLWS_Wallet_autoRefreshInterval: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_addSubaddressAccount: {
+  CWLWS_Wallet_addSubaddressAccount: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "pointer"] as [
@@ -1431,14 +1431,14 @@ export const moneroSymbols = {
       label: "pointer",
     ],
   },
-  MONERO_Wallet_numSubaddressAccounts: {
+  CWLWS_Wallet_numSubaddressAccounts: {
     nonblocking: true,
     result: "usize",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_numSubaddresses: {
+  CWLWS_Wallet_numSubaddresses: {
     nonblocking: true,
     result: "usize",
     parameters: ["pointer", "u32"] as [
@@ -1446,7 +1446,7 @@ export const moneroSymbols = {
       accountIndex: "u32",
     ],
   },
-  MONERO_Wallet_addSubaddress: {
+  CWLWS_Wallet_addSubaddress: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "u32", "pointer"] as [
@@ -1455,7 +1455,7 @@ export const moneroSymbols = {
       label: "pointer",
     ],
   },
-  MONERO_Wallet_getSubaddressLabel: {
+  CWLWS_Wallet_getSubaddressLabel: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "u32", "u32"] as [
@@ -1464,7 +1464,7 @@ export const moneroSymbols = {
       addressIndex: "u32",
     ],
   },
-  MONERO_Wallet_setSubaddressLabel: {
+  CWLWS_Wallet_setSubaddressLabel: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "u32", "u32", "pointer"] as [
@@ -1474,7 +1474,7 @@ export const moneroSymbols = {
       label: "pointer",
     ],
   },
-  MONERO_Wallet_multisig: {
+  CWLWS_Wallet_multisig: {
     optional: true,
     nonblocking: true,
     result: "pointer",
@@ -1482,14 +1482,14 @@ export const moneroSymbols = {
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_getMultisigInfo: {
+  CWLWS_Wallet_getMultisigInfo: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_makeMultisig: {
+  CWLWS_Wallet_makeMultisig: {
     optional: true,
     nonblocking: true,
     result: "pointer",
@@ -1500,7 +1500,7 @@ export const moneroSymbols = {
       threshold: "u32",
     ],
   },
-  MONERO_Wallet_exchangeMultisigKeys: {
+  CWLWS_Wallet_exchangeMultisigKeys: {
     optional: true,
     nonblocking: true,
     result: "pointer",
@@ -1511,7 +1511,7 @@ export const moneroSymbols = {
       force_update_use_with_caution: "bool",
     ],
   },
-  MONERO_Wallet_exportMultisigImages: {
+  CWLWS_Wallet_exportMultisigImages: {
     optional: true,
     nonblocking: true,
     result: "pointer",
@@ -1520,7 +1520,7 @@ export const moneroSymbols = {
       separator: "pointer",
     ],
   },
-  MONERO_Wallet_importMultisigImages: {
+  CWLWS_Wallet_importMultisigImages: {
     optional: true,
     nonblocking: true,
     result: "usize",
@@ -1530,7 +1530,7 @@ export const moneroSymbols = {
       info_separator: "pointer",
     ],
   },
-  MONERO_Wallet_hasMultisigPartialKeyImages: {
+  CWLWS_Wallet_hasMultisigPartialKeyImages: {
     optional: true,
     nonblocking: true,
     result: "usize",
@@ -1538,7 +1538,7 @@ export const moneroSymbols = {
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_restoreMultisigTransaction: {
+  CWLWS_Wallet_restoreMultisigTransaction: {
     optional: true,
     nonblocking: true,
     result: "pointer",
@@ -1547,7 +1547,7 @@ export const moneroSymbols = {
       signData: "pointer",
     ],
   },
-  MONERO_Wallet_createTransactionMultDest: {
+  CWLWS_Wallet_createTransactionMultDest: {
     optional: true,
     nonblocking: true,
     result: "pointer",
@@ -1579,7 +1579,7 @@ export const moneroSymbols = {
       preferredInputs_separator: "pointer",
     ],
   },
-  MONERO_Wallet_createTransaction: {
+  CWLWS_Wallet_createTransaction: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer", "pointer", "u64", "u32", "i32", "u32", "pointer", "pointer"] as [
@@ -1594,7 +1594,7 @@ export const moneroSymbols = {
       separator: "pointer",
     ],
   },
-  MONERO_Wallet_loadUnsignedTx: {
+  CWLWS_Wallet_loadUnsignedTx: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -1602,7 +1602,7 @@ export const moneroSymbols = {
       fileName: "pointer",
     ],
   },
-  MONERO_Wallet_loadUnsignedTxUR: {
+  CWLWS_Wallet_loadUnsignedTxUR: {
     optional: true,
     nonblocking: true,
     result: "pointer",
@@ -1611,7 +1611,7 @@ export const moneroSymbols = {
       input: "pointer",
     ],
   },
-  MONERO_Wallet_submitTransaction: {
+  CWLWS_Wallet_submitTransaction: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer"] as [
@@ -1619,7 +1619,7 @@ export const moneroSymbols = {
       fileName: "pointer",
     ],
   },
-  MONERO_Wallet_submitTransactionUR: {
+  CWLWS_Wallet_submitTransactionUR: {
     optional: true,
     nonblocking: true,
     result: "bool",
@@ -1628,14 +1628,14 @@ export const moneroSymbols = {
       input: "pointer",
     ],
   },
-  MONERO_Wallet_hasUnknownKeyImages: {
+  CWLWS_Wallet_hasUnknownKeyImages: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_exportKeyImages: {
+  CWLWS_Wallet_exportKeyImages: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer", "bool"] as [
@@ -1644,7 +1644,7 @@ export const moneroSymbols = {
       all: "bool",
     ],
   },
-  MONERO_Wallet_exportKeyImagesUR: {
+  CWLWS_Wallet_exportKeyImagesUR: {
     optional: true,
     nonblocking: true,
     result: "pointer",
@@ -1654,7 +1654,7 @@ export const moneroSymbols = {
       all: "bool",
     ],
   },
-  MONERO_Wallet_importKeyImages: {
+  CWLWS_Wallet_importKeyImages: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer"] as [
@@ -1662,7 +1662,7 @@ export const moneroSymbols = {
       filename: "pointer",
     ],
   },
-  MONERO_Wallet_importKeyImagesUR: {
+  CWLWS_Wallet_importKeyImagesUR: {
     optional: true,
     nonblocking: true,
     result: "bool",
@@ -1671,7 +1671,7 @@ export const moneroSymbols = {
       input: "pointer",
     ],
   },
-  MONERO_Wallet_exportOutputs: {
+  CWLWS_Wallet_exportOutputs: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer", "bool"] as [
@@ -1680,7 +1680,7 @@ export const moneroSymbols = {
       all: "bool",
     ],
   },
-  MONERO_Wallet_exportOutputsUR: {
+  CWLWS_Wallet_exportOutputsUR: {
     optional: true,
     nonblocking: true,
     result: "pointer",
@@ -1690,7 +1690,7 @@ export const moneroSymbols = {
       all: "bool",
     ],
   },
-  MONERO_Wallet_importOutputs: {
+  CWLWS_Wallet_importOutputs: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer"] as [
@@ -1698,7 +1698,7 @@ export const moneroSymbols = {
       filename: "pointer",
     ],
   },
-  MONERO_Wallet_importOutputsUR: {
+  CWLWS_Wallet_importOutputsUR: {
     optional: true,
     nonblocking: true,
     result: "bool",
@@ -1707,7 +1707,7 @@ export const moneroSymbols = {
       input: "pointer",
     ],
   },
-  MONERO_Wallet_setupBackgroundSync: {
+  CWLWS_Wallet_setupBackgroundSync: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "i32", "pointer", "pointer"] as [
@@ -1717,21 +1717,21 @@ export const moneroSymbols = {
       background_cache_password: "pointer",
     ],
   },
-  MONERO_Wallet_getBackgroundSyncType: {
+  CWLWS_Wallet_getBackgroundSyncType: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_startBackgroundSync: {
+  CWLWS_Wallet_startBackgroundSync: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_stopBackgroundSync: {
+  CWLWS_Wallet_stopBackgroundSync: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer"] as [
@@ -1739,63 +1739,63 @@ export const moneroSymbols = {
       wallet_password: "pointer",
     ],
   },
-  MONERO_Wallet_isBackgroundSyncing: {
+  CWLWS_Wallet_isBackgroundSyncing: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_isBackgroundWallet: {
+  CWLWS_Wallet_isBackgroundWallet: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_history: {
+  CWLWS_Wallet_history: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_addressBook: {
+  CWLWS_Wallet_addressBook: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_coins: {
+  CWLWS_Wallet_coins: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_subaddress: {
+  CWLWS_Wallet_subaddress: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_subaddressAccount: {
+  CWLWS_Wallet_subaddressAccount: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_defaultMixin: {
+  CWLWS_Wallet_defaultMixin: {
     nonblocking: true,
     result: "u32",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_setDefaultMixin: {
+  CWLWS_Wallet_setDefaultMixin: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "u32"] as [
@@ -1803,7 +1803,7 @@ export const moneroSymbols = {
       arg: "u32",
     ],
   },
-  MONERO_Wallet_setCacheAttribute: {
+  CWLWS_Wallet_setCacheAttribute: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer", "pointer"] as [
@@ -1812,7 +1812,7 @@ export const moneroSymbols = {
       val: "pointer",
     ],
   },
-  MONERO_Wallet_getCacheAttribute: {
+  CWLWS_Wallet_getCacheAttribute: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -1820,7 +1820,7 @@ export const moneroSymbols = {
       key: "pointer",
     ],
   },
-  MONERO_Wallet_setUserNote: {
+  CWLWS_Wallet_setUserNote: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer", "pointer"] as [
@@ -1829,7 +1829,7 @@ export const moneroSymbols = {
       note: "pointer",
     ],
   },
-  MONERO_Wallet_getUserNote: {
+  CWLWS_Wallet_getUserNote: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -1837,7 +1837,7 @@ export const moneroSymbols = {
       txid: "pointer",
     ],
   },
-  MONERO_Wallet_getTxKey: {
+  CWLWS_Wallet_getTxKey: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer"] as [
@@ -1845,7 +1845,7 @@ export const moneroSymbols = {
       txid: "pointer",
     ],
   },
-  MONERO_Wallet_signMessage: {
+  CWLWS_Wallet_signMessage: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer", "pointer"] as [
@@ -1854,7 +1854,7 @@ export const moneroSymbols = {
       address: "pointer",
     ],
   },
-  MONERO_Wallet_verifySignedMessage: {
+  CWLWS_Wallet_verifySignedMessage: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer", "pointer", "pointer"] as [
@@ -1864,14 +1864,14 @@ export const moneroSymbols = {
       signature: "pointer",
     ],
   },
-  MONERO_Wallet_rescanSpent: {
+  CWLWS_Wallet_rescanSpent: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_setOffline: {
+  CWLWS_Wallet_setOffline: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "bool"] as [
@@ -1879,14 +1879,14 @@ export const moneroSymbols = {
       offline: "bool",
     ],
   },
-  MONERO_Wallet_isOffline: {
+  CWLWS_Wallet_isOffline: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_segregatePreForkOutputs: {
+  CWLWS_Wallet_segregatePreForkOutputs: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "bool"] as [
@@ -1894,7 +1894,7 @@ export const moneroSymbols = {
       segregate: "bool",
     ],
   },
-  MONERO_Wallet_segregationHeight: {
+  CWLWS_Wallet_segregationHeight: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "u64"] as [
@@ -1902,7 +1902,7 @@ export const moneroSymbols = {
       height: "u64",
     ],
   },
-  MONERO_Wallet_keyReuseMitigation2: {
+  CWLWS_Wallet_keyReuseMitigation2: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "bool"] as [
@@ -1910,35 +1910,35 @@ export const moneroSymbols = {
       mitigation: "bool",
     ],
   },
-  MONERO_Wallet_lockKeysFile: {
+  CWLWS_Wallet_lockKeysFile: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_unlockKeysFile: {
+  CWLWS_Wallet_unlockKeysFile: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_isKeysFileLocked: {
+  CWLWS_Wallet_isKeysFileLocked: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_getDeviceType: {
+  CWLWS_Wallet_getDeviceType: {
     nonblocking: true,
     result: "i32",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_coldKeyImageSync: {
+  CWLWS_Wallet_coldKeyImageSync: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer", "u64", "u64"] as [
@@ -1947,7 +1947,7 @@ export const moneroSymbols = {
       unspent: "u64",
     ],
   },
-  MONERO_Wallet_deviceShowAddress: {
+  CWLWS_Wallet_deviceShowAddress: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "u32", "u32"] as [
@@ -1956,7 +1956,7 @@ export const moneroSymbols = {
       addressIndex: "u32",
     ],
   },
-  MONERO_Wallet_reconnectDevice: {
+  CWLWS_Wallet_reconnectDevice: {
     optional: true,
     nonblocking: true,
     result: "bool",
@@ -1964,21 +1964,21 @@ export const moneroSymbols = {
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_getBytesReceived: {
+  CWLWS_Wallet_getBytesReceived: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_getBytesSent: {
+  CWLWS_Wallet_getBytesSent: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_getStateIsConnected: {
+  CWLWS_Wallet_getStateIsConnected: {
     optional: true,
     nonblocking: true,
     result: "bool",
@@ -1986,7 +1986,7 @@ export const moneroSymbols = {
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_getSendToDevice: {
+  CWLWS_Wallet_getSendToDevice: {
     optional: true,
     nonblocking: true,
     result: "pointer",
@@ -1994,7 +1994,7 @@ export const moneroSymbols = {
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_getSendToDeviceLength: {
+  CWLWS_Wallet_getSendToDeviceLength: {
     optional: true,
     nonblocking: true,
     result: "usize",
@@ -2002,7 +2002,7 @@ export const moneroSymbols = {
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_getReceivedFromDevice: {
+  CWLWS_Wallet_getReceivedFromDevice: {
     optional: true,
     nonblocking: true,
     result: "pointer",
@@ -2010,7 +2010,7 @@ export const moneroSymbols = {
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_getReceivedFromDeviceLength: {
+  CWLWS_Wallet_getReceivedFromDeviceLength: {
     optional: true,
     nonblocking: true,
     result: "usize",
@@ -2018,7 +2018,7 @@ export const moneroSymbols = {
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_getWaitsForDeviceSend: {
+  CWLWS_Wallet_getWaitsForDeviceSend: {
     optional: true,
     nonblocking: true,
     result: "bool",
@@ -2026,7 +2026,7 @@ export const moneroSymbols = {
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_getWaitsForDeviceReceive: {
+  CWLWS_Wallet_getWaitsForDeviceReceive: {
     optional: true,
     nonblocking: true,
     result: "bool",
@@ -2034,7 +2034,7 @@ export const moneroSymbols = {
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_Wallet_setDeviceReceivedData: {
+  CWLWS_Wallet_setDeviceReceivedData: {
     optional: true,
     nonblocking: true,
     result: "void",
@@ -2044,7 +2044,7 @@ export const moneroSymbols = {
       len: "usize",
     ],
   },
-  MONERO_Wallet_setDeviceSendData: {
+  CWLWS_Wallet_setDeviceSendData: {
     optional: true,
     nonblocking: true,
     result: "void",
@@ -2054,7 +2054,7 @@ export const moneroSymbols = {
       len: "usize",
     ],
   },
-  MONERO_WalletManager_createWallet: {
+  CWLWS_WalletManager_createWallet: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer", "pointer", "pointer", "i32"] as [
@@ -2065,7 +2065,7 @@ export const moneroSymbols = {
       networkType: "i32",
     ],
   },
-  MONERO_WalletManager_openWallet: {
+  CWLWS_WalletManager_openWallet: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer", "pointer", "i32"] as [
@@ -2075,7 +2075,7 @@ export const moneroSymbols = {
       networkType: "i32",
     ],
   },
-  MONERO_WalletManager_recoveryWallet: {
+  CWLWS_WalletManager_recoveryWallet: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer", "pointer", "pointer", "i32", "u64", "u64", "pointer"] as [
@@ -2089,7 +2089,7 @@ export const moneroSymbols = {
       seedOffset: "pointer",
     ],
   },
-  MONERO_WalletManager_createWalletFromKeys: {
+  CWLWS_WalletManager_createWalletFromKeys: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer", "pointer", "pointer", "i32", "u64", "pointer", "pointer", "pointer", "u64"] as [
@@ -2105,7 +2105,7 @@ export const moneroSymbols = {
       kdf_rounds: "u64",
     ],
   },
-  MONERO_WalletManager_createWalletFromDevice: {
+  CWLWS_WalletManager_createWalletFromDevice: {
     optional: true,
     nonblocking: true,
     result: "pointer",
@@ -2122,7 +2122,7 @@ export const moneroSymbols = {
       kdf_rounds: "u64",
     ],
   },
-  MONERO_WalletManager_createDeterministicWalletFromSpendKey: {
+  CWLWS_WalletManager_createDeterministicWalletFromSpendKey: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer", "pointer", "pointer", "i32", "u64", "pointer", "u64"] as [
@@ -2136,7 +2136,7 @@ export const moneroSymbols = {
       kdf_rounds: "u64",
     ],
   },
-  MONERO_WalletManager_createWalletFromPolyseed: {
+  CWLWS_WalletManager_createWalletFromPolyseed: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer", "pointer", "i32", "pointer", "pointer", "bool", "u64", "u64"] as [
@@ -2151,7 +2151,7 @@ export const moneroSymbols = {
       kdf_rounds: "u64",
     ],
   },
-  MONERO_WalletManager_closeWallet: {
+  CWLWS_WalletManager_closeWallet: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer", "bool"] as [
@@ -2160,7 +2160,7 @@ export const moneroSymbols = {
       store: "bool",
     ],
   },
-  MONERO_WalletManager_walletExists: {
+  CWLWS_WalletManager_walletExists: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer"] as [
@@ -2168,7 +2168,7 @@ export const moneroSymbols = {
       path: "pointer",
     ],
   },
-  MONERO_WalletManager_verifyWalletPassword: {
+  CWLWS_WalletManager_verifyWalletPassword: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer", "pointer", "bool", "u64"] as [
@@ -2179,7 +2179,7 @@ export const moneroSymbols = {
       kdf_rounds: "u64",
     ],
   },
-  MONERO_WalletManager_queryWalletDevice: {
+  CWLWS_WalletManager_queryWalletDevice: {
     optional: true,
     nonblocking: true,
     result: "i32",
@@ -2190,7 +2190,7 @@ export const moneroSymbols = {
       kdf_rounds: "u64",
     ],
   },
-  MONERO_WalletManager_findWallets: {
+  CWLWS_WalletManager_findWallets: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer", "pointer"] as [
@@ -2199,14 +2199,14 @@ export const moneroSymbols = {
       separator: "pointer",
     ],
   },
-  MONERO_WalletManager_errorString: {
+  CWLWS_WalletManager_errorString: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wm_ptr: "pointer",
     ],
   },
-  MONERO_WalletManager_setDaemonAddress: {
+  CWLWS_WalletManager_setDaemonAddress: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer", "pointer"] as [
@@ -2214,7 +2214,7 @@ export const moneroSymbols = {
       address: "pointer",
     ],
   },
-  MONERO_WalletManager_setProxy: {
+  CWLWS_WalletManager_setProxy: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer"] as [
@@ -2222,49 +2222,49 @@ export const moneroSymbols = {
       address: "pointer",
     ],
   },
-  MONERO_WalletManager_blockchainHeight: {
+  CWLWS_WalletManager_blockchainHeight: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       wm_ptr: "pointer",
     ],
   },
-  MONERO_WalletManager_blockchainTargetHeight: {
+  CWLWS_WalletManager_blockchainTargetHeight: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       wm_ptr: "pointer",
     ],
   },
-  MONERO_WalletManager_networkDifficulty: {
+  CWLWS_WalletManager_networkDifficulty: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       wm_ptr: "pointer",
     ],
   },
-  MONERO_WalletManager_miningHashRate: {
+  CWLWS_WalletManager_miningHashRate: {
     nonblocking: true,
     result: "f64",
     parameters: ["pointer"] as [
       wm_ptr: "pointer",
     ],
   },
-  MONERO_WalletManager_blockTarget: {
+  CWLWS_WalletManager_blockTarget: {
     nonblocking: true,
     result: "u64",
     parameters: ["pointer"] as [
       wm_ptr: "pointer",
     ],
   },
-  MONERO_WalletManager_isMining: {
+  CWLWS_WalletManager_isMining: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wm_ptr: "pointer",
     ],
   },
-  MONERO_WalletManager_startMining: {
+  CWLWS_WalletManager_startMining: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer", "u32", "bool", "bool"] as [
@@ -2275,7 +2275,7 @@ export const moneroSymbols = {
       ignoreBattery: "bool",
     ],
   },
-  MONERO_WalletManager_stopMining: {
+  CWLWS_WalletManager_stopMining: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer", "pointer"] as [
@@ -2283,7 +2283,7 @@ export const moneroSymbols = {
       address: "pointer",
     ],
   },
-  MONERO_WalletManager_resolveOpenAlias: {
+  CWLWS_WalletManager_resolveOpenAlias: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer", "pointer", "bool"] as [
@@ -2292,19 +2292,19 @@ export const moneroSymbols = {
       dnssec_valid: "bool",
     ],
   },
-  MONERO_WalletManagerFactory_getWalletManager: {
+  CWLWS_WalletManagerFactory_getWalletManager: {
     nonblocking: true,
     result: "pointer",
     parameters: [],
   },
-  MONERO_WalletManagerFactory_setLogLevel: {
+  CWLWS_WalletManagerFactory_setLogLevel: {
     nonblocking: true,
     result: "void",
     parameters: ["i32"] as [
       level: "i32",
     ],
   },
-  MONERO_WalletManagerFactory_setLogCategories: {
+  CWLWS_WalletManagerFactory_setLogCategories: {
     optional: true,
     nonblocking: true,
     result: "void",
@@ -2312,92 +2312,92 @@ export const moneroSymbols = {
       categories: "pointer",
     ],
   },
-  MONERO_DEBUG_test0: {
+  CWLWS_DEBUG_test0: {
     nonblocking: true,
     result: "void",
     parameters: [],
   },
-  MONERO_DEBUG_test1: {
+  CWLWS_DEBUG_test1: {
     nonblocking: true,
     result: "bool",
     parameters: ["bool"] as [
       x: "bool",
     ],
   },
-  MONERO_DEBUG_test2: {
+  CWLWS_DEBUG_test2: {
     nonblocking: true,
     result: "i32",
     parameters: ["i32"] as [
       x: "i32",
     ],
   },
-  MONERO_DEBUG_test3: {
+  CWLWS_DEBUG_test3: {
     nonblocking: true,
     result: "u64",
     parameters: ["u64"] as [
       x: "u64",
     ],
   },
-  MONERO_DEBUG_test4: {
+  CWLWS_DEBUG_test4: {
     nonblocking: true,
     result: "pointer",
     parameters: ["u64"] as [
       x: "u64",
     ],
   },
-  MONERO_DEBUG_test5: {
+  CWLWS_DEBUG_test5: {
     nonblocking: true,
     result: "pointer",
     parameters: [],
   },
-  MONERO_DEBUG_test5_std: {
+  CWLWS_DEBUG_test5_std: {
     nonblocking: true,
     result: "pointer",
     parameters: [],
   },
-  MONERO_DEBUG_isPointerNull: {
+  CWLWS_DEBUG_isPointerNull: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_cw_getWalletListener: {
+  CWLWS_cw_getWalletListener: {
     nonblocking: true,
     result: "pointer",
     parameters: ["pointer"] as [
       wallet_ptr: "pointer",
     ],
   },
-  MONERO_cw_WalletListener_resetNeedToRefresh: {
+  CWLWS_cw_WalletListener_resetNeedToRefresh: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer"] as [
       cw_walletListener_ptr: "pointer",
     ],
   },
-  MONERO_cw_WalletListener_isNeedToRefresh: {
+  CWLWS_cw_WalletListener_isNeedToRefresh: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       cw_walletListener_ptr: "pointer",
     ],
   },
-  MONERO_cw_WalletListener_isNewTransactionExist: {
+  CWLWS_cw_WalletListener_isNewTransactionExist: {
     nonblocking: true,
     result: "bool",
     parameters: ["pointer"] as [
       cw_walletListener_ptr: "pointer",
     ],
   },
-  MONERO_cw_WalletListener_resetIsNewTransactionExist: {
+  CWLWS_cw_WalletListener_resetIsNewTransactionExist: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer"] as [
       cw_walletListener_ptr: "pointer",
     ],
   },
-  MONERO_cw_WalletListener_height: {
+  CWLWS_cw_WalletListener_height: {
     optional: true,
     nonblocking: true,
     result: "u64",
@@ -2405,25 +2405,25 @@ export const moneroSymbols = {
       cw_walletListener_ptr: "pointer",
     ],
   },
-  MONERO_checksum_wallet2_api_c_h: {
+  CWLWS_checksum_wallet2_api_c_h: {
     optional: true,
     nonblocking: true,
     result: "pointer",
     parameters: [],
   },
-  MONERO_checksum_wallet2_api_c_cpp: {
+  CWLWS_checksum_wallet2_api_c_cpp: {
     optional: true,
     nonblocking: true,
     result: "pointer",
     parameters: [],
   },
-  MONERO_checksum_wallet2_api_c_exp: {
+  CWLWS_checksum_wallet2_api_c_exp: {
     optional: true,
     nonblocking: true,
     result: "pointer",
     parameters: [],
   },
-  MONERO_free: {
+  CWLWS_free: {
     nonblocking: true,
     result: "void",
     parameters: ["pointer"] as [
@@ -2437,7 +2437,7 @@ export type MoneroSymbols = typeof moneroSymbols;
 type ReplaceMonero<T extends string> = T extends `MONERO${infer Y}` ? `WOWNERO${Y}` : never;
 export type WowneroSymbols = { [Key in keyof MoneroSymbols as ReplaceMonero<Key>]: MoneroSymbols[Key] };
 
-export type SymbolName = keyof MoneroSymbols extends `MONERO_${infer SymbolName}` ? SymbolName : never;
+export type SymbolName = keyof MoneroSymbols extends `CWLWS_${infer SymbolName}` ? SymbolName : never;
 
 export const wowneroSymbols = Object.fromEntries(
   Object.entries(moneroSymbols).map(([key, value]) => [key.replace("MONERO", "WOWNERO"), value]),

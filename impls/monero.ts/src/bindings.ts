@@ -7,7 +7,7 @@ export type Dylib = MoneroDylib | WowneroDylib;
 export let dylib: Dylib;
 
 let dylibPrefix = "MONERO";
-export const fns = new Proxy({} as { [K in SymbolName]: MoneroDylib["symbols"][`MONERO_${K}`] }, {
+export const fns = new Proxy({} as { [K in SymbolName]: MoneroDylib["symbols"][`CWLWS_${K}`] }, {
   get(_, symbolName: SymbolName) {
     return dylib.symbols[`${dylibPrefix}_${symbolName}` as keyof Dylib["symbols"]];
   },

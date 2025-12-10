@@ -19,973 +19,973 @@ class MoneroC {
           lookup)
       : _lookup = lookup;
 
-  int MONERO_PendingTransaction_status(
+  int CWLWS_PendingTransaction_status(
     ffi.Pointer<ffi.Void> pendingTx_ptr,
   ) {
-    return _MONERO_PendingTransaction_status(
+    return _CWLWS_PendingTransaction_status(
       pendingTx_ptr,
     );
   }
 
-  late final _MONERO_PendingTransaction_statusPtr =
+  late final _CWLWS_PendingTransaction_statusPtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_PendingTransaction_status');
-  late final _MONERO_PendingTransaction_status =
-      _MONERO_PendingTransaction_statusPtr.asFunction<
+          'CWLWS_PendingTransaction_status');
+  late final _CWLWS_PendingTransaction_status =
+      _CWLWS_PendingTransaction_statusPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_PendingTransaction_errorString(
+  ffi.Pointer<ffi.Char> CWLWS_PendingTransaction_errorString(
     ffi.Pointer<ffi.Void> pendingTx_ptr,
   ) {
-    return _MONERO_PendingTransaction_errorString(
+    return _CWLWS_PendingTransaction_errorString(
       pendingTx_ptr,
     );
   }
 
-  late final _MONERO_PendingTransaction_errorStringPtr = _lookup<
+  late final _CWLWS_PendingTransaction_errorStringPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_PendingTransaction_errorString');
-  late final _MONERO_PendingTransaction_errorString =
-      _MONERO_PendingTransaction_errorStringPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_PendingTransaction_errorString');
+  late final _CWLWS_PendingTransaction_errorString =
+      _CWLWS_PendingTransaction_errorStringPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_PendingTransaction_commit(
+  bool CWLWS_PendingTransaction_commit(
     ffi.Pointer<ffi.Void> pendingTx_ptr,
     ffi.Pointer<ffi.Char> filename,
     bool overwrite,
   ) {
-    return _MONERO_PendingTransaction_commit(
+    return _CWLWS_PendingTransaction_commit(
       pendingTx_ptr,
       filename,
       overwrite,
     );
   }
 
-  late final _MONERO_PendingTransaction_commitPtr = _lookup<
+  late final _CWLWS_PendingTransaction_commitPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
-              ffi.Bool)>>('MONERO_PendingTransaction_commit');
-  late final _MONERO_PendingTransaction_commit =
-      _MONERO_PendingTransaction_commitPtr.asFunction<
+              ffi.Bool)>>('CWLWS_PendingTransaction_commit');
+  late final _CWLWS_PendingTransaction_commit =
+      _CWLWS_PendingTransaction_commitPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>, bool)>();
 
-  ffi.Pointer<ffi.Char> MONERO_PendingTransaction_commitUR(
+  ffi.Pointer<ffi.Char> CWLWS_PendingTransaction_commitUR(
     ffi.Pointer<ffi.Void> pendingTx_ptr,
     int max_fragment_length,
   ) {
-    return _MONERO_PendingTransaction_commitUR(
+    return _CWLWS_PendingTransaction_commitUR(
       pendingTx_ptr,
       max_fragment_length,
     );
   }
 
-  late final _MONERO_PendingTransaction_commitURPtr = _lookup<
+  late final _CWLWS_PendingTransaction_commitURPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Int)>>('MONERO_PendingTransaction_commitUR');
-  late final _MONERO_PendingTransaction_commitUR =
-      _MONERO_PendingTransaction_commitURPtr.asFunction<
+              ffi.Int)>>('CWLWS_PendingTransaction_commitUR');
+  late final _CWLWS_PendingTransaction_commitUR =
+      _CWLWS_PendingTransaction_commitURPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>, int)>();
 
-  int MONERO_PendingTransaction_amount(
+  int CWLWS_PendingTransaction_amount(
     ffi.Pointer<ffi.Void> pendingTx_ptr,
   ) {
-    return _MONERO_PendingTransaction_amount(
+    return _CWLWS_PendingTransaction_amount(
       pendingTx_ptr,
     );
   }
 
-  late final _MONERO_PendingTransaction_amountPtr =
+  late final _CWLWS_PendingTransaction_amountPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_PendingTransaction_amount');
-  late final _MONERO_PendingTransaction_amount =
-      _MONERO_PendingTransaction_amountPtr.asFunction<
+          'CWLWS_PendingTransaction_amount');
+  late final _CWLWS_PendingTransaction_amount =
+      _CWLWS_PendingTransaction_amountPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_PendingTransaction_dust(
+  int CWLWS_PendingTransaction_dust(
     ffi.Pointer<ffi.Void> pendingTx_ptr,
   ) {
-    return _MONERO_PendingTransaction_dust(
+    return _CWLWS_PendingTransaction_dust(
       pendingTx_ptr,
     );
   }
 
-  late final _MONERO_PendingTransaction_dustPtr =
+  late final _CWLWS_PendingTransaction_dustPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_PendingTransaction_dust');
-  late final _MONERO_PendingTransaction_dust =
-      _MONERO_PendingTransaction_dustPtr.asFunction<
+          'CWLWS_PendingTransaction_dust');
+  late final _CWLWS_PendingTransaction_dust =
+      _CWLWS_PendingTransaction_dustPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_PendingTransaction_fee(
+  int CWLWS_PendingTransaction_fee(
     ffi.Pointer<ffi.Void> pendingTx_ptr,
   ) {
-    return _MONERO_PendingTransaction_fee(
+    return _CWLWS_PendingTransaction_fee(
       pendingTx_ptr,
     );
   }
 
-  late final _MONERO_PendingTransaction_feePtr =
+  late final _CWLWS_PendingTransaction_feePtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_PendingTransaction_fee');
-  late final _MONERO_PendingTransaction_fee = _MONERO_PendingTransaction_feePtr
+          'CWLWS_PendingTransaction_fee');
+  late final _CWLWS_PendingTransaction_fee = _CWLWS_PendingTransaction_feePtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_PendingTransaction_txid(
+  ffi.Pointer<ffi.Char> CWLWS_PendingTransaction_txid(
     ffi.Pointer<ffi.Void> pendingTx_ptr,
     ffi.Pointer<ffi.Char> separator,
   ) {
-    return _MONERO_PendingTransaction_txid(
+    return _CWLWS_PendingTransaction_txid(
       pendingTx_ptr,
       separator,
     );
   }
 
-  late final _MONERO_PendingTransaction_txidPtr = _lookup<
+  late final _CWLWS_PendingTransaction_txidPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_PendingTransaction_txid');
-  late final _MONERO_PendingTransaction_txid =
-      _MONERO_PendingTransaction_txidPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_PendingTransaction_txid');
+  late final _CWLWS_PendingTransaction_txid =
+      _CWLWS_PendingTransaction_txidPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  int MONERO_PendingTransaction_txCount(
+  int CWLWS_PendingTransaction_txCount(
     ffi.Pointer<ffi.Void> pendingTx_ptr,
   ) {
-    return _MONERO_PendingTransaction_txCount(
+    return _CWLWS_PendingTransaction_txCount(
       pendingTx_ptr,
     );
   }
 
-  late final _MONERO_PendingTransaction_txCountPtr =
+  late final _CWLWS_PendingTransaction_txCountPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_PendingTransaction_txCount');
-  late final _MONERO_PendingTransaction_txCount =
-      _MONERO_PendingTransaction_txCountPtr.asFunction<
+          'CWLWS_PendingTransaction_txCount');
+  late final _CWLWS_PendingTransaction_txCount =
+      _CWLWS_PendingTransaction_txCountPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_PendingTransaction_subaddrAccount(
+  ffi.Pointer<ffi.Char> CWLWS_PendingTransaction_subaddrAccount(
     ffi.Pointer<ffi.Void> pendingTx_ptr,
     ffi.Pointer<ffi.Char> separator,
   ) {
-    return _MONERO_PendingTransaction_subaddrAccount(
+    return _CWLWS_PendingTransaction_subaddrAccount(
       pendingTx_ptr,
       separator,
     );
   }
 
-  late final _MONERO_PendingTransaction_subaddrAccountPtr = _lookup<
+  late final _CWLWS_PendingTransaction_subaddrAccountPtr = _lookup<
           ffi.NativeFunction<
               ffi.Pointer<ffi.Char> Function(
                   ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>>(
-      'MONERO_PendingTransaction_subaddrAccount');
-  late final _MONERO_PendingTransaction_subaddrAccount =
-      _MONERO_PendingTransaction_subaddrAccountPtr.asFunction<
+      'CWLWS_PendingTransaction_subaddrAccount');
+  late final _CWLWS_PendingTransaction_subaddrAccount =
+      _CWLWS_PendingTransaction_subaddrAccountPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_PendingTransaction_subaddrIndices(
+  ffi.Pointer<ffi.Char> CWLWS_PendingTransaction_subaddrIndices(
     ffi.Pointer<ffi.Void> pendingTx_ptr,
     ffi.Pointer<ffi.Char> separator,
   ) {
-    return _MONERO_PendingTransaction_subaddrIndices(
+    return _CWLWS_PendingTransaction_subaddrIndices(
       pendingTx_ptr,
       separator,
     );
   }
 
-  late final _MONERO_PendingTransaction_subaddrIndicesPtr = _lookup<
+  late final _CWLWS_PendingTransaction_subaddrIndicesPtr = _lookup<
           ffi.NativeFunction<
               ffi.Pointer<ffi.Char> Function(
                   ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>>(
-      'MONERO_PendingTransaction_subaddrIndices');
-  late final _MONERO_PendingTransaction_subaddrIndices =
-      _MONERO_PendingTransaction_subaddrIndicesPtr.asFunction<
+      'CWLWS_PendingTransaction_subaddrIndices');
+  late final _CWLWS_PendingTransaction_subaddrIndices =
+      _CWLWS_PendingTransaction_subaddrIndicesPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_PendingTransaction_multisigSignData(
+  ffi.Pointer<ffi.Char> CWLWS_PendingTransaction_multisigSignData(
     ffi.Pointer<ffi.Void> pendingTx_ptr,
   ) {
-    return _MONERO_PendingTransaction_multisigSignData(
+    return _CWLWS_PendingTransaction_multisigSignData(
       pendingTx_ptr,
     );
   }
 
-  late final _MONERO_PendingTransaction_multisigSignDataPtr = _lookup<
+  late final _CWLWS_PendingTransaction_multisigSignDataPtr = _lookup<
           ffi.NativeFunction<
               ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>>(
-      'MONERO_PendingTransaction_multisigSignData');
-  late final _MONERO_PendingTransaction_multisigSignData =
-      _MONERO_PendingTransaction_multisigSignDataPtr.asFunction<
+      'CWLWS_PendingTransaction_multisigSignData');
+  late final _CWLWS_PendingTransaction_multisigSignData =
+      _CWLWS_PendingTransaction_multisigSignDataPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_PendingTransaction_signMultisigTx(
+  void CWLWS_PendingTransaction_signMultisigTx(
     ffi.Pointer<ffi.Void> pendingTx_ptr,
   ) {
-    return _MONERO_PendingTransaction_signMultisigTx(
+    return _CWLWS_PendingTransaction_signMultisigTx(
       pendingTx_ptr,
     );
   }
 
-  late final _MONERO_PendingTransaction_signMultisigTxPtr =
+  late final _CWLWS_PendingTransaction_signMultisigTxPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_PendingTransaction_signMultisigTx');
-  late final _MONERO_PendingTransaction_signMultisigTx =
-      _MONERO_PendingTransaction_signMultisigTxPtr.asFunction<
+          'CWLWS_PendingTransaction_signMultisigTx');
+  late final _CWLWS_PendingTransaction_signMultisigTx =
+      _CWLWS_PendingTransaction_signMultisigTxPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_PendingTransaction_signersKeys(
+  ffi.Pointer<ffi.Char> CWLWS_PendingTransaction_signersKeys(
     ffi.Pointer<ffi.Void> pendingTx_ptr,
     ffi.Pointer<ffi.Char> separator,
   ) {
-    return _MONERO_PendingTransaction_signersKeys(
+    return _CWLWS_PendingTransaction_signersKeys(
       pendingTx_ptr,
       separator,
     );
   }
 
-  late final _MONERO_PendingTransaction_signersKeysPtr = _lookup<
+  late final _CWLWS_PendingTransaction_signersKeysPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_PendingTransaction_signersKeys');
-  late final _MONERO_PendingTransaction_signersKeys =
-      _MONERO_PendingTransaction_signersKeysPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_PendingTransaction_signersKeys');
+  late final _CWLWS_PendingTransaction_signersKeys =
+      _CWLWS_PendingTransaction_signersKeysPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_PendingTransaction_hex(
+  ffi.Pointer<ffi.Char> CWLWS_PendingTransaction_hex(
     ffi.Pointer<ffi.Void> pendingTx_ptr,
     ffi.Pointer<ffi.Char> separator,
   ) {
-    return _MONERO_PendingTransaction_hex(
+    return _CWLWS_PendingTransaction_hex(
       pendingTx_ptr,
       separator,
     );
   }
 
-  late final _MONERO_PendingTransaction_hexPtr = _lookup<
+  late final _CWLWS_PendingTransaction_hexPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_PendingTransaction_hex');
-  late final _MONERO_PendingTransaction_hex =
-      _MONERO_PendingTransaction_hexPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_PendingTransaction_hex');
+  late final _CWLWS_PendingTransaction_hex =
+      _CWLWS_PendingTransaction_hexPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  int MONERO_UnsignedTransaction_status(
+  int CWLWS_UnsignedTransaction_status(
     ffi.Pointer<ffi.Void> unsignedTx_ptr,
   ) {
-    return _MONERO_UnsignedTransaction_status(
+    return _CWLWS_UnsignedTransaction_status(
       unsignedTx_ptr,
     );
   }
 
-  late final _MONERO_UnsignedTransaction_statusPtr =
+  late final _CWLWS_UnsignedTransaction_statusPtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_UnsignedTransaction_status');
-  late final _MONERO_UnsignedTransaction_status =
-      _MONERO_UnsignedTransaction_statusPtr.asFunction<
+          'CWLWS_UnsignedTransaction_status');
+  late final _CWLWS_UnsignedTransaction_status =
+      _CWLWS_UnsignedTransaction_statusPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_UnsignedTransaction_errorString(
+  ffi.Pointer<ffi.Char> CWLWS_UnsignedTransaction_errorString(
     ffi.Pointer<ffi.Void> unsignedTx_ptr,
   ) {
-    return _MONERO_UnsignedTransaction_errorString(
+    return _CWLWS_UnsignedTransaction_errorString(
       unsignedTx_ptr,
     );
   }
 
-  late final _MONERO_UnsignedTransaction_errorStringPtr = _lookup<
+  late final _CWLWS_UnsignedTransaction_errorStringPtr = _lookup<
           ffi.NativeFunction<
               ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>>(
-      'MONERO_UnsignedTransaction_errorString');
-  late final _MONERO_UnsignedTransaction_errorString =
-      _MONERO_UnsignedTransaction_errorStringPtr.asFunction<
+      'CWLWS_UnsignedTransaction_errorString');
+  late final _CWLWS_UnsignedTransaction_errorString =
+      _CWLWS_UnsignedTransaction_errorStringPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_UnsignedTransaction_amount(
+  ffi.Pointer<ffi.Char> CWLWS_UnsignedTransaction_amount(
     ffi.Pointer<ffi.Void> unsignedTx_ptr,
     ffi.Pointer<ffi.Char> separator,
   ) {
-    return _MONERO_UnsignedTransaction_amount(
+    return _CWLWS_UnsignedTransaction_amount(
       unsignedTx_ptr,
       separator,
     );
   }
 
-  late final _MONERO_UnsignedTransaction_amountPtr = _lookup<
+  late final _CWLWS_UnsignedTransaction_amountPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_UnsignedTransaction_amount');
-  late final _MONERO_UnsignedTransaction_amount =
-      _MONERO_UnsignedTransaction_amountPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_UnsignedTransaction_amount');
+  late final _CWLWS_UnsignedTransaction_amount =
+      _CWLWS_UnsignedTransaction_amountPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_UnsignedTransaction_fee(
+  ffi.Pointer<ffi.Char> CWLWS_UnsignedTransaction_fee(
     ffi.Pointer<ffi.Void> unsignedTx_ptr,
     ffi.Pointer<ffi.Char> separator,
   ) {
-    return _MONERO_UnsignedTransaction_fee(
+    return _CWLWS_UnsignedTransaction_fee(
       unsignedTx_ptr,
       separator,
     );
   }
 
-  late final _MONERO_UnsignedTransaction_feePtr = _lookup<
+  late final _CWLWS_UnsignedTransaction_feePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_UnsignedTransaction_fee');
-  late final _MONERO_UnsignedTransaction_fee =
-      _MONERO_UnsignedTransaction_feePtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_UnsignedTransaction_fee');
+  late final _CWLWS_UnsignedTransaction_fee =
+      _CWLWS_UnsignedTransaction_feePtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_UnsignedTransaction_mixin(
+  ffi.Pointer<ffi.Char> CWLWS_UnsignedTransaction_mixin(
     ffi.Pointer<ffi.Void> unsignedTx_ptr,
     ffi.Pointer<ffi.Char> separator,
   ) {
-    return _MONERO_UnsignedTransaction_mixin(
+    return _CWLWS_UnsignedTransaction_mixin(
       unsignedTx_ptr,
       separator,
     );
   }
 
-  late final _MONERO_UnsignedTransaction_mixinPtr = _lookup<
+  late final _CWLWS_UnsignedTransaction_mixinPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_UnsignedTransaction_mixin');
-  late final _MONERO_UnsignedTransaction_mixin =
-      _MONERO_UnsignedTransaction_mixinPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_UnsignedTransaction_mixin');
+  late final _CWLWS_UnsignedTransaction_mixin =
+      _CWLWS_UnsignedTransaction_mixinPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_UnsignedTransaction_confirmationMessage(
+  ffi.Pointer<ffi.Char> CWLWS_UnsignedTransaction_confirmationMessage(
     ffi.Pointer<ffi.Void> unsignedTx_ptr,
   ) {
-    return _MONERO_UnsignedTransaction_confirmationMessage(
+    return _CWLWS_UnsignedTransaction_confirmationMessage(
       unsignedTx_ptr,
     );
   }
 
-  late final _MONERO_UnsignedTransaction_confirmationMessagePtr = _lookup<
+  late final _CWLWS_UnsignedTransaction_confirmationMessagePtr = _lookup<
           ffi.NativeFunction<
               ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>>(
-      'MONERO_UnsignedTransaction_confirmationMessage');
-  late final _MONERO_UnsignedTransaction_confirmationMessage =
-      _MONERO_UnsignedTransaction_confirmationMessagePtr.asFunction<
+      'CWLWS_UnsignedTransaction_confirmationMessage');
+  late final _CWLWS_UnsignedTransaction_confirmationMessage =
+      _CWLWS_UnsignedTransaction_confirmationMessagePtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_UnsignedTransaction_paymentId(
+  ffi.Pointer<ffi.Char> CWLWS_UnsignedTransaction_paymentId(
     ffi.Pointer<ffi.Void> unsignedTx_ptr,
     ffi.Pointer<ffi.Char> separator,
   ) {
-    return _MONERO_UnsignedTransaction_paymentId(
+    return _CWLWS_UnsignedTransaction_paymentId(
       unsignedTx_ptr,
       separator,
     );
   }
 
-  late final _MONERO_UnsignedTransaction_paymentIdPtr = _lookup<
+  late final _CWLWS_UnsignedTransaction_paymentIdPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_UnsignedTransaction_paymentId');
-  late final _MONERO_UnsignedTransaction_paymentId =
-      _MONERO_UnsignedTransaction_paymentIdPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_UnsignedTransaction_paymentId');
+  late final _CWLWS_UnsignedTransaction_paymentId =
+      _CWLWS_UnsignedTransaction_paymentIdPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_UnsignedTransaction_recipientAddress(
+  ffi.Pointer<ffi.Char> CWLWS_UnsignedTransaction_recipientAddress(
     ffi.Pointer<ffi.Void> unsignedTx_ptr,
     ffi.Pointer<ffi.Char> separator,
   ) {
-    return _MONERO_UnsignedTransaction_recipientAddress(
+    return _CWLWS_UnsignedTransaction_recipientAddress(
       unsignedTx_ptr,
       separator,
     );
   }
 
-  late final _MONERO_UnsignedTransaction_recipientAddressPtr = _lookup<
+  late final _CWLWS_UnsignedTransaction_recipientAddressPtr = _lookup<
           ffi.NativeFunction<
               ffi.Pointer<ffi.Char> Function(
                   ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>>(
-      'MONERO_UnsignedTransaction_recipientAddress');
-  late final _MONERO_UnsignedTransaction_recipientAddress =
-      _MONERO_UnsignedTransaction_recipientAddressPtr.asFunction<
+      'CWLWS_UnsignedTransaction_recipientAddress');
+  late final _CWLWS_UnsignedTransaction_recipientAddress =
+      _CWLWS_UnsignedTransaction_recipientAddressPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  int MONERO_UnsignedTransaction_minMixinCount(
+  int CWLWS_UnsignedTransaction_minMixinCount(
     ffi.Pointer<ffi.Void> unsignedTx_ptr,
   ) {
-    return _MONERO_UnsignedTransaction_minMixinCount(
+    return _CWLWS_UnsignedTransaction_minMixinCount(
       unsignedTx_ptr,
     );
   }
 
-  late final _MONERO_UnsignedTransaction_minMixinCountPtr =
+  late final _CWLWS_UnsignedTransaction_minMixinCountPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_UnsignedTransaction_minMixinCount');
-  late final _MONERO_UnsignedTransaction_minMixinCount =
-      _MONERO_UnsignedTransaction_minMixinCountPtr.asFunction<
+          'CWLWS_UnsignedTransaction_minMixinCount');
+  late final _CWLWS_UnsignedTransaction_minMixinCount =
+      _CWLWS_UnsignedTransaction_minMixinCountPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_UnsignedTransaction_txCount(
+  int CWLWS_UnsignedTransaction_txCount(
     ffi.Pointer<ffi.Void> unsignedTx_ptr,
   ) {
-    return _MONERO_UnsignedTransaction_txCount(
+    return _CWLWS_UnsignedTransaction_txCount(
       unsignedTx_ptr,
     );
   }
 
-  late final _MONERO_UnsignedTransaction_txCountPtr =
+  late final _CWLWS_UnsignedTransaction_txCountPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_UnsignedTransaction_txCount');
-  late final _MONERO_UnsignedTransaction_txCount =
-      _MONERO_UnsignedTransaction_txCountPtr.asFunction<
+          'CWLWS_UnsignedTransaction_txCount');
+  late final _CWLWS_UnsignedTransaction_txCount =
+      _CWLWS_UnsignedTransaction_txCountPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_UnsignedTransaction_sign(
+  bool CWLWS_UnsignedTransaction_sign(
     ffi.Pointer<ffi.Void> unsignedTx_ptr,
     ffi.Pointer<ffi.Char> signedFileName,
   ) {
-    return _MONERO_UnsignedTransaction_sign(
+    return _CWLWS_UnsignedTransaction_sign(
       unsignedTx_ptr,
       signedFileName,
     );
   }
 
-  late final _MONERO_UnsignedTransaction_signPtr = _lookup<
+  late final _CWLWS_UnsignedTransaction_signPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_UnsignedTransaction_sign');
-  late final _MONERO_UnsignedTransaction_sign =
-      _MONERO_UnsignedTransaction_signPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_UnsignedTransaction_sign');
+  late final _CWLWS_UnsignedTransaction_sign =
+      _CWLWS_UnsignedTransaction_signPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_UnsignedTransaction_signUR(
+  ffi.Pointer<ffi.Char> CWLWS_UnsignedTransaction_signUR(
     ffi.Pointer<ffi.Void> unsignedTx_ptr,
     int max_fragment_length,
   ) {
-    return _MONERO_UnsignedTransaction_signUR(
+    return _CWLWS_UnsignedTransaction_signUR(
       unsignedTx_ptr,
       max_fragment_length,
     );
   }
 
-  late final _MONERO_UnsignedTransaction_signURPtr = _lookup<
+  late final _CWLWS_UnsignedTransaction_signURPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Int)>>('MONERO_UnsignedTransaction_signUR');
-  late final _MONERO_UnsignedTransaction_signUR =
-      _MONERO_UnsignedTransaction_signURPtr.asFunction<
+              ffi.Int)>>('CWLWS_UnsignedTransaction_signUR');
+  late final _CWLWS_UnsignedTransaction_signUR =
+      _CWLWS_UnsignedTransaction_signURPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>, int)>();
 
-  int MONERO_TransactionInfo_direction(
+  int CWLWS_TransactionInfo_direction(
     ffi.Pointer<ffi.Void> txInfo_ptr,
   ) {
-    return _MONERO_TransactionInfo_direction(
+    return _CWLWS_TransactionInfo_direction(
       txInfo_ptr,
     );
   }
 
-  late final _MONERO_TransactionInfo_directionPtr =
+  late final _CWLWS_TransactionInfo_directionPtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_TransactionInfo_direction');
-  late final _MONERO_TransactionInfo_direction =
-      _MONERO_TransactionInfo_directionPtr.asFunction<
+          'CWLWS_TransactionInfo_direction');
+  late final _CWLWS_TransactionInfo_direction =
+      _CWLWS_TransactionInfo_directionPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_TransactionInfo_isPending(
+  bool CWLWS_TransactionInfo_isPending(
     ffi.Pointer<ffi.Void> txInfo_ptr,
   ) {
-    return _MONERO_TransactionInfo_isPending(
+    return _CWLWS_TransactionInfo_isPending(
       txInfo_ptr,
     );
   }
 
-  late final _MONERO_TransactionInfo_isPendingPtr =
+  late final _CWLWS_TransactionInfo_isPendingPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_TransactionInfo_isPending');
-  late final _MONERO_TransactionInfo_isPending =
-      _MONERO_TransactionInfo_isPendingPtr.asFunction<
+          'CWLWS_TransactionInfo_isPending');
+  late final _CWLWS_TransactionInfo_isPending =
+      _CWLWS_TransactionInfo_isPendingPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_TransactionInfo_isFailed(
+  bool CWLWS_TransactionInfo_isFailed(
     ffi.Pointer<ffi.Void> txInfo_ptr,
   ) {
-    return _MONERO_TransactionInfo_isFailed(
+    return _CWLWS_TransactionInfo_isFailed(
       txInfo_ptr,
     );
   }
 
-  late final _MONERO_TransactionInfo_isFailedPtr =
+  late final _CWLWS_TransactionInfo_isFailedPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_TransactionInfo_isFailed');
-  late final _MONERO_TransactionInfo_isFailed =
-      _MONERO_TransactionInfo_isFailedPtr.asFunction<
+          'CWLWS_TransactionInfo_isFailed');
+  late final _CWLWS_TransactionInfo_isFailed =
+      _CWLWS_TransactionInfo_isFailedPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_TransactionInfo_isCoinbase(
+  bool CWLWS_TransactionInfo_isCoinbase(
     ffi.Pointer<ffi.Void> txInfo_ptr,
   ) {
-    return _MONERO_TransactionInfo_isCoinbase(
+    return _CWLWS_TransactionInfo_isCoinbase(
       txInfo_ptr,
     );
   }
 
-  late final _MONERO_TransactionInfo_isCoinbasePtr =
+  late final _CWLWS_TransactionInfo_isCoinbasePtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_TransactionInfo_isCoinbase');
-  late final _MONERO_TransactionInfo_isCoinbase =
-      _MONERO_TransactionInfo_isCoinbasePtr.asFunction<
+          'CWLWS_TransactionInfo_isCoinbase');
+  late final _CWLWS_TransactionInfo_isCoinbase =
+      _CWLWS_TransactionInfo_isCoinbasePtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_TransactionInfo_amount(
+  int CWLWS_TransactionInfo_amount(
     ffi.Pointer<ffi.Void> txInfo_ptr,
   ) {
-    return _MONERO_TransactionInfo_amount(
+    return _CWLWS_TransactionInfo_amount(
       txInfo_ptr,
     );
   }
 
-  late final _MONERO_TransactionInfo_amountPtr =
+  late final _CWLWS_TransactionInfo_amountPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_TransactionInfo_amount');
-  late final _MONERO_TransactionInfo_amount = _MONERO_TransactionInfo_amountPtr
+          'CWLWS_TransactionInfo_amount');
+  late final _CWLWS_TransactionInfo_amount = _CWLWS_TransactionInfo_amountPtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_TransactionInfo_fee(
+  int CWLWS_TransactionInfo_fee(
     ffi.Pointer<ffi.Void> txInfo_ptr,
   ) {
-    return _MONERO_TransactionInfo_fee(
+    return _CWLWS_TransactionInfo_fee(
       txInfo_ptr,
     );
   }
 
-  late final _MONERO_TransactionInfo_feePtr =
+  late final _CWLWS_TransactionInfo_feePtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_TransactionInfo_fee');
-  late final _MONERO_TransactionInfo_fee = _MONERO_TransactionInfo_feePtr
+          'CWLWS_TransactionInfo_fee');
+  late final _CWLWS_TransactionInfo_fee = _CWLWS_TransactionInfo_feePtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_TransactionInfo_blockHeight(
+  int CWLWS_TransactionInfo_blockHeight(
     ffi.Pointer<ffi.Void> txInfo_ptr,
   ) {
-    return _MONERO_TransactionInfo_blockHeight(
+    return _CWLWS_TransactionInfo_blockHeight(
       txInfo_ptr,
     );
   }
 
-  late final _MONERO_TransactionInfo_blockHeightPtr =
+  late final _CWLWS_TransactionInfo_blockHeightPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_TransactionInfo_blockHeight');
-  late final _MONERO_TransactionInfo_blockHeight =
-      _MONERO_TransactionInfo_blockHeightPtr.asFunction<
+          'CWLWS_TransactionInfo_blockHeight');
+  late final _CWLWS_TransactionInfo_blockHeight =
+      _CWLWS_TransactionInfo_blockHeightPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_TransactionInfo_description(
+  ffi.Pointer<ffi.Char> CWLWS_TransactionInfo_description(
     ffi.Pointer<ffi.Void> txInfo_ptr,
   ) {
-    return _MONERO_TransactionInfo_description(
+    return _CWLWS_TransactionInfo_description(
       txInfo_ptr,
     );
   }
 
-  late final _MONERO_TransactionInfo_descriptionPtr = _lookup<
+  late final _CWLWS_TransactionInfo_descriptionPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_TransactionInfo_description');
-  late final _MONERO_TransactionInfo_description =
-      _MONERO_TransactionInfo_descriptionPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_TransactionInfo_description');
+  late final _CWLWS_TransactionInfo_description =
+      _CWLWS_TransactionInfo_descriptionPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_TransactionInfo_subaddrIndex(
+  ffi.Pointer<ffi.Char> CWLWS_TransactionInfo_subaddrIndex(
     ffi.Pointer<ffi.Void> txInfo_ptr,
     ffi.Pointer<ffi.Char> separator,
   ) {
-    return _MONERO_TransactionInfo_subaddrIndex(
+    return _CWLWS_TransactionInfo_subaddrIndex(
       txInfo_ptr,
       separator,
     );
   }
 
-  late final _MONERO_TransactionInfo_subaddrIndexPtr = _lookup<
+  late final _CWLWS_TransactionInfo_subaddrIndexPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_TransactionInfo_subaddrIndex');
-  late final _MONERO_TransactionInfo_subaddrIndex =
-      _MONERO_TransactionInfo_subaddrIndexPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_TransactionInfo_subaddrIndex');
+  late final _CWLWS_TransactionInfo_subaddrIndex =
+      _CWLWS_TransactionInfo_subaddrIndexPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  int MONERO_TransactionInfo_subaddrAccount(
+  int CWLWS_TransactionInfo_subaddrAccount(
     ffi.Pointer<ffi.Void> txInfo_ptr,
   ) {
-    return _MONERO_TransactionInfo_subaddrAccount(
+    return _CWLWS_TransactionInfo_subaddrAccount(
       txInfo_ptr,
     );
   }
 
-  late final _MONERO_TransactionInfo_subaddrAccountPtr =
+  late final _CWLWS_TransactionInfo_subaddrAccountPtr =
       _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_TransactionInfo_subaddrAccount');
-  late final _MONERO_TransactionInfo_subaddrAccount =
-      _MONERO_TransactionInfo_subaddrAccountPtr.asFunction<
+          'CWLWS_TransactionInfo_subaddrAccount');
+  late final _CWLWS_TransactionInfo_subaddrAccount =
+      _CWLWS_TransactionInfo_subaddrAccountPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_TransactionInfo_label(
+  ffi.Pointer<ffi.Char> CWLWS_TransactionInfo_label(
     ffi.Pointer<ffi.Void> txInfo_ptr,
   ) {
-    return _MONERO_TransactionInfo_label(
+    return _CWLWS_TransactionInfo_label(
       txInfo_ptr,
     );
   }
 
-  late final _MONERO_TransactionInfo_labelPtr = _lookup<
+  late final _CWLWS_TransactionInfo_labelPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_TransactionInfo_label');
-  late final _MONERO_TransactionInfo_label = _MONERO_TransactionInfo_labelPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_TransactionInfo_label');
+  late final _CWLWS_TransactionInfo_label = _CWLWS_TransactionInfo_labelPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_TransactionInfo_confirmations(
+  int CWLWS_TransactionInfo_confirmations(
     ffi.Pointer<ffi.Void> txInfo_ptr,
   ) {
-    return _MONERO_TransactionInfo_confirmations(
+    return _CWLWS_TransactionInfo_confirmations(
       txInfo_ptr,
     );
   }
 
-  late final _MONERO_TransactionInfo_confirmationsPtr =
+  late final _CWLWS_TransactionInfo_confirmationsPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_TransactionInfo_confirmations');
-  late final _MONERO_TransactionInfo_confirmations =
-      _MONERO_TransactionInfo_confirmationsPtr.asFunction<
+          'CWLWS_TransactionInfo_confirmations');
+  late final _CWLWS_TransactionInfo_confirmations =
+      _CWLWS_TransactionInfo_confirmationsPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_TransactionInfo_unlockTime(
+  int CWLWS_TransactionInfo_unlockTime(
     ffi.Pointer<ffi.Void> txInfo_ptr,
   ) {
-    return _MONERO_TransactionInfo_unlockTime(
+    return _CWLWS_TransactionInfo_unlockTime(
       txInfo_ptr,
     );
   }
 
-  late final _MONERO_TransactionInfo_unlockTimePtr =
+  late final _CWLWS_TransactionInfo_unlockTimePtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_TransactionInfo_unlockTime');
-  late final _MONERO_TransactionInfo_unlockTime =
-      _MONERO_TransactionInfo_unlockTimePtr.asFunction<
+          'CWLWS_TransactionInfo_unlockTime');
+  late final _CWLWS_TransactionInfo_unlockTime =
+      _CWLWS_TransactionInfo_unlockTimePtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_TransactionInfo_hash(
+  ffi.Pointer<ffi.Char> CWLWS_TransactionInfo_hash(
     ffi.Pointer<ffi.Void> txInfo_ptr,
   ) {
-    return _MONERO_TransactionInfo_hash(
+    return _CWLWS_TransactionInfo_hash(
       txInfo_ptr,
     );
   }
 
-  late final _MONERO_TransactionInfo_hashPtr = _lookup<
+  late final _CWLWS_TransactionInfo_hashPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_TransactionInfo_hash');
-  late final _MONERO_TransactionInfo_hash = _MONERO_TransactionInfo_hashPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_TransactionInfo_hash');
+  late final _CWLWS_TransactionInfo_hash = _CWLWS_TransactionInfo_hashPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_TransactionInfo_timestamp(
+  int CWLWS_TransactionInfo_timestamp(
     ffi.Pointer<ffi.Void> txInfo_ptr,
   ) {
-    return _MONERO_TransactionInfo_timestamp(
+    return _CWLWS_TransactionInfo_timestamp(
       txInfo_ptr,
     );
   }
 
-  late final _MONERO_TransactionInfo_timestampPtr =
+  late final _CWLWS_TransactionInfo_timestampPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_TransactionInfo_timestamp');
-  late final _MONERO_TransactionInfo_timestamp =
-      _MONERO_TransactionInfo_timestampPtr.asFunction<
+          'CWLWS_TransactionInfo_timestamp');
+  late final _CWLWS_TransactionInfo_timestamp =
+      _CWLWS_TransactionInfo_timestampPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_TransactionInfo_paymentId(
+  ffi.Pointer<ffi.Char> CWLWS_TransactionInfo_paymentId(
     ffi.Pointer<ffi.Void> txInfo_ptr,
   ) {
-    return _MONERO_TransactionInfo_paymentId(
+    return _CWLWS_TransactionInfo_paymentId(
       txInfo_ptr,
     );
   }
 
-  late final _MONERO_TransactionInfo_paymentIdPtr = _lookup<
+  late final _CWLWS_TransactionInfo_paymentIdPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_TransactionInfo_paymentId');
-  late final _MONERO_TransactionInfo_paymentId =
-      _MONERO_TransactionInfo_paymentIdPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_TransactionInfo_paymentId');
+  late final _CWLWS_TransactionInfo_paymentId =
+      _CWLWS_TransactionInfo_paymentIdPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_TransactionInfo_transfers_count(
+  int CWLWS_TransactionInfo_transfers_count(
     ffi.Pointer<ffi.Void> txInfo_ptr,
   ) {
-    return _MONERO_TransactionInfo_transfers_count(
+    return _CWLWS_TransactionInfo_transfers_count(
       txInfo_ptr,
     );
   }
 
-  late final _MONERO_TransactionInfo_transfers_countPtr =
+  late final _CWLWS_TransactionInfo_transfers_countPtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_TransactionInfo_transfers_count');
-  late final _MONERO_TransactionInfo_transfers_count =
-      _MONERO_TransactionInfo_transfers_countPtr.asFunction<
+          'CWLWS_TransactionInfo_transfers_count');
+  late final _CWLWS_TransactionInfo_transfers_count =
+      _CWLWS_TransactionInfo_transfers_countPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_TransactionInfo_transfers_amount(
+  int CWLWS_TransactionInfo_transfers_amount(
     ffi.Pointer<ffi.Void> txInfo_ptr,
     int index,
   ) {
-    return _MONERO_TransactionInfo_transfers_amount(
+    return _CWLWS_TransactionInfo_transfers_amount(
       txInfo_ptr,
       index,
     );
   }
 
-  late final _MONERO_TransactionInfo_transfers_amountPtr = _lookup<
+  late final _CWLWS_TransactionInfo_transfers_amountPtr = _lookup<
           ffi
           .NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>, ffi.Int)>>(
-      'MONERO_TransactionInfo_transfers_amount');
-  late final _MONERO_TransactionInfo_transfers_amount =
-      _MONERO_TransactionInfo_transfers_amountPtr.asFunction<
+      'CWLWS_TransactionInfo_transfers_amount');
+  late final _CWLWS_TransactionInfo_transfers_amount =
+      _CWLWS_TransactionInfo_transfers_amountPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>, int)>();
 
-  ffi.Pointer<ffi.Char> MONERO_TransactionInfo_transfers_address(
+  ffi.Pointer<ffi.Char> CWLWS_TransactionInfo_transfers_address(
     ffi.Pointer<ffi.Void> txInfo_ptr,
     int address,
   ) {
-    return _MONERO_TransactionInfo_transfers_address(
+    return _CWLWS_TransactionInfo_transfers_address(
       txInfo_ptr,
       address,
     );
   }
 
-  late final _MONERO_TransactionInfo_transfers_addressPtr = _lookup<
+  late final _CWLWS_TransactionInfo_transfers_addressPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Int)>>('MONERO_TransactionInfo_transfers_address');
-  late final _MONERO_TransactionInfo_transfers_address =
-      _MONERO_TransactionInfo_transfers_addressPtr.asFunction<
+              ffi.Int)>>('CWLWS_TransactionInfo_transfers_address');
+  late final _CWLWS_TransactionInfo_transfers_address =
+      _CWLWS_TransactionInfo_transfers_addressPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>, int)>();
 
-  int MONERO_TransactionHistory_count(
+  int CWLWS_TransactionHistory_count(
     ffi.Pointer<ffi.Void> txHistory_ptr,
   ) {
-    return _MONERO_TransactionHistory_count(
+    return _CWLWS_TransactionHistory_count(
       txHistory_ptr,
     );
   }
 
-  late final _MONERO_TransactionHistory_countPtr =
+  late final _CWLWS_TransactionHistory_countPtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_TransactionHistory_count');
-  late final _MONERO_TransactionHistory_count =
-      _MONERO_TransactionHistory_countPtr.asFunction<
+          'CWLWS_TransactionHistory_count');
+  late final _CWLWS_TransactionHistory_count =
+      _CWLWS_TransactionHistory_countPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_TransactionHistory_transaction(
+  ffi.Pointer<ffi.Void> CWLWS_TransactionHistory_transaction(
     ffi.Pointer<ffi.Void> txHistory_ptr,
     int index,
   ) {
-    return _MONERO_TransactionHistory_transaction(
+    return _CWLWS_TransactionHistory_transaction(
       txHistory_ptr,
       index,
     );
   }
 
-  late final _MONERO_TransactionHistory_transactionPtr = _lookup<
+  late final _CWLWS_TransactionHistory_transactionPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
-              ffi.Int)>>('MONERO_TransactionHistory_transaction');
-  late final _MONERO_TransactionHistory_transaction =
-      _MONERO_TransactionHistory_transactionPtr.asFunction<
+              ffi.Int)>>('CWLWS_TransactionHistory_transaction');
+  late final _CWLWS_TransactionHistory_transaction =
+      _CWLWS_TransactionHistory_transactionPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int)>();
 
-  ffi.Pointer<ffi.Void> MONERO_TransactionHistory_transactionById(
+  ffi.Pointer<ffi.Void> CWLWS_TransactionHistory_transactionById(
     ffi.Pointer<ffi.Void> txHistory_ptr,
     ffi.Pointer<ffi.Char> id,
   ) {
-    return _MONERO_TransactionHistory_transactionById(
+    return _CWLWS_TransactionHistory_transactionById(
       txHistory_ptr,
       id,
     );
   }
 
-  late final _MONERO_TransactionHistory_transactionByIdPtr = _lookup<
+  late final _CWLWS_TransactionHistory_transactionByIdPtr = _lookup<
           ffi.NativeFunction<
               ffi.Pointer<ffi.Void> Function(
                   ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>>(
-      'MONERO_TransactionHistory_transactionById');
-  late final _MONERO_TransactionHistory_transactionById =
-      _MONERO_TransactionHistory_transactionByIdPtr.asFunction<
+      'CWLWS_TransactionHistory_transactionById');
+  late final _CWLWS_TransactionHistory_transactionById =
+      _CWLWS_TransactionHistory_transactionByIdPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  void MONERO_TransactionHistory_refresh(
+  void CWLWS_TransactionHistory_refresh(
     ffi.Pointer<ffi.Void> txHistory_ptr,
   ) {
-    return _MONERO_TransactionHistory_refresh(
+    return _CWLWS_TransactionHistory_refresh(
       txHistory_ptr,
     );
   }
 
-  late final _MONERO_TransactionHistory_refreshPtr =
+  late final _CWLWS_TransactionHistory_refreshPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_TransactionHistory_refresh');
-  late final _MONERO_TransactionHistory_refresh =
-      _MONERO_TransactionHistory_refreshPtr.asFunction<
+          'CWLWS_TransactionHistory_refresh');
+  late final _CWLWS_TransactionHistory_refresh =
+      _CWLWS_TransactionHistory_refreshPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_TransactionHistory_setTxNote(
+  void CWLWS_TransactionHistory_setTxNote(
     ffi.Pointer<ffi.Void> txHistory_ptr,
     ffi.Pointer<ffi.Char> txid,
     ffi.Pointer<ffi.Char> note,
   ) {
-    return _MONERO_TransactionHistory_setTxNote(
+    return _CWLWS_TransactionHistory_setTxNote(
       txHistory_ptr,
       txid,
       note,
     );
   }
 
-  late final _MONERO_TransactionHistory_setTxNotePtr = _lookup<
+  late final _CWLWS_TransactionHistory_setTxNotePtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_TransactionHistory_setTxNote');
-  late final _MONERO_TransactionHistory_setTxNote =
-      _MONERO_TransactionHistory_setTxNotePtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_TransactionHistory_setTxNote');
+  late final _CWLWS_TransactionHistory_setTxNote =
+      _CWLWS_TransactionHistory_setTxNotePtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_AddressBookRow_extra(
+  ffi.Pointer<ffi.Char> CWLWS_AddressBookRow_extra(
     ffi.Pointer<ffi.Void> addressBookRow_ptr,
   ) {
-    return _MONERO_AddressBookRow_extra(
+    return _CWLWS_AddressBookRow_extra(
       addressBookRow_ptr,
     );
   }
 
-  late final _MONERO_AddressBookRow_extraPtr = _lookup<
+  late final _CWLWS_AddressBookRow_extraPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_AddressBookRow_extra');
-  late final _MONERO_AddressBookRow_extra = _MONERO_AddressBookRow_extraPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_AddressBookRow_extra');
+  late final _CWLWS_AddressBookRow_extra = _CWLWS_AddressBookRow_extraPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_AddressBookRow_getAddress(
+  ffi.Pointer<ffi.Char> CWLWS_AddressBookRow_getAddress(
     ffi.Pointer<ffi.Void> addressBookRow_ptr,
   ) {
-    return _MONERO_AddressBookRow_getAddress(
+    return _CWLWS_AddressBookRow_getAddress(
       addressBookRow_ptr,
     );
   }
 
-  late final _MONERO_AddressBookRow_getAddressPtr = _lookup<
+  late final _CWLWS_AddressBookRow_getAddressPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_AddressBookRow_getAddress');
-  late final _MONERO_AddressBookRow_getAddress =
-      _MONERO_AddressBookRow_getAddressPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_AddressBookRow_getAddress');
+  late final _CWLWS_AddressBookRow_getAddress =
+      _CWLWS_AddressBookRow_getAddressPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_AddressBookRow_getDescription(
+  ffi.Pointer<ffi.Char> CWLWS_AddressBookRow_getDescription(
     ffi.Pointer<ffi.Void> addressBookRow_ptr,
   ) {
-    return _MONERO_AddressBookRow_getDescription(
+    return _CWLWS_AddressBookRow_getDescription(
       addressBookRow_ptr,
     );
   }
 
-  late final _MONERO_AddressBookRow_getDescriptionPtr = _lookup<
+  late final _CWLWS_AddressBookRow_getDescriptionPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_AddressBookRow_getDescription');
-  late final _MONERO_AddressBookRow_getDescription =
-      _MONERO_AddressBookRow_getDescriptionPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_AddressBookRow_getDescription');
+  late final _CWLWS_AddressBookRow_getDescription =
+      _CWLWS_AddressBookRow_getDescriptionPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_AddressBookRow_getPaymentId(
+  ffi.Pointer<ffi.Char> CWLWS_AddressBookRow_getPaymentId(
     ffi.Pointer<ffi.Void> addressBookRow_ptr,
   ) {
-    return _MONERO_AddressBookRow_getPaymentId(
+    return _CWLWS_AddressBookRow_getPaymentId(
       addressBookRow_ptr,
     );
   }
 
-  late final _MONERO_AddressBookRow_getPaymentIdPtr = _lookup<
+  late final _CWLWS_AddressBookRow_getPaymentIdPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_AddressBookRow_getPaymentId');
-  late final _MONERO_AddressBookRow_getPaymentId =
-      _MONERO_AddressBookRow_getPaymentIdPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_AddressBookRow_getPaymentId');
+  late final _CWLWS_AddressBookRow_getPaymentId =
+      _CWLWS_AddressBookRow_getPaymentIdPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_AddressBookRow_getRowId(
+  int CWLWS_AddressBookRow_getRowId(
     ffi.Pointer<ffi.Void> addressBookRow_ptr,
   ) {
-    return _MONERO_AddressBookRow_getRowId(
+    return _CWLWS_AddressBookRow_getRowId(
       addressBookRow_ptr,
     );
   }
 
-  late final _MONERO_AddressBookRow_getRowIdPtr =
+  late final _CWLWS_AddressBookRow_getRowIdPtr =
       _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_AddressBookRow_getRowId');
-  late final _MONERO_AddressBookRow_getRowId =
-      _MONERO_AddressBookRow_getRowIdPtr.asFunction<
+          'CWLWS_AddressBookRow_getRowId');
+  late final _CWLWS_AddressBookRow_getRowId =
+      _CWLWS_AddressBookRow_getRowIdPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_AddressBook_getAll_size(
+  int CWLWS_AddressBook_getAll_size(
     ffi.Pointer<ffi.Void> addressBook_ptr,
   ) {
-    return _MONERO_AddressBook_getAll_size(
+    return _CWLWS_AddressBook_getAll_size(
       addressBook_ptr,
     );
   }
 
-  late final _MONERO_AddressBook_getAll_sizePtr =
+  late final _CWLWS_AddressBook_getAll_sizePtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_AddressBook_getAll_size');
-  late final _MONERO_AddressBook_getAll_size =
-      _MONERO_AddressBook_getAll_sizePtr.asFunction<
+          'CWLWS_AddressBook_getAll_size');
+  late final _CWLWS_AddressBook_getAll_size =
+      _CWLWS_AddressBook_getAll_sizePtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_AddressBook_getAll_byIndex(
+  ffi.Pointer<ffi.Void> CWLWS_AddressBook_getAll_byIndex(
     ffi.Pointer<ffi.Void> addressBook_ptr,
     int index,
   ) {
-    return _MONERO_AddressBook_getAll_byIndex(
+    return _CWLWS_AddressBook_getAll_byIndex(
       addressBook_ptr,
       index,
     );
   }
 
-  late final _MONERO_AddressBook_getAll_byIndexPtr = _lookup<
+  late final _CWLWS_AddressBook_getAll_byIndexPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
-              ffi.Int)>>('MONERO_AddressBook_getAll_byIndex');
-  late final _MONERO_AddressBook_getAll_byIndex =
-      _MONERO_AddressBook_getAll_byIndexPtr.asFunction<
+              ffi.Int)>>('CWLWS_AddressBook_getAll_byIndex');
+  late final _CWLWS_AddressBook_getAll_byIndex =
+      _CWLWS_AddressBook_getAll_byIndexPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int)>();
 
-  bool MONERO_AddressBook_addRow(
+  bool CWLWS_AddressBook_addRow(
     ffi.Pointer<ffi.Void> addressBook_ptr,
     ffi.Pointer<ffi.Char> dst_addr,
     ffi.Pointer<ffi.Char> payment_id,
     ffi.Pointer<ffi.Char> description,
   ) {
-    return _MONERO_AddressBook_addRow(
+    return _CWLWS_AddressBook_addRow(
       addressBook_ptr,
       dst_addr,
       payment_id,
@@ -993,727 +993,727 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_AddressBook_addRowPtr = _lookup<
+  late final _CWLWS_AddressBook_addRowPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_AddressBook_addRow');
-  late final _MONERO_AddressBook_addRow =
-      _MONERO_AddressBook_addRowPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_AddressBook_addRow');
+  late final _CWLWS_AddressBook_addRow =
+      _CWLWS_AddressBook_addRowPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_AddressBook_deleteRow(
+  bool CWLWS_AddressBook_deleteRow(
     ffi.Pointer<ffi.Void> addressBook_ptr,
     int rowId,
   ) {
-    return _MONERO_AddressBook_deleteRow(
+    return _CWLWS_AddressBook_deleteRow(
       addressBook_ptr,
       rowId,
     );
   }
 
-  late final _MONERO_AddressBook_deleteRowPtr = _lookup<
+  late final _CWLWS_AddressBook_deleteRowPtr = _lookup<
           ffi
           .NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Size)>>(
-      'MONERO_AddressBook_deleteRow');
-  late final _MONERO_AddressBook_deleteRow = _MONERO_AddressBook_deleteRowPtr
+      'CWLWS_AddressBook_deleteRow');
+  late final _CWLWS_AddressBook_deleteRow = _CWLWS_AddressBook_deleteRowPtr
       .asFunction<bool Function(ffi.Pointer<ffi.Void>, int)>();
 
-  bool MONERO_AddressBook_setDescription(
+  bool CWLWS_AddressBook_setDescription(
     ffi.Pointer<ffi.Void> addressBook_ptr,
     int rowId,
     ffi.Pointer<ffi.Char> description,
   ) {
-    return _MONERO_AddressBook_setDescription(
+    return _CWLWS_AddressBook_setDescription(
       addressBook_ptr,
       rowId,
       description,
     );
   }
 
-  late final _MONERO_AddressBook_setDescriptionPtr = _lookup<
+  late final _CWLWS_AddressBook_setDescriptionPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Size,
-              ffi.Pointer<ffi.Char>)>>('MONERO_AddressBook_setDescription');
-  late final _MONERO_AddressBook_setDescription =
-      _MONERO_AddressBook_setDescriptionPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_AddressBook_setDescription');
+  late final _CWLWS_AddressBook_setDescription =
+      _CWLWS_AddressBook_setDescriptionPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Char>)>();
 
-  void MONERO_AddressBook_refresh(
+  void CWLWS_AddressBook_refresh(
     ffi.Pointer<ffi.Void> addressBook_ptr,
   ) {
-    return _MONERO_AddressBook_refresh(
+    return _CWLWS_AddressBook_refresh(
       addressBook_ptr,
     );
   }
 
-  late final _MONERO_AddressBook_refreshPtr =
+  late final _CWLWS_AddressBook_refreshPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_AddressBook_refresh');
-  late final _MONERO_AddressBook_refresh = _MONERO_AddressBook_refreshPtr
+          'CWLWS_AddressBook_refresh');
+  late final _CWLWS_AddressBook_refresh = _CWLWS_AddressBook_refreshPtr
       .asFunction<void Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_AddressBook_errorString(
+  ffi.Pointer<ffi.Char> CWLWS_AddressBook_errorString(
     ffi.Pointer<ffi.Void> addressBook_ptr,
   ) {
-    return _MONERO_AddressBook_errorString(
+    return _CWLWS_AddressBook_errorString(
       addressBook_ptr,
     );
   }
 
-  late final _MONERO_AddressBook_errorStringPtr = _lookup<
+  late final _CWLWS_AddressBook_errorStringPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_AddressBook_errorString');
-  late final _MONERO_AddressBook_errorString =
-      _MONERO_AddressBook_errorStringPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_AddressBook_errorString');
+  late final _CWLWS_AddressBook_errorString =
+      _CWLWS_AddressBook_errorStringPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_AddressBook_errorCode(
+  int CWLWS_AddressBook_errorCode(
     ffi.Pointer<ffi.Void> addressBook_ptr,
   ) {
-    return _MONERO_AddressBook_errorCode(
+    return _CWLWS_AddressBook_errorCode(
       addressBook_ptr,
     );
   }
 
-  late final _MONERO_AddressBook_errorCodePtr =
+  late final _CWLWS_AddressBook_errorCodePtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_AddressBook_errorCode');
-  late final _MONERO_AddressBook_errorCode = _MONERO_AddressBook_errorCodePtr
+          'CWLWS_AddressBook_errorCode');
+  late final _CWLWS_AddressBook_errorCode = _CWLWS_AddressBook_errorCodePtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_AddressBook_lookupPaymentID(
+  int CWLWS_AddressBook_lookupPaymentID(
     ffi.Pointer<ffi.Void> addressBook_ptr,
     ffi.Pointer<ffi.Char> payment_id,
   ) {
-    return _MONERO_AddressBook_lookupPaymentID(
+    return _CWLWS_AddressBook_lookupPaymentID(
       addressBook_ptr,
       payment_id,
     );
   }
 
-  late final _MONERO_AddressBook_lookupPaymentIDPtr = _lookup<
+  late final _CWLWS_AddressBook_lookupPaymentIDPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_AddressBook_lookupPaymentID');
-  late final _MONERO_AddressBook_lookupPaymentID =
-      _MONERO_AddressBook_lookupPaymentIDPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_AddressBook_lookupPaymentID');
+  late final _CWLWS_AddressBook_lookupPaymentID =
+      _CWLWS_AddressBook_lookupPaymentIDPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  int MONERO_CoinsInfo_blockHeight(
+  int CWLWS_CoinsInfo_blockHeight(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_blockHeight(
+    return _CWLWS_CoinsInfo_blockHeight(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_blockHeightPtr =
+  late final _CWLWS_CoinsInfo_blockHeightPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_CoinsInfo_blockHeight');
-  late final _MONERO_CoinsInfo_blockHeight = _MONERO_CoinsInfo_blockHeightPtr
+          'CWLWS_CoinsInfo_blockHeight');
+  late final _CWLWS_CoinsInfo_blockHeight = _CWLWS_CoinsInfo_blockHeightPtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_CoinsInfo_hash(
+  ffi.Pointer<ffi.Char> CWLWS_CoinsInfo_hash(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_hash(
+    return _CWLWS_CoinsInfo_hash(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_hashPtr = _lookup<
+  late final _CWLWS_CoinsInfo_hashPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_CoinsInfo_hash');
-  late final _MONERO_CoinsInfo_hash = _MONERO_CoinsInfo_hashPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_CoinsInfo_hash');
+  late final _CWLWS_CoinsInfo_hash = _CWLWS_CoinsInfo_hashPtr.asFunction<
       ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_CoinsInfo_internalOutputIndex(
+  int CWLWS_CoinsInfo_internalOutputIndex(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_internalOutputIndex(
+    return _CWLWS_CoinsInfo_internalOutputIndex(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_internalOutputIndexPtr =
+  late final _CWLWS_CoinsInfo_internalOutputIndexPtr =
       _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_CoinsInfo_internalOutputIndex');
-  late final _MONERO_CoinsInfo_internalOutputIndex =
-      _MONERO_CoinsInfo_internalOutputIndexPtr.asFunction<
+          'CWLWS_CoinsInfo_internalOutputIndex');
+  late final _CWLWS_CoinsInfo_internalOutputIndex =
+      _CWLWS_CoinsInfo_internalOutputIndexPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_CoinsInfo_globalOutputIndex(
+  int CWLWS_CoinsInfo_globalOutputIndex(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_globalOutputIndex(
+    return _CWLWS_CoinsInfo_globalOutputIndex(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_globalOutputIndexPtr =
+  late final _CWLWS_CoinsInfo_globalOutputIndexPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_CoinsInfo_globalOutputIndex');
-  late final _MONERO_CoinsInfo_globalOutputIndex =
-      _MONERO_CoinsInfo_globalOutputIndexPtr.asFunction<
+          'CWLWS_CoinsInfo_globalOutputIndex');
+  late final _CWLWS_CoinsInfo_globalOutputIndex =
+      _CWLWS_CoinsInfo_globalOutputIndexPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_CoinsInfo_spent(
+  bool CWLWS_CoinsInfo_spent(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_spent(
+    return _CWLWS_CoinsInfo_spent(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_spentPtr =
+  late final _CWLWS_CoinsInfo_spentPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_CoinsInfo_spent');
-  late final _MONERO_CoinsInfo_spent = _MONERO_CoinsInfo_spentPtr.asFunction<
+          'CWLWS_CoinsInfo_spent');
+  late final _CWLWS_CoinsInfo_spent = _CWLWS_CoinsInfo_spentPtr.asFunction<
       bool Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_CoinsInfo_frozen(
+  bool CWLWS_CoinsInfo_frozen(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_frozen(
+    return _CWLWS_CoinsInfo_frozen(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_frozenPtr =
+  late final _CWLWS_CoinsInfo_frozenPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_CoinsInfo_frozen');
-  late final _MONERO_CoinsInfo_frozen = _MONERO_CoinsInfo_frozenPtr.asFunction<
+          'CWLWS_CoinsInfo_frozen');
+  late final _CWLWS_CoinsInfo_frozen = _CWLWS_CoinsInfo_frozenPtr.asFunction<
       bool Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_CoinsInfo_spentHeight(
+  int CWLWS_CoinsInfo_spentHeight(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_spentHeight(
+    return _CWLWS_CoinsInfo_spentHeight(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_spentHeightPtr =
+  late final _CWLWS_CoinsInfo_spentHeightPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_CoinsInfo_spentHeight');
-  late final _MONERO_CoinsInfo_spentHeight = _MONERO_CoinsInfo_spentHeightPtr
+          'CWLWS_CoinsInfo_spentHeight');
+  late final _CWLWS_CoinsInfo_spentHeight = _CWLWS_CoinsInfo_spentHeightPtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_CoinsInfo_amount(
+  int CWLWS_CoinsInfo_amount(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_amount(
+    return _CWLWS_CoinsInfo_amount(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_amountPtr =
+  late final _CWLWS_CoinsInfo_amountPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_CoinsInfo_amount');
-  late final _MONERO_CoinsInfo_amount = _MONERO_CoinsInfo_amountPtr.asFunction<
+          'CWLWS_CoinsInfo_amount');
+  late final _CWLWS_CoinsInfo_amount = _CWLWS_CoinsInfo_amountPtr.asFunction<
       int Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_CoinsInfo_rct(
+  bool CWLWS_CoinsInfo_rct(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_rct(
+    return _CWLWS_CoinsInfo_rct(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_rctPtr =
+  late final _CWLWS_CoinsInfo_rctPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_CoinsInfo_rct');
-  late final _MONERO_CoinsInfo_rct = _MONERO_CoinsInfo_rctPtr.asFunction<
+          'CWLWS_CoinsInfo_rct');
+  late final _CWLWS_CoinsInfo_rct = _CWLWS_CoinsInfo_rctPtr.asFunction<
       bool Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_CoinsInfo_keyImageKnown(
+  bool CWLWS_CoinsInfo_keyImageKnown(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_keyImageKnown(
+    return _CWLWS_CoinsInfo_keyImageKnown(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_keyImageKnownPtr =
+  late final _CWLWS_CoinsInfo_keyImageKnownPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_CoinsInfo_keyImageKnown');
-  late final _MONERO_CoinsInfo_keyImageKnown =
-      _MONERO_CoinsInfo_keyImageKnownPtr.asFunction<
+          'CWLWS_CoinsInfo_keyImageKnown');
+  late final _CWLWS_CoinsInfo_keyImageKnown =
+      _CWLWS_CoinsInfo_keyImageKnownPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_CoinsInfo_pkIndex(
+  int CWLWS_CoinsInfo_pkIndex(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_pkIndex(
+    return _CWLWS_CoinsInfo_pkIndex(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_pkIndexPtr =
+  late final _CWLWS_CoinsInfo_pkIndexPtr =
       _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_CoinsInfo_pkIndex');
-  late final _MONERO_CoinsInfo_pkIndex = _MONERO_CoinsInfo_pkIndexPtr
+          'CWLWS_CoinsInfo_pkIndex');
+  late final _CWLWS_CoinsInfo_pkIndex = _CWLWS_CoinsInfo_pkIndexPtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_CoinsInfo_subaddrIndex(
+  int CWLWS_CoinsInfo_subaddrIndex(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_subaddrIndex(
+    return _CWLWS_CoinsInfo_subaddrIndex(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_subaddrIndexPtr =
+  late final _CWLWS_CoinsInfo_subaddrIndexPtr =
       _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_CoinsInfo_subaddrIndex');
-  late final _MONERO_CoinsInfo_subaddrIndex = _MONERO_CoinsInfo_subaddrIndexPtr
+          'CWLWS_CoinsInfo_subaddrIndex');
+  late final _CWLWS_CoinsInfo_subaddrIndex = _CWLWS_CoinsInfo_subaddrIndexPtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_CoinsInfo_subaddrAccount(
+  int CWLWS_CoinsInfo_subaddrAccount(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_subaddrAccount(
+    return _CWLWS_CoinsInfo_subaddrAccount(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_subaddrAccountPtr =
+  late final _CWLWS_CoinsInfo_subaddrAccountPtr =
       _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_CoinsInfo_subaddrAccount');
-  late final _MONERO_CoinsInfo_subaddrAccount =
-      _MONERO_CoinsInfo_subaddrAccountPtr.asFunction<
+          'CWLWS_CoinsInfo_subaddrAccount');
+  late final _CWLWS_CoinsInfo_subaddrAccount =
+      _CWLWS_CoinsInfo_subaddrAccountPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_CoinsInfo_address(
+  ffi.Pointer<ffi.Char> CWLWS_CoinsInfo_address(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_address(
+    return _CWLWS_CoinsInfo_address(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_addressPtr = _lookup<
+  late final _CWLWS_CoinsInfo_addressPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_CoinsInfo_address');
-  late final _MONERO_CoinsInfo_address = _MONERO_CoinsInfo_addressPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_CoinsInfo_address');
+  late final _CWLWS_CoinsInfo_address = _CWLWS_CoinsInfo_addressPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_CoinsInfo_addressLabel(
+  ffi.Pointer<ffi.Char> CWLWS_CoinsInfo_addressLabel(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_addressLabel(
+    return _CWLWS_CoinsInfo_addressLabel(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_addressLabelPtr = _lookup<
+  late final _CWLWS_CoinsInfo_addressLabelPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_CoinsInfo_addressLabel');
-  late final _MONERO_CoinsInfo_addressLabel = _MONERO_CoinsInfo_addressLabelPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_CoinsInfo_addressLabel');
+  late final _CWLWS_CoinsInfo_addressLabel = _CWLWS_CoinsInfo_addressLabelPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_CoinsInfo_keyImage(
+  ffi.Pointer<ffi.Char> CWLWS_CoinsInfo_keyImage(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_keyImage(
+    return _CWLWS_CoinsInfo_keyImage(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_keyImagePtr = _lookup<
+  late final _CWLWS_CoinsInfo_keyImagePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_CoinsInfo_keyImage');
-  late final _MONERO_CoinsInfo_keyImage = _MONERO_CoinsInfo_keyImagePtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_CoinsInfo_keyImage');
+  late final _CWLWS_CoinsInfo_keyImage = _CWLWS_CoinsInfo_keyImagePtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_CoinsInfo_unlockTime(
+  int CWLWS_CoinsInfo_unlockTime(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_unlockTime(
+    return _CWLWS_CoinsInfo_unlockTime(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_unlockTimePtr =
+  late final _CWLWS_CoinsInfo_unlockTimePtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_CoinsInfo_unlockTime');
-  late final _MONERO_CoinsInfo_unlockTime = _MONERO_CoinsInfo_unlockTimePtr
+          'CWLWS_CoinsInfo_unlockTime');
+  late final _CWLWS_CoinsInfo_unlockTime = _CWLWS_CoinsInfo_unlockTimePtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_CoinsInfo_unlocked(
+  bool CWLWS_CoinsInfo_unlocked(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_unlocked(
+    return _CWLWS_CoinsInfo_unlocked(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_unlockedPtr =
+  late final _CWLWS_CoinsInfo_unlockedPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_CoinsInfo_unlocked');
-  late final _MONERO_CoinsInfo_unlocked = _MONERO_CoinsInfo_unlockedPtr
+          'CWLWS_CoinsInfo_unlocked');
+  late final _CWLWS_CoinsInfo_unlocked = _CWLWS_CoinsInfo_unlockedPtr
       .asFunction<bool Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_CoinsInfo_pubKey(
+  ffi.Pointer<ffi.Char> CWLWS_CoinsInfo_pubKey(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_pubKey(
+    return _CWLWS_CoinsInfo_pubKey(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_pubKeyPtr = _lookup<
+  late final _CWLWS_CoinsInfo_pubKeyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_CoinsInfo_pubKey');
-  late final _MONERO_CoinsInfo_pubKey = _MONERO_CoinsInfo_pubKeyPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_CoinsInfo_pubKey');
+  late final _CWLWS_CoinsInfo_pubKey = _CWLWS_CoinsInfo_pubKeyPtr.asFunction<
       ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_CoinsInfo_coinbase(
+  bool CWLWS_CoinsInfo_coinbase(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_coinbase(
+    return _CWLWS_CoinsInfo_coinbase(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_coinbasePtr =
+  late final _CWLWS_CoinsInfo_coinbasePtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_CoinsInfo_coinbase');
-  late final _MONERO_CoinsInfo_coinbase = _MONERO_CoinsInfo_coinbasePtr
+          'CWLWS_CoinsInfo_coinbase');
+  late final _CWLWS_CoinsInfo_coinbase = _CWLWS_CoinsInfo_coinbasePtr
       .asFunction<bool Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_CoinsInfo_description(
+  ffi.Pointer<ffi.Char> CWLWS_CoinsInfo_description(
     ffi.Pointer<ffi.Void> coinsInfo_ptr,
   ) {
-    return _MONERO_CoinsInfo_description(
+    return _CWLWS_CoinsInfo_description(
       coinsInfo_ptr,
     );
   }
 
-  late final _MONERO_CoinsInfo_descriptionPtr = _lookup<
+  late final _CWLWS_CoinsInfo_descriptionPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_CoinsInfo_description');
-  late final _MONERO_CoinsInfo_description = _MONERO_CoinsInfo_descriptionPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_CoinsInfo_description');
+  late final _CWLWS_CoinsInfo_description = _CWLWS_CoinsInfo_descriptionPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_Coins_count(
+  int CWLWS_Coins_count(
     ffi.Pointer<ffi.Void> coins_ptr,
   ) {
-    return _MONERO_Coins_count(
+    return _CWLWS_Coins_count(
       coins_ptr,
     );
   }
 
-  late final _MONERO_Coins_countPtr =
+  late final _CWLWS_Coins_countPtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Coins_count');
-  late final _MONERO_Coins_count =
-      _MONERO_Coins_countPtr.asFunction<int Function(ffi.Pointer<ffi.Void>)>();
+          'CWLWS_Coins_count');
+  late final _CWLWS_Coins_count =
+      _CWLWS_Coins_countPtr.asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_Coins_coin(
+  ffi.Pointer<ffi.Void> CWLWS_Coins_coin(
     ffi.Pointer<ffi.Void> coins_ptr,
     int index,
   ) {
-    return _MONERO_Coins_coin(
+    return _CWLWS_Coins_coin(
       coins_ptr,
       index,
     );
   }
 
-  late final _MONERO_Coins_coinPtr = _lookup<
+  late final _CWLWS_Coins_coinPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(
-              ffi.Pointer<ffi.Void>, ffi.Int)>>('MONERO_Coins_coin');
-  late final _MONERO_Coins_coin = _MONERO_Coins_coinPtr.asFunction<
+              ffi.Pointer<ffi.Void>, ffi.Int)>>('CWLWS_Coins_coin');
+  late final _CWLWS_Coins_coin = _CWLWS_Coins_coinPtr.asFunction<
       ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int)>();
 
-  int MONERO_Coins_getAll_size(
+  int CWLWS_Coins_getAll_size(
     ffi.Pointer<ffi.Void> coins_ptr,
   ) {
-    return _MONERO_Coins_getAll_size(
+    return _CWLWS_Coins_getAll_size(
       coins_ptr,
     );
   }
 
-  late final _MONERO_Coins_getAll_sizePtr =
+  late final _CWLWS_Coins_getAll_sizePtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Coins_getAll_size');
-  late final _MONERO_Coins_getAll_size = _MONERO_Coins_getAll_sizePtr
+          'CWLWS_Coins_getAll_size');
+  late final _CWLWS_Coins_getAll_size = _CWLWS_Coins_getAll_sizePtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_Coins_getAll_byIndex(
+  ffi.Pointer<ffi.Void> CWLWS_Coins_getAll_byIndex(
     ffi.Pointer<ffi.Void> coins_ptr,
     int index,
   ) {
-    return _MONERO_Coins_getAll_byIndex(
+    return _CWLWS_Coins_getAll_byIndex(
       coins_ptr,
       index,
     );
   }
 
-  late final _MONERO_Coins_getAll_byIndexPtr = _lookup<
+  late final _CWLWS_Coins_getAll_byIndexPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(
-              ffi.Pointer<ffi.Void>, ffi.Int)>>('MONERO_Coins_getAll_byIndex');
-  late final _MONERO_Coins_getAll_byIndex = _MONERO_Coins_getAll_byIndexPtr
+              ffi.Pointer<ffi.Void>, ffi.Int)>>('CWLWS_Coins_getAll_byIndex');
+  late final _CWLWS_Coins_getAll_byIndex = _CWLWS_Coins_getAll_byIndexPtr
       .asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int)>();
 
-  void MONERO_Coins_refresh(
+  void CWLWS_Coins_refresh(
     ffi.Pointer<ffi.Void> coins_ptr,
   ) {
-    return _MONERO_Coins_refresh(
+    return _CWLWS_Coins_refresh(
       coins_ptr,
     );
   }
 
-  late final _MONERO_Coins_refreshPtr =
+  late final _CWLWS_Coins_refreshPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Coins_refresh');
-  late final _MONERO_Coins_refresh = _MONERO_Coins_refreshPtr.asFunction<
+          'CWLWS_Coins_refresh');
+  late final _CWLWS_Coins_refresh = _CWLWS_Coins_refreshPtr.asFunction<
       void Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_Coins_setFrozenByPublicKey(
+  void CWLWS_Coins_setFrozenByPublicKey(
     ffi.Pointer<ffi.Void> coins_ptr,
     ffi.Pointer<ffi.Char> public_key,
   ) {
-    return _MONERO_Coins_setFrozenByPublicKey(
+    return _CWLWS_Coins_setFrozenByPublicKey(
       coins_ptr,
       public_key,
     );
   }
 
-  late final _MONERO_Coins_setFrozenByPublicKeyPtr = _lookup<
+  late final _CWLWS_Coins_setFrozenByPublicKeyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Coins_setFrozenByPublicKey');
-  late final _MONERO_Coins_setFrozenByPublicKey =
-      _MONERO_Coins_setFrozenByPublicKeyPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Coins_setFrozenByPublicKey');
+  late final _CWLWS_Coins_setFrozenByPublicKey =
+      _CWLWS_Coins_setFrozenByPublicKeyPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  void MONERO_Coins_setFrozen(
+  void CWLWS_Coins_setFrozen(
     ffi.Pointer<ffi.Void> coins_ptr,
     int index,
   ) {
-    return _MONERO_Coins_setFrozen(
+    return _CWLWS_Coins_setFrozen(
       coins_ptr,
       index,
     );
   }
 
-  late final _MONERO_Coins_setFrozenPtr = _lookup<
+  late final _CWLWS_Coins_setFrozenPtr = _lookup<
           ffi
           .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int)>>(
-      'MONERO_Coins_setFrozen');
-  late final _MONERO_Coins_setFrozen = _MONERO_Coins_setFrozenPtr.asFunction<
+      'CWLWS_Coins_setFrozen');
+  late final _CWLWS_Coins_setFrozen = _CWLWS_Coins_setFrozenPtr.asFunction<
       void Function(ffi.Pointer<ffi.Void>, int)>();
 
-  void MONERO_Coins_thaw(
+  void CWLWS_Coins_thaw(
     ffi.Pointer<ffi.Void> coins_ptr,
     int index,
   ) {
-    return _MONERO_Coins_thaw(
+    return _CWLWS_Coins_thaw(
       coins_ptr,
       index,
     );
   }
 
-  late final _MONERO_Coins_thawPtr = _lookup<
+  late final _CWLWS_Coins_thawPtr = _lookup<
           ffi
           .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int)>>(
-      'MONERO_Coins_thaw');
-  late final _MONERO_Coins_thaw = _MONERO_Coins_thawPtr.asFunction<
+      'CWLWS_Coins_thaw');
+  late final _CWLWS_Coins_thaw = _CWLWS_Coins_thawPtr.asFunction<
       void Function(ffi.Pointer<ffi.Void>, int)>();
 
-  void MONERO_Coins_thawByPublicKey(
+  void CWLWS_Coins_thawByPublicKey(
     ffi.Pointer<ffi.Void> coins_ptr,
     ffi.Pointer<ffi.Char> public_key,
   ) {
-    return _MONERO_Coins_thawByPublicKey(
+    return _CWLWS_Coins_thawByPublicKey(
       coins_ptr,
       public_key,
     );
   }
 
-  late final _MONERO_Coins_thawByPublicKeyPtr = _lookup<
+  late final _CWLWS_Coins_thawByPublicKeyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Coins_thawByPublicKey');
-  late final _MONERO_Coins_thawByPublicKey =
-      _MONERO_Coins_thawByPublicKeyPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Coins_thawByPublicKey');
+  late final _CWLWS_Coins_thawByPublicKey =
+      _CWLWS_Coins_thawByPublicKeyPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_Coins_isTransferUnlocked(
+  bool CWLWS_Coins_isTransferUnlocked(
     ffi.Pointer<ffi.Void> coins_ptr,
     int unlockTime,
     int blockHeight,
   ) {
-    return _MONERO_Coins_isTransferUnlocked(
+    return _CWLWS_Coins_isTransferUnlocked(
       coins_ptr,
       unlockTime,
       blockHeight,
     );
   }
 
-  late final _MONERO_Coins_isTransferUnlockedPtr = _lookup<
+  late final _CWLWS_Coins_isTransferUnlockedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Uint64,
-              ffi.Uint64)>>('MONERO_Coins_isTransferUnlocked');
-  late final _MONERO_Coins_isTransferUnlocked =
-      _MONERO_Coins_isTransferUnlockedPtr.asFunction<
+              ffi.Uint64)>>('CWLWS_Coins_isTransferUnlocked');
+  late final _CWLWS_Coins_isTransferUnlocked =
+      _CWLWS_Coins_isTransferUnlockedPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, int, int)>();
 
-  void MONERO_Coins_setDescription(
+  void CWLWS_Coins_setDescription(
     ffi.Pointer<ffi.Void> coins_ptr,
     ffi.Pointer<ffi.Char> public_key,
     ffi.Pointer<ffi.Char> description,
   ) {
-    return _MONERO_Coins_setDescription(
+    return _CWLWS_Coins_setDescription(
       coins_ptr,
       public_key,
       description,
     );
   }
 
-  late final _MONERO_Coins_setDescriptionPtr = _lookup<
+  late final _CWLWS_Coins_setDescriptionPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Coins_setDescription');
-  late final _MONERO_Coins_setDescription =
-      _MONERO_Coins_setDescriptionPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Coins_setDescription');
+  late final _CWLWS_Coins_setDescription =
+      _CWLWS_Coins_setDescriptionPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_SubaddressRow_extra(
+  ffi.Pointer<ffi.Char> CWLWS_SubaddressRow_extra(
     ffi.Pointer<ffi.Void> subaddressRow_ptr,
   ) {
-    return _MONERO_SubaddressRow_extra(
+    return _CWLWS_SubaddressRow_extra(
       subaddressRow_ptr,
     );
   }
 
-  late final _MONERO_SubaddressRow_extraPtr = _lookup<
+  late final _CWLWS_SubaddressRow_extraPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_SubaddressRow_extra');
-  late final _MONERO_SubaddressRow_extra = _MONERO_SubaddressRow_extraPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_SubaddressRow_extra');
+  late final _CWLWS_SubaddressRow_extra = _CWLWS_SubaddressRow_extraPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_SubaddressRow_getAddress(
+  ffi.Pointer<ffi.Char> CWLWS_SubaddressRow_getAddress(
     ffi.Pointer<ffi.Void> subaddressRow_ptr,
   ) {
-    return _MONERO_SubaddressRow_getAddress(
+    return _CWLWS_SubaddressRow_getAddress(
       subaddressRow_ptr,
     );
   }
 
-  late final _MONERO_SubaddressRow_getAddressPtr = _lookup<
+  late final _CWLWS_SubaddressRow_getAddressPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_SubaddressRow_getAddress');
-  late final _MONERO_SubaddressRow_getAddress =
-      _MONERO_SubaddressRow_getAddressPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_SubaddressRow_getAddress');
+  late final _CWLWS_SubaddressRow_getAddress =
+      _CWLWS_SubaddressRow_getAddressPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_SubaddressRow_getLabel(
+  ffi.Pointer<ffi.Char> CWLWS_SubaddressRow_getLabel(
     ffi.Pointer<ffi.Void> subaddressRow_ptr,
   ) {
-    return _MONERO_SubaddressRow_getLabel(
+    return _CWLWS_SubaddressRow_getLabel(
       subaddressRow_ptr,
     );
   }
 
-  late final _MONERO_SubaddressRow_getLabelPtr = _lookup<
+  late final _CWLWS_SubaddressRow_getLabelPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_SubaddressRow_getLabel');
-  late final _MONERO_SubaddressRow_getLabel = _MONERO_SubaddressRow_getLabelPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_SubaddressRow_getLabel');
+  late final _CWLWS_SubaddressRow_getLabel = _CWLWS_SubaddressRow_getLabelPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_SubaddressRow_getRowId(
+  int CWLWS_SubaddressRow_getRowId(
     ffi.Pointer<ffi.Void> subaddressRow_ptr,
   ) {
-    return _MONERO_SubaddressRow_getRowId(
+    return _CWLWS_SubaddressRow_getRowId(
       subaddressRow_ptr,
     );
   }
 
-  late final _MONERO_SubaddressRow_getRowIdPtr =
+  late final _CWLWS_SubaddressRow_getRowIdPtr =
       _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_SubaddressRow_getRowId');
-  late final _MONERO_SubaddressRow_getRowId = _MONERO_SubaddressRow_getRowIdPtr
+          'CWLWS_SubaddressRow_getRowId');
+  late final _CWLWS_SubaddressRow_getRowId = _CWLWS_SubaddressRow_getRowIdPtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_Subaddress_getAll_size(
+  int CWLWS_Subaddress_getAll_size(
     ffi.Pointer<ffi.Void> subaddress_ptr,
   ) {
-    return _MONERO_Subaddress_getAll_size(
+    return _CWLWS_Subaddress_getAll_size(
       subaddress_ptr,
     );
   }
 
-  late final _MONERO_Subaddress_getAll_sizePtr =
+  late final _CWLWS_Subaddress_getAll_sizePtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Subaddress_getAll_size');
-  late final _MONERO_Subaddress_getAll_size = _MONERO_Subaddress_getAll_sizePtr
+          'CWLWS_Subaddress_getAll_size');
+  late final _CWLWS_Subaddress_getAll_size = _CWLWS_Subaddress_getAll_sizePtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_Subaddress_getAll_byIndex(
+  ffi.Pointer<ffi.Void> CWLWS_Subaddress_getAll_byIndex(
     ffi.Pointer<ffi.Void> subaddress_ptr,
     int index,
   ) {
-    return _MONERO_Subaddress_getAll_byIndex(
+    return _CWLWS_Subaddress_getAll_byIndex(
       subaddress_ptr,
       index,
     );
   }
 
-  late final _MONERO_Subaddress_getAll_byIndexPtr = _lookup<
+  late final _CWLWS_Subaddress_getAll_byIndexPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
-              ffi.Int)>>('MONERO_Subaddress_getAll_byIndex');
-  late final _MONERO_Subaddress_getAll_byIndex =
-      _MONERO_Subaddress_getAll_byIndexPtr.asFunction<
+              ffi.Int)>>('CWLWS_Subaddress_getAll_byIndex');
+  late final _CWLWS_Subaddress_getAll_byIndex =
+      _CWLWS_Subaddress_getAll_byIndexPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int)>();
 
-  void MONERO_Subaddress_addRow(
+  void CWLWS_Subaddress_addRow(
     ffi.Pointer<ffi.Void> subaddress_ptr,
     int accountIndex,
     ffi.Pointer<ffi.Char> label,
   ) {
-    return _MONERO_Subaddress_addRow(
+    return _CWLWS_Subaddress_addRow(
       subaddress_ptr,
       accountIndex,
       label,
     );
   }
 
-  late final _MONERO_Subaddress_addRowPtr = _lookup<
+  late final _CWLWS_Subaddress_addRowPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Uint32,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Subaddress_addRow');
-  late final _MONERO_Subaddress_addRow =
-      _MONERO_Subaddress_addRowPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Subaddress_addRow');
+  late final _CWLWS_Subaddress_addRow =
+      _CWLWS_Subaddress_addRowPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Char>)>();
 
-  void MONERO_Subaddress_setLabel(
+  void CWLWS_Subaddress_setLabel(
     ffi.Pointer<ffi.Void> subaddress_ptr,
     int accountIndex,
     int addressIndex,
     ffi.Pointer<ffi.Char> label,
   ) {
-    return _MONERO_Subaddress_setLabel(
+    return _CWLWS_Subaddress_setLabel(
       subaddress_ptr,
       accountIndex,
       addressIndex,
@@ -1721,674 +1721,674 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_Subaddress_setLabelPtr = _lookup<
+  late final _CWLWS_Subaddress_setLabelPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Uint32, ffi.Uint32,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Subaddress_setLabel');
-  late final _MONERO_Subaddress_setLabel =
-      _MONERO_Subaddress_setLabelPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Subaddress_setLabel');
+  late final _CWLWS_Subaddress_setLabel =
+      _CWLWS_Subaddress_setLabelPtr.asFunction<
           void Function(
               ffi.Pointer<ffi.Void>, int, int, ffi.Pointer<ffi.Char>)>();
 
-  void MONERO_Subaddress_refresh(
+  void CWLWS_Subaddress_refresh(
     ffi.Pointer<ffi.Void> subaddress_ptr,
     int accountIndex,
   ) {
-    return _MONERO_Subaddress_refresh(
+    return _CWLWS_Subaddress_refresh(
       subaddress_ptr,
       accountIndex,
     );
   }
 
-  late final _MONERO_Subaddress_refreshPtr = _lookup<
+  late final _CWLWS_Subaddress_refreshPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(
-              ffi.Pointer<ffi.Void>, ffi.Uint32)>>('MONERO_Subaddress_refresh');
-  late final _MONERO_Subaddress_refresh = _MONERO_Subaddress_refreshPtr
+              ffi.Pointer<ffi.Void>, ffi.Uint32)>>('CWLWS_Subaddress_refresh');
+  late final _CWLWS_Subaddress_refresh = _CWLWS_Subaddress_refreshPtr
       .asFunction<void Function(ffi.Pointer<ffi.Void>, int)>();
 
-  ffi.Pointer<ffi.Char> MONERO_SubaddressAccountRow_extra(
+  ffi.Pointer<ffi.Char> CWLWS_SubaddressAccountRow_extra(
     ffi.Pointer<ffi.Void> subaddressAccountRow_ptr,
   ) {
-    return _MONERO_SubaddressAccountRow_extra(
+    return _CWLWS_SubaddressAccountRow_extra(
       subaddressAccountRow_ptr,
     );
   }
 
-  late final _MONERO_SubaddressAccountRow_extraPtr = _lookup<
+  late final _CWLWS_SubaddressAccountRow_extraPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_SubaddressAccountRow_extra');
-  late final _MONERO_SubaddressAccountRow_extra =
-      _MONERO_SubaddressAccountRow_extraPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_SubaddressAccountRow_extra');
+  late final _CWLWS_SubaddressAccountRow_extra =
+      _CWLWS_SubaddressAccountRow_extraPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_SubaddressAccountRow_getAddress(
+  ffi.Pointer<ffi.Char> CWLWS_SubaddressAccountRow_getAddress(
     ffi.Pointer<ffi.Void> subaddressAccountRow_ptr,
   ) {
-    return _MONERO_SubaddressAccountRow_getAddress(
+    return _CWLWS_SubaddressAccountRow_getAddress(
       subaddressAccountRow_ptr,
     );
   }
 
-  late final _MONERO_SubaddressAccountRow_getAddressPtr = _lookup<
+  late final _CWLWS_SubaddressAccountRow_getAddressPtr = _lookup<
           ffi.NativeFunction<
               ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>>(
-      'MONERO_SubaddressAccountRow_getAddress');
-  late final _MONERO_SubaddressAccountRow_getAddress =
-      _MONERO_SubaddressAccountRow_getAddressPtr.asFunction<
+      'CWLWS_SubaddressAccountRow_getAddress');
+  late final _CWLWS_SubaddressAccountRow_getAddress =
+      _CWLWS_SubaddressAccountRow_getAddressPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_SubaddressAccountRow_getLabel(
+  ffi.Pointer<ffi.Char> CWLWS_SubaddressAccountRow_getLabel(
     ffi.Pointer<ffi.Void> subaddressAccountRow_ptr,
   ) {
-    return _MONERO_SubaddressAccountRow_getLabel(
+    return _CWLWS_SubaddressAccountRow_getLabel(
       subaddressAccountRow_ptr,
     );
   }
 
-  late final _MONERO_SubaddressAccountRow_getLabelPtr = _lookup<
+  late final _CWLWS_SubaddressAccountRow_getLabelPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_SubaddressAccountRow_getLabel');
-  late final _MONERO_SubaddressAccountRow_getLabel =
-      _MONERO_SubaddressAccountRow_getLabelPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_SubaddressAccountRow_getLabel');
+  late final _CWLWS_SubaddressAccountRow_getLabel =
+      _CWLWS_SubaddressAccountRow_getLabelPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_SubaddressAccountRow_getBalance(
+  ffi.Pointer<ffi.Char> CWLWS_SubaddressAccountRow_getBalance(
     ffi.Pointer<ffi.Void> subaddressAccountRow_ptr,
   ) {
-    return _MONERO_SubaddressAccountRow_getBalance(
+    return _CWLWS_SubaddressAccountRow_getBalance(
       subaddressAccountRow_ptr,
     );
   }
 
-  late final _MONERO_SubaddressAccountRow_getBalancePtr = _lookup<
+  late final _CWLWS_SubaddressAccountRow_getBalancePtr = _lookup<
           ffi.NativeFunction<
               ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>>(
-      'MONERO_SubaddressAccountRow_getBalance');
-  late final _MONERO_SubaddressAccountRow_getBalance =
-      _MONERO_SubaddressAccountRow_getBalancePtr.asFunction<
+      'CWLWS_SubaddressAccountRow_getBalance');
+  late final _CWLWS_SubaddressAccountRow_getBalance =
+      _CWLWS_SubaddressAccountRow_getBalancePtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_SubaddressAccountRow_getUnlockedBalance(
+  ffi.Pointer<ffi.Char> CWLWS_SubaddressAccountRow_getUnlockedBalance(
     ffi.Pointer<ffi.Void> subaddressAccountRow_ptr,
   ) {
-    return _MONERO_SubaddressAccountRow_getUnlockedBalance(
+    return _CWLWS_SubaddressAccountRow_getUnlockedBalance(
       subaddressAccountRow_ptr,
     );
   }
 
-  late final _MONERO_SubaddressAccountRow_getUnlockedBalancePtr = _lookup<
+  late final _CWLWS_SubaddressAccountRow_getUnlockedBalancePtr = _lookup<
           ffi.NativeFunction<
               ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>>(
-      'MONERO_SubaddressAccountRow_getUnlockedBalance');
-  late final _MONERO_SubaddressAccountRow_getUnlockedBalance =
-      _MONERO_SubaddressAccountRow_getUnlockedBalancePtr.asFunction<
+      'CWLWS_SubaddressAccountRow_getUnlockedBalance');
+  late final _CWLWS_SubaddressAccountRow_getUnlockedBalance =
+      _CWLWS_SubaddressAccountRow_getUnlockedBalancePtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_SubaddressAccountRow_getRowId(
+  int CWLWS_SubaddressAccountRow_getRowId(
     ffi.Pointer<ffi.Void> subaddressAccountRow_ptr,
   ) {
-    return _MONERO_SubaddressAccountRow_getRowId(
+    return _CWLWS_SubaddressAccountRow_getRowId(
       subaddressAccountRow_ptr,
     );
   }
 
-  late final _MONERO_SubaddressAccountRow_getRowIdPtr =
+  late final _CWLWS_SubaddressAccountRow_getRowIdPtr =
       _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_SubaddressAccountRow_getRowId');
-  late final _MONERO_SubaddressAccountRow_getRowId =
-      _MONERO_SubaddressAccountRow_getRowIdPtr.asFunction<
+          'CWLWS_SubaddressAccountRow_getRowId');
+  late final _CWLWS_SubaddressAccountRow_getRowId =
+      _CWLWS_SubaddressAccountRow_getRowIdPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_SubaddressAccount_getAll_size(
+  int CWLWS_SubaddressAccount_getAll_size(
     ffi.Pointer<ffi.Void> subaddressAccount_ptr,
   ) {
-    return _MONERO_SubaddressAccount_getAll_size(
+    return _CWLWS_SubaddressAccount_getAll_size(
       subaddressAccount_ptr,
     );
   }
 
-  late final _MONERO_SubaddressAccount_getAll_sizePtr =
+  late final _CWLWS_SubaddressAccount_getAll_sizePtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_SubaddressAccount_getAll_size');
-  late final _MONERO_SubaddressAccount_getAll_size =
-      _MONERO_SubaddressAccount_getAll_sizePtr.asFunction<
+          'CWLWS_SubaddressAccount_getAll_size');
+  late final _CWLWS_SubaddressAccount_getAll_size =
+      _CWLWS_SubaddressAccount_getAll_sizePtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_SubaddressAccount_getAll_byIndex(
+  ffi.Pointer<ffi.Void> CWLWS_SubaddressAccount_getAll_byIndex(
     ffi.Pointer<ffi.Void> subaddressAccount_ptr,
     int index,
   ) {
-    return _MONERO_SubaddressAccount_getAll_byIndex(
+    return _CWLWS_SubaddressAccount_getAll_byIndex(
       subaddressAccount_ptr,
       index,
     );
   }
 
-  late final _MONERO_SubaddressAccount_getAll_byIndexPtr = _lookup<
+  late final _CWLWS_SubaddressAccount_getAll_byIndexPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
-              ffi.Int)>>('MONERO_SubaddressAccount_getAll_byIndex');
-  late final _MONERO_SubaddressAccount_getAll_byIndex =
-      _MONERO_SubaddressAccount_getAll_byIndexPtr.asFunction<
+              ffi.Int)>>('CWLWS_SubaddressAccount_getAll_byIndex');
+  late final _CWLWS_SubaddressAccount_getAll_byIndex =
+      _CWLWS_SubaddressAccount_getAll_byIndexPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int)>();
 
-  void MONERO_SubaddressAccount_addRow(
+  void CWLWS_SubaddressAccount_addRow(
     ffi.Pointer<ffi.Void> subaddressAccount_ptr,
     ffi.Pointer<ffi.Char> label,
   ) {
-    return _MONERO_SubaddressAccount_addRow(
+    return _CWLWS_SubaddressAccount_addRow(
       subaddressAccount_ptr,
       label,
     );
   }
 
-  late final _MONERO_SubaddressAccount_addRowPtr = _lookup<
+  late final _CWLWS_SubaddressAccount_addRowPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_SubaddressAccount_addRow');
-  late final _MONERO_SubaddressAccount_addRow =
-      _MONERO_SubaddressAccount_addRowPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_SubaddressAccount_addRow');
+  late final _CWLWS_SubaddressAccount_addRow =
+      _CWLWS_SubaddressAccount_addRowPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  void MONERO_SubaddressAccount_setLabel(
+  void CWLWS_SubaddressAccount_setLabel(
     ffi.Pointer<ffi.Void> subaddressAccount_ptr,
     int accountIndex,
     ffi.Pointer<ffi.Char> label,
   ) {
-    return _MONERO_SubaddressAccount_setLabel(
+    return _CWLWS_SubaddressAccount_setLabel(
       subaddressAccount_ptr,
       accountIndex,
       label,
     );
   }
 
-  late final _MONERO_SubaddressAccount_setLabelPtr = _lookup<
+  late final _CWLWS_SubaddressAccount_setLabelPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Uint32,
-              ffi.Pointer<ffi.Char>)>>('MONERO_SubaddressAccount_setLabel');
-  late final _MONERO_SubaddressAccount_setLabel =
-      _MONERO_SubaddressAccount_setLabelPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_SubaddressAccount_setLabel');
+  late final _CWLWS_SubaddressAccount_setLabel =
+      _CWLWS_SubaddressAccount_setLabelPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Char>)>();
 
-  void MONERO_SubaddressAccount_refresh(
+  void CWLWS_SubaddressAccount_refresh(
     ffi.Pointer<ffi.Void> subaddressAccount_ptr,
   ) {
-    return _MONERO_SubaddressAccount_refresh(
+    return _CWLWS_SubaddressAccount_refresh(
       subaddressAccount_ptr,
     );
   }
 
-  late final _MONERO_SubaddressAccount_refreshPtr =
+  late final _CWLWS_SubaddressAccount_refreshPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_SubaddressAccount_refresh');
-  late final _MONERO_SubaddressAccount_refresh =
-      _MONERO_SubaddressAccount_refreshPtr.asFunction<
+          'CWLWS_SubaddressAccount_refresh');
+  late final _CWLWS_SubaddressAccount_refresh =
+      _CWLWS_SubaddressAccount_refreshPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_MultisigState_isMultisig(
+  bool CWLWS_MultisigState_isMultisig(
     ffi.Pointer<ffi.Void> multisigState_ptr,
   ) {
-    return _MONERO_MultisigState_isMultisig(
+    return _CWLWS_MultisigState_isMultisig(
       multisigState_ptr,
     );
   }
 
-  late final _MONERO_MultisigState_isMultisigPtr =
+  late final _CWLWS_MultisigState_isMultisigPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_MultisigState_isMultisig');
-  late final _MONERO_MultisigState_isMultisig =
-      _MONERO_MultisigState_isMultisigPtr.asFunction<
+          'CWLWS_MultisigState_isMultisig');
+  late final _CWLWS_MultisigState_isMultisig =
+      _CWLWS_MultisigState_isMultisigPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_MultisigState_isReady(
+  bool CWLWS_MultisigState_isReady(
     ffi.Pointer<ffi.Void> multisigState_ptr,
   ) {
-    return _MONERO_MultisigState_isReady(
+    return _CWLWS_MultisigState_isReady(
       multisigState_ptr,
     );
   }
 
-  late final _MONERO_MultisigState_isReadyPtr =
+  late final _CWLWS_MultisigState_isReadyPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_MultisigState_isReady');
-  late final _MONERO_MultisigState_isReady = _MONERO_MultisigState_isReadyPtr
+          'CWLWS_MultisigState_isReady');
+  late final _CWLWS_MultisigState_isReady = _CWLWS_MultisigState_isReadyPtr
       .asFunction<bool Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_MultisigState_threshold(
+  int CWLWS_MultisigState_threshold(
     ffi.Pointer<ffi.Void> multisigState_ptr,
   ) {
-    return _MONERO_MultisigState_threshold(
+    return _CWLWS_MultisigState_threshold(
       multisigState_ptr,
     );
   }
 
-  late final _MONERO_MultisigState_thresholdPtr =
+  late final _CWLWS_MultisigState_thresholdPtr =
       _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_MultisigState_threshold');
-  late final _MONERO_MultisigState_threshold =
-      _MONERO_MultisigState_thresholdPtr.asFunction<
+          'CWLWS_MultisigState_threshold');
+  late final _CWLWS_MultisigState_threshold =
+      _CWLWS_MultisigState_thresholdPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_MultisigState_total(
+  int CWLWS_MultisigState_total(
     ffi.Pointer<ffi.Void> multisigState_ptr,
   ) {
-    return _MONERO_MultisigState_total(
+    return _CWLWS_MultisigState_total(
       multisigState_ptr,
     );
   }
 
-  late final _MONERO_MultisigState_totalPtr =
+  late final _CWLWS_MultisigState_totalPtr =
       _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_MultisigState_total');
-  late final _MONERO_MultisigState_total = _MONERO_MultisigState_totalPtr
+          'CWLWS_MultisigState_total');
+  late final _CWLWS_MultisigState_total = _CWLWS_MultisigState_totalPtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_DeviceProgress_progress(
+  bool CWLWS_DeviceProgress_progress(
     ffi.Pointer<ffi.Void> deviceProgress_ptr,
   ) {
-    return _MONERO_DeviceProgress_progress(
+    return _CWLWS_DeviceProgress_progress(
       deviceProgress_ptr,
     );
   }
 
-  late final _MONERO_DeviceProgress_progressPtr =
+  late final _CWLWS_DeviceProgress_progressPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_DeviceProgress_progress');
-  late final _MONERO_DeviceProgress_progress =
-      _MONERO_DeviceProgress_progressPtr.asFunction<
+          'CWLWS_DeviceProgress_progress');
+  late final _CWLWS_DeviceProgress_progress =
+      _CWLWS_DeviceProgress_progressPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_DeviceProgress_indeterminate(
+  bool CWLWS_DeviceProgress_indeterminate(
     ffi.Pointer<ffi.Void> deviceProgress_ptr,
   ) {
-    return _MONERO_DeviceProgress_indeterminate(
+    return _CWLWS_DeviceProgress_indeterminate(
       deviceProgress_ptr,
     );
   }
 
-  late final _MONERO_DeviceProgress_indeterminatePtr =
+  late final _CWLWS_DeviceProgress_indeterminatePtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_DeviceProgress_indeterminate');
-  late final _MONERO_DeviceProgress_indeterminate =
-      _MONERO_DeviceProgress_indeterminatePtr.asFunction<
+          'CWLWS_DeviceProgress_indeterminate');
+  late final _CWLWS_DeviceProgress_indeterminate =
+      _CWLWS_DeviceProgress_indeterminatePtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_seed(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_seed(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> seed_offset,
   ) {
-    return _MONERO_Wallet_seed(
+    return _CWLWS_Wallet_seed(
       wallet_ptr,
       seed_offset,
     );
   }
 
-  late final _MONERO_Wallet_seedPtr = _lookup<
+  late final _CWLWS_Wallet_seedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_seed');
-  late final _MONERO_Wallet_seed = _MONERO_Wallet_seedPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_seed');
+  late final _CWLWS_Wallet_seed = _CWLWS_Wallet_seedPtr.asFunction<
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_getSeedLanguage(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_getSeedLanguage(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_getSeedLanguage(
+    return _CWLWS_Wallet_getSeedLanguage(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_getSeedLanguagePtr = _lookup<
+  late final _CWLWS_Wallet_getSeedLanguagePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_getSeedLanguage');
-  late final _MONERO_Wallet_getSeedLanguage = _MONERO_Wallet_getSeedLanguagePtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_getSeedLanguage');
+  late final _CWLWS_Wallet_getSeedLanguage = _CWLWS_Wallet_getSeedLanguagePtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_Wallet_setSeedLanguage(
+  void CWLWS_Wallet_setSeedLanguage(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> arg,
   ) {
-    return _MONERO_Wallet_setSeedLanguage(
+    return _CWLWS_Wallet_setSeedLanguage(
       wallet_ptr,
       arg,
     );
   }
 
-  late final _MONERO_Wallet_setSeedLanguagePtr = _lookup<
+  late final _CWLWS_Wallet_setSeedLanguagePtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_setSeedLanguage');
-  late final _MONERO_Wallet_setSeedLanguage =
-      _MONERO_Wallet_setSeedLanguagePtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_setSeedLanguage');
+  late final _CWLWS_Wallet_setSeedLanguage =
+      _CWLWS_Wallet_setSeedLanguagePtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  int MONERO_Wallet_status(
+  int CWLWS_Wallet_status(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_status(
+    return _CWLWS_Wallet_status(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_statusPtr =
+  late final _CWLWS_Wallet_statusPtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_status');
-  late final _MONERO_Wallet_status = _MONERO_Wallet_statusPtr.asFunction<
+          'CWLWS_Wallet_status');
+  late final _CWLWS_Wallet_status = _CWLWS_Wallet_statusPtr.asFunction<
       int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_errorString(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_errorString(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_errorString(
+    return _CWLWS_Wallet_errorString(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_errorStringPtr = _lookup<
+  late final _CWLWS_Wallet_errorStringPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_errorString');
-  late final _MONERO_Wallet_errorString = _MONERO_Wallet_errorStringPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_errorString');
+  late final _CWLWS_Wallet_errorString = _CWLWS_Wallet_errorStringPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_Wallet_setPassword(
+  bool CWLWS_Wallet_setPassword(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> password,
   ) {
-    return _MONERO_Wallet_setPassword(
+    return _CWLWS_Wallet_setPassword(
       wallet_ptr,
       password,
     );
   }
 
-  late final _MONERO_Wallet_setPasswordPtr = _lookup<
+  late final _CWLWS_Wallet_setPasswordPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_setPassword');
-  late final _MONERO_Wallet_setPassword =
-      _MONERO_Wallet_setPasswordPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_setPassword');
+  late final _CWLWS_Wallet_setPassword =
+      _CWLWS_Wallet_setPasswordPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_getPassword(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_getPassword(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_getPassword(
+    return _CWLWS_Wallet_getPassword(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_getPasswordPtr = _lookup<
+  late final _CWLWS_Wallet_getPasswordPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_getPassword');
-  late final _MONERO_Wallet_getPassword = _MONERO_Wallet_getPasswordPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_getPassword');
+  late final _CWLWS_Wallet_getPassword = _CWLWS_Wallet_getPasswordPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_Wallet_setDevicePin(
+  bool CWLWS_Wallet_setDevicePin(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> pin,
   ) {
-    return _MONERO_Wallet_setDevicePin(
+    return _CWLWS_Wallet_setDevicePin(
       wallet_ptr,
       pin,
     );
   }
 
-  late final _MONERO_Wallet_setDevicePinPtr = _lookup<
+  late final _CWLWS_Wallet_setDevicePinPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_setDevicePin');
-  late final _MONERO_Wallet_setDevicePin =
-      _MONERO_Wallet_setDevicePinPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_setDevicePin');
+  late final _CWLWS_Wallet_setDevicePin =
+      _CWLWS_Wallet_setDevicePinPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_Wallet_setDevicePassphrase(
+  bool CWLWS_Wallet_setDevicePassphrase(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> passphrase,
   ) {
-    return _MONERO_Wallet_setDevicePassphrase(
+    return _CWLWS_Wallet_setDevicePassphrase(
       wallet_ptr,
       passphrase,
     );
   }
 
-  late final _MONERO_Wallet_setDevicePassphrasePtr = _lookup<
+  late final _CWLWS_Wallet_setDevicePassphrasePtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_setDevicePassphrase');
-  late final _MONERO_Wallet_setDevicePassphrase =
-      _MONERO_Wallet_setDevicePassphrasePtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_setDevicePassphrase');
+  late final _CWLWS_Wallet_setDevicePassphrase =
+      _CWLWS_Wallet_setDevicePassphrasePtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_address(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_address(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int accountIndex,
     int addressIndex,
   ) {
-    return _MONERO_Wallet_address(
+    return _CWLWS_Wallet_address(
       wallet_ptr,
       accountIndex,
       addressIndex,
     );
   }
 
-  late final _MONERO_Wallet_addressPtr = _lookup<
+  late final _CWLWS_Wallet_addressPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>, ffi.Uint64,
-              ffi.Uint64)>>('MONERO_Wallet_address');
-  late final _MONERO_Wallet_address = _MONERO_Wallet_addressPtr.asFunction<
+              ffi.Uint64)>>('CWLWS_Wallet_address');
+  late final _CWLWS_Wallet_address = _CWLWS_Wallet_addressPtr.asFunction<
       ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>, int, int)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_path(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_path(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_path(
+    return _CWLWS_Wallet_path(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_pathPtr = _lookup<
+  late final _CWLWS_Wallet_pathPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_path');
-  late final _MONERO_Wallet_path = _MONERO_Wallet_pathPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_path');
+  late final _CWLWS_Wallet_path = _CWLWS_Wallet_pathPtr.asFunction<
       ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_Wallet_nettype(
+  int CWLWS_Wallet_nettype(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_nettype(
+    return _CWLWS_Wallet_nettype(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_nettypePtr =
+  late final _CWLWS_Wallet_nettypePtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_nettype');
-  late final _MONERO_Wallet_nettype = _MONERO_Wallet_nettypePtr.asFunction<
+          'CWLWS_Wallet_nettype');
+  late final _CWLWS_Wallet_nettype = _CWLWS_Wallet_nettypePtr.asFunction<
       int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_Wallet_useForkRules(
+  int CWLWS_Wallet_useForkRules(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int version,
     int early_blocks,
   ) {
-    return _MONERO_Wallet_useForkRules(
+    return _CWLWS_Wallet_useForkRules(
       wallet_ptr,
       version,
       early_blocks,
     );
   }
 
-  late final _MONERO_Wallet_useForkRulesPtr = _lookup<
+  late final _CWLWS_Wallet_useForkRulesPtr = _lookup<
       ffi.NativeFunction<
           ffi.Uint8 Function(ffi.Pointer<ffi.Void>, ffi.Uint8,
-              ffi.Int64)>>('MONERO_Wallet_useForkRules');
-  late final _MONERO_Wallet_useForkRules = _MONERO_Wallet_useForkRulesPtr
+              ffi.Int64)>>('CWLWS_Wallet_useForkRules');
+  late final _CWLWS_Wallet_useForkRules = _CWLWS_Wallet_useForkRulesPtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>, int, int)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_integratedAddress(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_integratedAddress(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> payment_id,
   ) {
-    return _MONERO_Wallet_integratedAddress(
+    return _CWLWS_Wallet_integratedAddress(
       wallet_ptr,
       payment_id,
     );
   }
 
-  late final _MONERO_Wallet_integratedAddressPtr = _lookup<
+  late final _CWLWS_Wallet_integratedAddressPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_integratedAddress');
-  late final _MONERO_Wallet_integratedAddress =
-      _MONERO_Wallet_integratedAddressPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_integratedAddress');
+  late final _CWLWS_Wallet_integratedAddress =
+      _CWLWS_Wallet_integratedAddressPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_secretViewKey(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_secretViewKey(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_secretViewKey(
+    return _CWLWS_Wallet_secretViewKey(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_secretViewKeyPtr = _lookup<
+  late final _CWLWS_Wallet_secretViewKeyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_secretViewKey');
-  late final _MONERO_Wallet_secretViewKey = _MONERO_Wallet_secretViewKeyPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_secretViewKey');
+  late final _CWLWS_Wallet_secretViewKey = _CWLWS_Wallet_secretViewKeyPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_publicViewKey(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_publicViewKey(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_publicViewKey(
+    return _CWLWS_Wallet_publicViewKey(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_publicViewKeyPtr = _lookup<
+  late final _CWLWS_Wallet_publicViewKeyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_publicViewKey');
-  late final _MONERO_Wallet_publicViewKey = _MONERO_Wallet_publicViewKeyPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_publicViewKey');
+  late final _CWLWS_Wallet_publicViewKey = _CWLWS_Wallet_publicViewKeyPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_secretSpendKey(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_secretSpendKey(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_secretSpendKey(
+    return _CWLWS_Wallet_secretSpendKey(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_secretSpendKeyPtr = _lookup<
+  late final _CWLWS_Wallet_secretSpendKeyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_secretSpendKey');
-  late final _MONERO_Wallet_secretSpendKey = _MONERO_Wallet_secretSpendKeyPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_secretSpendKey');
+  late final _CWLWS_Wallet_secretSpendKey = _CWLWS_Wallet_secretSpendKeyPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_publicSpendKey(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_publicSpendKey(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_publicSpendKey(
+    return _CWLWS_Wallet_publicSpendKey(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_publicSpendKeyPtr = _lookup<
+  late final _CWLWS_Wallet_publicSpendKeyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_publicSpendKey');
-  late final _MONERO_Wallet_publicSpendKey = _MONERO_Wallet_publicSpendKeyPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_publicSpendKey');
+  late final _CWLWS_Wallet_publicSpendKey = _CWLWS_Wallet_publicSpendKeyPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_publicMultisigSignerKey(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_publicMultisigSignerKey(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_publicMultisigSignerKey(
+    return _CWLWS_Wallet_publicMultisigSignerKey(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_publicMultisigSignerKeyPtr = _lookup<
+  late final _CWLWS_Wallet_publicMultisigSignerKeyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_publicMultisigSignerKey');
-  late final _MONERO_Wallet_publicMultisigSignerKey =
-      _MONERO_Wallet_publicMultisigSignerKeyPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_publicMultisigSignerKey');
+  late final _CWLWS_Wallet_publicMultisigSignerKey =
+      _CWLWS_Wallet_publicMultisigSignerKeyPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_Wallet_stop(
+  void CWLWS_Wallet_stop(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_stop(
+    return _CWLWS_Wallet_stop(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_stopPtr =
+  late final _CWLWS_Wallet_stopPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_stop');
-  late final _MONERO_Wallet_stop =
-      _MONERO_Wallet_stopPtr.asFunction<void Function(ffi.Pointer<ffi.Void>)>();
+          'CWLWS_Wallet_stop');
+  late final _CWLWS_Wallet_stop =
+      _CWLWS_Wallet_stopPtr.asFunction<void Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_Wallet_store(
+  bool CWLWS_Wallet_store(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> path,
   ) {
-    return _MONERO_Wallet_store(
+    return _CWLWS_Wallet_store(
       wallet_ptr,
       path,
     );
   }
 
-  late final _MONERO_Wallet_storePtr = _lookup<
+  late final _CWLWS_Wallet_storePtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_store');
-  late final _MONERO_Wallet_store = _MONERO_Wallet_storePtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_store');
+  late final _CWLWS_Wallet_store = _CWLWS_Wallet_storePtr.asFunction<
       bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_filename(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_filename(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_filename(
+    return _CWLWS_Wallet_filename(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_filenamePtr = _lookup<
+  late final _CWLWS_Wallet_filenamePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_filename');
-  late final _MONERO_Wallet_filename = _MONERO_Wallet_filenamePtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_filename');
+  late final _CWLWS_Wallet_filename = _CWLWS_Wallet_filenamePtr.asFunction<
       ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_keysFilename(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_keysFilename(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_keysFilename(
+    return _CWLWS_Wallet_keysFilename(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_keysFilenamePtr = _lookup<
+  late final _CWLWS_Wallet_keysFilenamePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_keysFilename');
-  late final _MONERO_Wallet_keysFilename = _MONERO_Wallet_keysFilenamePtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_keysFilename');
+  late final _CWLWS_Wallet_keysFilename = _CWLWS_Wallet_keysFilenamePtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_Wallet_init(
+  bool CWLWS_Wallet_init(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> daemon_address,
     int upper_transaction_size_limit,
@@ -2398,7 +2398,7 @@ class MoneroC {
     bool lightWallet,
     ffi.Pointer<ffi.Char> proxy_address,
   ) {
-    return _MONERO_Wallet_init(
+    return _CWLWS_Wallet_init(
       wallet_ptr,
       daemon_address,
       upper_transaction_size_limit,
@@ -2410,7 +2410,7 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_Wallet_initPtr = _lookup<
+  late final _CWLWS_Wallet_initPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(
               ffi.Pointer<ffi.Void>,
@@ -2420,8 +2420,8 @@ class MoneroC {
               ffi.Pointer<ffi.Char>,
               ffi.Bool,
               ffi.Bool,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_init');
-  late final _MONERO_Wallet_init = _MONERO_Wallet_initPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_init');
+  late final _CWLWS_Wallet_init = _CWLWS_Wallet_initPtr.asFunction<
       bool Function(
           ffi.Pointer<ffi.Void>,
           ffi.Pointer<ffi.Char>,
@@ -2432,13 +2432,13 @@ class MoneroC {
           bool,
           ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_Wallet_createWatchOnly(
+  bool CWLWS_Wallet_createWatchOnly(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> path,
     ffi.Pointer<ffi.Char> password,
     ffi.Pointer<ffi.Char> language,
   ) {
-    return _MONERO_Wallet_createWatchOnly(
+    return _CWLWS_Wallet_createWatchOnly(
       wallet_ptr,
       path,
       password,
@@ -2446,443 +2446,443 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_Wallet_createWatchOnlyPtr = _lookup<
+  late final _CWLWS_Wallet_createWatchOnlyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_createWatchOnly');
-  late final _MONERO_Wallet_createWatchOnly =
-      _MONERO_Wallet_createWatchOnlyPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_createWatchOnly');
+  late final _CWLWS_Wallet_createWatchOnly =
+      _CWLWS_Wallet_createWatchOnlyPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  void MONERO_Wallet_setRefreshFromBlockHeight(
+  void CWLWS_Wallet_setRefreshFromBlockHeight(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int refresh_from_block_height,
   ) {
-    return _MONERO_Wallet_setRefreshFromBlockHeight(
+    return _CWLWS_Wallet_setRefreshFromBlockHeight(
       wallet_ptr,
       refresh_from_block_height,
     );
   }
 
-  late final _MONERO_Wallet_setRefreshFromBlockHeightPtr = _lookup<
+  late final _CWLWS_Wallet_setRefreshFromBlockHeightPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>,
-              ffi.Uint64)>>('MONERO_Wallet_setRefreshFromBlockHeight');
-  late final _MONERO_Wallet_setRefreshFromBlockHeight =
-      _MONERO_Wallet_setRefreshFromBlockHeightPtr.asFunction<
+              ffi.Uint64)>>('CWLWS_Wallet_setRefreshFromBlockHeight');
+  late final _CWLWS_Wallet_setRefreshFromBlockHeight =
+      _CWLWS_Wallet_setRefreshFromBlockHeightPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, int)>();
 
-  int MONERO_Wallet_getRefreshFromBlockHeight(
+  int CWLWS_Wallet_getRefreshFromBlockHeight(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_getRefreshFromBlockHeight(
+    return _CWLWS_Wallet_getRefreshFromBlockHeight(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_getRefreshFromBlockHeightPtr =
+  late final _CWLWS_Wallet_getRefreshFromBlockHeightPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_getRefreshFromBlockHeight');
-  late final _MONERO_Wallet_getRefreshFromBlockHeight =
-      _MONERO_Wallet_getRefreshFromBlockHeightPtr.asFunction<
+          'CWLWS_Wallet_getRefreshFromBlockHeight');
+  late final _CWLWS_Wallet_getRefreshFromBlockHeight =
+      _CWLWS_Wallet_getRefreshFromBlockHeightPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_Wallet_setRecoveringFromSeed(
+  void CWLWS_Wallet_setRecoveringFromSeed(
     ffi.Pointer<ffi.Void> wallet_ptr,
     bool recoveringFromSeed,
   ) {
-    return _MONERO_Wallet_setRecoveringFromSeed(
+    return _CWLWS_Wallet_setRecoveringFromSeed(
       wallet_ptr,
       recoveringFromSeed,
     );
   }
 
-  late final _MONERO_Wallet_setRecoveringFromSeedPtr = _lookup<
+  late final _CWLWS_Wallet_setRecoveringFromSeedPtr = _lookup<
           ffi
           .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
-      'MONERO_Wallet_setRecoveringFromSeed');
-  late final _MONERO_Wallet_setRecoveringFromSeed =
-      _MONERO_Wallet_setRecoveringFromSeedPtr.asFunction<
+      'CWLWS_Wallet_setRecoveringFromSeed');
+  late final _CWLWS_Wallet_setRecoveringFromSeed =
+      _CWLWS_Wallet_setRecoveringFromSeedPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, bool)>();
 
-  void MONERO_Wallet_setRecoveringFromDevice(
+  void CWLWS_Wallet_setRecoveringFromDevice(
     ffi.Pointer<ffi.Void> wallet_ptr,
     bool recoveringFromDevice,
   ) {
-    return _MONERO_Wallet_setRecoveringFromDevice(
+    return _CWLWS_Wallet_setRecoveringFromDevice(
       wallet_ptr,
       recoveringFromDevice,
     );
   }
 
-  late final _MONERO_Wallet_setRecoveringFromDevicePtr = _lookup<
+  late final _CWLWS_Wallet_setRecoveringFromDevicePtr = _lookup<
           ffi
           .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
-      'MONERO_Wallet_setRecoveringFromDevice');
-  late final _MONERO_Wallet_setRecoveringFromDevice =
-      _MONERO_Wallet_setRecoveringFromDevicePtr.asFunction<
+      'CWLWS_Wallet_setRecoveringFromDevice');
+  late final _CWLWS_Wallet_setRecoveringFromDevice =
+      _CWLWS_Wallet_setRecoveringFromDevicePtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, bool)>();
 
-  void MONERO_Wallet_setSubaddressLookahead(
+  void CWLWS_Wallet_setSubaddressLookahead(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int major,
     int minor,
   ) {
-    return _MONERO_Wallet_setSubaddressLookahead(
+    return _CWLWS_Wallet_setSubaddressLookahead(
       wallet_ptr,
       major,
       minor,
     );
   }
 
-  late final _MONERO_Wallet_setSubaddressLookaheadPtr = _lookup<
+  late final _CWLWS_Wallet_setSubaddressLookaheadPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Uint32,
-              ffi.Uint32)>>('MONERO_Wallet_setSubaddressLookahead');
-  late final _MONERO_Wallet_setSubaddressLookahead =
-      _MONERO_Wallet_setSubaddressLookaheadPtr.asFunction<
+              ffi.Uint32)>>('CWLWS_Wallet_setSubaddressLookahead');
+  late final _CWLWS_Wallet_setSubaddressLookahead =
+      _CWLWS_Wallet_setSubaddressLookaheadPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, int, int)>();
 
-  bool MONERO_Wallet_connectToDaemon(
+  bool CWLWS_Wallet_connectToDaemon(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_connectToDaemon(
+    return _CWLWS_Wallet_connectToDaemon(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_connectToDaemonPtr =
+  late final _CWLWS_Wallet_connectToDaemonPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_connectToDaemon');
-  late final _MONERO_Wallet_connectToDaemon = _MONERO_Wallet_connectToDaemonPtr
+          'CWLWS_Wallet_connectToDaemon');
+  late final _CWLWS_Wallet_connectToDaemon = _CWLWS_Wallet_connectToDaemonPtr
       .asFunction<bool Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_Wallet_connected(
+  int CWLWS_Wallet_connected(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_connected(
+    return _CWLWS_Wallet_connected(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_connectedPtr =
+  late final _CWLWS_Wallet_connectedPtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_connected');
-  late final _MONERO_Wallet_connected = _MONERO_Wallet_connectedPtr.asFunction<
+          'CWLWS_Wallet_connected');
+  late final _CWLWS_Wallet_connected = _CWLWS_Wallet_connectedPtr.asFunction<
       int Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_Wallet_setTrustedDaemon(
+  void CWLWS_Wallet_setTrustedDaemon(
     ffi.Pointer<ffi.Void> wallet_ptr,
     bool arg,
   ) {
-    return _MONERO_Wallet_setTrustedDaemon(
+    return _CWLWS_Wallet_setTrustedDaemon(
       wallet_ptr,
       arg,
     );
   }
 
-  late final _MONERO_Wallet_setTrustedDaemonPtr = _lookup<
+  late final _CWLWS_Wallet_setTrustedDaemonPtr = _lookup<
           ffi
           .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
-      'MONERO_Wallet_setTrustedDaemon');
-  late final _MONERO_Wallet_setTrustedDaemon =
-      _MONERO_Wallet_setTrustedDaemonPtr.asFunction<
+      'CWLWS_Wallet_setTrustedDaemon');
+  late final _CWLWS_Wallet_setTrustedDaemon =
+      _CWLWS_Wallet_setTrustedDaemonPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, bool)>();
 
-  bool MONERO_Wallet_trustedDaemon(
+  bool CWLWS_Wallet_trustedDaemon(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_trustedDaemon(
+    return _CWLWS_Wallet_trustedDaemon(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_trustedDaemonPtr =
+  late final _CWLWS_Wallet_trustedDaemonPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_trustedDaemon');
-  late final _MONERO_Wallet_trustedDaemon = _MONERO_Wallet_trustedDaemonPtr
+          'CWLWS_Wallet_trustedDaemon');
+  late final _CWLWS_Wallet_trustedDaemon = _CWLWS_Wallet_trustedDaemonPtr
       .asFunction<bool Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_Wallet_setProxy(
+  bool CWLWS_Wallet_setProxy(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> address,
   ) {
-    return _MONERO_Wallet_setProxy(
+    return _CWLWS_Wallet_setProxy(
       wallet_ptr,
       address,
     );
   }
 
-  late final _MONERO_Wallet_setProxyPtr = _lookup<
+  late final _CWLWS_Wallet_setProxyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_setProxy');
-  late final _MONERO_Wallet_setProxy = _MONERO_Wallet_setProxyPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_setProxy');
+  late final _CWLWS_Wallet_setProxy = _CWLWS_Wallet_setProxyPtr.asFunction<
       bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  int MONERO_Wallet_balance(
+  int CWLWS_Wallet_balance(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int accountIndex,
   ) {
-    return _MONERO_Wallet_balance(
+    return _CWLWS_Wallet_balance(
       wallet_ptr,
       accountIndex,
     );
   }
 
-  late final _MONERO_Wallet_balancePtr = _lookup<
+  late final _CWLWS_Wallet_balancePtr = _lookup<
       ffi.NativeFunction<
           ffi.Uint64 Function(
-              ffi.Pointer<ffi.Void>, ffi.Uint32)>>('MONERO_Wallet_balance');
-  late final _MONERO_Wallet_balance = _MONERO_Wallet_balancePtr.asFunction<
+              ffi.Pointer<ffi.Void>, ffi.Uint32)>>('CWLWS_Wallet_balance');
+  late final _CWLWS_Wallet_balance = _CWLWS_Wallet_balancePtr.asFunction<
       int Function(ffi.Pointer<ffi.Void>, int)>();
 
-  int MONERO_Wallet_unlockedBalance(
+  int CWLWS_Wallet_unlockedBalance(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int accountIndex,
   ) {
-    return _MONERO_Wallet_unlockedBalance(
+    return _CWLWS_Wallet_unlockedBalance(
       wallet_ptr,
       accountIndex,
     );
   }
 
-  late final _MONERO_Wallet_unlockedBalancePtr = _lookup<
+  late final _CWLWS_Wallet_unlockedBalancePtr = _lookup<
       ffi.NativeFunction<
           ffi.Uint64 Function(ffi.Pointer<ffi.Void>,
-              ffi.Uint32)>>('MONERO_Wallet_unlockedBalance');
-  late final _MONERO_Wallet_unlockedBalance = _MONERO_Wallet_unlockedBalancePtr
+              ffi.Uint32)>>('CWLWS_Wallet_unlockedBalance');
+  late final _CWLWS_Wallet_unlockedBalance = _CWLWS_Wallet_unlockedBalancePtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
 
-  int MONERO_Wallet_viewOnlyBalance(
+  int CWLWS_Wallet_viewOnlyBalance(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int accountIndex,
   ) {
-    return _MONERO_Wallet_viewOnlyBalance(
+    return _CWLWS_Wallet_viewOnlyBalance(
       wallet_ptr,
       accountIndex,
     );
   }
 
-  late final _MONERO_Wallet_viewOnlyBalancePtr = _lookup<
+  late final _CWLWS_Wallet_viewOnlyBalancePtr = _lookup<
       ffi.NativeFunction<
           ffi.Uint64 Function(ffi.Pointer<ffi.Void>,
-              ffi.Uint32)>>('MONERO_Wallet_viewOnlyBalance');
-  late final _MONERO_Wallet_viewOnlyBalance = _MONERO_Wallet_viewOnlyBalancePtr
+              ffi.Uint32)>>('CWLWS_Wallet_viewOnlyBalance');
+  late final _CWLWS_Wallet_viewOnlyBalance = _CWLWS_Wallet_viewOnlyBalancePtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
 
-  bool MONERO_Wallet_watchOnly(
+  bool CWLWS_Wallet_watchOnly(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_watchOnly(
+    return _CWLWS_Wallet_watchOnly(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_watchOnlyPtr =
+  late final _CWLWS_Wallet_watchOnlyPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_watchOnly');
-  late final _MONERO_Wallet_watchOnly = _MONERO_Wallet_watchOnlyPtr.asFunction<
+          'CWLWS_Wallet_watchOnly');
+  late final _CWLWS_Wallet_watchOnly = _CWLWS_Wallet_watchOnlyPtr.asFunction<
       bool Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_Wallet_isDeterministic(
+  bool CWLWS_Wallet_isDeterministic(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_isDeterministic(
+    return _CWLWS_Wallet_isDeterministic(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_isDeterministicPtr =
+  late final _CWLWS_Wallet_isDeterministicPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_isDeterministic');
-  late final _MONERO_Wallet_isDeterministic = _MONERO_Wallet_isDeterministicPtr
+          'CWLWS_Wallet_isDeterministic');
+  late final _CWLWS_Wallet_isDeterministic = _CWLWS_Wallet_isDeterministicPtr
       .asFunction<bool Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_Wallet_blockChainHeight(
+  int CWLWS_Wallet_blockChainHeight(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_blockChainHeight(
+    return _CWLWS_Wallet_blockChainHeight(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_blockChainHeightPtr =
+  late final _CWLWS_Wallet_blockChainHeightPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_blockChainHeight');
-  late final _MONERO_Wallet_blockChainHeight =
-      _MONERO_Wallet_blockChainHeightPtr.asFunction<
+          'CWLWS_Wallet_blockChainHeight');
+  late final _CWLWS_Wallet_blockChainHeight =
+      _CWLWS_Wallet_blockChainHeightPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_Wallet_approximateBlockChainHeight(
+  int CWLWS_Wallet_approximateBlockChainHeight(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_approximateBlockChainHeight(
+    return _CWLWS_Wallet_approximateBlockChainHeight(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_approximateBlockChainHeightPtr =
+  late final _CWLWS_Wallet_approximateBlockChainHeightPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_approximateBlockChainHeight');
-  late final _MONERO_Wallet_approximateBlockChainHeight =
-      _MONERO_Wallet_approximateBlockChainHeightPtr.asFunction<
+          'CWLWS_Wallet_approximateBlockChainHeight');
+  late final _CWLWS_Wallet_approximateBlockChainHeight =
+      _CWLWS_Wallet_approximateBlockChainHeightPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_Wallet_estimateBlockChainHeight(
+  int CWLWS_Wallet_estimateBlockChainHeight(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_estimateBlockChainHeight(
+    return _CWLWS_Wallet_estimateBlockChainHeight(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_estimateBlockChainHeightPtr =
+  late final _CWLWS_Wallet_estimateBlockChainHeightPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_estimateBlockChainHeight');
-  late final _MONERO_Wallet_estimateBlockChainHeight =
-      _MONERO_Wallet_estimateBlockChainHeightPtr.asFunction<
+          'CWLWS_Wallet_estimateBlockChainHeight');
+  late final _CWLWS_Wallet_estimateBlockChainHeight =
+      _CWLWS_Wallet_estimateBlockChainHeightPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_Wallet_daemonBlockChainHeight(
+  int CWLWS_Wallet_daemonBlockChainHeight(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_daemonBlockChainHeight(
+    return _CWLWS_Wallet_daemonBlockChainHeight(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_daemonBlockChainHeightPtr =
+  late final _CWLWS_Wallet_daemonBlockChainHeightPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_daemonBlockChainHeight');
-  late final _MONERO_Wallet_daemonBlockChainHeight =
-      _MONERO_Wallet_daemonBlockChainHeightPtr.asFunction<
+          'CWLWS_Wallet_daemonBlockChainHeight');
+  late final _CWLWS_Wallet_daemonBlockChainHeight =
+      _CWLWS_Wallet_daemonBlockChainHeightPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_Wallet_daemonBlockChainTargetHeight(
+  int CWLWS_Wallet_daemonBlockChainTargetHeight(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_daemonBlockChainTargetHeight(
+    return _CWLWS_Wallet_daemonBlockChainTargetHeight(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_daemonBlockChainTargetHeightPtr =
+  late final _CWLWS_Wallet_daemonBlockChainTargetHeightPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_daemonBlockChainTargetHeight');
-  late final _MONERO_Wallet_daemonBlockChainTargetHeight =
-      _MONERO_Wallet_daemonBlockChainTargetHeightPtr.asFunction<
+          'CWLWS_Wallet_daemonBlockChainTargetHeight');
+  late final _CWLWS_Wallet_daemonBlockChainTargetHeight =
+      _CWLWS_Wallet_daemonBlockChainTargetHeightPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_Wallet_synchronized(
+  bool CWLWS_Wallet_synchronized(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_synchronized(
+    return _CWLWS_Wallet_synchronized(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_synchronizedPtr =
+  late final _CWLWS_Wallet_synchronizedPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_synchronized');
-  late final _MONERO_Wallet_synchronized = _MONERO_Wallet_synchronizedPtr
+          'CWLWS_Wallet_synchronized');
+  late final _CWLWS_Wallet_synchronized = _CWLWS_Wallet_synchronizedPtr
       .asFunction<bool Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_displayAmount(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_displayAmount(
     int amount,
   ) {
-    return _MONERO_Wallet_displayAmount(
+    return _CWLWS_Wallet_displayAmount(
       amount,
     );
   }
 
-  late final _MONERO_Wallet_displayAmountPtr =
+  late final _CWLWS_Wallet_displayAmountPtr =
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Uint64)>>(
-          'MONERO_Wallet_displayAmount');
-  late final _MONERO_Wallet_displayAmount = _MONERO_Wallet_displayAmountPtr
+          'CWLWS_Wallet_displayAmount');
+  late final _CWLWS_Wallet_displayAmount = _CWLWS_Wallet_displayAmountPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
-  int MONERO_Wallet_amountFromString(
+  int CWLWS_Wallet_amountFromString(
     ffi.Pointer<ffi.Char> amount,
   ) {
-    return _MONERO_Wallet_amountFromString(
+    return _CWLWS_Wallet_amountFromString(
       amount,
     );
   }
 
-  late final _MONERO_Wallet_amountFromStringPtr =
+  late final _CWLWS_Wallet_amountFromStringPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Char>)>>(
-          'MONERO_Wallet_amountFromString');
-  late final _MONERO_Wallet_amountFromString =
-      _MONERO_Wallet_amountFromStringPtr.asFunction<
+          'CWLWS_Wallet_amountFromString');
+  late final _CWLWS_Wallet_amountFromString =
+      _CWLWS_Wallet_amountFromStringPtr.asFunction<
           int Function(ffi.Pointer<ffi.Char>)>();
 
-  int MONERO_Wallet_amountFromDouble(
+  int CWLWS_Wallet_amountFromDouble(
     double amount,
   ) {
-    return _MONERO_Wallet_amountFromDouble(
+    return _CWLWS_Wallet_amountFromDouble(
       amount,
     );
   }
 
-  late final _MONERO_Wallet_amountFromDoublePtr =
+  late final _CWLWS_Wallet_amountFromDoublePtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Double)>>(
-          'MONERO_Wallet_amountFromDouble');
-  late final _MONERO_Wallet_amountFromDouble =
-      _MONERO_Wallet_amountFromDoublePtr.asFunction<int Function(double)>();
+          'CWLWS_Wallet_amountFromDouble');
+  late final _CWLWS_Wallet_amountFromDouble =
+      _CWLWS_Wallet_amountFromDoublePtr.asFunction<int Function(double)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_genPaymentId() {
-    return _MONERO_Wallet_genPaymentId();
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_genPaymentId() {
+    return _CWLWS_Wallet_genPaymentId();
   }
 
-  late final _MONERO_Wallet_genPaymentIdPtr =
+  late final _CWLWS_Wallet_genPaymentIdPtr =
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function()>>(
-          'MONERO_Wallet_genPaymentId');
-  late final _MONERO_Wallet_genPaymentId = _MONERO_Wallet_genPaymentIdPtr
+          'CWLWS_Wallet_genPaymentId');
+  late final _CWLWS_Wallet_genPaymentId = _CWLWS_Wallet_genPaymentIdPtr
       .asFunction<ffi.Pointer<ffi.Char> Function()>();
 
-  bool MONERO_Wallet_paymentIdValid(
+  bool CWLWS_Wallet_paymentIdValid(
     ffi.Pointer<ffi.Char> paiment_id,
   ) {
-    return _MONERO_Wallet_paymentIdValid(
+    return _CWLWS_Wallet_paymentIdValid(
       paiment_id,
     );
   }
 
-  late final _MONERO_Wallet_paymentIdValidPtr =
+  late final _CWLWS_Wallet_paymentIdValidPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Char>)>>(
-          'MONERO_Wallet_paymentIdValid');
-  late final _MONERO_Wallet_paymentIdValid = _MONERO_Wallet_paymentIdValidPtr
+          'CWLWS_Wallet_paymentIdValid');
+  late final _CWLWS_Wallet_paymentIdValid = _CWLWS_Wallet_paymentIdValidPtr
       .asFunction<bool Function(ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_Wallet_addressValid(
+  bool CWLWS_Wallet_addressValid(
     ffi.Pointer<ffi.Char> str,
     int nettype,
   ) {
-    return _MONERO_Wallet_addressValid(
+    return _CWLWS_Wallet_addressValid(
       str,
       nettype,
     );
   }
 
-  late final _MONERO_Wallet_addressValidPtr = _lookup<
+  late final _CWLWS_Wallet_addressValidPtr = _lookup<
           ffi
           .NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Char>, ffi.Int)>>(
-      'MONERO_Wallet_addressValid');
-  late final _MONERO_Wallet_addressValid = _MONERO_Wallet_addressValidPtr
+      'CWLWS_Wallet_addressValid');
+  late final _CWLWS_Wallet_addressValid = _CWLWS_Wallet_addressValidPtr
       .asFunction<bool Function(ffi.Pointer<ffi.Char>, int)>();
 
-  bool MONERO_Wallet_keyValid(
+  bool CWLWS_Wallet_keyValid(
     ffi.Pointer<ffi.Char> secret_key_string,
     ffi.Pointer<ffi.Char> address_string,
     bool isViewKey,
     int nettype,
   ) {
-    return _MONERO_Wallet_keyValid(
+    return _CWLWS_Wallet_keyValid(
       secret_key_string,
       address_string,
       isViewKey,
@@ -2890,20 +2890,20 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_Wallet_keyValidPtr = _lookup<
+  late final _CWLWS_Wallet_keyValidPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Bool, ffi.Int)>>('MONERO_Wallet_keyValid');
-  late final _MONERO_Wallet_keyValid = _MONERO_Wallet_keyValidPtr.asFunction<
+              ffi.Bool, ffi.Int)>>('CWLWS_Wallet_keyValid');
+  late final _CWLWS_Wallet_keyValid = _CWLWS_Wallet_keyValidPtr.asFunction<
       bool Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, bool, int)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_keyValid_error(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_keyValid_error(
     ffi.Pointer<ffi.Char> secret_key_string,
     ffi.Pointer<ffi.Char> address_string,
     bool isViewKey,
     int nettype,
   ) {
-    return _MONERO_Wallet_keyValid_error(
+    return _CWLWS_Wallet_keyValid_error(
       secret_key_string,
       address_string,
       isViewKey,
@@ -2911,54 +2911,54 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_Wallet_keyValid_errorPtr = _lookup<
+  late final _CWLWS_Wallet_keyValid_errorPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
               ffi.Bool,
-              ffi.Int)>>('MONERO_Wallet_keyValid_error');
-  late final _MONERO_Wallet_keyValid_error =
-      _MONERO_Wallet_keyValid_errorPtr.asFunction<
+              ffi.Int)>>('CWLWS_Wallet_keyValid_error');
+  late final _CWLWS_Wallet_keyValid_error =
+      _CWLWS_Wallet_keyValid_errorPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, bool, int)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_paymentIdFromAddress(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_paymentIdFromAddress(
     ffi.Pointer<ffi.Char> strarg,
     int nettype,
   ) {
-    return _MONERO_Wallet_paymentIdFromAddress(
+    return _CWLWS_Wallet_paymentIdFromAddress(
       strarg,
       nettype,
     );
   }
 
-  late final _MONERO_Wallet_paymentIdFromAddressPtr = _lookup<
+  late final _CWLWS_Wallet_paymentIdFromAddressPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
-              ffi.Int)>>('MONERO_Wallet_paymentIdFromAddress');
-  late final _MONERO_Wallet_paymentIdFromAddress =
-      _MONERO_Wallet_paymentIdFromAddressPtr.asFunction<
+              ffi.Int)>>('CWLWS_Wallet_paymentIdFromAddress');
+  late final _CWLWS_Wallet_paymentIdFromAddress =
+      _CWLWS_Wallet_paymentIdFromAddressPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
-  int MONERO_Wallet_maximumAllowedAmount() {
-    return _MONERO_Wallet_maximumAllowedAmount();
+  int CWLWS_Wallet_maximumAllowedAmount() {
+    return _CWLWS_Wallet_maximumAllowedAmount();
   }
 
-  late final _MONERO_Wallet_maximumAllowedAmountPtr =
+  late final _CWLWS_Wallet_maximumAllowedAmountPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function()>>(
-          'MONERO_Wallet_maximumAllowedAmount');
-  late final _MONERO_Wallet_maximumAllowedAmount =
-      _MONERO_Wallet_maximumAllowedAmountPtr.asFunction<int Function()>();
+          'CWLWS_Wallet_maximumAllowedAmount');
+  late final _CWLWS_Wallet_maximumAllowedAmount =
+      _CWLWS_Wallet_maximumAllowedAmountPtr.asFunction<int Function()>();
 
-  void MONERO_Wallet_init3(
+  void CWLWS_Wallet_init3(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> argv0,
     ffi.Pointer<ffi.Char> default_log_base_name,
     ffi.Pointer<ffi.Char> log_path,
     bool console,
   ) {
-    return _MONERO_Wallet_init3(
+    return _CWLWS_Wallet_init3(
       wallet_ptr,
       argv0,
       default_log_base_name,
@@ -2967,268 +2967,268 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_Wallet_init3Ptr = _lookup<
+  late final _CWLWS_Wallet_init3Ptr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Bool)>>('MONERO_Wallet_init3');
-  late final _MONERO_Wallet_init3 = _MONERO_Wallet_init3Ptr.asFunction<
+              ffi.Bool)>>('CWLWS_Wallet_init3');
+  late final _CWLWS_Wallet_init3 = _CWLWS_Wallet_init3Ptr.asFunction<
       void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, bool)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_getPolyseed(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_getPolyseed(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> passphrase,
   ) {
-    return _MONERO_Wallet_getPolyseed(
+    return _CWLWS_Wallet_getPolyseed(
       wallet_ptr,
       passphrase,
     );
   }
 
-  late final _MONERO_Wallet_getPolyseedPtr = _lookup<
+  late final _CWLWS_Wallet_getPolyseedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_getPolyseed');
-  late final _MONERO_Wallet_getPolyseed =
-      _MONERO_Wallet_getPolyseedPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_getPolyseed');
+  late final _CWLWS_Wallet_getPolyseed =
+      _CWLWS_Wallet_getPolyseedPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_createPolyseed(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_createPolyseed(
     ffi.Pointer<ffi.Char> language,
   ) {
-    return _MONERO_Wallet_createPolyseed(
+    return _CWLWS_Wallet_createPolyseed(
       language,
     );
   }
 
-  late final _MONERO_Wallet_createPolyseedPtr = _lookup<
+  late final _CWLWS_Wallet_createPolyseedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_createPolyseed');
-  late final _MONERO_Wallet_createPolyseed = _MONERO_Wallet_createPolyseedPtr
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_createPolyseed');
+  late final _CWLWS_Wallet_createPolyseed = _CWLWS_Wallet_createPolyseedPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
-  void MONERO_Wallet_startRefresh(
+  void CWLWS_Wallet_startRefresh(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_startRefresh(
+    return _CWLWS_Wallet_startRefresh(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_startRefreshPtr =
+  late final _CWLWS_Wallet_startRefreshPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_startRefresh');
-  late final _MONERO_Wallet_startRefresh = _MONERO_Wallet_startRefreshPtr
+          'CWLWS_Wallet_startRefresh');
+  late final _CWLWS_Wallet_startRefresh = _CWLWS_Wallet_startRefreshPtr
       .asFunction<void Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_Wallet_pauseRefresh(
+  void CWLWS_Wallet_pauseRefresh(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_pauseRefresh(
+    return _CWLWS_Wallet_pauseRefresh(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_pauseRefreshPtr =
+  late final _CWLWS_Wallet_pauseRefreshPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_pauseRefresh');
-  late final _MONERO_Wallet_pauseRefresh = _MONERO_Wallet_pauseRefreshPtr
+          'CWLWS_Wallet_pauseRefresh');
+  late final _CWLWS_Wallet_pauseRefresh = _CWLWS_Wallet_pauseRefreshPtr
       .asFunction<void Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_Wallet_refresh(
+  bool CWLWS_Wallet_refresh(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_refresh(
+    return _CWLWS_Wallet_refresh(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_refreshPtr =
+  late final _CWLWS_Wallet_refreshPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_refresh');
-  late final _MONERO_Wallet_refresh = _MONERO_Wallet_refreshPtr.asFunction<
+          'CWLWS_Wallet_refresh');
+  late final _CWLWS_Wallet_refresh = _CWLWS_Wallet_refreshPtr.asFunction<
       bool Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_Wallet_refreshAsync(
+  void CWLWS_Wallet_refreshAsync(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_refreshAsync(
+    return _CWLWS_Wallet_refreshAsync(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_refreshAsyncPtr =
+  late final _CWLWS_Wallet_refreshAsyncPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_refreshAsync');
-  late final _MONERO_Wallet_refreshAsync = _MONERO_Wallet_refreshAsyncPtr
+          'CWLWS_Wallet_refreshAsync');
+  late final _CWLWS_Wallet_refreshAsync = _CWLWS_Wallet_refreshAsyncPtr
       .asFunction<void Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_Wallet_rescanBlockchain(
+  bool CWLWS_Wallet_rescanBlockchain(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_rescanBlockchain(
+    return _CWLWS_Wallet_rescanBlockchain(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_rescanBlockchainPtr =
+  late final _CWLWS_Wallet_rescanBlockchainPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_rescanBlockchain');
-  late final _MONERO_Wallet_rescanBlockchain =
-      _MONERO_Wallet_rescanBlockchainPtr.asFunction<
+          'CWLWS_Wallet_rescanBlockchain');
+  late final _CWLWS_Wallet_rescanBlockchain =
+      _CWLWS_Wallet_rescanBlockchainPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_Wallet_rescanBlockchainAsync(
+  void CWLWS_Wallet_rescanBlockchainAsync(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_rescanBlockchainAsync(
+    return _CWLWS_Wallet_rescanBlockchainAsync(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_rescanBlockchainAsyncPtr =
+  late final _CWLWS_Wallet_rescanBlockchainAsyncPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_rescanBlockchainAsync');
-  late final _MONERO_Wallet_rescanBlockchainAsync =
-      _MONERO_Wallet_rescanBlockchainAsyncPtr.asFunction<
+          'CWLWS_Wallet_rescanBlockchainAsync');
+  late final _CWLWS_Wallet_rescanBlockchainAsync =
+      _CWLWS_Wallet_rescanBlockchainAsyncPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_Wallet_setAutoRefreshInterval(
+  void CWLWS_Wallet_setAutoRefreshInterval(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int millis,
   ) {
-    return _MONERO_Wallet_setAutoRefreshInterval(
+    return _CWLWS_Wallet_setAutoRefreshInterval(
       wallet_ptr,
       millis,
     );
   }
 
-  late final _MONERO_Wallet_setAutoRefreshIntervalPtr = _lookup<
+  late final _CWLWS_Wallet_setAutoRefreshIntervalPtr = _lookup<
           ffi
           .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int)>>(
-      'MONERO_Wallet_setAutoRefreshInterval');
-  late final _MONERO_Wallet_setAutoRefreshInterval =
-      _MONERO_Wallet_setAutoRefreshIntervalPtr.asFunction<
+      'CWLWS_Wallet_setAutoRefreshInterval');
+  late final _CWLWS_Wallet_setAutoRefreshInterval =
+      _CWLWS_Wallet_setAutoRefreshIntervalPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, int)>();
 
-  int MONERO_Wallet_autoRefreshInterval(
+  int CWLWS_Wallet_autoRefreshInterval(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_autoRefreshInterval(
+    return _CWLWS_Wallet_autoRefreshInterval(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_autoRefreshIntervalPtr =
+  late final _CWLWS_Wallet_autoRefreshIntervalPtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_autoRefreshInterval');
-  late final _MONERO_Wallet_autoRefreshInterval =
-      _MONERO_Wallet_autoRefreshIntervalPtr.asFunction<
+          'CWLWS_Wallet_autoRefreshInterval');
+  late final _CWLWS_Wallet_autoRefreshInterval =
+      _CWLWS_Wallet_autoRefreshIntervalPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_Wallet_addSubaddressAccount(
+  void CWLWS_Wallet_addSubaddressAccount(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> label,
   ) {
-    return _MONERO_Wallet_addSubaddressAccount(
+    return _CWLWS_Wallet_addSubaddressAccount(
       wallet_ptr,
       label,
     );
   }
 
-  late final _MONERO_Wallet_addSubaddressAccountPtr = _lookup<
+  late final _CWLWS_Wallet_addSubaddressAccountPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_addSubaddressAccount');
-  late final _MONERO_Wallet_addSubaddressAccount =
-      _MONERO_Wallet_addSubaddressAccountPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_addSubaddressAccount');
+  late final _CWLWS_Wallet_addSubaddressAccount =
+      _CWLWS_Wallet_addSubaddressAccountPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  int MONERO_Wallet_numSubaddressAccounts(
+  int CWLWS_Wallet_numSubaddressAccounts(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_numSubaddressAccounts(
+    return _CWLWS_Wallet_numSubaddressAccounts(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_numSubaddressAccountsPtr =
+  late final _CWLWS_Wallet_numSubaddressAccountsPtr =
       _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_numSubaddressAccounts');
-  late final _MONERO_Wallet_numSubaddressAccounts =
-      _MONERO_Wallet_numSubaddressAccountsPtr.asFunction<
+          'CWLWS_Wallet_numSubaddressAccounts');
+  late final _CWLWS_Wallet_numSubaddressAccounts =
+      _CWLWS_Wallet_numSubaddressAccountsPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_Wallet_numSubaddresses(
+  int CWLWS_Wallet_numSubaddresses(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int accountIndex,
   ) {
-    return _MONERO_Wallet_numSubaddresses(
+    return _CWLWS_Wallet_numSubaddresses(
       wallet_ptr,
       accountIndex,
     );
   }
 
-  late final _MONERO_Wallet_numSubaddressesPtr = _lookup<
+  late final _CWLWS_Wallet_numSubaddressesPtr = _lookup<
       ffi.NativeFunction<
           ffi.Size Function(ffi.Pointer<ffi.Void>,
-              ffi.Uint32)>>('MONERO_Wallet_numSubaddresses');
-  late final _MONERO_Wallet_numSubaddresses = _MONERO_Wallet_numSubaddressesPtr
+              ffi.Uint32)>>('CWLWS_Wallet_numSubaddresses');
+  late final _CWLWS_Wallet_numSubaddresses = _CWLWS_Wallet_numSubaddressesPtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
 
-  void MONERO_Wallet_addSubaddress(
+  void CWLWS_Wallet_addSubaddress(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int accountIndex,
     ffi.Pointer<ffi.Char> label,
   ) {
-    return _MONERO_Wallet_addSubaddress(
+    return _CWLWS_Wallet_addSubaddress(
       wallet_ptr,
       accountIndex,
       label,
     );
   }
 
-  late final _MONERO_Wallet_addSubaddressPtr = _lookup<
+  late final _CWLWS_Wallet_addSubaddressPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Uint32,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_addSubaddress');
-  late final _MONERO_Wallet_addSubaddress =
-      _MONERO_Wallet_addSubaddressPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_addSubaddress');
+  late final _CWLWS_Wallet_addSubaddress =
+      _CWLWS_Wallet_addSubaddressPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_getSubaddressLabel(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_getSubaddressLabel(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int accountIndex,
     int addressIndex,
   ) {
-    return _MONERO_Wallet_getSubaddressLabel(
+    return _CWLWS_Wallet_getSubaddressLabel(
       wallet_ptr,
       accountIndex,
       addressIndex,
     );
   }
 
-  late final _MONERO_Wallet_getSubaddressLabelPtr = _lookup<
+  late final _CWLWS_Wallet_getSubaddressLabelPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>, ffi.Uint32,
-              ffi.Uint32)>>('MONERO_Wallet_getSubaddressLabel');
-  late final _MONERO_Wallet_getSubaddressLabel =
-      _MONERO_Wallet_getSubaddressLabelPtr.asFunction<
+              ffi.Uint32)>>('CWLWS_Wallet_getSubaddressLabel');
+  late final _CWLWS_Wallet_getSubaddressLabel =
+      _CWLWS_Wallet_getSubaddressLabelPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>, int, int)>();
 
-  void MONERO_Wallet_setSubaddressLabel(
+  void CWLWS_Wallet_setSubaddressLabel(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int accountIndex,
     int addressIndex,
     ffi.Pointer<ffi.Char> label,
   ) {
-    return _MONERO_Wallet_setSubaddressLabel(
+    return _CWLWS_Wallet_setSubaddressLabel(
       wallet_ptr,
       accountIndex,
       addressIndex,
@@ -3236,52 +3236,52 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_Wallet_setSubaddressLabelPtr = _lookup<
+  late final _CWLWS_Wallet_setSubaddressLabelPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Uint32, ffi.Uint32,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_setSubaddressLabel');
-  late final _MONERO_Wallet_setSubaddressLabel =
-      _MONERO_Wallet_setSubaddressLabelPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_setSubaddressLabel');
+  late final _CWLWS_Wallet_setSubaddressLabel =
+      _CWLWS_Wallet_setSubaddressLabelPtr.asFunction<
           void Function(
               ffi.Pointer<ffi.Void>, int, int, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_Wallet_multisig(
+  ffi.Pointer<ffi.Void> CWLWS_Wallet_multisig(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_multisig(
+    return _CWLWS_Wallet_multisig(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_multisigPtr = _lookup<
+  late final _CWLWS_Wallet_multisigPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_multisig');
-  late final _MONERO_Wallet_multisig = _MONERO_Wallet_multisigPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_multisig');
+  late final _CWLWS_Wallet_multisig = _CWLWS_Wallet_multisigPtr.asFunction<
       ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_getMultisigInfo(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_getMultisigInfo(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_getMultisigInfo(
+    return _CWLWS_Wallet_getMultisigInfo(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_getMultisigInfoPtr = _lookup<
+  late final _CWLWS_Wallet_getMultisigInfoPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_getMultisigInfo');
-  late final _MONERO_Wallet_getMultisigInfo = _MONERO_Wallet_getMultisigInfoPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_getMultisigInfo');
+  late final _CWLWS_Wallet_getMultisigInfo = _CWLWS_Wallet_getMultisigInfoPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_makeMultisig(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_makeMultisig(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> info,
     ffi.Pointer<ffi.Char> info_separator,
     int threshold,
   ) {
-    return _MONERO_Wallet_makeMultisig(
+    return _CWLWS_Wallet_makeMultisig(
       wallet_ptr,
       info,
       info_separator,
@@ -3289,25 +3289,25 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_Wallet_makeMultisigPtr = _lookup<
+  late final _CWLWS_Wallet_makeMultisigPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Uint32)>>('MONERO_Wallet_makeMultisig');
-  late final _MONERO_Wallet_makeMultisig =
-      _MONERO_Wallet_makeMultisigPtr.asFunction<
+              ffi.Uint32)>>('CWLWS_Wallet_makeMultisig');
+  late final _CWLWS_Wallet_makeMultisig =
+      _CWLWS_Wallet_makeMultisigPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_exchangeMultisigKeys(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_exchangeMultisigKeys(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> info,
     ffi.Pointer<ffi.Char> info_separator,
     bool force_update_use_with_caution,
   ) {
-    return _MONERO_Wallet_exchangeMultisigKeys(
+    return _CWLWS_Wallet_exchangeMultisigKeys(
       wallet_ptr,
       info,
       info_separator,
@@ -3315,94 +3315,94 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_Wallet_exchangeMultisigKeysPtr = _lookup<
+  late final _CWLWS_Wallet_exchangeMultisigKeysPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Bool)>>('MONERO_Wallet_exchangeMultisigKeys');
-  late final _MONERO_Wallet_exchangeMultisigKeys =
-      _MONERO_Wallet_exchangeMultisigKeysPtr.asFunction<
+              ffi.Bool)>>('CWLWS_Wallet_exchangeMultisigKeys');
+  late final _CWLWS_Wallet_exchangeMultisigKeys =
+      _CWLWS_Wallet_exchangeMultisigKeysPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, bool)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_exportMultisigImages(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_exportMultisigImages(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> separator,
   ) {
-    return _MONERO_Wallet_exportMultisigImages(
+    return _CWLWS_Wallet_exportMultisigImages(
       wallet_ptr,
       separator,
     );
   }
 
-  late final _MONERO_Wallet_exportMultisigImagesPtr = _lookup<
+  late final _CWLWS_Wallet_exportMultisigImagesPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_exportMultisigImages');
-  late final _MONERO_Wallet_exportMultisigImages =
-      _MONERO_Wallet_exportMultisigImagesPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_exportMultisigImages');
+  late final _CWLWS_Wallet_exportMultisigImages =
+      _CWLWS_Wallet_exportMultisigImagesPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  int MONERO_Wallet_importMultisigImages(
+  int CWLWS_Wallet_importMultisigImages(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> info,
     ffi.Pointer<ffi.Char> info_separator,
   ) {
-    return _MONERO_Wallet_importMultisigImages(
+    return _CWLWS_Wallet_importMultisigImages(
       wallet_ptr,
       info,
       info_separator,
     );
   }
 
-  late final _MONERO_Wallet_importMultisigImagesPtr = _lookup<
+  late final _CWLWS_Wallet_importMultisigImagesPtr = _lookup<
       ffi.NativeFunction<
           ffi.Size Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_importMultisigImages');
-  late final _MONERO_Wallet_importMultisigImages =
-      _MONERO_Wallet_importMultisigImagesPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_importMultisigImages');
+  late final _CWLWS_Wallet_importMultisigImages =
+      _CWLWS_Wallet_importMultisigImagesPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>)>();
 
-  int MONERO_Wallet_hasMultisigPartialKeyImages(
+  int CWLWS_Wallet_hasMultisigPartialKeyImages(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_hasMultisigPartialKeyImages(
+    return _CWLWS_Wallet_hasMultisigPartialKeyImages(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_hasMultisigPartialKeyImagesPtr =
+  late final _CWLWS_Wallet_hasMultisigPartialKeyImagesPtr =
       _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_hasMultisigPartialKeyImages');
-  late final _MONERO_Wallet_hasMultisigPartialKeyImages =
-      _MONERO_Wallet_hasMultisigPartialKeyImagesPtr.asFunction<
+          'CWLWS_Wallet_hasMultisigPartialKeyImages');
+  late final _CWLWS_Wallet_hasMultisigPartialKeyImages =
+      _CWLWS_Wallet_hasMultisigPartialKeyImagesPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_Wallet_restoreMultisigTransaction(
+  ffi.Pointer<ffi.Void> CWLWS_Wallet_restoreMultisigTransaction(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> signData,
   ) {
-    return _MONERO_Wallet_restoreMultisigTransaction(
+    return _CWLWS_Wallet_restoreMultisigTransaction(
       wallet_ptr,
       signData,
     );
   }
 
-  late final _MONERO_Wallet_restoreMultisigTransactionPtr = _lookup<
+  late final _CWLWS_Wallet_restoreMultisigTransactionPtr = _lookup<
           ffi.NativeFunction<
               ffi.Pointer<ffi.Void> Function(
                   ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>>(
-      'MONERO_Wallet_restoreMultisigTransaction');
-  late final _MONERO_Wallet_restoreMultisigTransaction =
-      _MONERO_Wallet_restoreMultisigTransactionPtr.asFunction<
+      'CWLWS_Wallet_restoreMultisigTransaction');
+  late final _CWLWS_Wallet_restoreMultisigTransaction =
+      _CWLWS_Wallet_restoreMultisigTransactionPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_Wallet_createTransactionMultDest(
+  ffi.Pointer<ffi.Void> CWLWS_Wallet_createTransactionMultDest(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> dst_addr_list,
     ffi.Pointer<ffi.Char> dst_addr_list_separator,
@@ -3416,7 +3416,7 @@ class MoneroC {
     ffi.Pointer<ffi.Char> preferredInputs,
     ffi.Pointer<ffi.Char> preferredInputs_separator,
   ) {
-    return _MONERO_Wallet_createTransactionMultDest(
+    return _CWLWS_Wallet_createTransactionMultDest(
       wallet_ptr,
       dst_addr_list,
       dst_addr_list_separator,
@@ -3432,7 +3432,7 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_Wallet_createTransactionMultDestPtr = _lookup<
+  late final _CWLWS_Wallet_createTransactionMultDestPtr = _lookup<
           ffi.NativeFunction<
               ffi.Pointer<ffi.Void> Function(
                   ffi.Pointer<ffi.Void>,
@@ -3447,9 +3447,9 @@ class MoneroC {
                   ffi.Uint32,
                   ffi.Pointer<ffi.Char>,
                   ffi.Pointer<ffi.Char>)>>(
-      'MONERO_Wallet_createTransactionMultDest');
-  late final _MONERO_Wallet_createTransactionMultDest =
-      _MONERO_Wallet_createTransactionMultDestPtr.asFunction<
+      'CWLWS_Wallet_createTransactionMultDest');
+  late final _CWLWS_Wallet_createTransactionMultDest =
+      _CWLWS_Wallet_createTransactionMultDestPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
@@ -3464,7 +3464,7 @@ class MoneroC {
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_Wallet_createTransaction(
+  ffi.Pointer<ffi.Void> CWLWS_Wallet_createTransaction(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> dst_addr,
     ffi.Pointer<ffi.Char> payment_id,
@@ -3475,7 +3475,7 @@ class MoneroC {
     ffi.Pointer<ffi.Char> preferredInputs,
     ffi.Pointer<ffi.Char> separator,
   ) {
-    return _MONERO_Wallet_createTransaction(
+    return _CWLWS_Wallet_createTransaction(
       wallet_ptr,
       dst_addr,
       payment_id,
@@ -3488,7 +3488,7 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_Wallet_createTransactionPtr = _lookup<
+  late final _CWLWS_Wallet_createTransactionPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
@@ -3499,9 +3499,9 @@ class MoneroC {
               ffi.Int,
               ffi.Uint32,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_createTransaction');
-  late final _MONERO_Wallet_createTransaction =
-      _MONERO_Wallet_createTransactionPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_createTransaction');
+  late final _CWLWS_Wallet_createTransaction =
+      _CWLWS_Wallet_createTransactionPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
@@ -3513,254 +3513,254 @@ class MoneroC {
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_Wallet_loadUnsignedTx(
+  ffi.Pointer<ffi.Void> CWLWS_Wallet_loadUnsignedTx(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> unsigned_filename,
   ) {
-    return _MONERO_Wallet_loadUnsignedTx(
+    return _CWLWS_Wallet_loadUnsignedTx(
       wallet_ptr,
       unsigned_filename,
     );
   }
 
-  late final _MONERO_Wallet_loadUnsignedTxPtr = _lookup<
+  late final _CWLWS_Wallet_loadUnsignedTxPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_loadUnsignedTx');
-  late final _MONERO_Wallet_loadUnsignedTx =
-      _MONERO_Wallet_loadUnsignedTxPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_loadUnsignedTx');
+  late final _CWLWS_Wallet_loadUnsignedTx =
+      _CWLWS_Wallet_loadUnsignedTxPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_Wallet_loadUnsignedTxUR(
+  ffi.Pointer<ffi.Void> CWLWS_Wallet_loadUnsignedTxUR(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> input,
   ) {
-    return _MONERO_Wallet_loadUnsignedTxUR(
+    return _CWLWS_Wallet_loadUnsignedTxUR(
       wallet_ptr,
       input,
     );
   }
 
-  late final _MONERO_Wallet_loadUnsignedTxURPtr = _lookup<
+  late final _CWLWS_Wallet_loadUnsignedTxURPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_loadUnsignedTxUR');
-  late final _MONERO_Wallet_loadUnsignedTxUR =
-      _MONERO_Wallet_loadUnsignedTxURPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_loadUnsignedTxUR');
+  late final _CWLWS_Wallet_loadUnsignedTxUR =
+      _CWLWS_Wallet_loadUnsignedTxURPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_Wallet_submitTransaction(
+  bool CWLWS_Wallet_submitTransaction(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> fileName,
   ) {
-    return _MONERO_Wallet_submitTransaction(
+    return _CWLWS_Wallet_submitTransaction(
       wallet_ptr,
       fileName,
     );
   }
 
-  late final _MONERO_Wallet_submitTransactionPtr = _lookup<
+  late final _CWLWS_Wallet_submitTransactionPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_submitTransaction');
-  late final _MONERO_Wallet_submitTransaction =
-      _MONERO_Wallet_submitTransactionPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_submitTransaction');
+  late final _CWLWS_Wallet_submitTransaction =
+      _CWLWS_Wallet_submitTransactionPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_Wallet_submitTransactionUR(
+  bool CWLWS_Wallet_submitTransactionUR(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> input,
   ) {
-    return _MONERO_Wallet_submitTransactionUR(
+    return _CWLWS_Wallet_submitTransactionUR(
       wallet_ptr,
       input,
     );
   }
 
-  late final _MONERO_Wallet_submitTransactionURPtr = _lookup<
+  late final _CWLWS_Wallet_submitTransactionURPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_submitTransactionUR');
-  late final _MONERO_Wallet_submitTransactionUR =
-      _MONERO_Wallet_submitTransactionURPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_submitTransactionUR');
+  late final _CWLWS_Wallet_submitTransactionUR =
+      _CWLWS_Wallet_submitTransactionURPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_Wallet_hasUnknownKeyImages(
+  bool CWLWS_Wallet_hasUnknownKeyImages(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_hasUnknownKeyImages(
+    return _CWLWS_Wallet_hasUnknownKeyImages(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_hasUnknownKeyImagesPtr =
+  late final _CWLWS_Wallet_hasUnknownKeyImagesPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_hasUnknownKeyImages');
-  late final _MONERO_Wallet_hasUnknownKeyImages =
-      _MONERO_Wallet_hasUnknownKeyImagesPtr.asFunction<
+          'CWLWS_Wallet_hasUnknownKeyImages');
+  late final _CWLWS_Wallet_hasUnknownKeyImages =
+      _CWLWS_Wallet_hasUnknownKeyImagesPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_Wallet_exportKeyImages(
+  bool CWLWS_Wallet_exportKeyImages(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> filename,
     bool all,
   ) {
-    return _MONERO_Wallet_exportKeyImages(
+    return _CWLWS_Wallet_exportKeyImages(
       wallet_ptr,
       filename,
       all,
     );
   }
 
-  late final _MONERO_Wallet_exportKeyImagesPtr = _lookup<
+  late final _CWLWS_Wallet_exportKeyImagesPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
-              ffi.Bool)>>('MONERO_Wallet_exportKeyImages');
-  late final _MONERO_Wallet_exportKeyImages =
-      _MONERO_Wallet_exportKeyImagesPtr.asFunction<
+              ffi.Bool)>>('CWLWS_Wallet_exportKeyImages');
+  late final _CWLWS_Wallet_exportKeyImages =
+      _CWLWS_Wallet_exportKeyImagesPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>, bool)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_exportKeyImagesUR(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_exportKeyImagesUR(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int max_fragment_length,
     bool all,
   ) {
-    return _MONERO_Wallet_exportKeyImagesUR(
+    return _CWLWS_Wallet_exportKeyImagesUR(
       wallet_ptr,
       max_fragment_length,
       all,
     );
   }
 
-  late final _MONERO_Wallet_exportKeyImagesURPtr = _lookup<
+  late final _CWLWS_Wallet_exportKeyImagesURPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>, ffi.Size,
-              ffi.Bool)>>('MONERO_Wallet_exportKeyImagesUR');
-  late final _MONERO_Wallet_exportKeyImagesUR =
-      _MONERO_Wallet_exportKeyImagesURPtr.asFunction<
+              ffi.Bool)>>('CWLWS_Wallet_exportKeyImagesUR');
+  late final _CWLWS_Wallet_exportKeyImagesUR =
+      _CWLWS_Wallet_exportKeyImagesURPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>, int, bool)>();
 
-  bool MONERO_Wallet_importKeyImages(
+  bool CWLWS_Wallet_importKeyImages(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> filename,
   ) {
-    return _MONERO_Wallet_importKeyImages(
+    return _CWLWS_Wallet_importKeyImages(
       wallet_ptr,
       filename,
     );
   }
 
-  late final _MONERO_Wallet_importKeyImagesPtr = _lookup<
+  late final _CWLWS_Wallet_importKeyImagesPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_importKeyImages');
-  late final _MONERO_Wallet_importKeyImages =
-      _MONERO_Wallet_importKeyImagesPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_importKeyImages');
+  late final _CWLWS_Wallet_importKeyImages =
+      _CWLWS_Wallet_importKeyImagesPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_Wallet_importKeyImagesUR(
+  bool CWLWS_Wallet_importKeyImagesUR(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> input,
   ) {
-    return _MONERO_Wallet_importKeyImagesUR(
+    return _CWLWS_Wallet_importKeyImagesUR(
       wallet_ptr,
       input,
     );
   }
 
-  late final _MONERO_Wallet_importKeyImagesURPtr = _lookup<
+  late final _CWLWS_Wallet_importKeyImagesURPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_importKeyImagesUR');
-  late final _MONERO_Wallet_importKeyImagesUR =
-      _MONERO_Wallet_importKeyImagesURPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_importKeyImagesUR');
+  late final _CWLWS_Wallet_importKeyImagesUR =
+      _CWLWS_Wallet_importKeyImagesURPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_Wallet_exportOutputs(
+  bool CWLWS_Wallet_exportOutputs(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> filename,
     bool all,
   ) {
-    return _MONERO_Wallet_exportOutputs(
+    return _CWLWS_Wallet_exportOutputs(
       wallet_ptr,
       filename,
       all,
     );
   }
 
-  late final _MONERO_Wallet_exportOutputsPtr = _lookup<
+  late final _CWLWS_Wallet_exportOutputsPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
-              ffi.Bool)>>('MONERO_Wallet_exportOutputs');
-  late final _MONERO_Wallet_exportOutputs =
-      _MONERO_Wallet_exportOutputsPtr.asFunction<
+              ffi.Bool)>>('CWLWS_Wallet_exportOutputs');
+  late final _CWLWS_Wallet_exportOutputs =
+      _CWLWS_Wallet_exportOutputsPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>, bool)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_exportOutputsUR(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_exportOutputsUR(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int max_fragment_length,
     bool all,
   ) {
-    return _MONERO_Wallet_exportOutputsUR(
+    return _CWLWS_Wallet_exportOutputsUR(
       wallet_ptr,
       max_fragment_length,
       all,
     );
   }
 
-  late final _MONERO_Wallet_exportOutputsURPtr = _lookup<
+  late final _CWLWS_Wallet_exportOutputsURPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>, ffi.Size,
-              ffi.Bool)>>('MONERO_Wallet_exportOutputsUR');
-  late final _MONERO_Wallet_exportOutputsUR =
-      _MONERO_Wallet_exportOutputsURPtr.asFunction<
+              ffi.Bool)>>('CWLWS_Wallet_exportOutputsUR');
+  late final _CWLWS_Wallet_exportOutputsUR =
+      _CWLWS_Wallet_exportOutputsURPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>, int, bool)>();
 
-  bool MONERO_Wallet_importOutputs(
+  bool CWLWS_Wallet_importOutputs(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> filename,
   ) {
-    return _MONERO_Wallet_importOutputs(
+    return _CWLWS_Wallet_importOutputs(
       wallet_ptr,
       filename,
     );
   }
 
-  late final _MONERO_Wallet_importOutputsPtr = _lookup<
+  late final _CWLWS_Wallet_importOutputsPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_importOutputs');
-  late final _MONERO_Wallet_importOutputs =
-      _MONERO_Wallet_importOutputsPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_importOutputs');
+  late final _CWLWS_Wallet_importOutputs =
+      _CWLWS_Wallet_importOutputsPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_Wallet_importOutputsUR(
+  bool CWLWS_Wallet_importOutputsUR(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> input,
   ) {
-    return _MONERO_Wallet_importOutputsUR(
+    return _CWLWS_Wallet_importOutputsUR(
       wallet_ptr,
       input,
     );
   }
 
-  late final _MONERO_Wallet_importOutputsURPtr = _lookup<
+  late final _CWLWS_Wallet_importOutputsURPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_importOutputsUR');
-  late final _MONERO_Wallet_importOutputsUR =
-      _MONERO_Wallet_importOutputsURPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_importOutputsUR');
+  late final _CWLWS_Wallet_importOutputsUR =
+      _CWLWS_Wallet_importOutputsURPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_Wallet_setupBackgroundSync(
+  bool CWLWS_Wallet_setupBackgroundSync(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int background_sync_type,
     ffi.Pointer<ffi.Char> wallet_password,
     ffi.Pointer<ffi.Char> background_cache_password,
   ) {
-    return _MONERO_Wallet_setupBackgroundSync(
+    return _CWLWS_Wallet_setupBackgroundSync(
       wallet_ptr,
       background_sync_type,
       wallet_password,
@@ -3768,331 +3768,331 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_Wallet_setupBackgroundSyncPtr = _lookup<
+  late final _CWLWS_Wallet_setupBackgroundSyncPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(
               ffi.Pointer<ffi.Void>,
               ffi.Int,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_setupBackgroundSync');
-  late final _MONERO_Wallet_setupBackgroundSync =
-      _MONERO_Wallet_setupBackgroundSyncPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_setupBackgroundSync');
+  late final _CWLWS_Wallet_setupBackgroundSync =
+      _CWLWS_Wallet_setupBackgroundSyncPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>)>();
 
-  int MONERO_Wallet_getBackgroundSyncType(
+  int CWLWS_Wallet_getBackgroundSyncType(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_getBackgroundSyncType(
+    return _CWLWS_Wallet_getBackgroundSyncType(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_getBackgroundSyncTypePtr =
+  late final _CWLWS_Wallet_getBackgroundSyncTypePtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_getBackgroundSyncType');
-  late final _MONERO_Wallet_getBackgroundSyncType =
-      _MONERO_Wallet_getBackgroundSyncTypePtr.asFunction<
+          'CWLWS_Wallet_getBackgroundSyncType');
+  late final _CWLWS_Wallet_getBackgroundSyncType =
+      _CWLWS_Wallet_getBackgroundSyncTypePtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_Wallet_startBackgroundSync(
+  bool CWLWS_Wallet_startBackgroundSync(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_startBackgroundSync(
+    return _CWLWS_Wallet_startBackgroundSync(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_startBackgroundSyncPtr =
+  late final _CWLWS_Wallet_startBackgroundSyncPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_startBackgroundSync');
-  late final _MONERO_Wallet_startBackgroundSync =
-      _MONERO_Wallet_startBackgroundSyncPtr.asFunction<
+          'CWLWS_Wallet_startBackgroundSync');
+  late final _CWLWS_Wallet_startBackgroundSync =
+      _CWLWS_Wallet_startBackgroundSyncPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_Wallet_stopBackgroundSync(
+  bool CWLWS_Wallet_stopBackgroundSync(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> wallet_password,
   ) {
-    return _MONERO_Wallet_stopBackgroundSync(
+    return _CWLWS_Wallet_stopBackgroundSync(
       wallet_ptr,
       wallet_password,
     );
   }
 
-  late final _MONERO_Wallet_stopBackgroundSyncPtr = _lookup<
+  late final _CWLWS_Wallet_stopBackgroundSyncPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_stopBackgroundSync');
-  late final _MONERO_Wallet_stopBackgroundSync =
-      _MONERO_Wallet_stopBackgroundSyncPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_stopBackgroundSync');
+  late final _CWLWS_Wallet_stopBackgroundSync =
+      _CWLWS_Wallet_stopBackgroundSyncPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_Wallet_isBackgroundSyncing(
+  bool CWLWS_Wallet_isBackgroundSyncing(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_isBackgroundSyncing(
+    return _CWLWS_Wallet_isBackgroundSyncing(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_isBackgroundSyncingPtr =
+  late final _CWLWS_Wallet_isBackgroundSyncingPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_isBackgroundSyncing');
-  late final _MONERO_Wallet_isBackgroundSyncing =
-      _MONERO_Wallet_isBackgroundSyncingPtr.asFunction<
+          'CWLWS_Wallet_isBackgroundSyncing');
+  late final _CWLWS_Wallet_isBackgroundSyncing =
+      _CWLWS_Wallet_isBackgroundSyncingPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_Wallet_isBackgroundWallet(
+  bool CWLWS_Wallet_isBackgroundWallet(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_isBackgroundWallet(
+    return _CWLWS_Wallet_isBackgroundWallet(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_isBackgroundWalletPtr =
+  late final _CWLWS_Wallet_isBackgroundWalletPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_isBackgroundWallet');
-  late final _MONERO_Wallet_isBackgroundWallet =
-      _MONERO_Wallet_isBackgroundWalletPtr.asFunction<
+          'CWLWS_Wallet_isBackgroundWallet');
+  late final _CWLWS_Wallet_isBackgroundWallet =
+      _CWLWS_Wallet_isBackgroundWalletPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_Wallet_history(
+  ffi.Pointer<ffi.Void> CWLWS_Wallet_history(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_history(
+    return _CWLWS_Wallet_history(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_historyPtr = _lookup<
+  late final _CWLWS_Wallet_historyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_history');
-  late final _MONERO_Wallet_history = _MONERO_Wallet_historyPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_history');
+  late final _CWLWS_Wallet_history = _CWLWS_Wallet_historyPtr.asFunction<
       ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_Wallet_addressBook(
+  ffi.Pointer<ffi.Void> CWLWS_Wallet_addressBook(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_addressBook(
+    return _CWLWS_Wallet_addressBook(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_addressBookPtr = _lookup<
+  late final _CWLWS_Wallet_addressBookPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_addressBook');
-  late final _MONERO_Wallet_addressBook = _MONERO_Wallet_addressBookPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_addressBook');
+  late final _CWLWS_Wallet_addressBook = _CWLWS_Wallet_addressBookPtr
       .asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_Wallet_coins(
+  ffi.Pointer<ffi.Void> CWLWS_Wallet_coins(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_coins(
+    return _CWLWS_Wallet_coins(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_coinsPtr = _lookup<
+  late final _CWLWS_Wallet_coinsPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_coins');
-  late final _MONERO_Wallet_coins = _MONERO_Wallet_coinsPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_coins');
+  late final _CWLWS_Wallet_coins = _CWLWS_Wallet_coinsPtr.asFunction<
       ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_Wallet_subaddress(
+  ffi.Pointer<ffi.Void> CWLWS_Wallet_subaddress(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_subaddress(
+    return _CWLWS_Wallet_subaddress(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_subaddressPtr = _lookup<
+  late final _CWLWS_Wallet_subaddressPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_subaddress');
-  late final _MONERO_Wallet_subaddress = _MONERO_Wallet_subaddressPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_subaddress');
+  late final _CWLWS_Wallet_subaddress = _CWLWS_Wallet_subaddressPtr
       .asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_Wallet_subaddressAccount(
+  ffi.Pointer<ffi.Void> CWLWS_Wallet_subaddressAccount(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_subaddressAccount(
+    return _CWLWS_Wallet_subaddressAccount(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_subaddressAccountPtr = _lookup<
+  late final _CWLWS_Wallet_subaddressAccountPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_Wallet_subaddressAccount');
-  late final _MONERO_Wallet_subaddressAccount =
-      _MONERO_Wallet_subaddressAccountPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_Wallet_subaddressAccount');
+  late final _CWLWS_Wallet_subaddressAccount =
+      _CWLWS_Wallet_subaddressAccountPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_Wallet_defaultMixin(
+  int CWLWS_Wallet_defaultMixin(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_defaultMixin(
+    return _CWLWS_Wallet_defaultMixin(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_defaultMixinPtr =
+  late final _CWLWS_Wallet_defaultMixinPtr =
       _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_defaultMixin');
-  late final _MONERO_Wallet_defaultMixin = _MONERO_Wallet_defaultMixinPtr
+          'CWLWS_Wallet_defaultMixin');
+  late final _CWLWS_Wallet_defaultMixin = _CWLWS_Wallet_defaultMixinPtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_Wallet_setDefaultMixin(
+  void CWLWS_Wallet_setDefaultMixin(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int arg,
   ) {
-    return _MONERO_Wallet_setDefaultMixin(
+    return _CWLWS_Wallet_setDefaultMixin(
       wallet_ptr,
       arg,
     );
   }
 
-  late final _MONERO_Wallet_setDefaultMixinPtr = _lookup<
+  late final _CWLWS_Wallet_setDefaultMixinPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>,
-              ffi.Uint32)>>('MONERO_Wallet_setDefaultMixin');
-  late final _MONERO_Wallet_setDefaultMixin = _MONERO_Wallet_setDefaultMixinPtr
+              ffi.Uint32)>>('CWLWS_Wallet_setDefaultMixin');
+  late final _CWLWS_Wallet_setDefaultMixin = _CWLWS_Wallet_setDefaultMixinPtr
       .asFunction<void Function(ffi.Pointer<ffi.Void>, int)>();
 
-  bool MONERO_Wallet_setCacheAttribute(
+  bool CWLWS_Wallet_setCacheAttribute(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> key,
     ffi.Pointer<ffi.Char> val,
   ) {
-    return _MONERO_Wallet_setCacheAttribute(
+    return _CWLWS_Wallet_setCacheAttribute(
       wallet_ptr,
       key,
       val,
     );
   }
 
-  late final _MONERO_Wallet_setCacheAttributePtr = _lookup<
+  late final _CWLWS_Wallet_setCacheAttributePtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_setCacheAttribute');
-  late final _MONERO_Wallet_setCacheAttribute =
-      _MONERO_Wallet_setCacheAttributePtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_setCacheAttribute');
+  late final _CWLWS_Wallet_setCacheAttribute =
+      _CWLWS_Wallet_setCacheAttributePtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_getCacheAttribute(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_getCacheAttribute(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> key,
   ) {
-    return _MONERO_Wallet_getCacheAttribute(
+    return _CWLWS_Wallet_getCacheAttribute(
       wallet_ptr,
       key,
     );
   }
 
-  late final _MONERO_Wallet_getCacheAttributePtr = _lookup<
+  late final _CWLWS_Wallet_getCacheAttributePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_getCacheAttribute');
-  late final _MONERO_Wallet_getCacheAttribute =
-      _MONERO_Wallet_getCacheAttributePtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_getCacheAttribute');
+  late final _CWLWS_Wallet_getCacheAttribute =
+      _CWLWS_Wallet_getCacheAttributePtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_Wallet_setUserNote(
+  bool CWLWS_Wallet_setUserNote(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> txid,
     ffi.Pointer<ffi.Char> note,
   ) {
-    return _MONERO_Wallet_setUserNote(
+    return _CWLWS_Wallet_setUserNote(
       wallet_ptr,
       txid,
       note,
     );
   }
 
-  late final _MONERO_Wallet_setUserNotePtr = _lookup<
+  late final _CWLWS_Wallet_setUserNotePtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_setUserNote');
-  late final _MONERO_Wallet_setUserNote =
-      _MONERO_Wallet_setUserNotePtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_setUserNote');
+  late final _CWLWS_Wallet_setUserNote =
+      _CWLWS_Wallet_setUserNotePtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_getUserNote(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_getUserNote(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> txid,
   ) {
-    return _MONERO_Wallet_getUserNote(
+    return _CWLWS_Wallet_getUserNote(
       wallet_ptr,
       txid,
     );
   }
 
-  late final _MONERO_Wallet_getUserNotePtr = _lookup<
+  late final _CWLWS_Wallet_getUserNotePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_getUserNote');
-  late final _MONERO_Wallet_getUserNote =
-      _MONERO_Wallet_getUserNotePtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_getUserNote');
+  late final _CWLWS_Wallet_getUserNote =
+      _CWLWS_Wallet_getUserNotePtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_getTxKey(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_getTxKey(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> txid,
   ) {
-    return _MONERO_Wallet_getTxKey(
+    return _CWLWS_Wallet_getTxKey(
       wallet_ptr,
       txid,
     );
   }
 
-  late final _MONERO_Wallet_getTxKeyPtr = _lookup<
+  late final _CWLWS_Wallet_getTxKeyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_getTxKey');
-  late final _MONERO_Wallet_getTxKey = _MONERO_Wallet_getTxKeyPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_getTxKey');
+  late final _CWLWS_Wallet_getTxKey = _CWLWS_Wallet_getTxKeyPtr.asFunction<
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_signMessage(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_signMessage(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> message,
     ffi.Pointer<ffi.Char> address,
   ) {
-    return _MONERO_Wallet_signMessage(
+    return _CWLWS_Wallet_signMessage(
       wallet_ptr,
       message,
       address,
     );
   }
 
-  late final _MONERO_Wallet_signMessagePtr = _lookup<
+  late final _CWLWS_Wallet_signMessagePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_signMessage');
-  late final _MONERO_Wallet_signMessage =
-      _MONERO_Wallet_signMessagePtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_signMessage');
+  late final _CWLWS_Wallet_signMessage =
+      _CWLWS_Wallet_signMessagePtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_Wallet_verifySignedMessage(
+  bool CWLWS_Wallet_verifySignedMessage(
     ffi.Pointer<ffi.Void> wallet_ptr,
     ffi.Pointer<ffi.Char> message,
     ffi.Pointer<ffi.Char> address,
     ffi.Pointer<ffi.Char> signature,
   ) {
-    return _MONERO_Wallet_verifySignedMessage(
+    return _CWLWS_Wallet_verifySignedMessage(
       wallet_ptr,
       message,
       address,
@@ -4100,378 +4100,378 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_Wallet_verifySignedMessagePtr = _lookup<
+  late final _CWLWS_Wallet_verifySignedMessagePtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_Wallet_verifySignedMessage');
-  late final _MONERO_Wallet_verifySignedMessage =
-      _MONERO_Wallet_verifySignedMessagePtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_Wallet_verifySignedMessage');
+  late final _CWLWS_Wallet_verifySignedMessage =
+      _CWLWS_Wallet_verifySignedMessagePtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_Wallet_rescanSpent(
+  bool CWLWS_Wallet_rescanSpent(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_rescanSpent(
+    return _CWLWS_Wallet_rescanSpent(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_rescanSpentPtr =
+  late final _CWLWS_Wallet_rescanSpentPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_rescanSpent');
-  late final _MONERO_Wallet_rescanSpent = _MONERO_Wallet_rescanSpentPtr
+          'CWLWS_Wallet_rescanSpent');
+  late final _CWLWS_Wallet_rescanSpent = _CWLWS_Wallet_rescanSpentPtr
       .asFunction<bool Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_Wallet_setOffline(
+  void CWLWS_Wallet_setOffline(
     ffi.Pointer<ffi.Void> wallet_ptr,
     bool offline,
   ) {
-    return _MONERO_Wallet_setOffline(
+    return _CWLWS_Wallet_setOffline(
       wallet_ptr,
       offline,
     );
   }
 
-  late final _MONERO_Wallet_setOfflinePtr = _lookup<
+  late final _CWLWS_Wallet_setOfflinePtr = _lookup<
           ffi
           .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
-      'MONERO_Wallet_setOffline');
-  late final _MONERO_Wallet_setOffline = _MONERO_Wallet_setOfflinePtr
+      'CWLWS_Wallet_setOffline');
+  late final _CWLWS_Wallet_setOffline = _CWLWS_Wallet_setOfflinePtr
       .asFunction<void Function(ffi.Pointer<ffi.Void>, bool)>();
 
-  bool MONERO_Wallet_isOffline(
+  bool CWLWS_Wallet_isOffline(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_isOffline(
+    return _CWLWS_Wallet_isOffline(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_isOfflinePtr =
+  late final _CWLWS_Wallet_isOfflinePtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_isOffline');
-  late final _MONERO_Wallet_isOffline = _MONERO_Wallet_isOfflinePtr.asFunction<
+          'CWLWS_Wallet_isOffline');
+  late final _CWLWS_Wallet_isOffline = _CWLWS_Wallet_isOfflinePtr.asFunction<
       bool Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_Wallet_segregatePreForkOutputs(
+  void CWLWS_Wallet_segregatePreForkOutputs(
     ffi.Pointer<ffi.Void> wallet_ptr,
     bool segregate,
   ) {
-    return _MONERO_Wallet_segregatePreForkOutputs(
+    return _CWLWS_Wallet_segregatePreForkOutputs(
       wallet_ptr,
       segregate,
     );
   }
 
-  late final _MONERO_Wallet_segregatePreForkOutputsPtr = _lookup<
+  late final _CWLWS_Wallet_segregatePreForkOutputsPtr = _lookup<
           ffi
           .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
-      'MONERO_Wallet_segregatePreForkOutputs');
-  late final _MONERO_Wallet_segregatePreForkOutputs =
-      _MONERO_Wallet_segregatePreForkOutputsPtr.asFunction<
+      'CWLWS_Wallet_segregatePreForkOutputs');
+  late final _CWLWS_Wallet_segregatePreForkOutputs =
+      _CWLWS_Wallet_segregatePreForkOutputsPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, bool)>();
 
-  void MONERO_Wallet_segregationHeight(
+  void CWLWS_Wallet_segregationHeight(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int height,
   ) {
-    return _MONERO_Wallet_segregationHeight(
+    return _CWLWS_Wallet_segregationHeight(
       wallet_ptr,
       height,
     );
   }
 
-  late final _MONERO_Wallet_segregationHeightPtr = _lookup<
+  late final _CWLWS_Wallet_segregationHeightPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>,
-              ffi.Uint64)>>('MONERO_Wallet_segregationHeight');
-  late final _MONERO_Wallet_segregationHeight =
-      _MONERO_Wallet_segregationHeightPtr.asFunction<
+              ffi.Uint64)>>('CWLWS_Wallet_segregationHeight');
+  late final _CWLWS_Wallet_segregationHeight =
+      _CWLWS_Wallet_segregationHeightPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, int)>();
 
-  void MONERO_Wallet_keyReuseMitigation2(
+  void CWLWS_Wallet_keyReuseMitigation2(
     ffi.Pointer<ffi.Void> wallet_ptr,
     bool mitigation,
   ) {
-    return _MONERO_Wallet_keyReuseMitigation2(
+    return _CWLWS_Wallet_keyReuseMitigation2(
       wallet_ptr,
       mitigation,
     );
   }
 
-  late final _MONERO_Wallet_keyReuseMitigation2Ptr = _lookup<
+  late final _CWLWS_Wallet_keyReuseMitigation2Ptr = _lookup<
           ffi
           .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
-      'MONERO_Wallet_keyReuseMitigation2');
-  late final _MONERO_Wallet_keyReuseMitigation2 =
-      _MONERO_Wallet_keyReuseMitigation2Ptr.asFunction<
+      'CWLWS_Wallet_keyReuseMitigation2');
+  late final _CWLWS_Wallet_keyReuseMitigation2 =
+      _CWLWS_Wallet_keyReuseMitigation2Ptr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, bool)>();
 
-  bool MONERO_Wallet_lockKeysFile(
+  bool CWLWS_Wallet_lockKeysFile(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_lockKeysFile(
+    return _CWLWS_Wallet_lockKeysFile(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_lockKeysFilePtr =
+  late final _CWLWS_Wallet_lockKeysFilePtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_lockKeysFile');
-  late final _MONERO_Wallet_lockKeysFile = _MONERO_Wallet_lockKeysFilePtr
+          'CWLWS_Wallet_lockKeysFile');
+  late final _CWLWS_Wallet_lockKeysFile = _CWLWS_Wallet_lockKeysFilePtr
       .asFunction<bool Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_Wallet_unlockKeysFile(
+  bool CWLWS_Wallet_unlockKeysFile(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_unlockKeysFile(
+    return _CWLWS_Wallet_unlockKeysFile(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_unlockKeysFilePtr =
+  late final _CWLWS_Wallet_unlockKeysFilePtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_unlockKeysFile');
-  late final _MONERO_Wallet_unlockKeysFile = _MONERO_Wallet_unlockKeysFilePtr
+          'CWLWS_Wallet_unlockKeysFile');
+  late final _CWLWS_Wallet_unlockKeysFile = _CWLWS_Wallet_unlockKeysFilePtr
       .asFunction<bool Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_Wallet_isKeysFileLocked(
+  bool CWLWS_Wallet_isKeysFileLocked(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_isKeysFileLocked(
+    return _CWLWS_Wallet_isKeysFileLocked(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_isKeysFileLockedPtr =
+  late final _CWLWS_Wallet_isKeysFileLockedPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_isKeysFileLocked');
-  late final _MONERO_Wallet_isKeysFileLocked =
-      _MONERO_Wallet_isKeysFileLockedPtr.asFunction<
+          'CWLWS_Wallet_isKeysFileLocked');
+  late final _CWLWS_Wallet_isKeysFileLocked =
+      _CWLWS_Wallet_isKeysFileLockedPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_Wallet_getDeviceType(
+  int CWLWS_Wallet_getDeviceType(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_getDeviceType(
+    return _CWLWS_Wallet_getDeviceType(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_getDeviceTypePtr =
+  late final _CWLWS_Wallet_getDeviceTypePtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_getDeviceType');
-  late final _MONERO_Wallet_getDeviceType = _MONERO_Wallet_getDeviceTypePtr
+          'CWLWS_Wallet_getDeviceType');
+  late final _CWLWS_Wallet_getDeviceType = _CWLWS_Wallet_getDeviceTypePtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_Wallet_coldKeyImageSync(
+  int CWLWS_Wallet_coldKeyImageSync(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int spent,
     int unspent,
   ) {
-    return _MONERO_Wallet_coldKeyImageSync(
+    return _CWLWS_Wallet_coldKeyImageSync(
       wallet_ptr,
       spent,
       unspent,
     );
   }
 
-  late final _MONERO_Wallet_coldKeyImageSyncPtr = _lookup<
+  late final _CWLWS_Wallet_coldKeyImageSyncPtr = _lookup<
       ffi.NativeFunction<
           ffi.Uint64 Function(ffi.Pointer<ffi.Void>, ffi.Uint64,
-              ffi.Uint64)>>('MONERO_Wallet_coldKeyImageSync');
-  late final _MONERO_Wallet_coldKeyImageSync =
-      _MONERO_Wallet_coldKeyImageSyncPtr.asFunction<
+              ffi.Uint64)>>('CWLWS_Wallet_coldKeyImageSync');
+  late final _CWLWS_Wallet_coldKeyImageSync =
+      _CWLWS_Wallet_coldKeyImageSyncPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>, int, int)>();
 
-  ffi.Pointer<ffi.Char> MONERO_Wallet_deviceShowAddress(
+  ffi.Pointer<ffi.Char> CWLWS_Wallet_deviceShowAddress(
     ffi.Pointer<ffi.Void> wallet_ptr,
     int accountIndex,
     int addressIndex,
   ) {
-    return _MONERO_Wallet_deviceShowAddress(
+    return _CWLWS_Wallet_deviceShowAddress(
       wallet_ptr,
       accountIndex,
       addressIndex,
     );
   }
 
-  late final _MONERO_Wallet_deviceShowAddressPtr = _lookup<
+  late final _CWLWS_Wallet_deviceShowAddressPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>, ffi.Uint32,
-              ffi.Uint32)>>('MONERO_Wallet_deviceShowAddress');
-  late final _MONERO_Wallet_deviceShowAddress =
-      _MONERO_Wallet_deviceShowAddressPtr.asFunction<
+              ffi.Uint32)>>('CWLWS_Wallet_deviceShowAddress');
+  late final _CWLWS_Wallet_deviceShowAddress =
+      _CWLWS_Wallet_deviceShowAddressPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>, int, int)>();
 
-  bool MONERO_Wallet_reconnectDevice(
+  bool CWLWS_Wallet_reconnectDevice(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_reconnectDevice(
+    return _CWLWS_Wallet_reconnectDevice(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_reconnectDevicePtr =
+  late final _CWLWS_Wallet_reconnectDevicePtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_reconnectDevice');
-  late final _MONERO_Wallet_reconnectDevice = _MONERO_Wallet_reconnectDevicePtr
+          'CWLWS_Wallet_reconnectDevice');
+  late final _CWLWS_Wallet_reconnectDevice = _CWLWS_Wallet_reconnectDevicePtr
       .asFunction<bool Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_Wallet_getBytesReceived(
+  int CWLWS_Wallet_getBytesReceived(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_getBytesReceived(
+    return _CWLWS_Wallet_getBytesReceived(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_getBytesReceivedPtr =
+  late final _CWLWS_Wallet_getBytesReceivedPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_getBytesReceived');
-  late final _MONERO_Wallet_getBytesReceived =
-      _MONERO_Wallet_getBytesReceivedPtr.asFunction<
+          'CWLWS_Wallet_getBytesReceived');
+  late final _CWLWS_Wallet_getBytesReceived =
+      _CWLWS_Wallet_getBytesReceivedPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_Wallet_getBytesSent(
+  int CWLWS_Wallet_getBytesSent(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_Wallet_getBytesSent(
+    return _CWLWS_Wallet_getBytesSent(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_Wallet_getBytesSentPtr =
+  late final _CWLWS_Wallet_getBytesSentPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_Wallet_getBytesSent');
-  late final _MONERO_Wallet_getBytesSent = _MONERO_Wallet_getBytesSentPtr
+          'CWLWS_Wallet_getBytesSent');
+  late final _CWLWS_Wallet_getBytesSent = _CWLWS_Wallet_getBytesSentPtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_Wallet_getStateIsConnected() {
-    return _MONERO_Wallet_getStateIsConnected();
+  bool CWLWS_Wallet_getStateIsConnected() {
+    return _CWLWS_Wallet_getStateIsConnected();
   }
 
-  late final _MONERO_Wallet_getStateIsConnectedPtr =
+  late final _CWLWS_Wallet_getStateIsConnectedPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function()>>(
-          'MONERO_Wallet_getStateIsConnected');
-  late final _MONERO_Wallet_getStateIsConnected =
-      _MONERO_Wallet_getStateIsConnectedPtr.asFunction<bool Function()>();
+          'CWLWS_Wallet_getStateIsConnected');
+  late final _CWLWS_Wallet_getStateIsConnected =
+      _CWLWS_Wallet_getStateIsConnectedPtr.asFunction<bool Function()>();
 
-  ffi.Pointer<ffi.UnsignedChar> MONERO_Wallet_getSendToDevice() {
-    return _MONERO_Wallet_getSendToDevice();
+  ffi.Pointer<ffi.UnsignedChar> CWLWS_Wallet_getSendToDevice() {
+    return _CWLWS_Wallet_getSendToDevice();
   }
 
-  late final _MONERO_Wallet_getSendToDevicePtr =
+  late final _CWLWS_Wallet_getSendToDevicePtr =
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.UnsignedChar> Function()>>(
-          'MONERO_Wallet_getSendToDevice');
-  late final _MONERO_Wallet_getSendToDevice = _MONERO_Wallet_getSendToDevicePtr
+          'CWLWS_Wallet_getSendToDevice');
+  late final _CWLWS_Wallet_getSendToDevice = _CWLWS_Wallet_getSendToDevicePtr
       .asFunction<ffi.Pointer<ffi.UnsignedChar> Function()>();
 
-  int MONERO_Wallet_getSendToDeviceLength() {
-    return _MONERO_Wallet_getSendToDeviceLength();
+  int CWLWS_Wallet_getSendToDeviceLength() {
+    return _CWLWS_Wallet_getSendToDeviceLength();
   }
 
-  late final _MONERO_Wallet_getSendToDeviceLengthPtr =
+  late final _CWLWS_Wallet_getSendToDeviceLengthPtr =
       _lookup<ffi.NativeFunction<ffi.Size Function()>>(
-          'MONERO_Wallet_getSendToDeviceLength');
-  late final _MONERO_Wallet_getSendToDeviceLength =
-      _MONERO_Wallet_getSendToDeviceLengthPtr.asFunction<int Function()>();
+          'CWLWS_Wallet_getSendToDeviceLength');
+  late final _CWLWS_Wallet_getSendToDeviceLength =
+      _CWLWS_Wallet_getSendToDeviceLengthPtr.asFunction<int Function()>();
 
-  ffi.Pointer<ffi.UnsignedChar> MONERO_Wallet_getReceivedFromDevice() {
-    return _MONERO_Wallet_getReceivedFromDevice();
+  ffi.Pointer<ffi.UnsignedChar> CWLWS_Wallet_getReceivedFromDevice() {
+    return _CWLWS_Wallet_getReceivedFromDevice();
   }
 
-  late final _MONERO_Wallet_getReceivedFromDevicePtr =
+  late final _CWLWS_Wallet_getReceivedFromDevicePtr =
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.UnsignedChar> Function()>>(
-          'MONERO_Wallet_getReceivedFromDevice');
-  late final _MONERO_Wallet_getReceivedFromDevice =
-      _MONERO_Wallet_getReceivedFromDevicePtr.asFunction<
+          'CWLWS_Wallet_getReceivedFromDevice');
+  late final _CWLWS_Wallet_getReceivedFromDevice =
+      _CWLWS_Wallet_getReceivedFromDevicePtr.asFunction<
           ffi.Pointer<ffi.UnsignedChar> Function()>();
 
-  int MONERO_Wallet_getReceivedFromDeviceLength() {
-    return _MONERO_Wallet_getReceivedFromDeviceLength();
+  int CWLWS_Wallet_getReceivedFromDeviceLength() {
+    return _CWLWS_Wallet_getReceivedFromDeviceLength();
   }
 
-  late final _MONERO_Wallet_getReceivedFromDeviceLengthPtr =
+  late final _CWLWS_Wallet_getReceivedFromDeviceLengthPtr =
       _lookup<ffi.NativeFunction<ffi.Size Function()>>(
-          'MONERO_Wallet_getReceivedFromDeviceLength');
-  late final _MONERO_Wallet_getReceivedFromDeviceLength =
-      _MONERO_Wallet_getReceivedFromDeviceLengthPtr.asFunction<
+          'CWLWS_Wallet_getReceivedFromDeviceLength');
+  late final _CWLWS_Wallet_getReceivedFromDeviceLength =
+      _CWLWS_Wallet_getReceivedFromDeviceLengthPtr.asFunction<
           int Function()>();
 
-  bool MONERO_Wallet_getWaitsForDeviceSend() {
-    return _MONERO_Wallet_getWaitsForDeviceSend();
+  bool CWLWS_Wallet_getWaitsForDeviceSend() {
+    return _CWLWS_Wallet_getWaitsForDeviceSend();
   }
 
-  late final _MONERO_Wallet_getWaitsForDeviceSendPtr =
+  late final _CWLWS_Wallet_getWaitsForDeviceSendPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function()>>(
-          'MONERO_Wallet_getWaitsForDeviceSend');
-  late final _MONERO_Wallet_getWaitsForDeviceSend =
-      _MONERO_Wallet_getWaitsForDeviceSendPtr.asFunction<bool Function()>();
+          'CWLWS_Wallet_getWaitsForDeviceSend');
+  late final _CWLWS_Wallet_getWaitsForDeviceSend =
+      _CWLWS_Wallet_getWaitsForDeviceSendPtr.asFunction<bool Function()>();
 
-  bool MONERO_Wallet_getWaitsForDeviceReceive() {
-    return _MONERO_Wallet_getWaitsForDeviceReceive();
+  bool CWLWS_Wallet_getWaitsForDeviceReceive() {
+    return _CWLWS_Wallet_getWaitsForDeviceReceive();
   }
 
-  late final _MONERO_Wallet_getWaitsForDeviceReceivePtr =
+  late final _CWLWS_Wallet_getWaitsForDeviceReceivePtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function()>>(
-          'MONERO_Wallet_getWaitsForDeviceReceive');
-  late final _MONERO_Wallet_getWaitsForDeviceReceive =
-      _MONERO_Wallet_getWaitsForDeviceReceivePtr.asFunction<bool Function()>();
+          'CWLWS_Wallet_getWaitsForDeviceReceive');
+  late final _CWLWS_Wallet_getWaitsForDeviceReceive =
+      _CWLWS_Wallet_getWaitsForDeviceReceivePtr.asFunction<bool Function()>();
 
-  void MONERO_Wallet_setDeviceReceivedData(
+  void CWLWS_Wallet_setDeviceReceivedData(
     ffi.Pointer<ffi.UnsignedChar> data,
     int len,
   ) {
-    return _MONERO_Wallet_setDeviceReceivedData(
+    return _CWLWS_Wallet_setDeviceReceivedData(
       data,
       len,
     );
   }
 
-  late final _MONERO_Wallet_setDeviceReceivedDataPtr = _lookup<
+  late final _CWLWS_Wallet_setDeviceReceivedDataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.UnsignedChar>,
-              ffi.Size)>>('MONERO_Wallet_setDeviceReceivedData');
-  late final _MONERO_Wallet_setDeviceReceivedData =
-      _MONERO_Wallet_setDeviceReceivedDataPtr.asFunction<
+              ffi.Size)>>('CWLWS_Wallet_setDeviceReceivedData');
+  late final _CWLWS_Wallet_setDeviceReceivedData =
+      _CWLWS_Wallet_setDeviceReceivedDataPtr.asFunction<
           void Function(ffi.Pointer<ffi.UnsignedChar>, int)>();
 
-  void MONERO_Wallet_setDeviceSendData(
+  void CWLWS_Wallet_setDeviceSendData(
     ffi.Pointer<ffi.UnsignedChar> data,
     int len,
   ) {
-    return _MONERO_Wallet_setDeviceSendData(
+    return _CWLWS_Wallet_setDeviceSendData(
       data,
       len,
     );
   }
 
-  late final _MONERO_Wallet_setDeviceSendDataPtr = _lookup<
+  late final _CWLWS_Wallet_setDeviceSendDataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.UnsignedChar>,
-              ffi.Size)>>('MONERO_Wallet_setDeviceSendData');
-  late final _MONERO_Wallet_setDeviceSendData =
-      _MONERO_Wallet_setDeviceSendDataPtr.asFunction<
+              ffi.Size)>>('CWLWS_Wallet_setDeviceSendData');
+  late final _CWLWS_Wallet_setDeviceSendData =
+      _CWLWS_Wallet_setDeviceSendDataPtr.asFunction<
           void Function(ffi.Pointer<ffi.UnsignedChar>, int)>();
 
-  void MONERO_Wallet_setLedgerCallback(
+  void CWLWS_Wallet_setLedgerCallback(
     ffi.Pointer<
             ffi.NativeFunction<
                 ffi.Void Function(ffi.Pointer<ffi.UnsignedChar> command,
                     ffi.UnsignedInt cmd_len)>>
         sendToLedgerDevice,
   ) {
-    return _MONERO_Wallet_setLedgerCallback(
+    return _CWLWS_Wallet_setLedgerCallback(
       sendToLedgerDevice,
     );
   }
 
-  late final _MONERO_Wallet_setLedgerCallbackPtr = _lookup<
+  late final _CWLWS_Wallet_setLedgerCallbackPtr = _lookup<
           ffi.NativeFunction<
               ffi.Void Function(
                   ffi.Pointer<
@@ -4479,23 +4479,23 @@ class MoneroC {
                           ffi.Void Function(
                               ffi.Pointer<ffi.UnsignedChar> command,
                               ffi.UnsignedInt cmd_len)>>)>>(
-      'MONERO_Wallet_setLedgerCallback');
-  late final _MONERO_Wallet_setLedgerCallback =
-      _MONERO_Wallet_setLedgerCallbackPtr.asFunction<
+      'CWLWS_Wallet_setLedgerCallback');
+  late final _CWLWS_Wallet_setLedgerCallback =
+      _CWLWS_Wallet_setLedgerCallbackPtr.asFunction<
           void Function(
               ffi.Pointer<
                   ffi.NativeFunction<
                       ffi.Void Function(ffi.Pointer<ffi.UnsignedChar> command,
                           ffi.UnsignedInt cmd_len)>>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_WalletManager_createWallet(
+  ffi.Pointer<ffi.Void> CWLWS_WalletManager_createWallet(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Char> path,
     ffi.Pointer<ffi.Char> password,
     ffi.Pointer<ffi.Char> language,
     int networkType,
   ) {
-    return _MONERO_WalletManager_createWallet(
+    return _CWLWS_WalletManager_createWallet(
       wm_ptr,
       path,
       password,
@@ -4504,16 +4504,16 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_WalletManager_createWalletPtr = _lookup<
+  late final _CWLWS_WalletManager_createWalletPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Int)>>('MONERO_WalletManager_createWallet');
-  late final _MONERO_WalletManager_createWallet =
-      _MONERO_WalletManager_createWalletPtr.asFunction<
+              ffi.Int)>>('CWLWS_WalletManager_createWallet');
+  late final _CWLWS_WalletManager_createWallet =
+      _CWLWS_WalletManager_createWalletPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
@@ -4521,13 +4521,13 @@ class MoneroC {
               ffi.Pointer<ffi.Char>,
               int)>();
 
-  ffi.Pointer<ffi.Void> MONERO_WalletManager_openWallet(
+  ffi.Pointer<ffi.Void> CWLWS_WalletManager_openWallet(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Char> path,
     ffi.Pointer<ffi.Char> password,
     int networkType,
   ) {
-    return _MONERO_WalletManager_openWallet(
+    return _CWLWS_WalletManager_openWallet(
       wm_ptr,
       path,
       password,
@@ -4535,19 +4535,19 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_WalletManager_openWalletPtr = _lookup<
+  late final _CWLWS_WalletManager_openWalletPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Int)>>('MONERO_WalletManager_openWallet');
-  late final _MONERO_WalletManager_openWallet =
-      _MONERO_WalletManager_openWalletPtr.asFunction<
+              ffi.Int)>>('CWLWS_WalletManager_openWallet');
+  late final _CWLWS_WalletManager_openWallet =
+      _CWLWS_WalletManager_openWalletPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
-  ffi.Pointer<ffi.Void> MONERO_WalletManager_recoveryWallet(
+  ffi.Pointer<ffi.Void> CWLWS_WalletManager_recoveryWallet(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Char> path,
     ffi.Pointer<ffi.Char> password,
@@ -4557,7 +4557,7 @@ class MoneroC {
     int kdfRounds,
     ffi.Pointer<ffi.Char> seedOffset,
   ) {
-    return _MONERO_WalletManager_recoveryWallet(
+    return _CWLWS_WalletManager_recoveryWallet(
       wm_ptr,
       path,
       password,
@@ -4569,7 +4569,7 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_WalletManager_recoveryWalletPtr = _lookup<
+  late final _CWLWS_WalletManager_recoveryWalletPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
@@ -4579,9 +4579,9 @@ class MoneroC {
               ffi.Int,
               ffi.Uint64,
               ffi.Uint64,
-              ffi.Pointer<ffi.Char>)>>('MONERO_WalletManager_recoveryWallet');
-  late final _MONERO_WalletManager_recoveryWallet =
-      _MONERO_WalletManager_recoveryWalletPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_WalletManager_recoveryWallet');
+  late final _CWLWS_WalletManager_recoveryWallet =
+      _CWLWS_WalletManager_recoveryWalletPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
@@ -4592,7 +4592,7 @@ class MoneroC {
               int,
               ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_WalletManager_createWalletFromKeys(
+  ffi.Pointer<ffi.Void> CWLWS_WalletManager_createWalletFromKeys(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Char> path,
     ffi.Pointer<ffi.Char> password,
@@ -4604,7 +4604,7 @@ class MoneroC {
     ffi.Pointer<ffi.Char> spendKeyString,
     int kdf_rounds,
   ) {
-    return _MONERO_WalletManager_createWalletFromKeys(
+    return _CWLWS_WalletManager_createWalletFromKeys(
       wm_ptr,
       path,
       password,
@@ -4618,7 +4618,7 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_WalletManager_createWalletFromKeysPtr = _lookup<
+  late final _CWLWS_WalletManager_createWalletFromKeysPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
@@ -4630,9 +4630,9 @@ class MoneroC {
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Uint64)>>('MONERO_WalletManager_createWalletFromKeys');
-  late final _MONERO_WalletManager_createWalletFromKeys =
-      _MONERO_WalletManager_createWalletFromKeysPtr.asFunction<
+              ffi.Uint64)>>('CWLWS_WalletManager_createWalletFromKeys');
+  late final _CWLWS_WalletManager_createWalletFromKeys =
+      _CWLWS_WalletManager_createWalletFromKeysPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
@@ -4646,7 +4646,7 @@ class MoneroC {
               int)>();
 
   ffi.Pointer<ffi.Void>
-      MONERO_WalletManager_createDeterministicWalletFromSpendKey(
+      CWLWS_WalletManager_createDeterministicWalletFromSpendKey(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Char> path,
     ffi.Pointer<ffi.Char> password,
@@ -4656,7 +4656,7 @@ class MoneroC {
     ffi.Pointer<ffi.Char> spendKeyString,
     int kdf_rounds,
   ) {
-    return _MONERO_WalletManager_createDeterministicWalletFromSpendKey(
+    return _CWLWS_WalletManager_createDeterministicWalletFromSpendKey(
       wm_ptr,
       path,
       password,
@@ -4668,7 +4668,7 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_WalletManager_createDeterministicWalletFromSpendKeyPtr =
+  late final _CWLWS_WalletManager_createDeterministicWalletFromSpendKeyPtr =
       _lookup<
               ffi.NativeFunction<
                   ffi.Pointer<ffi.Void> Function(
@@ -4680,9 +4680,9 @@ class MoneroC {
                       ffi.Uint64,
                       ffi.Pointer<ffi.Char>,
                       ffi.Uint64)>>(
-          'MONERO_WalletManager_createDeterministicWalletFromSpendKey');
-  late final _MONERO_WalletManager_createDeterministicWalletFromSpendKey =
-      _MONERO_WalletManager_createDeterministicWalletFromSpendKeyPtr.asFunction<
+          'CWLWS_WalletManager_createDeterministicWalletFromSpendKey');
+  late final _CWLWS_WalletManager_createDeterministicWalletFromSpendKey =
+      _CWLWS_WalletManager_createDeterministicWalletFromSpendKeyPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
@@ -4693,7 +4693,7 @@ class MoneroC {
               ffi.Pointer<ffi.Char>,
               int)>();
 
-  ffi.Pointer<ffi.Void> MONERO_WalletManager_createWalletFromDevice(
+  ffi.Pointer<ffi.Void> CWLWS_WalletManager_createWalletFromDevice(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Char> path,
     ffi.Pointer<ffi.Char> password,
@@ -4705,7 +4705,7 @@ class MoneroC {
     ffi.Pointer<ffi.Char> spendKeyString,
     int kdf_rounds,
   ) {
-    return _MONERO_WalletManager_createWalletFromDevice(
+    return _CWLWS_WalletManager_createWalletFromDevice(
       wm_ptr,
       path,
       password,
@@ -4719,7 +4719,7 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_WalletManager_createWalletFromDevicePtr = _lookup<
+  late final _CWLWS_WalletManager_createWalletFromDevicePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
@@ -4731,9 +4731,9 @@ class MoneroC {
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Uint64)>>('MONERO_WalletManager_createWalletFromDevice');
-  late final _MONERO_WalletManager_createWalletFromDevice =
-      _MONERO_WalletManager_createWalletFromDevicePtr.asFunction<
+              ffi.Uint64)>>('CWLWS_WalletManager_createWalletFromDevice');
+  late final _CWLWS_WalletManager_createWalletFromDevice =
+      _CWLWS_WalletManager_createWalletFromDevicePtr.asFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
@@ -4746,7 +4746,7 @@ class MoneroC {
               ffi.Pointer<ffi.Char>,
               int)>();
 
-  ffi.Pointer<ffi.Void> MONERO_WalletManager_createWalletFromPolyseed(
+  ffi.Pointer<ffi.Void> CWLWS_WalletManager_createWalletFromPolyseed(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Char> path,
     ffi.Pointer<ffi.Char> password,
@@ -4757,7 +4757,7 @@ class MoneroC {
     int restore_height,
     int kdf_rounds,
   ) {
-    return _MONERO_WalletManager_createWalletFromPolyseed(
+    return _CWLWS_WalletManager_createWalletFromPolyseed(
       wm_ptr,
       path,
       password,
@@ -4770,7 +4770,7 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_WalletManager_createWalletFromPolyseedPtr = _lookup<
+  late final _CWLWS_WalletManager_createWalletFromPolyseedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
@@ -4781,9 +4781,9 @@ class MoneroC {
               ffi.Pointer<ffi.Char>,
               ffi.Bool,
               ffi.Uint64,
-              ffi.Uint64)>>('MONERO_WalletManager_createWalletFromPolyseed');
-  late final _MONERO_WalletManager_createWalletFromPolyseed =
-      _MONERO_WalletManager_createWalletFromPolyseedPtr.asFunction<
+              ffi.Uint64)>>('CWLWS_WalletManager_createWalletFromPolyseed');
+  late final _CWLWS_WalletManager_createWalletFromPolyseed =
+      _CWLWS_WalletManager_createWalletFromPolyseedPtr.asFunction<
           ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
@@ -4795,52 +4795,52 @@ class MoneroC {
               int,
               int)>();
 
-  bool MONERO_WalletManager_closeWallet(
+  bool CWLWS_WalletManager_closeWallet(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Void> wallet_ptr,
     bool store,
   ) {
-    return _MONERO_WalletManager_closeWallet(
+    return _CWLWS_WalletManager_closeWallet(
       wm_ptr,
       wallet_ptr,
       store,
     );
   }
 
-  late final _MONERO_WalletManager_closeWalletPtr = _lookup<
+  late final _CWLWS_WalletManager_closeWalletPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
-              ffi.Bool)>>('MONERO_WalletManager_closeWallet');
-  late final _MONERO_WalletManager_closeWallet =
-      _MONERO_WalletManager_closeWalletPtr.asFunction<
+              ffi.Bool)>>('CWLWS_WalletManager_closeWallet');
+  late final _CWLWS_WalletManager_closeWallet =
+      _CWLWS_WalletManager_closeWalletPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, bool)>();
 
-  bool MONERO_WalletManager_walletExists(
+  bool CWLWS_WalletManager_walletExists(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Char> path,
   ) {
-    return _MONERO_WalletManager_walletExists(
+    return _CWLWS_WalletManager_walletExists(
       wm_ptr,
       path,
     );
   }
 
-  late final _MONERO_WalletManager_walletExistsPtr = _lookup<
+  late final _CWLWS_WalletManager_walletExistsPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_WalletManager_walletExists');
-  late final _MONERO_WalletManager_walletExists =
-      _MONERO_WalletManager_walletExistsPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_WalletManager_walletExists');
+  late final _CWLWS_WalletManager_walletExists =
+      _CWLWS_WalletManager_walletExistsPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  bool MONERO_WalletManager_verifyWalletPassword(
+  bool CWLWS_WalletManager_verifyWalletPassword(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Char> keys_file_name,
     ffi.Pointer<ffi.Char> password,
     bool no_spend_key,
     int kdf_rounds,
   ) {
-    return _MONERO_WalletManager_verifyWalletPassword(
+    return _CWLWS_WalletManager_verifyWalletPassword(
       wm_ptr,
       keys_file_name,
       password,
@@ -4849,26 +4849,26 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_WalletManager_verifyWalletPasswordPtr = _lookup<
+  late final _CWLWS_WalletManager_verifyWalletPasswordPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
               ffi.Bool,
-              ffi.Uint64)>>('MONERO_WalletManager_verifyWalletPassword');
-  late final _MONERO_WalletManager_verifyWalletPassword =
-      _MONERO_WalletManager_verifyWalletPasswordPtr.asFunction<
+              ffi.Uint64)>>('CWLWS_WalletManager_verifyWalletPassword');
+  late final _CWLWS_WalletManager_verifyWalletPassword =
+      _CWLWS_WalletManager_verifyWalletPasswordPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>, bool, int)>();
 
-  int MONERO_WalletManager_queryWalletDevice(
+  int CWLWS_WalletManager_queryWalletDevice(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Char> keys_file_name,
     ffi.Pointer<ffi.Char> password,
     int kdf_rounds,
   ) {
-    return _MONERO_WalletManager_queryWalletDevice(
+    return _CWLWS_WalletManager_queryWalletDevice(
       wm_ptr,
       keys_file_name,
       password,
@@ -4876,172 +4876,172 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_WalletManager_queryWalletDevicePtr = _lookup<
+  late final _CWLWS_WalletManager_queryWalletDevicePtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Uint64)>>('MONERO_WalletManager_queryWalletDevice');
-  late final _MONERO_WalletManager_queryWalletDevice =
-      _MONERO_WalletManager_queryWalletDevicePtr.asFunction<
+              ffi.Uint64)>>('CWLWS_WalletManager_queryWalletDevice');
+  late final _CWLWS_WalletManager_queryWalletDevice =
+      _CWLWS_WalletManager_queryWalletDevicePtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>, int)>();
 
-  ffi.Pointer<ffi.Char> MONERO_WalletManager_findWallets(
+  ffi.Pointer<ffi.Char> CWLWS_WalletManager_findWallets(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Char> path,
     ffi.Pointer<ffi.Char> separator,
   ) {
-    return _MONERO_WalletManager_findWallets(
+    return _CWLWS_WalletManager_findWallets(
       wm_ptr,
       path,
       separator,
     );
   }
 
-  late final _MONERO_WalletManager_findWalletsPtr = _lookup<
+  late final _CWLWS_WalletManager_findWalletsPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_WalletManager_findWallets');
-  late final _MONERO_WalletManager_findWallets =
-      _MONERO_WalletManager_findWalletsPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_WalletManager_findWallets');
+  late final _CWLWS_WalletManager_findWallets =
+      _CWLWS_WalletManager_findWalletsPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_WalletManager_errorString(
+  ffi.Pointer<ffi.Char> CWLWS_WalletManager_errorString(
     ffi.Pointer<ffi.Void> wm_ptr,
   ) {
-    return _MONERO_WalletManager_errorString(
+    return _CWLWS_WalletManager_errorString(
       wm_ptr,
     );
   }
 
-  late final _MONERO_WalletManager_errorStringPtr = _lookup<
+  late final _CWLWS_WalletManager_errorStringPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_WalletManager_errorString');
-  late final _MONERO_WalletManager_errorString =
-      _MONERO_WalletManager_errorStringPtr.asFunction<
+              ffi.Pointer<ffi.Void>)>>('CWLWS_WalletManager_errorString');
+  late final _CWLWS_WalletManager_errorString =
+      _CWLWS_WalletManager_errorStringPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_WalletManager_setDaemonAddress(
+  void CWLWS_WalletManager_setDaemonAddress(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Char> address,
   ) {
-    return _MONERO_WalletManager_setDaemonAddress(
+    return _CWLWS_WalletManager_setDaemonAddress(
       wm_ptr,
       address,
     );
   }
 
-  late final _MONERO_WalletManager_setDaemonAddressPtr = _lookup<
+  late final _CWLWS_WalletManager_setDaemonAddressPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_WalletManager_setDaemonAddress');
-  late final _MONERO_WalletManager_setDaemonAddress =
-      _MONERO_WalletManager_setDaemonAddressPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_WalletManager_setDaemonAddress');
+  late final _CWLWS_WalletManager_setDaemonAddress =
+      _CWLWS_WalletManager_setDaemonAddressPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  int MONERO_WalletManager_blockchainHeight(
+  int CWLWS_WalletManager_blockchainHeight(
     ffi.Pointer<ffi.Void> wm_ptr,
   ) {
-    return _MONERO_WalletManager_blockchainHeight(
+    return _CWLWS_WalletManager_blockchainHeight(
       wm_ptr,
     );
   }
 
-  late final _MONERO_WalletManager_blockchainHeightPtr =
+  late final _CWLWS_WalletManager_blockchainHeightPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_WalletManager_blockchainHeight');
-  late final _MONERO_WalletManager_blockchainHeight =
-      _MONERO_WalletManager_blockchainHeightPtr.asFunction<
+          'CWLWS_WalletManager_blockchainHeight');
+  late final _CWLWS_WalletManager_blockchainHeight =
+      _CWLWS_WalletManager_blockchainHeightPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_WalletManager_blockchainTargetHeight(
+  int CWLWS_WalletManager_blockchainTargetHeight(
     ffi.Pointer<ffi.Void> wm_ptr,
   ) {
-    return _MONERO_WalletManager_blockchainTargetHeight(
+    return _CWLWS_WalletManager_blockchainTargetHeight(
       wm_ptr,
     );
   }
 
-  late final _MONERO_WalletManager_blockchainTargetHeightPtr =
+  late final _CWLWS_WalletManager_blockchainTargetHeightPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_WalletManager_blockchainTargetHeight');
-  late final _MONERO_WalletManager_blockchainTargetHeight =
-      _MONERO_WalletManager_blockchainTargetHeightPtr.asFunction<
+          'CWLWS_WalletManager_blockchainTargetHeight');
+  late final _CWLWS_WalletManager_blockchainTargetHeight =
+      _CWLWS_WalletManager_blockchainTargetHeightPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_WalletManager_networkDifficulty(
+  int CWLWS_WalletManager_networkDifficulty(
     ffi.Pointer<ffi.Void> wm_ptr,
   ) {
-    return _MONERO_WalletManager_networkDifficulty(
+    return _CWLWS_WalletManager_networkDifficulty(
       wm_ptr,
     );
   }
 
-  late final _MONERO_WalletManager_networkDifficultyPtr =
+  late final _CWLWS_WalletManager_networkDifficultyPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_WalletManager_networkDifficulty');
-  late final _MONERO_WalletManager_networkDifficulty =
-      _MONERO_WalletManager_networkDifficultyPtr.asFunction<
+          'CWLWS_WalletManager_networkDifficulty');
+  late final _CWLWS_WalletManager_networkDifficulty =
+      _CWLWS_WalletManager_networkDifficultyPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  double MONERO_WalletManager_miningHashRate(
+  double CWLWS_WalletManager_miningHashRate(
     ffi.Pointer<ffi.Void> wm_ptr,
   ) {
-    return _MONERO_WalletManager_miningHashRate(
+    return _CWLWS_WalletManager_miningHashRate(
       wm_ptr,
     );
   }
 
-  late final _MONERO_WalletManager_miningHashRatePtr =
+  late final _CWLWS_WalletManager_miningHashRatePtr =
       _lookup<ffi.NativeFunction<ffi.Double Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_WalletManager_miningHashRate');
-  late final _MONERO_WalletManager_miningHashRate =
-      _MONERO_WalletManager_miningHashRatePtr.asFunction<
+          'CWLWS_WalletManager_miningHashRate');
+  late final _CWLWS_WalletManager_miningHashRate =
+      _CWLWS_WalletManager_miningHashRatePtr.asFunction<
           double Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_WalletManager_blockTarget(
+  int CWLWS_WalletManager_blockTarget(
     ffi.Pointer<ffi.Void> wm_ptr,
   ) {
-    return _MONERO_WalletManager_blockTarget(
+    return _CWLWS_WalletManager_blockTarget(
       wm_ptr,
     );
   }
 
-  late final _MONERO_WalletManager_blockTargetPtr =
+  late final _CWLWS_WalletManager_blockTargetPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_WalletManager_blockTarget');
-  late final _MONERO_WalletManager_blockTarget =
-      _MONERO_WalletManager_blockTargetPtr.asFunction<
+          'CWLWS_WalletManager_blockTarget');
+  late final _CWLWS_WalletManager_blockTarget =
+      _CWLWS_WalletManager_blockTargetPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_WalletManager_isMining(
+  bool CWLWS_WalletManager_isMining(
     ffi.Pointer<ffi.Void> wm_ptr,
   ) {
-    return _MONERO_WalletManager_isMining(
+    return _CWLWS_WalletManager_isMining(
       wm_ptr,
     );
   }
 
-  late final _MONERO_WalletManager_isMiningPtr =
+  late final _CWLWS_WalletManager_isMiningPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_WalletManager_isMining');
-  late final _MONERO_WalletManager_isMining = _MONERO_WalletManager_isMiningPtr
+          'CWLWS_WalletManager_isMining');
+  late final _CWLWS_WalletManager_isMining = _CWLWS_WalletManager_isMiningPtr
       .asFunction<bool Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_WalletManager_startMining(
+  bool CWLWS_WalletManager_startMining(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Char> address,
     int threads,
     bool backgroundMining,
     bool ignoreBattery,
   ) {
-    return _MONERO_WalletManager_startMining(
+    return _CWLWS_WalletManager_startMining(
       wm_ptr,
       address,
       threads,
@@ -5050,117 +5050,117 @@ class MoneroC {
     );
   }
 
-  late final _MONERO_WalletManager_startMiningPtr = _lookup<
+  late final _CWLWS_WalletManager_startMiningPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
               ffi.Uint32,
               ffi.Bool,
-              ffi.Bool)>>('MONERO_WalletManager_startMining');
-  late final _MONERO_WalletManager_startMining =
-      _MONERO_WalletManager_startMiningPtr.asFunction<
+              ffi.Bool)>>('CWLWS_WalletManager_startMining');
+  late final _CWLWS_WalletManager_startMining =
+      _CWLWS_WalletManager_startMiningPtr.asFunction<
           bool Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>, int, bool, bool)>();
 
-  bool MONERO_WalletManager_stopMining(
+  bool CWLWS_WalletManager_stopMining(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Char> address,
   ) {
-    return _MONERO_WalletManager_stopMining(
+    return _CWLWS_WalletManager_stopMining(
       wm_ptr,
       address,
     );
   }
 
-  late final _MONERO_WalletManager_stopMiningPtr = _lookup<
+  late final _CWLWS_WalletManager_stopMiningPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_WalletManager_stopMining');
-  late final _MONERO_WalletManager_stopMining =
-      _MONERO_WalletManager_stopMiningPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_WalletManager_stopMining');
+  late final _CWLWS_WalletManager_stopMining =
+      _CWLWS_WalletManager_stopMiningPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_WalletManager_resolveOpenAlias(
+  ffi.Pointer<ffi.Char> CWLWS_WalletManager_resolveOpenAlias(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Char> address,
     bool dnssec_valid,
   ) {
-    return _MONERO_WalletManager_resolveOpenAlias(
+    return _CWLWS_WalletManager_resolveOpenAlias(
       wm_ptr,
       address,
       dnssec_valid,
     );
   }
 
-  late final _MONERO_WalletManager_resolveOpenAliasPtr = _lookup<
+  late final _CWLWS_WalletManager_resolveOpenAliasPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Char>,
-              ffi.Bool)>>('MONERO_WalletManager_resolveOpenAlias');
-  late final _MONERO_WalletManager_resolveOpenAlias =
-      _MONERO_WalletManager_resolveOpenAliasPtr.asFunction<
+              ffi.Bool)>>('CWLWS_WalletManager_resolveOpenAlias');
+  late final _CWLWS_WalletManager_resolveOpenAlias =
+      _CWLWS_WalletManager_resolveOpenAliasPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>, bool)>();
 
-  bool MONERO_WalletManager_setProxy(
+  bool CWLWS_WalletManager_setProxy(
     ffi.Pointer<ffi.Void> wm_ptr,
     ffi.Pointer<ffi.Char> address,
   ) {
-    return _MONERO_WalletManager_setProxy(
+    return _CWLWS_WalletManager_setProxy(
       wm_ptr,
       address,
     );
   }
 
-  late final _MONERO_WalletManager_setProxyPtr = _lookup<
+  late final _CWLWS_WalletManager_setProxyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Char>)>>('MONERO_WalletManager_setProxy');
-  late final _MONERO_WalletManager_setProxy =
-      _MONERO_WalletManager_setProxyPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('CWLWS_WalletManager_setProxy');
+  late final _CWLWS_WalletManager_setProxy =
+      _CWLWS_WalletManager_setProxyPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_WalletManagerFactory_getWalletManager() {
-    return _MONERO_WalletManagerFactory_getWalletManager();
+  ffi.Pointer<ffi.Void> CWLWS_WalletManagerFactory_getWalletManager() {
+    return _CWLWS_WalletManagerFactory_getWalletManager();
   }
 
-  late final _MONERO_WalletManagerFactory_getWalletManagerPtr =
+  late final _CWLWS_WalletManagerFactory_getWalletManagerPtr =
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>(
-          'MONERO_WalletManagerFactory_getWalletManager');
-  late final _MONERO_WalletManagerFactory_getWalletManager =
-      _MONERO_WalletManagerFactory_getWalletManagerPtr.asFunction<
+          'CWLWS_WalletManagerFactory_getWalletManager');
+  late final _CWLWS_WalletManagerFactory_getWalletManager =
+      _CWLWS_WalletManagerFactory_getWalletManagerPtr.asFunction<
           ffi.Pointer<ffi.Void> Function()>();
 
-  void MONERO_WalletManagerFactory_setLogLevel(
+  void CWLWS_WalletManagerFactory_setLogLevel(
     int level,
   ) {
-    return _MONERO_WalletManagerFactory_setLogLevel(
+    return _CWLWS_WalletManagerFactory_setLogLevel(
       level,
     );
   }
 
-  late final _MONERO_WalletManagerFactory_setLogLevelPtr =
+  late final _CWLWS_WalletManagerFactory_setLogLevelPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>(
-          'MONERO_WalletManagerFactory_setLogLevel');
-  late final _MONERO_WalletManagerFactory_setLogLevel =
-      _MONERO_WalletManagerFactory_setLogLevelPtr.asFunction<
+          'CWLWS_WalletManagerFactory_setLogLevel');
+  late final _CWLWS_WalletManagerFactory_setLogLevel =
+      _CWLWS_WalletManagerFactory_setLogLevelPtr.asFunction<
           void Function(int)>();
 
-  void MONERO_WalletManagerFactory_setLogCategories(
+  void CWLWS_WalletManagerFactory_setLogCategories(
     ffi.Pointer<ffi.Char> categories,
   ) {
-    return _MONERO_WalletManagerFactory_setLogCategories(
+    return _CWLWS_WalletManagerFactory_setLogCategories(
       categories,
     );
   }
 
-  late final _MONERO_WalletManagerFactory_setLogCategoriesPtr =
+  late final _CWLWS_WalletManagerFactory_setLogCategoriesPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Char>)>>(
-          'MONERO_WalletManagerFactory_setLogCategories');
-  late final _MONERO_WalletManagerFactory_setLogCategories =
-      _MONERO_WalletManagerFactory_setLogCategoriesPtr.asFunction<
+          'CWLWS_WalletManagerFactory_setLogCategories');
+  late final _CWLWS_WalletManagerFactory_setLogCategories =
+      _CWLWS_WalletManagerFactory_setLogCategoriesPtr.asFunction<
           void Function(ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<ffi.Void> LWSF_WalletManagerFactory_getWalletManager() {
@@ -5174,239 +5174,239 @@ class MoneroC {
       _LWSF_WalletManagerFactory_getWalletManagerPtr.asFunction<
           ffi.Pointer<ffi.Void> Function()>();
 
-  void MONERO_DEBUG_test0() {
-    return _MONERO_DEBUG_test0();
+  void CWLWS_DEBUG_test0() {
+    return _CWLWS_DEBUG_test0();
   }
 
-  late final _MONERO_DEBUG_test0Ptr =
-      _lookup<ffi.NativeFunction<ffi.Void Function()>>('MONERO_DEBUG_test0');
-  late final _MONERO_DEBUG_test0 =
-      _MONERO_DEBUG_test0Ptr.asFunction<void Function()>();
+  late final _CWLWS_DEBUG_test0Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('CWLWS_DEBUG_test0');
+  late final _CWLWS_DEBUG_test0 =
+      _CWLWS_DEBUG_test0Ptr.asFunction<void Function()>();
 
-  bool MONERO_DEBUG_test1(
+  bool CWLWS_DEBUG_test1(
     bool x,
   ) {
-    return _MONERO_DEBUG_test1(
+    return _CWLWS_DEBUG_test1(
       x,
     );
   }
 
-  late final _MONERO_DEBUG_test1Ptr =
+  late final _CWLWS_DEBUG_test1Ptr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Bool)>>(
-          'MONERO_DEBUG_test1');
-  late final _MONERO_DEBUG_test1 =
-      _MONERO_DEBUG_test1Ptr.asFunction<bool Function(bool)>();
+          'CWLWS_DEBUG_test1');
+  late final _CWLWS_DEBUG_test1 =
+      _CWLWS_DEBUG_test1Ptr.asFunction<bool Function(bool)>();
 
-  int MONERO_DEBUG_test2(
+  int CWLWS_DEBUG_test2(
     int x,
   ) {
-    return _MONERO_DEBUG_test2(
+    return _CWLWS_DEBUG_test2(
       x,
     );
   }
 
-  late final _MONERO_DEBUG_test2Ptr =
+  late final _CWLWS_DEBUG_test2Ptr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
-          'MONERO_DEBUG_test2');
-  late final _MONERO_DEBUG_test2 =
-      _MONERO_DEBUG_test2Ptr.asFunction<int Function(int)>();
+          'CWLWS_DEBUG_test2');
+  late final _CWLWS_DEBUG_test2 =
+      _CWLWS_DEBUG_test2Ptr.asFunction<int Function(int)>();
 
-  int MONERO_DEBUG_test3(
+  int CWLWS_DEBUG_test3(
     int x,
   ) {
-    return _MONERO_DEBUG_test3(
+    return _CWLWS_DEBUG_test3(
       x,
     );
   }
 
-  late final _MONERO_DEBUG_test3Ptr =
+  late final _CWLWS_DEBUG_test3Ptr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Uint64)>>(
-          'MONERO_DEBUG_test3');
-  late final _MONERO_DEBUG_test3 =
-      _MONERO_DEBUG_test3Ptr.asFunction<int Function(int)>();
+          'CWLWS_DEBUG_test3');
+  late final _CWLWS_DEBUG_test3 =
+      _CWLWS_DEBUG_test3Ptr.asFunction<int Function(int)>();
 
-  ffi.Pointer<ffi.Void> MONERO_DEBUG_test4(
+  ffi.Pointer<ffi.Void> CWLWS_DEBUG_test4(
     int x,
   ) {
-    return _MONERO_DEBUG_test4(
+    return _CWLWS_DEBUG_test4(
       x,
     );
   }
 
-  late final _MONERO_DEBUG_test4Ptr =
+  late final _CWLWS_DEBUG_test4Ptr =
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Uint64)>>(
-          'MONERO_DEBUG_test4');
-  late final _MONERO_DEBUG_test4 =
-      _MONERO_DEBUG_test4Ptr.asFunction<ffi.Pointer<ffi.Void> Function(int)>();
+          'CWLWS_DEBUG_test4');
+  late final _CWLWS_DEBUG_test4 =
+      _CWLWS_DEBUG_test4Ptr.asFunction<ffi.Pointer<ffi.Void> Function(int)>();
 
-  ffi.Pointer<ffi.Char> MONERO_DEBUG_test5() {
-    return _MONERO_DEBUG_test5();
+  ffi.Pointer<ffi.Char> CWLWS_DEBUG_test5() {
+    return _CWLWS_DEBUG_test5();
   }
 
-  late final _MONERO_DEBUG_test5Ptr =
+  late final _CWLWS_DEBUG_test5Ptr =
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function()>>(
-          'MONERO_DEBUG_test5');
-  late final _MONERO_DEBUG_test5 =
-      _MONERO_DEBUG_test5Ptr.asFunction<ffi.Pointer<ffi.Char> Function()>();
+          'CWLWS_DEBUG_test5');
+  late final _CWLWS_DEBUG_test5 =
+      _CWLWS_DEBUG_test5Ptr.asFunction<ffi.Pointer<ffi.Char> Function()>();
 
-  ffi.Pointer<ffi.Char> MONERO_DEBUG_test5_std() {
-    return _MONERO_DEBUG_test5_std();
+  ffi.Pointer<ffi.Char> CWLWS_DEBUG_test5_std() {
+    return _CWLWS_DEBUG_test5_std();
   }
 
-  late final _MONERO_DEBUG_test5_stdPtr =
+  late final _CWLWS_DEBUG_test5_stdPtr =
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function()>>(
-          'MONERO_DEBUG_test5_std');
-  late final _MONERO_DEBUG_test5_std =
-      _MONERO_DEBUG_test5_stdPtr.asFunction<ffi.Pointer<ffi.Char> Function()>();
+          'CWLWS_DEBUG_test5_std');
+  late final _CWLWS_DEBUG_test5_std =
+      _CWLWS_DEBUG_test5_stdPtr.asFunction<ffi.Pointer<ffi.Char> Function()>();
 
-  bool MONERO_DEBUG_isPointerNull(
+  bool CWLWS_DEBUG_isPointerNull(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_DEBUG_isPointerNull(
+    return _CWLWS_DEBUG_isPointerNull(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_DEBUG_isPointerNullPtr =
+  late final _CWLWS_DEBUG_isPointerNullPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_DEBUG_isPointerNull');
-  late final _MONERO_DEBUG_isPointerNull = _MONERO_DEBUG_isPointerNullPtr
+          'CWLWS_DEBUG_isPointerNull');
+  late final _CWLWS_DEBUG_isPointerNull = _CWLWS_DEBUG_isPointerNullPtr
       .asFunction<bool Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Void> MONERO_cw_getWalletListener(
+  ffi.Pointer<ffi.Void> CWLWS_cw_getWalletListener(
     ffi.Pointer<ffi.Void> wallet_ptr,
   ) {
-    return _MONERO_cw_getWalletListener(
+    return _CWLWS_cw_getWalletListener(
       wallet_ptr,
     );
   }
 
-  late final _MONERO_cw_getWalletListenerPtr = _lookup<
+  late final _CWLWS_cw_getWalletListenerPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(
-              ffi.Pointer<ffi.Void>)>>('MONERO_cw_getWalletListener');
-  late final _MONERO_cw_getWalletListener = _MONERO_cw_getWalletListenerPtr
+              ffi.Pointer<ffi.Void>)>>('CWLWS_cw_getWalletListener');
+  late final _CWLWS_cw_getWalletListener = _CWLWS_cw_getWalletListenerPtr
       .asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_cw_WalletListener_resetNeedToRefresh(
+  void CWLWS_cw_WalletListener_resetNeedToRefresh(
     ffi.Pointer<ffi.Void> cw_walletListener_ptr,
   ) {
-    return _MONERO_cw_WalletListener_resetNeedToRefresh(
+    return _CWLWS_cw_WalletListener_resetNeedToRefresh(
       cw_walletListener_ptr,
     );
   }
 
-  late final _MONERO_cw_WalletListener_resetNeedToRefreshPtr =
+  late final _CWLWS_cw_WalletListener_resetNeedToRefreshPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_cw_WalletListener_resetNeedToRefresh');
-  late final _MONERO_cw_WalletListener_resetNeedToRefresh =
-      _MONERO_cw_WalletListener_resetNeedToRefreshPtr.asFunction<
+          'CWLWS_cw_WalletListener_resetNeedToRefresh');
+  late final _CWLWS_cw_WalletListener_resetNeedToRefresh =
+      _CWLWS_cw_WalletListener_resetNeedToRefreshPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_cw_WalletListener_isNeedToRefresh(
+  bool CWLWS_cw_WalletListener_isNeedToRefresh(
     ffi.Pointer<ffi.Void> cw_walletListener_ptr,
   ) {
-    return _MONERO_cw_WalletListener_isNeedToRefresh(
+    return _CWLWS_cw_WalletListener_isNeedToRefresh(
       cw_walletListener_ptr,
     );
   }
 
-  late final _MONERO_cw_WalletListener_isNeedToRefreshPtr =
+  late final _CWLWS_cw_WalletListener_isNeedToRefreshPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_cw_WalletListener_isNeedToRefresh');
-  late final _MONERO_cw_WalletListener_isNeedToRefresh =
-      _MONERO_cw_WalletListener_isNeedToRefreshPtr.asFunction<
+          'CWLWS_cw_WalletListener_isNeedToRefresh');
+  late final _CWLWS_cw_WalletListener_isNeedToRefresh =
+      _CWLWS_cw_WalletListener_isNeedToRefreshPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>)>();
 
-  bool MONERO_cw_WalletListener_isNewTransactionExist(
+  bool CWLWS_cw_WalletListener_isNewTransactionExist(
     ffi.Pointer<ffi.Void> cw_walletListener_ptr,
   ) {
-    return _MONERO_cw_WalletListener_isNewTransactionExist(
+    return _CWLWS_cw_WalletListener_isNewTransactionExist(
       cw_walletListener_ptr,
     );
   }
 
-  late final _MONERO_cw_WalletListener_isNewTransactionExistPtr =
+  late final _CWLWS_cw_WalletListener_isNewTransactionExistPtr =
       _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_cw_WalletListener_isNewTransactionExist');
-  late final _MONERO_cw_WalletListener_isNewTransactionExist =
-      _MONERO_cw_WalletListener_isNewTransactionExistPtr.asFunction<
+          'CWLWS_cw_WalletListener_isNewTransactionExist');
+  late final _CWLWS_cw_WalletListener_isNewTransactionExist =
+      _CWLWS_cw_WalletListener_isNewTransactionExistPtr.asFunction<
           bool Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_cw_WalletListener_resetIsNewTransactionExist(
+  void CWLWS_cw_WalletListener_resetIsNewTransactionExist(
     ffi.Pointer<ffi.Void> cw_walletListener_ptr,
   ) {
-    return _MONERO_cw_WalletListener_resetIsNewTransactionExist(
+    return _CWLWS_cw_WalletListener_resetIsNewTransactionExist(
       cw_walletListener_ptr,
     );
   }
 
-  late final _MONERO_cw_WalletListener_resetIsNewTransactionExistPtr =
+  late final _CWLWS_cw_WalletListener_resetIsNewTransactionExistPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_cw_WalletListener_resetIsNewTransactionExist');
-  late final _MONERO_cw_WalletListener_resetIsNewTransactionExist =
-      _MONERO_cw_WalletListener_resetIsNewTransactionExistPtr.asFunction<
+          'CWLWS_cw_WalletListener_resetIsNewTransactionExist');
+  late final _CWLWS_cw_WalletListener_resetIsNewTransactionExist =
+      _CWLWS_cw_WalletListener_resetIsNewTransactionExistPtr.asFunction<
           void Function(ffi.Pointer<ffi.Void>)>();
 
-  int MONERO_cw_WalletListener_height(
+  int CWLWS_cw_WalletListener_height(
     ffi.Pointer<ffi.Void> cw_walletListener_ptr,
   ) {
-    return _MONERO_cw_WalletListener_height(
+    return _CWLWS_cw_WalletListener_height(
       cw_walletListener_ptr,
     );
   }
 
-  late final _MONERO_cw_WalletListener_heightPtr =
+  late final _CWLWS_cw_WalletListener_heightPtr =
       _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_cw_WalletListener_height');
-  late final _MONERO_cw_WalletListener_height =
-      _MONERO_cw_WalletListener_heightPtr.asFunction<
+          'CWLWS_cw_WalletListener_height');
+  late final _CWLWS_cw_WalletListener_height =
+      _CWLWS_cw_WalletListener_heightPtr.asFunction<
           int Function(ffi.Pointer<ffi.Void>)>();
 
-  void MONERO_free(
+  void CWLWS_free(
     ffi.Pointer<ffi.Void> ptr,
   ) {
-    return _MONERO_free(
+    return _CWLWS_free(
       ptr,
     );
   }
 
-  late final _MONERO_freePtr =
+  late final _CWLWS_freePtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-          'MONERO_free');
-  late final _MONERO_free =
-      _MONERO_freePtr.asFunction<void Function(ffi.Pointer<ffi.Void>)>();
+          'CWLWS_free');
+  late final _CWLWS_free =
+      _CWLWS_freePtr.asFunction<void Function(ffi.Pointer<ffi.Void>)>();
 
-  ffi.Pointer<ffi.Char> MONERO_checksum_wallet2_api_c_h() {
-    return _MONERO_checksum_wallet2_api_c_h();
+  ffi.Pointer<ffi.Char> CWLWS_checksum_wallet2_api_c_h() {
+    return _CWLWS_checksum_wallet2_api_c_h();
   }
 
-  late final _MONERO_checksum_wallet2_api_c_hPtr =
+  late final _CWLWS_checksum_wallet2_api_c_hPtr =
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function()>>(
-          'MONERO_checksum_wallet2_api_c_h');
-  late final _MONERO_checksum_wallet2_api_c_h =
-      _MONERO_checksum_wallet2_api_c_hPtr.asFunction<
+          'CWLWS_checksum_wallet2_api_c_h');
+  late final _CWLWS_checksum_wallet2_api_c_h =
+      _CWLWS_checksum_wallet2_api_c_hPtr.asFunction<
           ffi.Pointer<ffi.Char> Function()>();
 
-  ffi.Pointer<ffi.Char> MONERO_checksum_wallet2_api_c_cpp() {
-    return _MONERO_checksum_wallet2_api_c_cpp();
+  ffi.Pointer<ffi.Char> CWLWS_checksum_wallet2_api_c_cpp() {
+    return _CWLWS_checksum_wallet2_api_c_cpp();
   }
 
-  late final _MONERO_checksum_wallet2_api_c_cppPtr =
+  late final _CWLWS_checksum_wallet2_api_c_cppPtr =
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function()>>(
-          'MONERO_checksum_wallet2_api_c_cpp');
-  late final _MONERO_checksum_wallet2_api_c_cpp =
-      _MONERO_checksum_wallet2_api_c_cppPtr.asFunction<
+          'CWLWS_checksum_wallet2_api_c_cpp');
+  late final _CWLWS_checksum_wallet2_api_c_cpp =
+      _CWLWS_checksum_wallet2_api_c_cppPtr.asFunction<
           ffi.Pointer<ffi.Char> Function()>();
 
-  ffi.Pointer<ffi.Char> MONERO_checksum_wallet2_api_c_exp() {
-    return _MONERO_checksum_wallet2_api_c_exp();
+  ffi.Pointer<ffi.Char> CWLWS_checksum_wallet2_api_c_exp() {
+    return _CWLWS_checksum_wallet2_api_c_exp();
   }
 
-  late final _MONERO_checksum_wallet2_api_c_expPtr =
+  late final _CWLWS_checksum_wallet2_api_c_expPtr =
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function()>>(
-          'MONERO_checksum_wallet2_api_c_exp');
-  late final _MONERO_checksum_wallet2_api_c_exp =
-      _MONERO_checksum_wallet2_api_c_expPtr.asFunction<
+          'CWLWS_checksum_wallet2_api_c_exp');
+  late final _CWLWS_checksum_wallet2_api_c_exp =
+      _CWLWS_checksum_wallet2_api_c_expPtr.asFunction<
           ffi.Pointer<ffi.Char> Function()>();
 }
