@@ -1,0 +1,17 @@
+{
+  "version": "5",
+  "remote": {
+    "https://raw.githubusercontent.com/karlbuys/monero_c/main/impls/monero.ts/mod.ts": "4a268744d550c07cac728c8f02b3296960f09df522f33aa8fa82ab0459ec14d1",
+    "https://raw.githubusercontent.com/karlbuys/monero_c/main/impls/monero.ts/src/bindings.ts": "b2e5db50fa0393c356977ed3a0eedff6b7d18a0deb1d1f77b1b4ca0bb6d323bb",
+    "https://raw.githubusercontent.com/karlbuys/monero_c/main/impls/monero.ts/src/coins.ts": "18ce40cf8f6eed117313296c91417127d69e076a67deaf95642f8d9c9cac9a6b",
+    "https://raw.githubusercontent.com/karlbuys/monero_c/main/impls/monero.ts/src/coins_info.ts": "3c2feb03639beffe9daa3238f6b19f1addc881bc623d27315a262deae386c520",
+    "https://raw.githubusercontent.com/karlbuys/monero_c/main/impls/monero.ts/src/pending_transaction.ts": "6d3a0e4281d62b8a9b0cf3f3e7595c56834092cf07ad6da11fc6782ae180db16",
+    "https://raw.githubusercontent.com/karlbuys/monero_c/main/impls/monero.ts/src/symbols.ts": "e45d34c5ba2d5b95e4a03c4e3eb52bb627c66819a361640efb12cbcbb5d43b73",
+    "https://raw.githubusercontent.com/karlbuys/monero_c/main/impls/monero.ts/src/transaction_history.ts": "72f968cd7f30b9bca8dba91bf28133ef70ed9e4fe23874a178df349792f83267",
+    "https://raw.githubusercontent.com/karlbuys/monero_c/main/impls/monero.ts/src/transaction_info.ts": "2291e3eeeb88ded50cb9acdbab08cabc0abf1a5a507325d30009fd196f42ce1a",
+    "https://raw.githubusercontent.com/karlbuys/monero_c/main/impls/monero.ts/src/unsigned_transaction.ts": "139b2588d1e46b6195ed1965b688c6a812b6ca1ecb9ff500c01c871510bb945d",
+    "https://raw.githubusercontent.com/karlbuys/monero_c/main/impls/monero.ts/src/utils.ts": "2cda635de911cefc4dc819ccdd8654fb5d4a690edb770172d3e380b36dcac623",
+    "https://raw.githubusercontent.com/karlbuys/monero_c/main/impls/monero.ts/src/wallet.ts": "57e258eaf7d24c74f4285deea27a1cfbc24bfd79b2f96d25ce649463390a97fd",
+    "https://raw.githubusercontent.com/karlbuys/monero_c/main/impls/monero.ts/src/wallet_manager.ts": "ff4b9fe6e77ed6f1b9329551fb9142b0789e1c6e13a90f7059c9fb6b04ff5655"
+  }
+}

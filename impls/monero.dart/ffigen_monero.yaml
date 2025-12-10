@@ -3,9 +3,10 @@ description: monero_c bindings
 output: 'lib/src/generated_bindings_monero.g.dart'
 headers:
   entry-points:
-    - '../../monero_libwallet2_api_c/src/main/cpp/wallet2_api_c.h'
+    - '../../cwlws_libwallet2_api_c/src/main/cpp/wallet2_api_c.h'
 
 exclude-all-by-default: true
 functions:
   include:
-    - "MONERO_.+"
+    - "CWLWS_.+"
+    - "LWSF_.+"
