@@ -3,20 +3,20 @@
 ## Usage
 
 ```
-monero:
+cwlws:
   git:
-    url: https://github.com/mrcyjanek/monero_c
-    ref: master
+    url: https://github.com/karlbuys/monero_c
+    ref: main
     path: impls/monero.dart
 ```
 
 ```dart
-import 'package: monero/monero.dart' as monero;
+import 'package: monero/monero.dart' as cwlws;
 
 void main() {
-    final wm = monero.WalletManagerFactory_getWalletManager();
-    final w = monero.WalletManager_openWallet({...});
-    print(monero.Wallet_balance(w));
+    final wm = cwlws.WalletManagerFactory_getWalletManager();
+    final w = cwlws.WalletManager_openWallet({...});
+    print(cwlws.Wallet_balance(w));
 }
 ```
 
