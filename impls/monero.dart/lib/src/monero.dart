@@ -300,27 +300,27 @@ class MoneroWalletListener implements Wallet2WalletListener {
   
   @override
   int height() {
-    return monero.MONERO_cw_WalletListener_height(walletListenerPtr);
+    return monero.CWLWS_cw_WalletListener_height(walletListenerPtr);
   }
   
   @override
   bool isNeedToRefresh() {
-    return monero.MONERO_cw_WalletListener_isNeedToRefresh(walletListenerPtr);
+    return monero.CWLWS_cw_WalletListener_isNeedToRefresh(walletListenerPtr);
   }
   
   @override
   bool isNewTransactionExist() {
-    return monero.MONERO_cw_WalletListener_isNewTransactionExist(walletListenerPtr);
+    return monero.CWLWS_cw_WalletListener_isNewTransactionExist(walletListenerPtr);
   }
   
   @override
   void resetIsNewTransactionExist() {
-    monero.MONERO_cw_WalletListener_resetIsNewTransactionExist(walletListenerPtr);
+    monero.CWLWS_cw_WalletListener_resetIsNewTransactionExist(walletListenerPtr);
   }
   
   @override
   void resetNeedToRefresh() {
-    monero.MONERO_cw_WalletListener_resetNeedToRefresh(walletListenerPtr);
+    monero.CWLWS_cw_WalletListener_resetNeedToRefresh(walletListenerPtr);
   }
 
   @override
@@ -332,17 +332,17 @@ class MoneroWalletChecksum implements Wallet2Checksum {
 
   @override
   String checksum_wallet2_api_c_cpp() {
-    return monero.MONERO_checksum_wallet2_api_c_cpp();
+    return monero.CWLWS_checksum_wallet2_api_c_cpp();
   }
   
   @override
   String checksum_wallet2_api_c_exp() {
-    return monero.MONERO_checksum_wallet2_api_c_exp();
+    return monero.CWLWS_checksum_wallet2_api_c_exp();
   }
   
   @override
   String checksum_wallet2_api_c_h() {
-    return monero.MONERO_checksum_wallet2_api_c_h();
+    return monero.CWLWS_checksum_wallet2_api_c_h();
   }
 
   @override
@@ -354,7 +354,7 @@ class MoneroFree implements Wallet2Free {
 
   @override
   void free(Pointer<Void> ptr) {
-    monero.MONERO_free(ptr);
+    monero.CWLWS_free(ptr);
   }
 
   @override
@@ -1088,7 +1088,7 @@ class MoneroWallet implements Wallet2Wallet {
   
   @override
   Wallet2WalletListener getWalletListener() {
-    final listener = monero.MONERO_cw_getWalletListener(walletPtr);
+    final listener = monero.CWLWS_cw_getWalletListener(walletPtr);
     return MoneroWalletListener(listener);
   }
   
@@ -1661,6 +1661,11 @@ class MoneroWalletManagerFactory implements Wallet2WalletManagerFactory {
   @override
   Wallet2WalletManager getWalletManager() {
     return MoneroWalletManager(monero.WalletManagerFactory_getWalletManager());
+  }
+
+  @override
+  Wallet2WalletManager getLWSFWalletManager() {
+    return MoneroWalletManager(monero.WalletManagerFactory_getLWSFWalletManager());
   }
 
   @override

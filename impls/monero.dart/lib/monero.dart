@@ -24,7 +24,7 @@ library;
 //     required int pendingTransactionPriority,  /
 //     required int subaddr_account,            /
 //     List<String> preferredInputs = const []}) {                 List<String> - gets joined and passed as 2 separate parameters to be split in the C side____
-//   debugStart?.call('MONERO_Wallet_createTransaction'); <------------- debugStart functions just marks the function as currently being executed, used        |
+//   debugStart?.call('CWLWS_Wallet_createTransaction'); <------------- debugStart functions just marks the function as currently being executed, used        |
 //   lib ??= MoneroC(DynamicLibrary.open(libPath));                    \_for performance debugging                                                             |
 //   \_____________ Load the library in case it is not loaded                                                                                                  |
 //   final dst_addr_ = dst_addr.toNativeUtf8().cast<Char>(); -----------------| Cast the strings into Chars so it can be used as a parameter in a function     |
@@ -43,27 +43,27 @@ library;
 //   );___________________________________________________________/
 //   calloc.free(dst_addr_);---------------| Free the memory once we don't need it
 //   calloc.free(payment_id_);-------------|
-//   debugEnd?.call('MONERO_Wallet_createTransaction'); <------------- Mark the function as executed
+//   debugEnd?.call('CWLWS_Wallet_createTransaction'); <------------- Mark the function as executed
 //   return s; <------------- return the value
 // }
 //
 // Extra case is happening when we have a function call that returns const char* as we have to be memory safe
 // String PendingTransaction_txid(PendingTransaction ptr, String separator) {
-//   debugStart?.call('MONERO_PendingTransaction_txid');
+//   debugStart?.call('CWLWS_PendingTransaction_txid');
 //   lib ??= MoneroC(DynamicLibrary.open(libPath));
 //   final separator_ = separator.toNativeUtf8().cast<Char>();
-//   final txid = lib!.MONERO_PendingTransaction_txid(ptr, separator_);
+//   final txid = lib!.CWLWS_PendingTransaction_txid(ptr, separator_);
 //   calloc.free(separator_);
-//   debugEnd?.call('MONERO_PendingTransaction_txid');
+//   debugEnd?.call('CWLWS_PendingTransaction_txid');
 //   try { <------------- We need to try-catch these calls because they may fail in an unlikely case when we get an invalid UTF-8 string,
 //     final strPtr = txid.cast<Utf8>();                                            it is better to throw than to crash main isolate imo.
 //     final str = strPtr.toDartString(); <------------- convert the pointer to const char* to dart String
-//     MONERO_free(strPtr.cast()); <------------- free the memory
-//     debugEnd?.call('MONERO_PendingTransaction_txid');
+//     CWLWS_free(strPtr.cast()); <------------- free the memory
+//     debugEnd?.call('CWLWS_PendingTransaction_txid');
 //     return str; <------------- return the value
 //   } catch (e) {
-//     errorHandler?.call('MONERO_PendingTransaction_txid', e);
-//     debugEnd?.call('MONERO_PendingTransaction_txid');
+//     errorHandler?.call('CWLWS_PendingTransaction_txid', e);
+//     debugEnd?.call('CWLWS_PendingTransaction_txid');
 //     return ""; <------------- return an empty string in case of an error.
 //   }
 // }
@@ -137,26 +137,26 @@ void Function(String call, dynamic error)? errorHandler = (call, error) {
 };
 @Deprecated("TODO")
 int PendingTransaction_status(PendingTransaction ptr) {
-  debugStart?.call('MONERO_PendingTransaction_status');
+  debugStart?.call('CWLWS_PendingTransaction_status');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_PendingTransaction_status(ptr);
-  debugEnd?.call('MONERO_PendingTransaction_status');
+  final status = lib!.CWLWS_PendingTransaction_status(ptr);
+  debugEnd?.call('CWLWS_PendingTransaction_status');
   return status;
 }
 
 @Deprecated("TODO")
 String PendingTransaction_errorString(PendingTransaction ptr) {
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  debugStart?.call('MONERO_PendingTransaction_errorString');
+  debugStart?.call('CWLWS_PendingTransaction_errorString');
   try {
-    final rPtr = lib!.MONERO_PendingTransaction_errorString(ptr).cast<Utf8>();
+    final rPtr = lib!.CWLWS_PendingTransaction_errorString(ptr).cast<Utf8>();
     final str = rPtr.toDartString();
-    MONERO_free(rPtr.cast());
-    debugEnd?.call('MONERO_PendingTransaction_errorString');
+    CWLWS_free(rPtr.cast());
+    debugEnd?.call('CWLWS_PendingTransaction_errorString');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_PendingTransaction_errorString', e);
-    debugEnd?.call('MONERO_PendingTransaction_errorString');
+    errorHandler?.call('CWLWS_PendingTransaction_errorString', e);
+    debugEnd?.call('CWLWS_PendingTransaction_errorString');
     return "";
   }
 }
@@ -164,113 +164,113 @@ String PendingTransaction_errorString(PendingTransaction ptr) {
 @Deprecated("TODO")
 bool PendingTransaction_commit(PendingTransaction ptr,
     {required String filename, required bool overwrite}) {
-  debugStart?.call('MONERO_PendingTransaction_commit');
+  debugStart?.call('CWLWS_PendingTransaction_commit');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final filename_ = filename.toNativeUtf8().cast<Char>();
   final result =
-      lib!.MONERO_PendingTransaction_commit(ptr, filename_, overwrite);
+      lib!.CWLWS_PendingTransaction_commit(ptr, filename_, overwrite);
   calloc.free(filename_);
-  debugEnd?.call('MONERO_PendingTransaction_commit');
+  debugEnd?.call('CWLWS_PendingTransaction_commit');
   return result;
 }
 
 @Deprecated("TODO")
 String PendingTransaction_commitUR(
     PendingTransaction ptr, int max_fragment_length) {
-  debugStart?.call('MONERO_PendingTransaction_commitUR');
+  debugStart?.call('CWLWS_PendingTransaction_commitUR');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final txid =
-      lib!.MONERO_PendingTransaction_commitUR(ptr, max_fragment_length);
-  debugEnd?.call('MONERO_PendingTransaction_commitUR');
+      lib!.CWLWS_PendingTransaction_commitUR(ptr, max_fragment_length);
+  debugEnd?.call('CWLWS_PendingTransaction_commitUR');
   try {
     final strPtr = txid.cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_PendingTransaction_commitUR');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_PendingTransaction_commitUR');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_PendingTransaction_commitUR', e);
-    debugEnd?.call('MONERO_PendingTransaction_commitUR');
+    errorHandler?.call('CWLWS_PendingTransaction_commitUR', e);
+    debugEnd?.call('CWLWS_PendingTransaction_commitUR');
     return "";
   }
 }
 
 @Deprecated("TODO")
 int PendingTransaction_amount(PendingTransaction ptr) {
-  debugStart?.call('MONERO_PendingTransaction_amount');
+  debugStart?.call('CWLWS_PendingTransaction_amount');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final amount = lib!.MONERO_PendingTransaction_amount(ptr);
-  debugStart?.call('MONERO_PendingTransaction_amount');
+  final amount = lib!.CWLWS_PendingTransaction_amount(ptr);
+  debugStart?.call('CWLWS_PendingTransaction_amount');
   return amount;
 }
 
 @Deprecated("TODO")
 int PendingTransaction_dust(PendingTransaction ptr) {
-  debugStart?.call('MONERO_PendingTransaction_dust');
+  debugStart?.call('CWLWS_PendingTransaction_dust');
 
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final dust = lib!.MONERO_PendingTransaction_dust(ptr);
-  debugStart?.call('MONERO_PendingTransaction_dust');
+  final dust = lib!.CWLWS_PendingTransaction_dust(ptr);
+  debugStart?.call('CWLWS_PendingTransaction_dust');
   return dust;
 }
 
 @Deprecated("TODO")
 int PendingTransaction_fee(PendingTransaction ptr) {
-  debugStart?.call('MONERO_PendingTransaction_fee');
+  debugStart?.call('CWLWS_PendingTransaction_fee');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final fee = lib!.MONERO_PendingTransaction_fee(ptr);
-  debugEnd?.call('MONERO_PendingTransaction_fee');
+  final fee = lib!.CWLWS_PendingTransaction_fee(ptr);
+  debugEnd?.call('CWLWS_PendingTransaction_fee');
   return fee;
 }
 
 @Deprecated("TODO")
 String PendingTransaction_txid(PendingTransaction ptr, String separator) {
-  debugStart?.call('MONERO_PendingTransaction_txid');
+  debugStart?.call('CWLWS_PendingTransaction_txid');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final separator_ = separator.toNativeUtf8().cast<Char>();
-  final txid = lib!.MONERO_PendingTransaction_txid(ptr, separator_);
+  final txid = lib!.CWLWS_PendingTransaction_txid(ptr, separator_);
   calloc.free(separator_);
-  debugEnd?.call('MONERO_PendingTransaction_txid');
+  debugEnd?.call('CWLWS_PendingTransaction_txid');
   try {
     final strPtr = txid.cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_PendingTransaction_txid');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_PendingTransaction_txid');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_PendingTransaction_txid', e);
-    debugEnd?.call('MONERO_PendingTransaction_txid');
+    errorHandler?.call('CWLWS_PendingTransaction_txid', e);
+    debugEnd?.call('CWLWS_PendingTransaction_txid');
     return "";
   }
 }
 
 @Deprecated("TODO")
 int PendingTransaction_txCount(PendingTransaction ptr) {
-  debugStart?.call('MONERO_PendingTransaction_txCount');
+  debugStart?.call('CWLWS_PendingTransaction_txCount');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final txCount = lib!.MONERO_PendingTransaction_txCount(ptr);
-  debugEnd?.call('MONERO_PendingTransaction_txCount');
+  final txCount = lib!.CWLWS_PendingTransaction_txCount(ptr);
+  debugEnd?.call('CWLWS_PendingTransaction_txCount');
   return txCount;
 }
 
 @Deprecated("TODO")
 String PendingTransaction_subaddrAccount(
     PendingTransaction ptr, String separator) {
-  debugStart?.call('MONERO_PendingTransaction_subaddrAccount');
+  debugStart?.call('CWLWS_PendingTransaction_subaddrAccount');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final separator_ = separator.toNativeUtf8().cast<Char>();
-  final txid = lib!.MONERO_PendingTransaction_subaddrAccount(ptr, separator_);
+  final txid = lib!.CWLWS_PendingTransaction_subaddrAccount(ptr, separator_);
   calloc.free(separator_);
-  debugEnd?.call('MONERO_PendingTransaction_subaddrAccount');
+  debugEnd?.call('CWLWS_PendingTransaction_subaddrAccount');
   try {
     final strPtr = txid.cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_PendingTransaction_subaddrAccount');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_PendingTransaction_subaddrAccount');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_PendingTransaction_subaddrAccount', e);
-    debugEnd?.call('MONERO_PendingTransaction_subaddrAccount');
+    errorHandler?.call('CWLWS_PendingTransaction_subaddrAccount', e);
+    debugEnd?.call('CWLWS_PendingTransaction_subaddrAccount');
     return "";
   }
 }
@@ -278,92 +278,92 @@ String PendingTransaction_subaddrAccount(
 @Deprecated("TODO")
 String PendingTransaction_subaddrIndices(
     PendingTransaction ptr, String separator) {
-  debugStart?.call('MONERO_PendingTransaction_subaddrIndices');
+  debugStart?.call('CWLWS_PendingTransaction_subaddrIndices');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final separator_ = separator.toNativeUtf8().cast<Char>();
-  final txid = lib!.MONERO_PendingTransaction_subaddrIndices(ptr, separator_);
+  final txid = lib!.CWLWS_PendingTransaction_subaddrIndices(ptr, separator_);
   calloc.free(separator_);
-  debugEnd?.call('MONERO_PendingTransaction_subaddrIndices');
+  debugEnd?.call('CWLWS_PendingTransaction_subaddrIndices');
   try {
     final strPtr = txid.cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_PendingTransaction_subaddrIndices');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_PendingTransaction_subaddrIndices');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_PendingTransaction_subaddrIndices', e);
-    debugEnd?.call('MONERO_PendingTransaction_subaddrIndices');
+    errorHandler?.call('CWLWS_PendingTransaction_subaddrIndices', e);
+    debugEnd?.call('CWLWS_PendingTransaction_subaddrIndices');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String PendingTransaction_multisigSignData(PendingTransaction ptr) {
-  debugStart?.call('MONERO_PendingTransaction_multisigSignData');
+  debugStart?.call('CWLWS_PendingTransaction_multisigSignData');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final txid = lib!.MONERO_PendingTransaction_multisigSignData(ptr);
-  debugEnd?.call('MONERO_PendingTransaction_multisigSignData');
+  final txid = lib!.CWLWS_PendingTransaction_multisigSignData(ptr);
+  debugEnd?.call('CWLWS_PendingTransaction_multisigSignData');
   try {
     final strPtr = txid.cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_PendingTransaction_multisigSignData');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_PendingTransaction_multisigSignData');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_PendingTransaction_multisigSignData', e);
-    debugEnd?.call('MONERO_PendingTransaction_multisigSignData');
+    errorHandler?.call('CWLWS_PendingTransaction_multisigSignData', e);
+    debugEnd?.call('CWLWS_PendingTransaction_multisigSignData');
     return "";
   }
 }
 
 @Deprecated("TODO")
 void PendingTransaction_signMultisigTx(PendingTransaction ptr) {
-  debugStart?.call('MONERO_PendingTransaction_signMultisigTx');
+  debugStart?.call('CWLWS_PendingTransaction_signMultisigTx');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final ret = lib!.MONERO_PendingTransaction_signMultisigTx(ptr);
-  debugEnd?.call('MONERO_PendingTransaction_signMultisigTx');
+  final ret = lib!.CWLWS_PendingTransaction_signMultisigTx(ptr);
+  debugEnd?.call('CWLWS_PendingTransaction_signMultisigTx');
   return ret;
 }
 
 @Deprecated("TODO")
 String PendingTransaction_signersKeys(
     PendingTransaction ptr, String separator) {
-  debugStart?.call('MONERO_PendingTransaction_signersKeys');
+  debugStart?.call('CWLWS_PendingTransaction_signersKeys');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final separator_ = separator.toNativeUtf8().cast<Char>();
-  final txid = lib!.MONERO_PendingTransaction_signersKeys(ptr, separator_);
+  final txid = lib!.CWLWS_PendingTransaction_signersKeys(ptr, separator_);
   calloc.free(separator_);
-  debugEnd?.call('MONERO_PendingTransaction_signersKeys');
+  debugEnd?.call('CWLWS_PendingTransaction_signersKeys');
   try {
     final strPtr = txid.cast<Utf8>();
     final str = strPtr.toDartString();
-    debugEnd?.call('MONERO_PendingTransaction_signersKeys');
-    MONERO_free(strPtr.cast());
+    debugEnd?.call('CWLWS_PendingTransaction_signersKeys');
+    CWLWS_free(strPtr.cast());
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_PendingTransaction_signersKeys', e);
-    debugEnd?.call('MONERO_PendingTransaction_signersKeys');
+    errorHandler?.call('CWLWS_PendingTransaction_signersKeys', e);
+    debugEnd?.call('CWLWS_PendingTransaction_signersKeys');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String PendingTransaction_hex(PendingTransaction ptr, String separator) {
-  debugStart?.call('MONERO_PendingTransaction_hex');
+  debugStart?.call('CWLWS_PendingTransaction_hex');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final separator_ = separator.toNativeUtf8().cast<Char>();
-  final txid = lib!.MONERO_PendingTransaction_hex(ptr, separator_);
+  final txid = lib!.CWLWS_PendingTransaction_hex(ptr, separator_);
   calloc.free(separator_);
-  debugEnd?.call('MONERO_PendingTransaction_hex');
+  debugEnd?.call('CWLWS_PendingTransaction_hex');
   try {
     final strPtr = txid.cast<Utf8>();
     final str = strPtr.toDartString();
-    debugEnd?.call('MONERO_PendingTransaction_hex');
-    MONERO_free(strPtr.cast());
+    debugEnd?.call('CWLWS_PendingTransaction_hex');
+    CWLWS_free(strPtr.cast());
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_PendingTransaction_hex', e);
-    debugEnd?.call('MONERO_PendingTransaction_hex');
+    errorHandler?.call('CWLWS_PendingTransaction_hex', e);
+    debugEnd?.call('CWLWS_PendingTransaction_hex');
     return "";
   }
 }
@@ -374,197 +374,197 @@ typedef UnsignedTransaction = Pointer<Void>;
 
 @Deprecated("TODO")
 int UnsignedTransaction_status(UnsignedTransaction ptr) {
-  debugStart?.call('MONERO_UnsignedTransaction_status');
+  debugStart?.call('CWLWS_UnsignedTransaction_status');
 
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final dust = lib!.MONERO_UnsignedTransaction_status(ptr);
-  debugStart?.call('MONERO_UnsignedTransaction_status');
+  final dust = lib!.CWLWS_UnsignedTransaction_status(ptr);
+  debugStart?.call('CWLWS_UnsignedTransaction_status');
   return dust;
 }
 
 @Deprecated("TODO")
 String UnsignedTransaction_errorString(UnsignedTransaction ptr) {
-  debugStart?.call('MONERO_UnsignedTransaction_errorString');
+  debugStart?.call('CWLWS_UnsignedTransaction_errorString');
 
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final errorString = lib!.MONERO_UnsignedTransaction_errorString(ptr);
+  final errorString = lib!.CWLWS_UnsignedTransaction_errorString(ptr);
   try {
     final strPtr = errorString.cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_UnsignedTransaction_errorString');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_UnsignedTransaction_errorString');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_UnsignedTransaction_errorString', e);
-    debugEnd?.call('MONERO_UnsignedTransaction_errorString');
+    errorHandler?.call('CWLWS_UnsignedTransaction_errorString', e);
+    debugEnd?.call('CWLWS_UnsignedTransaction_errorString');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String UnsignedTransaction_amount(UnsignedTransaction ptr) {
-  debugStart?.call('MONERO_UnsignedTransaction_amount');
+  debugStart?.call('CWLWS_UnsignedTransaction_amount');
 
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final errorString =
-      lib!.MONERO_UnsignedTransaction_amount(ptr, defaultSeparator);
+      lib!.CWLWS_UnsignedTransaction_amount(ptr, defaultSeparator);
   try {
     final strPtr = errorString.cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_UnsignedTransaction_amount');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_UnsignedTransaction_amount');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_UnsignedTransaction_amount', e);
-    debugEnd?.call('MONERO_UnsignedTransaction_amount');
+    errorHandler?.call('CWLWS_UnsignedTransaction_amount', e);
+    debugEnd?.call('CWLWS_UnsignedTransaction_amount');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String UnsignedTransaction_fee(UnsignedTransaction ptr) {
-  debugStart?.call('MONERO_UnsignedTransaction_fee');
+  debugStart?.call('CWLWS_UnsignedTransaction_fee');
 
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final errorString =
-      lib!.MONERO_UnsignedTransaction_fee(ptr, defaultSeparator);
+      lib!.CWLWS_UnsignedTransaction_fee(ptr, defaultSeparator);
   try {
     final strPtr = errorString.cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_UnsignedTransaction_fee');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_UnsignedTransaction_fee');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_UnsignedTransaction_fee', e);
-    debugEnd?.call('MONERO_UnsignedTransaction_fee');
+    errorHandler?.call('CWLWS_UnsignedTransaction_fee', e);
+    debugEnd?.call('CWLWS_UnsignedTransaction_fee');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String UnsignedTransaction_mixin(UnsignedTransaction ptr) {
-  debugStart?.call('MONERO_UnsignedTransaction_mixin');
+  debugStart?.call('CWLWS_UnsignedTransaction_mixin');
 
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final errorString =
-      lib!.MONERO_UnsignedTransaction_mixin(ptr, defaultSeparator);
+      lib!.CWLWS_UnsignedTransaction_mixin(ptr, defaultSeparator);
   try {
     final strPtr = errorString.cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_UnsignedTransaction_mixin');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_UnsignedTransaction_mixin');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_UnsignedTransaction_mixin', e);
-    debugEnd?.call('MONERO_UnsignedTransaction_mixin');
+    errorHandler?.call('CWLWS_UnsignedTransaction_mixin', e);
+    debugEnd?.call('CWLWS_UnsignedTransaction_mixin');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String UnsignedTransaction_confirmationMessage(UnsignedTransaction ptr) {
-  debugStart?.call('MONERO_UnsignedTransaction_confirmationMessage');
+  debugStart?.call('CWLWS_UnsignedTransaction_confirmationMessage');
 
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final errorString = lib!.MONERO_UnsignedTransaction_confirmationMessage(ptr);
+  final errorString = lib!.CWLWS_UnsignedTransaction_confirmationMessage(ptr);
   try {
     final strPtr = errorString.cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_UnsignedTransaction_confirmationMessage');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_UnsignedTransaction_confirmationMessage');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_UnsignedTransaction_confirmationMessage', e);
-    debugEnd?.call('MONERO_UnsignedTransaction_confirmationMessage');
+    errorHandler?.call('CWLWS_UnsignedTransaction_confirmationMessage', e);
+    debugEnd?.call('CWLWS_UnsignedTransaction_confirmationMessage');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String UnsignedTransaction_paymentId(UnsignedTransaction ptr) {
-  debugStart?.call('MONERO_UnsignedTransaction_paymentId');
+  debugStart?.call('CWLWS_UnsignedTransaction_paymentId');
 
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final errorString =
-      lib!.MONERO_UnsignedTransaction_paymentId(ptr, defaultSeparator);
+      lib!.CWLWS_UnsignedTransaction_paymentId(ptr, defaultSeparator);
   try {
     final strPtr = errorString.cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_UnsignedTransaction_paymentId');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_UnsignedTransaction_paymentId');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_UnsignedTransaction_paymentId', e);
-    debugEnd?.call('MONERO_UnsignedTransaction_paymentId');
+    errorHandler?.call('CWLWS_UnsignedTransaction_paymentId', e);
+    debugEnd?.call('CWLWS_UnsignedTransaction_paymentId');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String UnsignedTransaction_recipientAddress(UnsignedTransaction ptr) {
-  debugStart?.call('MONERO_UnsignedTransaction_recipientAddress');
+  debugStart?.call('CWLWS_UnsignedTransaction_recipientAddress');
 
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final errorString =
-      lib!.MONERO_UnsignedTransaction_recipientAddress(ptr, defaultSeparator);
+      lib!.CWLWS_UnsignedTransaction_recipientAddress(ptr, defaultSeparator);
   try {
     final strPtr = errorString.cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_UnsignedTransaction_recipientAddress');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_UnsignedTransaction_recipientAddress');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_UnsignedTransaction_recipientAddress', e);
-    debugEnd?.call('MONERO_UnsignedTransaction_recipientAddress');
+    errorHandler?.call('CWLWS_UnsignedTransaction_recipientAddress', e);
+    debugEnd?.call('CWLWS_UnsignedTransaction_recipientAddress');
     return "";
   }
 }
 
 @Deprecated("TODO")
 int UnsignedTransaction_minMixinCount(UnsignedTransaction ptr) {
-  debugStart?.call('MONERO_UnsignedTransaction_minMixinCount');
+  debugStart?.call('CWLWS_UnsignedTransaction_minMixinCount');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_UnsignedTransaction_minMixinCount(ptr);
-  debugStart?.call('MONERO_UnsignedTransaction_minMixinCount');
+  final v = lib!.CWLWS_UnsignedTransaction_minMixinCount(ptr);
+  debugStart?.call('CWLWS_UnsignedTransaction_minMixinCount');
   return v;
 }
 
 @Deprecated("TODO")
 int UnsignedTransaction_txCount(UnsignedTransaction ptr) {
-  debugStart?.call('MONERO_UnsignedTransaction_txCount');
+  debugStart?.call('CWLWS_UnsignedTransaction_txCount');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_UnsignedTransaction_txCount(ptr);
-  debugStart?.call('MONERO_UnsignedTransaction_txCount');
+  final v = lib!.CWLWS_UnsignedTransaction_txCount(ptr);
+  debugStart?.call('CWLWS_UnsignedTransaction_txCount');
   return v;
 }
 
 @Deprecated("TODO")
 bool UnsignedTransaction_sign(UnsignedTransaction ptr, String signedFileName) {
-  debugStart?.call('MONERO_UnsignedTransaction_sign');
+  debugStart?.call('CWLWS_UnsignedTransaction_sign');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final signedFileName_ = signedFileName.toNativeUtf8().cast<Char>();
-  final v = lib!.MONERO_UnsignedTransaction_sign(ptr, signedFileName_);
+  final v = lib!.CWLWS_UnsignedTransaction_sign(ptr, signedFileName_);
   calloc.free(signedFileName_);
-  debugStart?.call('MONERO_UnsignedTransaction_sign');
+  debugStart?.call('CWLWS_UnsignedTransaction_sign');
   return v;
 }
 
 @Deprecated("TODO")
 String UnsignedTransaction_signUR(
     PendingTransaction ptr, int max_fragment_length) {
-  debugStart?.call('MONERO_UnsignedTransaction_signUR');
+  debugStart?.call('CWLWS_UnsignedTransaction_signUR');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final txid = lib!.MONERO_UnsignedTransaction_signUR(ptr, max_fragment_length);
-  debugEnd?.call('MONERO_UnsignedTransaction_signUR');
+  final txid = lib!.CWLWS_UnsignedTransaction_signUR(ptr, max_fragment_length);
+  debugEnd?.call('CWLWS_UnsignedTransaction_signUR');
   try {
     final strPtr = txid.cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_UnsignedTransaction_signUR');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_UnsignedTransaction_signUR');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_UnsignedTransaction_signUR', e);
-    debugEnd?.call('MONERO_UnsignedTransaction_signUR');
+    errorHandler?.call('CWLWS_UnsignedTransaction_signUR', e);
+    debugEnd?.call('CWLWS_UnsignedTransaction_signUR');
     return "";
   }
 }
@@ -577,222 +577,222 @@ enum TransactionInfo_Direction { In, Out }
 
 @Deprecated("TODO")
 TransactionInfo_Direction TransactionInfo_direction(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_direction');
+  debugStart?.call('CWLWS_TransactionInfo_direction');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final tiDir = TransactionInfo_Direction
-      .values[lib!.MONERO_TransactionInfo_direction(ptr)];
-  debugEnd?.call('MONERO_TransactionInfo_direction');
+      .values[lib!.CWLWS_TransactionInfo_direction(ptr)];
+  debugEnd?.call('CWLWS_TransactionInfo_direction');
   return tiDir;
 }
 
 @Deprecated("TODO")
 bool TransactionInfo_isPending(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_isPending');
+  debugStart?.call('CWLWS_TransactionInfo_isPending');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final isPending = lib!.MONERO_TransactionInfo_isPending(ptr);
-  debugEnd?.call('MONERO_TransactionInfo_isPending');
+  final isPending = lib!.CWLWS_TransactionInfo_isPending(ptr);
+  debugEnd?.call('CWLWS_TransactionInfo_isPending');
 
   return isPending;
 }
 
 @Deprecated("TODO")
 bool TransactionInfo_isFailed(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_isFailed');
+  debugStart?.call('CWLWS_TransactionInfo_isFailed');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final isFailed = lib!.MONERO_TransactionInfo_isFailed(ptr);
-  debugEnd?.call('MONERO_TransactionInfo_isFailed');
+  final isFailed = lib!.CWLWS_TransactionInfo_isFailed(ptr);
+  debugEnd?.call('CWLWS_TransactionInfo_isFailed');
   return isFailed;
 }
 
 @Deprecated("TODO")
 bool TransactionInfo_isCoinbase(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_isCoinbase');
+  debugStart?.call('CWLWS_TransactionInfo_isCoinbase');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final isCoinbase = lib!.MONERO_TransactionInfo_isCoinbase(ptr);
-  debugEnd?.call('MONERO_TransactionInfo_isCoinbase');
+  final isCoinbase = lib!.CWLWS_TransactionInfo_isCoinbase(ptr);
+  debugEnd?.call('CWLWS_TransactionInfo_isCoinbase');
   return isCoinbase;
 }
 
 @Deprecated("TODO")
 int TransactionInfo_amount(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_amount');
+  debugStart?.call('CWLWS_TransactionInfo_amount');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final amount = lib!.MONERO_TransactionInfo_amount(ptr);
-  debugEnd?.call('MONERO_TransactionInfo_amount');
+  final amount = lib!.CWLWS_TransactionInfo_amount(ptr);
+  debugEnd?.call('CWLWS_TransactionInfo_amount');
   return amount;
 }
 
 @Deprecated("TODO")
 int TransactionInfo_fee(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_fee');
+  debugStart?.call('CWLWS_TransactionInfo_fee');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final fee = lib!.MONERO_TransactionInfo_fee(ptr);
-  debugEnd?.call('MONERO_TransactionInfo_fee');
+  final fee = lib!.CWLWS_TransactionInfo_fee(ptr);
+  debugEnd?.call('CWLWS_TransactionInfo_fee');
   return fee;
 }
 
 @Deprecated("TODO")
 int TransactionInfo_blockHeight(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_blockHeight');
+  debugStart?.call('CWLWS_TransactionInfo_blockHeight');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final blockHeight = lib!.MONERO_TransactionInfo_blockHeight(ptr);
-  debugEnd?.call('MONERO_TransactionInfo_blockHeight');
+  final blockHeight = lib!.CWLWS_TransactionInfo_blockHeight(ptr);
+  debugEnd?.call('CWLWS_TransactionInfo_blockHeight');
   return blockHeight;
 }
 
 @Deprecated("TODO")
 String TransactionInfo_description(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_description');
+  debugStart?.call('CWLWS_TransactionInfo_description');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_TransactionInfo_description(ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_TransactionInfo_description(ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_TransactionInfo_description');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_TransactionInfo_description');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_TransactionInfo_description', e);
+    errorHandler?.call('CWLWS_TransactionInfo_description', e);
     return "";
   }
 }
 
 @Deprecated("TODO")
 String TransactionInfo_subaddrIndex(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_subaddrIndex');
+  debugStart?.call('CWLWS_TransactionInfo_subaddrIndex');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr = lib!
-        .MONERO_TransactionInfo_subaddrIndex(ptr, defaultSeparator)
+        .CWLWS_TransactionInfo_subaddrIndex(ptr, defaultSeparator)
         .cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_TransactionInfo_subaddrIndex');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_TransactionInfo_subaddrIndex');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_TransactionInfo_subaddrIndex', e);
+    errorHandler?.call('CWLWS_TransactionInfo_subaddrIndex', e);
     return "";
   }
 }
 
 @Deprecated("TODO")
 int TransactionInfo_subaddrAccount(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_subaddrAccount');
+  debugStart?.call('CWLWS_TransactionInfo_subaddrAccount');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final subaddrAccount = lib!.MONERO_TransactionInfo_subaddrAccount(ptr);
-  debugEnd?.call('MONERO_TransactionInfo_subaddrAccount');
+  final subaddrAccount = lib!.CWLWS_TransactionInfo_subaddrAccount(ptr);
+  debugEnd?.call('CWLWS_TransactionInfo_subaddrAccount');
   return subaddrAccount;
 }
 
 @Deprecated("TODO")
 String TransactionInfo_label(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_label');
+  debugStart?.call('CWLWS_TransactionInfo_label');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_TransactionInfo_label(ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_TransactionInfo_label(ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_TransactionInfo_label');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_TransactionInfo_label');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_TransactionInfo_label', e);
-    debugEnd?.call('MONERO_TransactionInfo_label');
+    errorHandler?.call('CWLWS_TransactionInfo_label', e);
+    debugEnd?.call('CWLWS_TransactionInfo_label');
     return "";
   }
 }
 
 @Deprecated("TODO")
 int TransactionInfo_confirmations(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_confirmations');
+  debugStart?.call('CWLWS_TransactionInfo_confirmations');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final confirmations = lib!.MONERO_TransactionInfo_confirmations(ptr);
-  debugEnd?.call('MONERO_TransactionInfo_confirmations');
+  final confirmations = lib!.CWLWS_TransactionInfo_confirmations(ptr);
+  debugEnd?.call('CWLWS_TransactionInfo_confirmations');
   return confirmations;
 }
 
 @Deprecated("TODO")
 int TransactionInfo_unlockTime(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_unlockTime');
+  debugStart?.call('CWLWS_TransactionInfo_unlockTime');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final unlockTime = lib!.MONERO_TransactionInfo_unlockTime(ptr);
-  debugEnd?.call('MONERO_TransactionInfo_unlockTime');
+  final unlockTime = lib!.CWLWS_TransactionInfo_unlockTime(ptr);
+  debugEnd?.call('CWLWS_TransactionInfo_unlockTime');
   return unlockTime;
 }
 
 @Deprecated("TODO")
 String TransactionInfo_hash(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_hash');
+  debugStart?.call('CWLWS_TransactionInfo_hash');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_TransactionInfo_hash(ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_TransactionInfo_hash(ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_TransactionInfo_hash');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_TransactionInfo_hash');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_TransactionInfo_hash', e);
-    debugEnd?.call('MONERO_TransactionInfo_hash');
+    errorHandler?.call('CWLWS_TransactionInfo_hash', e);
+    debugEnd?.call('CWLWS_TransactionInfo_hash');
     return "";
   }
 }
 
 @Deprecated("TODO")
 int TransactionInfo_timestamp(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_timestamp');
+  debugStart?.call('CWLWS_TransactionInfo_timestamp');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final timestamp = lib!.MONERO_TransactionInfo_timestamp(ptr);
-  debugEnd?.call('MONERO_TransactionInfo_timestamp');
+  final timestamp = lib!.CWLWS_TransactionInfo_timestamp(ptr);
+  debugEnd?.call('CWLWS_TransactionInfo_timestamp');
   return timestamp;
 }
 
 @Deprecated("TODO")
 String TransactionInfo_paymentId(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_paymentId');
+  debugStart?.call('CWLWS_TransactionInfo_paymentId');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_TransactionInfo_paymentId(ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_TransactionInfo_paymentId(ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_TransactionInfo_paymentId');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_TransactionInfo_paymentId');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_TransactionInfo_paymentId', e);
-    debugEnd?.call('MONERO_TransactionInfo_paymentId');
+    errorHandler?.call('CWLWS_TransactionInfo_paymentId', e);
+    debugEnd?.call('CWLWS_TransactionInfo_paymentId');
     return "";
   }
 }
 
 @Deprecated("TODO")
 int TransactionInfo_transfers_count(TransactionInfo ptr) {
-  debugStart?.call('MONERO_TransactionInfo_transfers_count');
+  debugStart?.call('CWLWS_TransactionInfo_transfers_count');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_TransactionInfo_transfers_count(ptr);
-  debugEnd?.call('MONERO_TransactionInfo_transfers_count');
+  final v = lib!.CWLWS_TransactionInfo_transfers_count(ptr);
+  debugEnd?.call('CWLWS_TransactionInfo_transfers_count');
   return v;
 }
 
 @Deprecated("TODO")
 int TransactionInfo_transfers_amount(TransactionInfo ptr, int index) {
-  debugStart?.call('MONERO_TransactionInfo_transfers_amount');
+  debugStart?.call('CWLWS_TransactionInfo_transfers_amount');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_TransactionInfo_transfers_amount(ptr, index);
-  debugEnd?.call('MONERO_TransactionInfo_transfers_amount');
+  final v = lib!.CWLWS_TransactionInfo_transfers_amount(ptr, index);
+  debugEnd?.call('CWLWS_TransactionInfo_transfers_amount');
   return v;
 }
 
 @Deprecated("TODO")
 String TransactionInfo_transfers_address(TransactionInfo ptr, int index) {
-  debugStart?.call('MONERO_TransactionInfo_transfers_address');
+  debugStart?.call('CWLWS_TransactionInfo_transfers_address');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr =
-        lib!.MONERO_TransactionInfo_transfers_address(ptr, index).cast<Utf8>();
+        lib!.CWLWS_TransactionInfo_transfers_address(ptr, index).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_TransactionInfo_transfers_address');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_TransactionInfo_transfers_address');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_TransactionInfo_transfers_address', e);
-    debugEnd?.call('MONERO_TransactionInfo_transfers_address');
+    errorHandler?.call('CWLWS_TransactionInfo_transfers_address', e);
+    debugEnd?.call('CWLWS_TransactionInfo_transfers_address');
     return "";
   }
 }
@@ -803,21 +803,21 @@ typedef TransactionHistory = Pointer<Void>;
 
 @Deprecated("TODO")
 int TransactionHistory_count(TransactionHistory txHistory_ptr) {
-  debugStart?.call('MONERO_TransactionHistory_count');
+  debugStart?.call('CWLWS_TransactionHistory_count');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final count = lib!.MONERO_TransactionHistory_count(txHistory_ptr);
-  debugEnd?.call('MONERO_TransactionHistory_count');
+  final count = lib!.CWLWS_TransactionHistory_count(txHistory_ptr);
+  debugEnd?.call('CWLWS_TransactionHistory_count');
   return count;
 }
 
 @Deprecated("TODO")
 TransactionInfo TransactionHistory_transaction(TransactionHistory txHistory_ptr,
     {required int index}) {
-  debugStart?.call('MONERO_TransactionHistory_transaction');
+  debugStart?.call('CWLWS_TransactionHistory_transaction');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final transaction =
-      lib!.MONERO_TransactionHistory_transaction(txHistory_ptr, index);
-  debugEnd?.call('MONERO_TransactionHistory_transaction');
+      lib!.CWLWS_TransactionHistory_transaction(txHistory_ptr, index);
+  debugEnd?.call('CWLWS_TransactionHistory_transaction');
   return transaction;
 }
 
@@ -825,34 +825,34 @@ TransactionInfo TransactionHistory_transaction(TransactionHistory txHistory_ptr,
 TransactionInfo TransactionHistory_transactionById(
     TransactionHistory txHistory_ptr,
     {required String txid}) {
-  debugStart?.call('MONERO_TransactionHistory_transactionById');
+  debugStart?.call('CWLWS_TransactionHistory_transactionById');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final txid_ = txid.toNativeUtf8().cast<Char>();
   final transaction =
-      lib!.MONERO_TransactionHistory_transactionById(txHistory_ptr, txid_);
+      lib!.CWLWS_TransactionHistory_transactionById(txHistory_ptr, txid_);
   calloc.free(txid_);
-  debugEnd?.call('MONERO_TransactionHistory_transactionById');
+  debugEnd?.call('CWLWS_TransactionHistory_transactionById');
   return transaction;
 }
 
 @Deprecated("TODO")
 void TransactionHistory_refresh(TransactionHistory txHistory_ptr) {
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  return lib!.MONERO_TransactionHistory_refresh(txHistory_ptr);
+  return lib!.CWLWS_TransactionHistory_refresh(txHistory_ptr);
 }
 
 @Deprecated("TODO")
 void TransactionHistory_setTxNote(TransactionHistory txHistory_ptr,
     {required String txid, required String note}) {
-  debugStart?.call('MONERO_TransactionHistory_setTxNote');
+  debugStart?.call('CWLWS_TransactionHistory_setTxNote');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final txid_ = txid.toNativeUtf8().cast<Char>();
   final note_ = note.toNativeUtf8().cast<Char>();
   final s =
-      lib!.MONERO_TransactionHistory_setTxNote(txHistory_ptr, txid_, note_);
+      lib!.CWLWS_TransactionHistory_setTxNote(txHistory_ptr, txid_, note_);
   calloc.free(txid_);
   calloc.free(note_);
-  debugEnd?.call('MONERO_TransactionHistory_setTxNote');
+  debugEnd?.call('CWLWS_TransactionHistory_setTxNote');
   return s;
 }
 
@@ -862,84 +862,84 @@ typedef AddressBookRow = Pointer<Void>;
 
 @Deprecated("TODO")
 String AddressBookRow_extra(AddressBookRow addressBookRow_ptr) {
-  debugStart?.call('MONERO_AddressBookRow_extra');
+  debugStart?.call('CWLWS_AddressBookRow_extra');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr =
-        lib!.MONERO_AddressBookRow_extra(addressBookRow_ptr).cast<Utf8>();
+        lib!.CWLWS_AddressBookRow_extra(addressBookRow_ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_AddressBookRow_extra');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_AddressBookRow_extra');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_AddressBookRow_extra', e);
-    debugEnd?.call('MONERO_AddressBookRow_extra');
+    errorHandler?.call('CWLWS_AddressBookRow_extra', e);
+    debugEnd?.call('CWLWS_AddressBookRow_extra');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String AddressBookRow_getAddress(AddressBookRow addressBookRow_ptr) {
-  debugStart?.call('MONERO_AddressBookRow_getAddress');
+  debugStart?.call('CWLWS_AddressBookRow_getAddress');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr =
-        lib!.MONERO_AddressBookRow_getAddress(addressBookRow_ptr).cast<Utf8>();
+        lib!.CWLWS_AddressBookRow_getAddress(addressBookRow_ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_AddressBookRow_getAddress');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_AddressBookRow_getAddress');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_AddressBookRow_getAddress', e);
-    debugEnd?.call('MONERO_AddressBookRow_getAddress');
+    errorHandler?.call('CWLWS_AddressBookRow_getAddress', e);
+    debugEnd?.call('CWLWS_AddressBookRow_getAddress');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String AddressBookRow_getDescription(AddressBookRow addressBookRow_ptr) {
-  debugStart?.call('MONERO_AddressBookRow_getDescription');
+  debugStart?.call('CWLWS_AddressBookRow_getDescription');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr = lib!
-        .MONERO_AddressBookRow_getDescription(addressBookRow_ptr)
+        .CWLWS_AddressBookRow_getDescription(addressBookRow_ptr)
         .cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_AddressBookRow_getDescription');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_AddressBookRow_getDescription');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_AddressBookRow_getDescription', e);
-    debugEnd?.call('MONERO_AddressBookRow_getDescription');
+    errorHandler?.call('CWLWS_AddressBookRow_getDescription', e);
+    debugEnd?.call('CWLWS_AddressBookRow_getDescription');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String AddressBookRow_getPaymentId(AddressBookRow addressBookRow_ptr) {
-  debugStart?.call('MONERO_AddressBookRow_getPaymentId');
+  debugStart?.call('CWLWS_AddressBookRow_getPaymentId');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr = lib!
-        .MONERO_AddressBookRow_getPaymentId(addressBookRow_ptr)
+        .CWLWS_AddressBookRow_getPaymentId(addressBookRow_ptr)
         .cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_AddressBookRow_getPaymentId');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_AddressBookRow_getPaymentId');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_AddressBookRow_getPaymentId', e);
-    debugEnd?.call('MONERO_AddressBookRow_getPaymentId');
+    errorHandler?.call('CWLWS_AddressBookRow_getPaymentId', e);
+    debugEnd?.call('CWLWS_AddressBookRow_getPaymentId');
     return "";
   }
 }
 
 @Deprecated("TODO")
 int AddressBookRow_getRowId(AddressBookRow addressBookRow_ptr) {
-  debugStart?.call('MONERO_AddressBookRow_getRowId');
+  debugStart?.call('CWLWS_AddressBookRow_getRowId');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_AddressBookRow_getRowId(addressBookRow_ptr);
-  debugEnd?.call('MONERO_AddressBookRow_getRowId');
+  final v = lib!.CWLWS_AddressBookRow_getRowId(addressBookRow_ptr);
+  debugEnd?.call('CWLWS_AddressBookRow_getRowId');
   return v;
 }
 
@@ -949,20 +949,20 @@ typedef AddressBook = Pointer<Void>;
 
 @Deprecated("TODO")
 int AddressBook_getAll_size(AddressBook addressBook_ptr) {
-  debugStart?.call('MONERO_AddressBook_getAll_size');
+  debugStart?.call('CWLWS_AddressBook_getAll_size');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_AddressBook_getAll_size(addressBook_ptr);
-  debugEnd?.call('MONERO_AddressBook_getAll_size');
+  final v = lib!.CWLWS_AddressBook_getAll_size(addressBook_ptr);
+  debugEnd?.call('CWLWS_AddressBook_getAll_size');
   return v;
 }
 
 @Deprecated("TODO")
 AddressBookRow AddressBook_getAll_byIndex(AddressBook addressBook_ptr,
     {required int index}) {
-  debugStart?.call('MONERO_AddressBook_getAll_byIndex');
+  debugStart?.call('CWLWS_AddressBook_getAll_byIndex');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_AddressBook_getAll_byIndex(addressBook_ptr, index);
-  debugEnd?.call('MONERO_AddressBook_getAll_byIndex');
+  final v = lib!.CWLWS_AddressBook_getAll_byIndex(addressBook_ptr, index);
+  debugEnd?.call('CWLWS_AddressBook_getAll_byIndex');
   return v;
 }
 
@@ -973,26 +973,26 @@ bool AddressBook_addRow(
   required String paymentId,
   required String description,
 }) {
-  debugStart?.call('MONERO_AddressBook_addRow');
+  debugStart?.call('CWLWS_AddressBook_addRow');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final dst_addr_ = dstAddr.toNativeUtf8().cast<Char>();
   final payment_id_ = paymentId.toNativeUtf8().cast<Char>();
   final description_ = description.toNativeUtf8().cast<Char>();
-  final v = lib!.MONERO_AddressBook_addRow(
+  final v = lib!.CWLWS_AddressBook_addRow(
       addressBook_ptr, dst_addr_, payment_id_, description_);
   calloc.free(dst_addr_);
   calloc.free(payment_id_);
   calloc.free(description_);
-  debugEnd?.call('MONERO_AddressBook_addRow');
+  debugEnd?.call('CWLWS_AddressBook_addRow');
   return v;
 }
 
 @Deprecated("TODO")
 bool AddressBook_deleteRow(AddressBook addressBook_ptr, {required int rowId}) {
-  debugStart?.call('MONERO_AddressBook_deleteRow');
+  debugStart?.call('CWLWS_AddressBook_deleteRow');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_AddressBook_deleteRow(addressBook_ptr, rowId);
-  debugEnd?.call('MONERO_AddressBook_deleteRow');
+  final v = lib!.CWLWS_AddressBook_deleteRow(addressBook_ptr, rowId);
+  debugEnd?.call('CWLWS_AddressBook_deleteRow');
   return v;
 }
 
@@ -1002,44 +1002,44 @@ bool AddressBook_setDescription(
   required int rowId,
   required String description,
 }) {
-  debugStart?.call('MONERO_AddressBook_setDescription');
+  debugStart?.call('CWLWS_AddressBook_setDescription');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final description_ = description.toNativeUtf8().cast<Char>();
   final v = lib!
-      .MONERO_AddressBook_setDescription(addressBook_ptr, rowId, description_);
+      .CWLWS_AddressBook_setDescription(addressBook_ptr, rowId, description_);
   calloc.free(description_);
-  debugEnd?.call('MONERO_AddressBook_setDescription');
+  debugEnd?.call('CWLWS_AddressBook_setDescription');
   return v;
 }
 
 @Deprecated("TODO")
 void AddressBook_refresh(AddressBook addressBook_ptr) {
-  debugStart?.call('MONERO_AddressBook_refresh');
+  debugStart?.call('CWLWS_AddressBook_refresh');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_AddressBook_refresh(addressBook_ptr);
-  debugEnd?.call('MONERO_AddressBook_refresh');
+  final v = lib!.CWLWS_AddressBook_refresh(addressBook_ptr);
+  debugEnd?.call('CWLWS_AddressBook_refresh');
   return v;
 }
 
 @Deprecated("TODO")
 int AddressBook_errorCode(AddressBook addressBook_ptr) {
-  debugStart?.call('MONERO_AddressBook_errorCode');
+  debugStart?.call('CWLWS_AddressBook_errorCode');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_AddressBook_errorCode(addressBook_ptr);
-  debugEnd?.call('MONERO_AddressBook_errorCode');
+  final v = lib!.CWLWS_AddressBook_errorCode(addressBook_ptr);
+  debugEnd?.call('CWLWS_AddressBook_errorCode');
   return v;
 }
 
 @Deprecated("TODO")
 int AddressBook_lookupPaymentID(AddressBook addressBook_ptr,
     {required String paymentId}) {
-  debugStart?.call('MONERO_AddressBook_lookupPaymentID');
+  debugStart?.call('CWLWS_AddressBook_lookupPaymentID');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final paymentId_ = paymentId.toNativeUtf8().cast<Char>();
   final v =
-      lib!.MONERO_AddressBook_lookupPaymentID(addressBook_ptr, paymentId_);
+      lib!.CWLWS_AddressBook_lookupPaymentID(addressBook_ptr, paymentId_);
   calloc.free(paymentId_);
-  debugEnd?.call('MONERO_AddressBook_lookupPaymentID');
+  debugEnd?.call('CWLWS_AddressBook_lookupPaymentID');
   return v;
 }
 
@@ -1048,240 +1048,240 @@ typedef CoinsInfo = Pointer<Void>;
 
 @Deprecated("TODO")
 int CoinsInfo_blockHeight(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_blockHeight');
+  debugStart?.call('CWLWS_CoinsInfo_blockHeight');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_CoinsInfo_blockHeight(coinsInfo_ptr);
-  debugEnd?.call('MONERO_CoinsInfo_blockHeight');
+  final v = lib!.CWLWS_CoinsInfo_blockHeight(coinsInfo_ptr);
+  debugEnd?.call('CWLWS_CoinsInfo_blockHeight');
   return v;
 }
 
 @Deprecated("TODO")
 String CoinsInfo_hash(CoinsInfo addressBookRow_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_hash');
+  debugStart?.call('CWLWS_CoinsInfo_hash');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_CoinsInfo_hash(addressBookRow_ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_CoinsInfo_hash(addressBookRow_ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_CoinsInfo_hash');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_CoinsInfo_hash');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_CoinsInfo_hash', e);
-    debugEnd?.call('MONERO_CoinsInfo_hash');
+    errorHandler?.call('CWLWS_CoinsInfo_hash', e);
+    debugEnd?.call('CWLWS_CoinsInfo_hash');
     return "";
   }
 }
 
 @Deprecated("TODO")
 int CoinsInfo_internalOutputIndex(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_internalOutputIndex');
+  debugStart?.call('CWLWS_CoinsInfo_internalOutputIndex');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_CoinsInfo_internalOutputIndex(coinsInfo_ptr);
-  debugEnd?.call('MONERO_CoinsInfo_internalOutputIndex');
+  final v = lib!.CWLWS_CoinsInfo_internalOutputIndex(coinsInfo_ptr);
+  debugEnd?.call('CWLWS_CoinsInfo_internalOutputIndex');
   return v;
 }
 
 @Deprecated("TODO")
 int CoinsInfo_globalOutputIndex(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_globalOutputIndex');
+  debugStart?.call('CWLWS_CoinsInfo_globalOutputIndex');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_CoinsInfo_globalOutputIndex(coinsInfo_ptr);
-  debugEnd?.call('MONERO_CoinsInfo_globalOutputIndex');
+  final v = lib!.CWLWS_CoinsInfo_globalOutputIndex(coinsInfo_ptr);
+  debugEnd?.call('CWLWS_CoinsInfo_globalOutputIndex');
   return v;
 }
 
 @Deprecated("TODO")
 bool CoinsInfo_spent(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_spent');
+  debugStart?.call('CWLWS_CoinsInfo_spent');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_CoinsInfo_spent(coinsInfo_ptr);
-  debugEnd?.call('MONERO_CoinsInfo_spent');
+  final v = lib!.CWLWS_CoinsInfo_spent(coinsInfo_ptr);
+  debugEnd?.call('CWLWS_CoinsInfo_spent');
   return v;
 }
 
 @Deprecated("TODO")
 bool CoinsInfo_frozen(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_frozen');
+  debugStart?.call('CWLWS_CoinsInfo_frozen');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_CoinsInfo_frozen(coinsInfo_ptr);
-  debugEnd?.call('MONERO_CoinsInfo_frozen');
+  final v = lib!.CWLWS_CoinsInfo_frozen(coinsInfo_ptr);
+  debugEnd?.call('CWLWS_CoinsInfo_frozen');
   return v;
 }
 
 @Deprecated("TODO")
 int CoinsInfo_spentHeight(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_spentHeight');
+  debugStart?.call('CWLWS_CoinsInfo_spentHeight');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_CoinsInfo_spentHeight(coinsInfo_ptr);
-  debugEnd?.call('MONERO_CoinsInfo_spentHeight');
+  final v = lib!.CWLWS_CoinsInfo_spentHeight(coinsInfo_ptr);
+  debugEnd?.call('CWLWS_CoinsInfo_spentHeight');
   return v;
 }
 
 @Deprecated("TODO")
 int CoinsInfo_amount(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_amount');
+  debugStart?.call('CWLWS_CoinsInfo_amount');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_CoinsInfo_amount(coinsInfo_ptr);
-  debugEnd?.call('MONERO_CoinsInfo_amount');
+  final v = lib!.CWLWS_CoinsInfo_amount(coinsInfo_ptr);
+  debugEnd?.call('CWLWS_CoinsInfo_amount');
   return v;
 }
 
 @Deprecated("TODO")
 bool CoinsInfo_rct(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_rct');
+  debugStart?.call('CWLWS_CoinsInfo_rct');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_CoinsInfo_rct(coinsInfo_ptr);
-  debugEnd?.call('MONERO_CoinsInfo_rct');
+  final v = lib!.CWLWS_CoinsInfo_rct(coinsInfo_ptr);
+  debugEnd?.call('CWLWS_CoinsInfo_rct');
   return v;
 }
 
 @Deprecated("TODO")
 bool CoinsInfo_keyImageKnown(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_keyImageKnown');
+  debugStart?.call('CWLWS_CoinsInfo_keyImageKnown');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_CoinsInfo_keyImageKnown(coinsInfo_ptr);
-  debugEnd?.call('MONERO_CoinsInfo_keyImageKnown');
+  final v = lib!.CWLWS_CoinsInfo_keyImageKnown(coinsInfo_ptr);
+  debugEnd?.call('CWLWS_CoinsInfo_keyImageKnown');
   return v;
 }
 
 @Deprecated("TODO")
 int CoinsInfo_pkIndex(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_pkIndex');
+  debugStart?.call('CWLWS_CoinsInfo_pkIndex');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_CoinsInfo_pkIndex(coinsInfo_ptr);
-  debugEnd?.call('MONERO_CoinsInfo_pkIndex');
+  final v = lib!.CWLWS_CoinsInfo_pkIndex(coinsInfo_ptr);
+  debugEnd?.call('CWLWS_CoinsInfo_pkIndex');
   return v;
 }
 
 @Deprecated("TODO")
 int CoinsInfo_subaddrIndex(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_subaddrIndex');
+  debugStart?.call('CWLWS_CoinsInfo_subaddrIndex');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_CoinsInfo_subaddrIndex(coinsInfo_ptr);
-  debugEnd?.call('MONERO_CoinsInfo_subaddrIndex');
+  final v = lib!.CWLWS_CoinsInfo_subaddrIndex(coinsInfo_ptr);
+  debugEnd?.call('CWLWS_CoinsInfo_subaddrIndex');
   return v;
 }
 
 @Deprecated("TODO")
 int CoinsInfo_subaddrAccount(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_subaddrAccount');
+  debugStart?.call('CWLWS_CoinsInfo_subaddrAccount');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_CoinsInfo_subaddrAccount(coinsInfo_ptr);
-  debugEnd?.call('MONERO_CoinsInfo_subaddrAccount');
+  final v = lib!.CWLWS_CoinsInfo_subaddrAccount(coinsInfo_ptr);
+  debugEnd?.call('CWLWS_CoinsInfo_subaddrAccount');
   return v;
 }
 
 @Deprecated("TODO")
 String CoinsInfo_address(CoinsInfo addressBookRow_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_address');
+  debugStart?.call('CWLWS_CoinsInfo_address');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr =
-        lib!.MONERO_CoinsInfo_address(addressBookRow_ptr).cast<Utf8>();
+        lib!.CWLWS_CoinsInfo_address(addressBookRow_ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_CoinsInfo_address');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_CoinsInfo_address');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_CoinsInfo_address', e);
-    debugEnd?.call('MONERO_CoinsInfo_address');
+    errorHandler?.call('CWLWS_CoinsInfo_address', e);
+    debugEnd?.call('CWLWS_CoinsInfo_address');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String CoinsInfo_addressLabel(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_addressLabel');
+  debugStart?.call('CWLWS_CoinsInfo_addressLabel');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr =
-        lib!.MONERO_CoinsInfo_addressLabel(coinsInfo_ptr).cast<Utf8>();
+        lib!.CWLWS_CoinsInfo_addressLabel(coinsInfo_ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_CoinsInfo_addressLabel');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_CoinsInfo_addressLabel');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_CoinsInfo_addressLabel', e);
-    debugEnd?.call('MONERO_CoinsInfo_addressLabel');
+    errorHandler?.call('CWLWS_CoinsInfo_addressLabel', e);
+    debugEnd?.call('CWLWS_CoinsInfo_addressLabel');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String CoinsInfo_keyImage(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_keyImage');
+  debugStart?.call('CWLWS_CoinsInfo_keyImage');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_CoinsInfo_keyImage(coinsInfo_ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_CoinsInfo_keyImage(coinsInfo_ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_CoinsInfo_keyImage');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_CoinsInfo_keyImage');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_CoinsInfo_keyImage', e);
-    debugEnd?.call('MONERO_CoinsInfo_keyImage');
+    errorHandler?.call('CWLWS_CoinsInfo_keyImage', e);
+    debugEnd?.call('CWLWS_CoinsInfo_keyImage');
     return "";
   }
 }
 
 @Deprecated("TODO")
 int CoinsInfo_unlockTime(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_unlockTime');
+  debugStart?.call('CWLWS_CoinsInfo_unlockTime');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_CoinsInfo_unlockTime(coinsInfo_ptr);
-  debugEnd?.call('MONERO_CoinsInfo_unlockTime');
+  final v = lib!.CWLWS_CoinsInfo_unlockTime(coinsInfo_ptr);
+  debugEnd?.call('CWLWS_CoinsInfo_unlockTime');
   return v;
 }
 
 @Deprecated("TODO")
 bool CoinsInfo_unlocked(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_unlocked');
+  debugStart?.call('CWLWS_CoinsInfo_unlocked');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_CoinsInfo_unlocked(coinsInfo_ptr);
-  debugEnd?.call('MONERO_CoinsInfo_unlocked');
+  final v = lib!.CWLWS_CoinsInfo_unlocked(coinsInfo_ptr);
+  debugEnd?.call('CWLWS_CoinsInfo_unlocked');
   return v;
 }
 
 @Deprecated("TODO")
 String CoinsInfo_pubKey(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_pubKey');
+  debugStart?.call('CWLWS_CoinsInfo_pubKey');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_CoinsInfo_pubKey(coinsInfo_ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_CoinsInfo_pubKey(coinsInfo_ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_CoinsInfo_pubKey');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_CoinsInfo_pubKey');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_CoinsInfo_pubKey', e);
-    debugEnd?.call('MONERO_CoinsInfo_pubKey');
+    errorHandler?.call('CWLWS_CoinsInfo_pubKey', e);
+    debugEnd?.call('CWLWS_CoinsInfo_pubKey');
     return "";
   }
 }
 
 @Deprecated("TODO")
 bool CoinsInfo_coinbase(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_coinbase');
+  debugStart?.call('CWLWS_CoinsInfo_coinbase');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_CoinsInfo_coinbase(coinsInfo_ptr);
-  debugEnd?.call('MONERO_CoinsInfo_coinbase');
+  final v = lib!.CWLWS_CoinsInfo_coinbase(coinsInfo_ptr);
+  debugEnd?.call('CWLWS_CoinsInfo_coinbase');
   return v;
 }
 
 @Deprecated("TODO")
 String CoinsInfo_description(CoinsInfo coinsInfo_ptr) {
-  debugStart?.call('MONERO_CoinsInfo_description');
+  debugStart?.call('CWLWS_CoinsInfo_description');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr =
-        lib!.MONERO_CoinsInfo_description(coinsInfo_ptr).cast<Utf8>();
+        lib!.CWLWS_CoinsInfo_description(coinsInfo_ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_CoinsInfo_description');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_CoinsInfo_description');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_CoinsInfo_description', e);
-    debugEnd?.call('MONERO_CoinsInfo_description');
+    errorHandler?.call('CWLWS_CoinsInfo_description', e);
+    debugEnd?.call('CWLWS_CoinsInfo_description');
     return "";
   }
 }
@@ -1291,86 +1291,86 @@ typedef Coins = Pointer<Void>;
 
 @Deprecated("TODO")
 int Coins_count(Coins coins_ptr) {
-  debugStart?.call('MONERO_Coins_count');
+  debugStart?.call('CWLWS_Coins_count');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Coins_count(coins_ptr);
-  debugEnd?.call('MONERO_Coins_count');
+  final v = lib!.CWLWS_Coins_count(coins_ptr);
+  debugEnd?.call('CWLWS_Coins_count');
   return v;
 }
 
 @Deprecated("TODO")
 CoinsInfo Coins_coin(Coins coins_ptr, int index) {
-  debugStart?.call('MONERO_Coins_coin');
+  debugStart?.call('CWLWS_Coins_coin');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Coins_coin(coins_ptr, index);
-  debugEnd?.call('MONERO_Coins_coin');
+  final v = lib!.CWLWS_Coins_coin(coins_ptr, index);
+  debugEnd?.call('CWLWS_Coins_coin');
   return v;
 }
 
 @Deprecated("TODO")
 int Coins_getAll_size(Coins coins_ptr) {
-  debugStart?.call('MONERO_Coins_getAll_size');
+  debugStart?.call('CWLWS_Coins_getAll_size');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Coins_getAll_size(coins_ptr);
-  debugEnd?.call('MONERO_Coins_getAll_size');
+  final v = lib!.CWLWS_Coins_getAll_size(coins_ptr);
+  debugEnd?.call('CWLWS_Coins_getAll_size');
   return v;
 }
 
 @Deprecated("TODO")
 CoinsInfo Coins_getAll_byIndex(Coins coins_ptr, int index) {
-  debugStart?.call('MONERO_Coins_getAll_byIndex');
+  debugStart?.call('CWLWS_Coins_getAll_byIndex');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Coins_getAll_byIndex(coins_ptr, index);
-  debugEnd?.call('MONERO_Coins_getAll_byIndex');
+  final v = lib!.CWLWS_Coins_getAll_byIndex(coins_ptr, index);
+  debugEnd?.call('CWLWS_Coins_getAll_byIndex');
   return v;
 }
 
 @Deprecated("TODO")
 void Coins_refresh(Coins coins_ptr) {
-  debugStart?.call('MONERO_Coins_refresh');
+  debugStart?.call('CWLWS_Coins_refresh');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Coins_refresh(coins_ptr);
-  debugEnd?.call('MONERO_Coins_refresh');
+  final v = lib!.CWLWS_Coins_refresh(coins_ptr);
+  debugEnd?.call('CWLWS_Coins_refresh');
   return v;
 }
 
 @Deprecated("TODO")
 void Coins_setFrozenByPublicKey(Coins coins_ptr, {required String publicKey}) {
-  debugStart?.call('MONERO_Coins_setFrozenByPublicKey');
+  debugStart?.call('CWLWS_Coins_setFrozenByPublicKey');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final publicKey_ = publicKey.toNativeUtf8().cast<Char>();
-  final v = lib!.MONERO_Coins_setFrozenByPublicKey(coins_ptr, publicKey_);
+  final v = lib!.CWLWS_Coins_setFrozenByPublicKey(coins_ptr, publicKey_);
   calloc.free(publicKey_);
-  debugEnd?.call('MONERO_Coins_setFrozenByPublicKey');
+  debugEnd?.call('CWLWS_Coins_setFrozenByPublicKey');
   return v;
 }
 
 @Deprecated("TODO")
 void Coins_setFrozen(Coins coins_ptr, {required int index}) {
-  debugStart?.call('MONERO_Coins_setFrozen');
+  debugStart?.call('CWLWS_Coins_setFrozen');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Coins_setFrozen(coins_ptr, index);
-  debugEnd?.call('MONERO_Coins_setFrozen');
+  final v = lib!.CWLWS_Coins_setFrozen(coins_ptr, index);
+  debugEnd?.call('CWLWS_Coins_setFrozen');
   return v;
 }
 
 @Deprecated("TODO")
 void Coins_thaw(Coins coins_ptr, {required int index}) {
-  debugStart?.call('MONERO_Coins_thaw');
+  debugStart?.call('CWLWS_Coins_thaw');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Coins_thaw(coins_ptr, index);
-  debugEnd?.call('MONERO_Coins_thaw');
+  final v = lib!.CWLWS_Coins_thaw(coins_ptr, index);
+  debugEnd?.call('CWLWS_Coins_thaw');
   return v;
 }
 
 @Deprecated("TODO")
 void Coins_thawByPublicKey(Coins coins_ptr, {required String publicKey}) {
-  debugStart?.call('MONERO_Coins_thawByPublicKey');
+  debugStart?.call('CWLWS_Coins_thawByPublicKey');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final publicKey_ = publicKey.toNativeUtf8().cast<Char>();
-  final v = lib!.MONERO_Coins_thawByPublicKey(coins_ptr, publicKey_);
+  final v = lib!.CWLWS_Coins_thawByPublicKey(coins_ptr, publicKey_);
   calloc.free(publicKey_);
-  debugEnd?.call('MONERO_Coins_thawByPublicKey');
+  debugEnd?.call('CWLWS_Coins_thawByPublicKey');
   return v;
 }
 
@@ -1380,11 +1380,11 @@ bool Coins_isTransferUnlocked(
   required int unlockTime,
   required int blockHeight,
 }) {
-  debugStart?.call('MONERO_Coins_isTransferUnlocked');
+  debugStart?.call('CWLWS_Coins_isTransferUnlocked');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final v =
-      lib!.MONERO_Coins_isTransferUnlocked(coins_ptr, unlockTime, blockHeight);
-  debugEnd?.call('MONERO_Coins_isTransferUnlocked');
+      lib!.CWLWS_Coins_isTransferUnlocked(coins_ptr, unlockTime, blockHeight);
+  debugEnd?.call('CWLWS_Coins_isTransferUnlocked');
   return v;
 }
 
@@ -1395,65 +1395,65 @@ typedef SubaddressRow = Pointer<Void>;
 
 @Deprecated("TODO")
 String SubaddressRow_extra(SubaddressRow subaddressBookRow_ptr) {
-  debugStart?.call('MONERO_SubaddressRow_extra');
+  debugStart?.call('CWLWS_SubaddressRow_extra');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr =
-        lib!.MONERO_SubaddressRow_extra(subaddressBookRow_ptr).cast<Utf8>();
+        lib!.CWLWS_SubaddressRow_extra(subaddressBookRow_ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_SubaddressRow_extra');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_SubaddressRow_extra');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_SubaddressRow_extra', e);
-    debugEnd?.call('MONERO_SubaddressRow_extra');
+    errorHandler?.call('CWLWS_SubaddressRow_extra', e);
+    debugEnd?.call('CWLWS_SubaddressRow_extra');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String SubaddressRow_getAddress(SubaddressRow subaddressBookRow_ptr) {
-  debugStart?.call('MONERO_SubaddressRow_getAddress');
+  debugStart?.call('CWLWS_SubaddressRow_getAddress');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr = lib!
-        .MONERO_SubaddressRow_getAddress(subaddressBookRow_ptr)
+        .CWLWS_SubaddressRow_getAddress(subaddressBookRow_ptr)
         .cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_SubaddressRow_getAddress');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_SubaddressRow_getAddress');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_SubaddressRow_getAddress', e);
-    debugEnd?.call('MONERO_SubaddressRow_getAddress');
+    errorHandler?.call('CWLWS_SubaddressRow_getAddress', e);
+    debugEnd?.call('CWLWS_SubaddressRow_getAddress');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String SubaddressRow_getLabel(SubaddressRow subaddressBookRow_ptr) {
-  debugStart?.call('MONERO_SubaddressRow_getLabel');
+  debugStart?.call('CWLWS_SubaddressRow_getLabel');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr =
-        lib!.MONERO_SubaddressRow_getLabel(subaddressBookRow_ptr).cast<Utf8>();
+        lib!.CWLWS_SubaddressRow_getLabel(subaddressBookRow_ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_SubaddressRow_getLabel');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_SubaddressRow_getLabel');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_SubaddressRow_getLabel', e);
-    debugEnd?.call('MONERO_SubaddressRow_getLabel');
+    errorHandler?.call('CWLWS_SubaddressRow_getLabel', e);
+    debugEnd?.call('CWLWS_SubaddressRow_getLabel');
     return "";
   }
 }
 
 @Deprecated("TODO")
 int SubaddressRow_getRowId(SubaddressRow subaddressBookRow_ptr) {
-  debugStart?.call('MONERO_SubaddressRow_getRowId');
+  debugStart?.call('CWLWS_SubaddressRow_getRowId');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_SubaddressRow_getRowId(subaddressBookRow_ptr);
-  debugEnd?.call('MONERO_SubaddressRow_getRowId');
+  final status = lib!.CWLWS_SubaddressRow_getRowId(subaddressBookRow_ptr);
+  debugEnd?.call('CWLWS_SubaddressRow_getRowId');
   return status;
 }
 
@@ -1463,33 +1463,33 @@ typedef Subaddress = Pointer<Void>;
 
 @Deprecated("TODO")
 int Subaddress_getAll_size(SubaddressRow subaddressBookRow_ptr) {
-  debugStart?.call('MONERO_Subaddress_getAll_size');
+  debugStart?.call('CWLWS_Subaddress_getAll_size');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_Subaddress_getAll_size(subaddressBookRow_ptr);
-  debugEnd?.call('MONERO_Subaddress_getAll_size');
+  final status = lib!.CWLWS_Subaddress_getAll_size(subaddressBookRow_ptr);
+  debugEnd?.call('CWLWS_Subaddress_getAll_size');
   return status;
 }
 
 @Deprecated("TODO")
 SubaddressRow Subaddress_getAll_byIndex(Subaddress subaddressRow_ptr,
     {required int index}) {
-  debugStart?.call('MONERO_Subaddress_getAll_byIndex');
+  debugStart?.call('CWLWS_Subaddress_getAll_byIndex');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final status =
-      lib!.MONERO_Subaddress_getAll_byIndex(subaddressRow_ptr, index);
-  debugEnd?.call('MONERO_Subaddress_getAll_byIndex');
+      lib!.CWLWS_Subaddress_getAll_byIndex(subaddressRow_ptr, index);
+  debugEnd?.call('CWLWS_Subaddress_getAll_byIndex');
   return status;
 }
 
 @Deprecated("TODO")
 void Subaddress_addRow(Subaddress ptr,
     {required int accountIndex, required String label}) {
-  debugStart?.call('MONERO_Subaddress_addRow');
+  debugStart?.call('CWLWS_Subaddress_addRow');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final label_ = label.toNativeUtf8().cast<Char>();
-  final status = lib!.MONERO_Subaddress_addRow(ptr, accountIndex, label_);
+  final status = lib!.CWLWS_Subaddress_addRow(ptr, accountIndex, label_);
   calloc.free(label_);
-  debugEnd?.call('MONERO_Subaddress_addRow');
+  debugEnd?.call('CWLWS_Subaddress_addRow');
   return status;
 }
 
@@ -1498,25 +1498,25 @@ void Subaddress_setLabel(Subaddress ptr,
     {required int accountIndex,
     required int addressIndex,
     required String label}) {
-  debugStart?.call('MONERO_Subaddress_setLabel');
+  debugStart?.call('CWLWS_Subaddress_setLabel');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final label_ = label.toNativeUtf8().cast<Char>();
   final status =
-      lib!.MONERO_Subaddress_setLabel(ptr, accountIndex, addressIndex, label_);
+      lib!.CWLWS_Subaddress_setLabel(ptr, accountIndex, addressIndex, label_);
   calloc.free(label_);
-  debugEnd?.call('MONERO_Subaddress_setLabel');
+  debugEnd?.call('CWLWS_Subaddress_setLabel');
   return status;
 }
 
 @Deprecated("TODO")
 void Subaddress_refresh(Subaddress ptr,
     {required int accountIndex, required String label}) {
-  debugStart?.call('MONERO_Subaddress_refresh');
+  debugStart?.call('CWLWS_Subaddress_refresh');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final label_ = label.toNativeUtf8().cast<Char>();
-  final status = lib!.MONERO_Subaddress_refresh(ptr, accountIndex);
+  final status = lib!.CWLWS_Subaddress_refresh(ptr, accountIndex);
   calloc.free(label_);
-  debugEnd?.call('MONERO_Subaddress_refresh');
+  debugEnd?.call('CWLWS_Subaddress_refresh');
   return status;
 }
 
@@ -1524,18 +1524,18 @@ void Subaddress_refresh(Subaddress ptr,
 typedef SubaddressAccountRow = Pointer<Void>;
 
 String SubaddressAccountRow_extra(SubaddressAccountRow addressBookRow_ptr) {
-  debugStart?.call('MONERO_SubaddressAccountRow_extra');
+  debugStart?.call('CWLWS_SubaddressAccountRow_extra');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr =
-        lib!.MONERO_SubaddressAccountRow_extra(addressBookRow_ptr).cast<Utf8>();
+        lib!.CWLWS_SubaddressAccountRow_extra(addressBookRow_ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_SubaddressAccountRow_extra');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_SubaddressAccountRow_extra');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_SubaddressAccountRow_extra', e);
-    debugEnd?.call('MONERO_SubaddressAccountRow_extra');
+    errorHandler?.call('CWLWS_SubaddressAccountRow_extra', e);
+    debugEnd?.call('CWLWS_SubaddressAccountRow_extra');
     return "";
   }
 }
@@ -1543,38 +1543,38 @@ String SubaddressAccountRow_extra(SubaddressAccountRow addressBookRow_ptr) {
 @Deprecated("TODO")
 String SubaddressAccountRow_getAddress(
     SubaddressAccountRow addressBookRow_ptr) {
-  debugStart?.call('MONERO_SubaddressAccountRow_getAddress');
+  debugStart?.call('CWLWS_SubaddressAccountRow_getAddress');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr = lib!
-        .MONERO_SubaddressAccountRow_getAddress(addressBookRow_ptr)
+        .CWLWS_SubaddressAccountRow_getAddress(addressBookRow_ptr)
         .cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_SubaddressAccountRow_getAddress');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_SubaddressAccountRow_getAddress');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_SubaddressAccountRow_getAddress', e);
-    debugEnd?.call('MONERO_SubaddressAccountRow_getAddress');
+    errorHandler?.call('CWLWS_SubaddressAccountRow_getAddress', e);
+    debugEnd?.call('CWLWS_SubaddressAccountRow_getAddress');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String SubaddressAccountRow_getLabel(SubaddressAccountRow addressBookRow_ptr) {
-  debugStart?.call('MONERO_SubaddressAccountRow_getLabel');
+  debugStart?.call('CWLWS_SubaddressAccountRow_getLabel');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr = lib!
-        .MONERO_SubaddressAccountRow_getLabel(addressBookRow_ptr)
+        .CWLWS_SubaddressAccountRow_getLabel(addressBookRow_ptr)
         .cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_SubaddressAccountRow_getLabel');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_SubaddressAccountRow_getLabel');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_SubaddressAccountRow_getLabel', e);
-    debugEnd?.call('MONERO_SubaddressAccountRow_getLabel');
+    errorHandler?.call('CWLWS_SubaddressAccountRow_getLabel', e);
+    debugEnd?.call('CWLWS_SubaddressAccountRow_getLabel');
     return "";
   }
 }
@@ -1582,19 +1582,19 @@ String SubaddressAccountRow_getLabel(SubaddressAccountRow addressBookRow_ptr) {
 @Deprecated("TODO")
 String SubaddressAccountRow_getBalance(
     SubaddressAccountRow addressBookRow_ptr) {
-  debugStart?.call('MONERO_SubaddressAccountRow_getBalance');
+  debugStart?.call('CWLWS_SubaddressAccountRow_getBalance');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr = lib!
-        .MONERO_SubaddressAccountRow_getBalance(addressBookRow_ptr)
+        .CWLWS_SubaddressAccountRow_getBalance(addressBookRow_ptr)
         .cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_SubaddressAccountRow_getBalance');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_SubaddressAccountRow_getBalance');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_SubaddressAccountRow_getBalance', e);
-    debugEnd?.call('MONERO_SubaddressAccountRow_getBalance');
+    errorHandler?.call('CWLWS_SubaddressAccountRow_getBalance', e);
+    debugEnd?.call('CWLWS_SubaddressAccountRow_getBalance');
     return "";
   }
 }
@@ -1602,29 +1602,29 @@ String SubaddressAccountRow_getBalance(
 @Deprecated("TODO")
 String SubaddressAccountRow_getUnlockedBalance(
     SubaddressAccountRow addressBookRow_ptr) {
-  debugStart?.call('MONERO_SubaddressAccountRow_getUnlockedBalance');
+  debugStart?.call('CWLWS_SubaddressAccountRow_getUnlockedBalance');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr = lib!
-        .MONERO_SubaddressAccountRow_getUnlockedBalance(addressBookRow_ptr)
+        .CWLWS_SubaddressAccountRow_getUnlockedBalance(addressBookRow_ptr)
         .cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_SubaddressAccountRow_getUnlockedBalance');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_SubaddressAccountRow_getUnlockedBalance');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_SubaddressAccountRow_getUnlockedBalance', e);
-    debugEnd?.call('MONERO_SubaddressAccountRow_getUnlockedBalance');
+    errorHandler?.call('CWLWS_SubaddressAccountRow_getUnlockedBalance', e);
+    debugEnd?.call('CWLWS_SubaddressAccountRow_getUnlockedBalance');
     return "";
   }
 }
 
 @Deprecated("TODO")
 int SubaddressAccountRow_getRowId(SubaddressAccountRow ptr) {
-  debugStart?.call('MONERO_SubaddressAccountRow_getRowId');
+  debugStart?.call('CWLWS_SubaddressAccountRow_getRowId');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_SubaddressAccountRow_getRowId(ptr);
-  debugEnd?.call('MONERO_SubaddressAccountRow_getRowId');
+  final status = lib!.CWLWS_SubaddressAccountRow_getRowId(ptr);
+  debugEnd?.call('CWLWS_SubaddressAccountRow_getRowId');
   return status;
 }
 
@@ -1632,53 +1632,53 @@ int SubaddressAccountRow_getRowId(SubaddressAccountRow ptr) {
 typedef SubaddressAccount = Pointer<Void>;
 
 int SubaddressAccount_getAll_size(SubaddressAccount ptr) {
-  debugStart?.call('MONERO_SubaddressAccount_getAll_size');
+  debugStart?.call('CWLWS_SubaddressAccount_getAll_size');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_SubaddressAccount_getAll_size(ptr);
-  debugEnd?.call('MONERO_SubaddressAccount_getAll_size');
+  final status = lib!.CWLWS_SubaddressAccount_getAll_size(ptr);
+  debugEnd?.call('CWLWS_SubaddressAccount_getAll_size');
   return status;
 }
 
 @Deprecated("TODO")
 SubaddressAccountRow SubaddressAccount_getAll_byIndex(SubaddressAccount ptr,
     {required int index}) {
-  debugStart?.call('MONERO_SubaddressAccount_getAll_byIndex');
+  debugStart?.call('CWLWS_SubaddressAccount_getAll_byIndex');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_SubaddressAccount_getAll_byIndex(ptr, index);
-  debugEnd?.call('MONERO_SubaddressAccount_getAll_byIndex');
+  final status = lib!.CWLWS_SubaddressAccount_getAll_byIndex(ptr, index);
+  debugEnd?.call('CWLWS_SubaddressAccount_getAll_byIndex');
   return status;
 }
 
 @Deprecated("TODO")
 void SubaddressAccount_addRow(SubaddressAccount ptr, {required String label}) {
-  debugStart?.call('MONERO_SubaddressAccount_addRow');
+  debugStart?.call('CWLWS_SubaddressAccount_addRow');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final label_ = label.toNativeUtf8().cast<Char>();
-  final status = lib!.MONERO_SubaddressAccount_addRow(ptr, label_);
+  final status = lib!.CWLWS_SubaddressAccount_addRow(ptr, label_);
   calloc.free(label_);
-  debugEnd?.call('MONERO_SubaddressAccount_addRow');
+  debugEnd?.call('CWLWS_SubaddressAccount_addRow');
   return status;
 }
 
 @Deprecated("TODO")
 void SubaddressAccount_setLabel(SubaddressAccount ptr,
     {required int accountIndex, required String label}) {
-  debugStart?.call('MONERO_SubaddressAccount_setLabel');
+  debugStart?.call('CWLWS_SubaddressAccount_setLabel');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final label_ = label.toNativeUtf8().cast<Char>();
   final status =
-      lib!.MONERO_SubaddressAccount_setLabel(ptr, accountIndex, label_);
+      lib!.CWLWS_SubaddressAccount_setLabel(ptr, accountIndex, label_);
   calloc.free(label_);
-  debugEnd?.call('MONERO_SubaddressAccount_setLabel');
+  debugEnd?.call('CWLWS_SubaddressAccount_setLabel');
   return status;
 }
 
 @Deprecated("TODO")
 void SubaddressAccount_refresh(SubaddressAccount ptr) {
-  debugStart?.call('MONERO_SubaddressAccount_refresh');
+  debugStart?.call('CWLWS_SubaddressAccount_refresh');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_SubaddressAccount_refresh(ptr);
-  debugEnd?.call('MONERO_SubaddressAccount_refresh');
+  final status = lib!.CWLWS_SubaddressAccount_refresh(ptr);
+  debugEnd?.call('CWLWS_SubaddressAccount_refresh');
   return status;
 }
 
@@ -1689,37 +1689,37 @@ typedef MultisigState = Pointer<Void>;
 
 @Deprecated("TODO")
 bool MultisigState_isMultisig(MultisigState ptr) {
-  debugStart?.call('MONERO_MultisigState_isMultisig');
+  debugStart?.call('CWLWS_MultisigState_isMultisig');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_MultisigState_isMultisig(ptr);
-  debugEnd?.call('MONERO_MultisigState_isMultisig');
+  final status = lib!.CWLWS_MultisigState_isMultisig(ptr);
+  debugEnd?.call('CWLWS_MultisigState_isMultisig');
   return status;
 }
 
 @Deprecated("TODO")
 bool MultisigState_isReady(MultisigState ptr) {
-  debugStart?.call('MONERO_MultisigState_isReady');
+  debugStart?.call('CWLWS_MultisigState_isReady');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_MultisigState_isReady(ptr);
-  debugEnd?.call('MONERO_MultisigState_isReady');
+  final status = lib!.CWLWS_MultisigState_isReady(ptr);
+  debugEnd?.call('CWLWS_MultisigState_isReady');
   return status;
 }
 
 @Deprecated("TODO")
 int MultisigState_threshold(MultisigState ptr) {
-  debugStart?.call('MONERO_MultisigState_threshold');
+  debugStart?.call('CWLWS_MultisigState_threshold');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_MultisigState_threshold(ptr);
-  debugEnd?.call('MONERO_MultisigState_threshold');
+  final status = lib!.CWLWS_MultisigState_threshold(ptr);
+  debugEnd?.call('CWLWS_MultisigState_threshold');
   return status;
 }
 
 @Deprecated("TODO")
 int MultisigState_total(MultisigState ptr) {
-  debugStart?.call('MONERO_MultisigState_total');
+  debugStart?.call('CWLWS_MultisigState_total');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_MultisigState_total(ptr);
-  debugEnd?.call('MONERO_MultisigState_total');
+  final status = lib!.CWLWS_MultisigState_total(ptr);
+  debugEnd?.call('CWLWS_MultisigState_total');
   return status;
 }
 
@@ -1730,19 +1730,19 @@ typedef DeviceProgress = Pointer<Void>;
 
 @Deprecated("TODO")
 bool DeviceProgress_progress(DeviceProgress ptr) {
-  debugStart?.call('MONERO_DeviceProgress_progress');
+  debugStart?.call('CWLWS_DeviceProgress_progress');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_DeviceProgress_progress(ptr);
-  debugEnd?.call('MONERO_DeviceProgress_progress');
+  final status = lib!.CWLWS_DeviceProgress_progress(ptr);
+  debugEnd?.call('CWLWS_DeviceProgress_progress');
   return status;
 }
 
 @Deprecated("TODO")
 bool DeviceProgress_indeterminate(DeviceProgress ptr) {
-  debugStart?.call('MONERO_DeviceProgress_indeterminate');
+  debugStart?.call('CWLWS_DeviceProgress_indeterminate');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_DeviceProgress_indeterminate(ptr);
-  debugEnd?.call('MONERO_DeviceProgress_indeterminate');
+  final status = lib!.CWLWS_DeviceProgress_indeterminate(ptr);
+  debugEnd?.call('CWLWS_DeviceProgress_indeterminate');
   return status;
 }
 
@@ -1753,159 +1753,159 @@ typedef wallet = Pointer<Void>;
 
 @Deprecated("TODO")
 String Wallet_seed(wallet ptr, {required String seedOffset}) {
-  debugStart?.call('MONERO_Wallet_seed');
+  debugStart?.call('CWLWS_Wallet_seed');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final seedOffset_ = seedOffset.toNativeUtf8().cast<Char>();
-    final strPtr = lib!.MONERO_Wallet_seed(ptr, seedOffset_).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_seed(ptr, seedOffset_).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
+    CWLWS_free(strPtr.cast());
     calloc.free(seedOffset_);
-    debugEnd?.call('MONERO_Wallet_seed');
+    debugEnd?.call('CWLWS_Wallet_seed');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_seed', e);
-    debugEnd?.call('MONERO_Wallet_seed');
+    errorHandler?.call('CWLWS_Wallet_seed', e);
+    debugEnd?.call('CWLWS_Wallet_seed');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String Wallet_getSeedLanguage(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_getSeedLanguage');
+  debugStart?.call('CWLWS_Wallet_getSeedLanguage');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_Wallet_getSeedLanguage(ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_getSeedLanguage(ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_getSeedLanguage');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_getSeedLanguage');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_getSeedLanguage', e);
-    debugEnd?.call('MONERO_Wallet_getSeedLanguage');
+    errorHandler?.call('CWLWS_Wallet_getSeedLanguage', e);
+    debugEnd?.call('CWLWS_Wallet_getSeedLanguage');
     return "";
   }
 }
 
 @Deprecated("TODO")
 void Wallet_setSeedLanguage(wallet ptr, {required String language}) {
-  debugStart?.call('MONERO_Wallet_setSeedLanguage');
+  debugStart?.call('CWLWS_Wallet_setSeedLanguage');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final language_ = language.toNativeUtf8().cast<Char>();
-  final status = lib!.MONERO_Wallet_setSeedLanguage(ptr, language_);
+  final status = lib!.CWLWS_Wallet_setSeedLanguage(ptr, language_);
   calloc.free(language_);
-  debugEnd?.call('MONERO_Wallet_setSeedLanguage');
+  debugEnd?.call('CWLWS_Wallet_setSeedLanguage');
   return status;
 }
 
 @Deprecated("TODO")
 int Wallet_status(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_status');
+  debugStart?.call('CWLWS_Wallet_status');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_Wallet_status(ptr);
-  debugEnd?.call('MONERO_Wallet_status');
+  final status = lib!.CWLWS_Wallet_status(ptr);
+  debugEnd?.call('CWLWS_Wallet_status');
   return status;
 }
 
 @Deprecated("TODO")
 String Wallet_errorString(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_errorString');
+  debugStart?.call('CWLWS_Wallet_errorString');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_Wallet_errorString(ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_errorString(ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_errorString');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_errorString');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_errorString', e);
-    debugEnd?.call('MONERO_Wallet_errorString');
+    errorHandler?.call('CWLWS_Wallet_errorString', e);
+    debugEnd?.call('CWLWS_Wallet_errorString');
     return "";
   }
 }
 
 @Deprecated("TODO")
 bool Wallet_setPassword(wallet ptr, {required String password}) {
-  debugStart?.call('MONERO_Wallet_setPassword');
+  debugStart?.call('CWLWS_Wallet_setPassword');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final password_ = password.toNativeUtf8().cast<Char>();
-  final status = lib!.MONERO_Wallet_setPassword(ptr, password_);
+  final status = lib!.CWLWS_Wallet_setPassword(ptr, password_);
   calloc.free(password_);
-  debugEnd?.call('MONERO_Wallet_setPassword');
+  debugEnd?.call('CWLWS_Wallet_setPassword');
   return status;
 }
 
 @Deprecated("TODO")
 String Wallet_getPassword(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_getPassword');
+  debugStart?.call('CWLWS_Wallet_getPassword');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_Wallet_getPassword(ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_getPassword(ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_getPassword');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_getPassword');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_getPassword', e);
-    debugEnd?.call('MONERO_Wallet_getPassword');
+    errorHandler?.call('CWLWS_Wallet_getPassword', e);
+    debugEnd?.call('CWLWS_Wallet_getPassword');
     return "";
   }
 }
 
 @Deprecated("TODO")
 bool Wallet_setDevicePin(wallet ptr, {required String passphrase}) {
-  debugStart?.call('MONERO_Wallet_setDevicePin');
+  debugStart?.call('CWLWS_Wallet_setDevicePin');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final passphrase_ = passphrase.toNativeUtf8().cast<Char>();
-  final status = lib!.MONERO_Wallet_setDevicePin(ptr, passphrase_);
+  final status = lib!.CWLWS_Wallet_setDevicePin(ptr, passphrase_);
   calloc.free(passphrase_);
-  debugEnd?.call('MONERO_Wallet_setDevicePin');
+  debugEnd?.call('CWLWS_Wallet_setDevicePin');
   return status;
 }
 
 @Deprecated("TODO")
 String Wallet_address(wallet ptr,
     {int accountIndex = 0, int addressIndex = 0}) {
-  debugStart?.call('MONERO_Wallet_address');
+  debugStart?.call('CWLWS_Wallet_address');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr = lib!
-        .MONERO_Wallet_address(ptr, accountIndex, addressIndex)
+        .CWLWS_Wallet_address(ptr, accountIndex, addressIndex)
         .cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_address');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_address');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_address', e);
-    debugEnd?.call('MONERO_Wallet_address');
+    errorHandler?.call('CWLWS_Wallet_address', e);
+    debugEnd?.call('CWLWS_Wallet_address');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String Wallet_path(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_path');
+  debugStart?.call('CWLWS_Wallet_path');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_Wallet_path(ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_path(ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_path');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_path');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_path', e);
-    debugEnd?.call('MONERO_Wallet_path');
+    errorHandler?.call('CWLWS_Wallet_path', e);
+    debugEnd?.call('CWLWS_Wallet_path');
     return "";
   }
 }
 
 @Deprecated("TODO")
 int Wallet_nettype(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_nettype');
+  debugStart?.call('CWLWS_Wallet_nettype');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_Wallet_nettype(ptr);
-  debugEnd?.call('MONERO_Wallet_nettype');
+  final status = lib!.CWLWS_Wallet_nettype(ptr);
+  debugEnd?.call('CWLWS_Wallet_nettype');
   return status;
 }
 
@@ -1915,167 +1915,167 @@ int Wallet_useForkRules(
   required int version,
   required int earlyBlocks,
 }) {
-  debugStart?.call('MONERO_Wallet_useForkRules');
+  debugStart?.call('CWLWS_Wallet_useForkRules');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_Wallet_useForkRules(ptr, version, earlyBlocks);
-  debugEnd?.call('MONERO_Wallet_useForkRules');
+  final status = lib!.CWLWS_Wallet_useForkRules(ptr, version, earlyBlocks);
+  debugEnd?.call('CWLWS_Wallet_useForkRules');
   return status;
 }
 
 @Deprecated("TODO")
 String Wallet_integratedAddress(wallet ptr, {required String paymentId}) {
-  debugStart?.call('MONERO_Wallet_integratedAddress');
+  debugStart?.call('CWLWS_Wallet_integratedAddress');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final paymentId_ = paymentId.toNativeUtf8().cast<Char>();
     final strPtr =
-        lib!.MONERO_Wallet_integratedAddress(ptr, paymentId_).cast<Utf8>();
+        lib!.CWLWS_Wallet_integratedAddress(ptr, paymentId_).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_integratedAddress');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_integratedAddress');
     calloc.free(paymentId_);
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_integratedAddress', e);
-    debugEnd?.call('MONERO_Wallet_integratedAddress');
+    errorHandler?.call('CWLWS_Wallet_integratedAddress', e);
+    debugEnd?.call('CWLWS_Wallet_integratedAddress');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String Wallet_secretViewKey(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_secretViewKey');
+  debugStart?.call('CWLWS_Wallet_secretViewKey');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_Wallet_secretViewKey(ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_secretViewKey(ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_secretViewKey');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_secretViewKey');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_secretViewKey', e);
-    debugEnd?.call('MONERO_Wallet_secretViewKey');
+    errorHandler?.call('CWLWS_Wallet_secretViewKey', e);
+    debugEnd?.call('CWLWS_Wallet_secretViewKey');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String Wallet_publicViewKey(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_publicViewKey');
+  debugStart?.call('CWLWS_Wallet_publicViewKey');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_Wallet_publicViewKey(ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_publicViewKey(ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_publicViewKey');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_publicViewKey');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_publicViewKey', e);
-    debugEnd?.call('MONERO_Wallet_publicViewKey');
+    errorHandler?.call('CWLWS_Wallet_publicViewKey', e);
+    debugEnd?.call('CWLWS_Wallet_publicViewKey');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String Wallet_secretSpendKey(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_secretSpendKey');
+  debugStart?.call('CWLWS_Wallet_secretSpendKey');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_Wallet_secretSpendKey(ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_secretSpendKey(ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_secretSpendKey');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_secretSpendKey');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_secretSpendKey', e);
-    debugEnd?.call('MONERO_Wallet_secretSpendKey');
+    errorHandler?.call('CWLWS_Wallet_secretSpendKey', e);
+    debugEnd?.call('CWLWS_Wallet_secretSpendKey');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String Wallet_publicSpendKey(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_publicSpendKey');
+  debugStart?.call('CWLWS_Wallet_publicSpendKey');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_Wallet_publicSpendKey(ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_publicSpendKey(ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_publicSpendKey');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_publicSpendKey');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_publicSpendKey', e);
-    debugEnd?.call('MONERO_Wallet_publicSpendKey');
+    errorHandler?.call('CWLWS_Wallet_publicSpendKey', e);
+    debugEnd?.call('CWLWS_Wallet_publicSpendKey');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String Wallet_publicMultisigSignerKey(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_publicMultisigSignerKey');
+  debugStart?.call('CWLWS_Wallet_publicMultisigSignerKey');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_Wallet_publicMultisigSignerKey(ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_publicMultisigSignerKey(ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_publicMultisigSignerKey');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_publicMultisigSignerKey');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_publicMultisigSignerKey', e);
-    debugEnd?.call('MONERO_Wallet_publicMultisigSignerKey');
+    errorHandler?.call('CWLWS_Wallet_publicMultisigSignerKey', e);
+    debugEnd?.call('CWLWS_Wallet_publicMultisigSignerKey');
     return "";
   }
 }
 
 @Deprecated("TODO")
 void Wallet_stop(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_stop');
+  debugStart?.call('CWLWS_Wallet_stop');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final stop = lib!.MONERO_Wallet_stop(ptr);
-  debugEnd?.call('MONERO_Wallet_stop');
+  final stop = lib!.CWLWS_Wallet_stop(ptr);
+  debugEnd?.call('CWLWS_Wallet_stop');
   return stop;
 }
 
 @Deprecated("TODO")
 bool Wallet_store(wallet ptr, {String path = ""}) {
-  debugStart?.call('MONERO_Wallet_store');
+  debugStart?.call('CWLWS_Wallet_store');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final path_ = path.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_store(ptr, path_);
+  final s = lib!.CWLWS_Wallet_store(ptr, path_);
   calloc.free(path_);
-  debugEnd?.call('MONERO_Wallet_store');
+  debugEnd?.call('CWLWS_Wallet_store');
   return s;
 }
 
 @Deprecated("TODO")
 String Wallet_filename(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_filename');
+  debugStart?.call('CWLWS_Wallet_filename');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_Wallet_filename(ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_filename(ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_filename');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_filename');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_filename', e);
-    debugEnd?.call('MONERO_Wallet_filename');
+    errorHandler?.call('CWLWS_Wallet_filename', e);
+    debugEnd?.call('CWLWS_Wallet_filename');
     return "";
   }
 }
 
 String Wallet_keysFilename(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_keysFilename');
+  debugStart?.call('CWLWS_Wallet_keysFilename');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_Wallet_keysFilename(ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_keysFilename(ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_keysFilename');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_keysFilename');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_keysFilename', e);
-    debugEnd?.call('MONERO_Wallet_keysFilename');
+    errorHandler?.call('CWLWS_Wallet_keysFilename', e);
+    debugEnd?.call('CWLWS_Wallet_keysFilename');
     return "";
   }
 }
@@ -2091,13 +2091,13 @@ bool Wallet_init(
   bool lightWallet = false,
   String proxyAddress = "",
 }) {
-  debugStart?.call('MONERO_Wallet_init');
+  debugStart?.call('CWLWS_Wallet_init');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final daemonAddress_ = daemonAddress.toNativeUtf8().cast<Char>();
   final daemonUsername_ = daemonUsername.toNativeUtf8().cast<Char>();
   final daemonPassword_ = daemonPassword.toNativeUtf8().cast<Char>();
   final proxyAddress_ = proxyAddress.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_init(
+  final s = lib!.CWLWS_Wallet_init(
       ptr,
       daemonAddress_,
       upperTransacationSizeLimit,
@@ -2111,7 +2111,7 @@ bool Wallet_init(
   calloc.free(daemonUsername_);
   calloc.free(daemonPassword_);
   calloc.free(proxyAddress_);
-  debugEnd?.call('MONERO_Wallet_init');
+  debugEnd?.call('CWLWS_Wallet_init');
   return s;
 }
 
@@ -2122,279 +2122,279 @@ bool Wallet_createWatchOnly(
   required String password,
   required String language,
 }) {
-  debugStart?.call('MONERO_Wallet_createWatchOnly');
+  debugStart?.call('CWLWS_Wallet_createWatchOnly');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final path_ = path.toNativeUtf8().cast<Char>();
   final password_ = password.toNativeUtf8().cast<Char>();
   final language_ = language.toNativeUtf8().cast<Char>();
   final getRefreshFromBlockHeight =
-      lib!.MONERO_Wallet_createWatchOnly(ptr, path_, password_, language_);
+      lib!.CWLWS_Wallet_createWatchOnly(ptr, path_, password_, language_);
   calloc.free(path_);
   calloc.free(password_);
   calloc.free(language_);
-  debugEnd?.call('MONERO_Wallet_createWatchOnly');
+  debugEnd?.call('CWLWS_Wallet_createWatchOnly');
   return getRefreshFromBlockHeight;
 }
 
 @Deprecated("TODO")
 void Wallet_setRefreshFromBlockHeight(wallet ptr,
     {required int refresh_from_block_height}) {
-  debugStart?.call('MONERO_Wallet_setRefreshFromBlockHeight');
+  debugStart?.call('CWLWS_Wallet_setRefreshFromBlockHeight');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final status = lib!
-      .MONERO_Wallet_setRefreshFromBlockHeight(ptr, refresh_from_block_height);
-  debugEnd?.call('MONERO_Wallet_setRefreshFromBlockHeight');
+      .CWLWS_Wallet_setRefreshFromBlockHeight(ptr, refresh_from_block_height);
+  debugEnd?.call('CWLWS_Wallet_setRefreshFromBlockHeight');
   return status;
 }
 
 @Deprecated("TODO")
 int Wallet_getRefreshFromBlockHeight(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_getRefreshFromBlockHeight');
+  debugStart?.call('CWLWS_Wallet_getRefreshFromBlockHeight');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final getRefreshFromBlockHeight =
-      lib!.MONERO_Wallet_getRefreshFromBlockHeight(ptr);
-  debugEnd?.call('MONERO_Wallet_getRefreshFromBlockHeight');
+      lib!.CWLWS_Wallet_getRefreshFromBlockHeight(ptr);
+  debugEnd?.call('CWLWS_Wallet_getRefreshFromBlockHeight');
   return getRefreshFromBlockHeight;
 }
 
 @Deprecated("TODO")
 void Wallet_setRecoveringFromSeed(wallet ptr,
     {required bool recoveringFromSeed}) {
-  debugStart?.call('MONERO_Wallet_setRecoveringFromSeed');
+  debugStart?.call('CWLWS_Wallet_setRecoveringFromSeed');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final status =
-      lib!.MONERO_Wallet_setRecoveringFromSeed(ptr, recoveringFromSeed);
-  debugEnd?.call('MONERO_Wallet_setRecoveringFromSeed');
+      lib!.CWLWS_Wallet_setRecoveringFromSeed(ptr, recoveringFromSeed);
+  debugEnd?.call('CWLWS_Wallet_setRecoveringFromSeed');
   return status;
 }
 
 @Deprecated("TODO")
 void Wallet_setRecoveringFromDevice(wallet ptr,
     {required bool recoveringFromDevice}) {
-  debugStart?.call('MONERO_Wallet_setRecoveringFromDevice');
+  debugStart?.call('CWLWS_Wallet_setRecoveringFromDevice');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final status =
-      lib!.MONERO_Wallet_setRecoveringFromDevice(ptr, recoveringFromDevice);
-  debugEnd?.call('MONERO_Wallet_setRecoveringFromDevice');
+      lib!.CWLWS_Wallet_setRecoveringFromDevice(ptr, recoveringFromDevice);
+  debugEnd?.call('CWLWS_Wallet_setRecoveringFromDevice');
   return status;
 }
 
 @Deprecated("TODO")
 void Wallet_setSubaddressLookahead(wallet ptr,
     {required int major, required int minor}) {
-  debugStart?.call('MONERO_Wallet_setSubaddressLookahead');
+  debugStart?.call('CWLWS_Wallet_setSubaddressLookahead');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_Wallet_setSubaddressLookahead(ptr, major, minor);
-  debugEnd?.call('MONERO_Wallet_setSubaddressLookahead');
+  final status = lib!.CWLWS_Wallet_setSubaddressLookahead(ptr, major, minor);
+  debugEnd?.call('CWLWS_Wallet_setSubaddressLookahead');
   return status;
 }
 
 @Deprecated("TODO")
 bool Wallet_connectToDaemon(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_connectToDaemon');
+  debugStart?.call('CWLWS_Wallet_connectToDaemon');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final connectToDaemon = lib!.MONERO_Wallet_connectToDaemon(ptr);
-  debugEnd?.call('MONERO_Wallet_connectToDaemon');
+  final connectToDaemon = lib!.CWLWS_Wallet_connectToDaemon(ptr);
+  debugEnd?.call('CWLWS_Wallet_connectToDaemon');
   return connectToDaemon;
 }
 
 @Deprecated("TODO")
 int Wallet_connected(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_connected');
+  debugStart?.call('CWLWS_Wallet_connected');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final connected = lib!.MONERO_Wallet_connected(ptr);
-  debugEnd?.call('MONERO_Wallet_connected');
+  final connected = lib!.CWLWS_Wallet_connected(ptr);
+  debugEnd?.call('CWLWS_Wallet_connected');
   return connected;
 }
 
 @Deprecated("TODO")
 void Wallet_setTrustedDaemon(wallet ptr, {required bool arg}) {
-  debugStart?.call('MONERO_Wallet_setTrustedDaemon');
+  debugStart?.call('CWLWS_Wallet_setTrustedDaemon');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_Wallet_setTrustedDaemon(ptr, arg);
-  debugEnd?.call('MONERO_Wallet_setTrustedDaemon');
+  final status = lib!.CWLWS_Wallet_setTrustedDaemon(ptr, arg);
+  debugEnd?.call('CWLWS_Wallet_setTrustedDaemon');
   return status;
 }
 
 @Deprecated("TODO")
 bool Wallet_trustedDaemon(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_trustedDaemon');
+  debugStart?.call('CWLWS_Wallet_trustedDaemon');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final status = lib!.MONERO_Wallet_trustedDaemon(ptr);
-  debugEnd?.call('MONERO_Wallet_trustedDaemon');
+  final status = lib!.CWLWS_Wallet_trustedDaemon(ptr);
+  debugEnd?.call('CWLWS_Wallet_trustedDaemon');
   return status;
 }
 
 @Deprecated("TODO")
 bool Wallet_setProxy(wallet ptr, {required String address}) {
-  debugStart?.call('MONERO_Wallet_setProxy');
+  debugStart?.call('CWLWS_Wallet_setProxy');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final address_ = address.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_setProxy(ptr, address_);
+  final s = lib!.CWLWS_Wallet_setProxy(ptr, address_);
   calloc.free(address_);
-  debugEnd?.call('MONERO_Wallet_setProxy');
+  debugEnd?.call('CWLWS_Wallet_setProxy');
   return s;
 }
 
 @Deprecated("TODO")
 int Wallet_balance(wallet ptr, {required int accountIndex}) {
-  debugStart?.call('MONERO_Wallet_balance');
+  debugStart?.call('CWLWS_Wallet_balance');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final balance = lib!.MONERO_Wallet_balance(ptr, accountIndex);
-  debugEnd?.call('MONERO_Wallet_balance');
+  final balance = lib!.CWLWS_Wallet_balance(ptr, accountIndex);
+  debugEnd?.call('CWLWS_Wallet_balance');
   return balance;
 }
 
 @Deprecated("TODO")
 int Wallet_unlockedBalance(wallet ptr, {required int accountIndex}) {
-  debugStart?.call('MONERO_Wallet_unlockedBalance');
+  debugStart?.call('CWLWS_Wallet_unlockedBalance');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final unlockedBalance = lib!.MONERO_Wallet_unlockedBalance(ptr, accountIndex);
-  debugEnd?.call('MONERO_Wallet_unlockedBalance');
+  final unlockedBalance = lib!.CWLWS_Wallet_unlockedBalance(ptr, accountIndex);
+  debugEnd?.call('CWLWS_Wallet_unlockedBalance');
   return unlockedBalance;
 }
 
 @Deprecated("TODO")
 int Wallet_viewOnlyBalance(wallet ptr, {required int accountIndex}) {
-  debugStart?.call('MONERO_Wallet_viewOnlyBalance');
+  debugStart?.call('CWLWS_Wallet_viewOnlyBalance');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final unlockedBalance = lib!.MONERO_Wallet_viewOnlyBalance(ptr, accountIndex);
-  debugEnd?.call('MONERO_Wallet_viewOnlyBalance');
+  final unlockedBalance = lib!.CWLWS_Wallet_viewOnlyBalance(ptr, accountIndex);
+  debugEnd?.call('CWLWS_Wallet_viewOnlyBalance');
   return unlockedBalance;
 }
 
 @Deprecated("TODO")
 bool Wallet_watchOnly(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_watchOnly');
+  debugStart?.call('CWLWS_Wallet_watchOnly');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final watchOnly = lib!.MONERO_Wallet_watchOnly(ptr);
-  debugEnd?.call('MONERO_Wallet_watchOnly');
+  final watchOnly = lib!.CWLWS_Wallet_watchOnly(ptr);
+  debugEnd?.call('CWLWS_Wallet_watchOnly');
   return watchOnly;
 }
 
 @Deprecated("TODO")
 int Wallet_blockChainHeight(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_blockChainHeight');
+  debugStart?.call('CWLWS_Wallet_blockChainHeight');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final blockChainHeight = lib!.MONERO_Wallet_blockChainHeight(ptr);
-  debugEnd?.call('MONERO_Wallet_blockChainHeight');
+  final blockChainHeight = lib!.CWLWS_Wallet_blockChainHeight(ptr);
+  debugEnd?.call('CWLWS_Wallet_blockChainHeight');
   return blockChainHeight;
 }
 
 @Deprecated("TODO")
 int Wallet_approximateBlockChainHeight(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_approximateBlockChainHeight');
+  debugStart?.call('CWLWS_Wallet_approximateBlockChainHeight');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final approximateBlockChainHeight =
-      lib!.MONERO_Wallet_approximateBlockChainHeight(ptr);
-  debugEnd?.call('MONERO_Wallet_approximateBlockChainHeight');
+      lib!.CWLWS_Wallet_approximateBlockChainHeight(ptr);
+  debugEnd?.call('CWLWS_Wallet_approximateBlockChainHeight');
   return approximateBlockChainHeight;
 }
 
 @Deprecated("TODO")
 int Wallet_estimateBlockChainHeight(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_estimateBlockChainHeight');
+  debugStart?.call('CWLWS_Wallet_estimateBlockChainHeight');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final estimateBlockChainHeight =
-      lib!.MONERO_Wallet_estimateBlockChainHeight(ptr);
-  debugEnd?.call('MONERO_Wallet_estimateBlockChainHeight');
+      lib!.CWLWS_Wallet_estimateBlockChainHeight(ptr);
+  debugEnd?.call('CWLWS_Wallet_estimateBlockChainHeight');
   return estimateBlockChainHeight;
 }
 
 int Wallet_daemonBlockChainHeight(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_daemonBlockChainHeight');
+  debugStart?.call('CWLWS_Wallet_daemonBlockChainHeight');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final daemonBlockChainHeight = lib!.MONERO_Wallet_daemonBlockChainHeight(ptr);
-  debugEnd?.call('MONERO_Wallet_daemonBlockChainHeight');
+  final daemonBlockChainHeight = lib!.CWLWS_Wallet_daemonBlockChainHeight(ptr);
+  debugEnd?.call('CWLWS_Wallet_daemonBlockChainHeight');
   return daemonBlockChainHeight;
 }
 
 @Deprecated("TODO")
 bool Wallet_synchronized(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_synchronized');
+  debugStart?.call('CWLWS_Wallet_synchronized');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final synchronized = lib!.MONERO_Wallet_synchronized(ptr);
-  debugEnd?.call('MONERO_Wallet_synchronized');
+  final synchronized = lib!.CWLWS_Wallet_synchronized(ptr);
+  debugEnd?.call('CWLWS_Wallet_synchronized');
   return synchronized;
 }
 
 @Deprecated("TODO")
 String Wallet_displayAmount(int amount) {
-  debugStart?.call('MONERO_Wallet_displayAmount');
+  debugStart?.call('CWLWS_Wallet_displayAmount');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_Wallet_displayAmount(amount).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_displayAmount(amount).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_displayAmount');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_displayAmount');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_displayAmount', e);
-    debugEnd?.call('MONERO_Wallet_displayAmount');
+    errorHandler?.call('CWLWS_Wallet_displayAmount', e);
+    debugEnd?.call('CWLWS_Wallet_displayAmount');
     return "";
   }
 }
 
 @Deprecated("TODO")
 int Wallet_amountFromString(String amount) {
-  debugStart?.call('MONERO_Wallet_amountFromString');
+  debugStart?.call('CWLWS_Wallet_amountFromString');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final amount_ = amount.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_amountFromString(amount_);
+  final s = lib!.CWLWS_Wallet_amountFromString(amount_);
   calloc.free(amount_);
-  debugEnd?.call('MONERO_Wallet_amountFromString');
+  debugEnd?.call('CWLWS_Wallet_amountFromString');
   return s;
 }
 
 @Deprecated("TODO")
 int Wallet_amountFromDouble(double amount) {
-  debugStart?.call('MONERO_Wallet_amountFromDouble');
+  debugStart?.call('CWLWS_Wallet_amountFromDouble');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
-  final s = lib!.MONERO_Wallet_amountFromDouble(amount);
-  debugEnd?.call('MONERO_Wallet_amountFromDouble');
+  final s = lib!.CWLWS_Wallet_amountFromDouble(amount);
+  debugEnd?.call('CWLWS_Wallet_amountFromDouble');
   return s;
 }
 
 @Deprecated("TODO")
 String Wallet_genPaymentId() {
-  debugStart?.call('MONERO_Wallet_genPaymentId');
+  debugStart?.call('CWLWS_Wallet_genPaymentId');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_Wallet_genPaymentId().cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_genPaymentId().cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_genPaymentId');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_genPaymentId');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_genPaymentId', e);
-    debugEnd?.call('MONERO_Wallet_genPaymentId');
+    errorHandler?.call('CWLWS_Wallet_genPaymentId', e);
+    debugEnd?.call('CWLWS_Wallet_genPaymentId');
     return "";
   }
 }
 
 @Deprecated("TODO")
 bool Wallet_paymentIdValid(String paymentId) {
-  debugStart?.call('MONERO_Wallet_paymentIdValid');
+  debugStart?.call('CWLWS_Wallet_paymentIdValid');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final paymentId_ = paymentId.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_paymentIdValid(paymentId_);
+  final s = lib!.CWLWS_Wallet_paymentIdValid(paymentId_);
   calloc.free(paymentId_);
-  debugEnd?.call('MONERO_Wallet_paymentIdValid');
+  debugEnd?.call('CWLWS_Wallet_paymentIdValid');
   return s;
 }
 
 @Deprecated("TODO")
 bool Wallet_addressValid(String address, int networkType) {
-  debugStart?.call('MONERO_Wallet_addressValid');
+  debugStart?.call('CWLWS_Wallet_addressValid');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final address_ = address.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_addressValid(address_, networkType);
+  final s = lib!.CWLWS_Wallet_addressValid(address_, networkType);
   calloc.free(address_);
-  debugEnd?.call('MONERO_Wallet_addressValid');
+  debugEnd?.call('CWLWS_Wallet_addressValid');
   return s;
 }
 
@@ -2404,16 +2404,16 @@ bool Wallet_keyValid(
     required String address_string,
     required bool isViewKey,
     required int nettype}) {
-  debugStart?.call('MONERO_Wallet_keyValid');
+  debugStart?.call('CWLWS_Wallet_keyValid');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final secret_key_string_ = secret_key_string.toNativeUtf8().cast<Char>();
   final address_string_ = address_string.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_keyValid(
+  final s = lib!.CWLWS_Wallet_keyValid(
       secret_key_string_, address_string_, isViewKey, nettype);
   calloc.free(secret_key_string_);
   calloc.free(address_string_);
-  debugEnd?.call('MONERO_Wallet_keyValid');
+  debugEnd?.call('CWLWS_Wallet_keyValid');
   return s;
 }
 
@@ -2423,23 +2423,23 @@ String Wallet_keyValid_error(
     required String address_string,
     required bool isViewKey,
     required int nettype}) {
-  debugStart?.call('MONERO_Wallet_keyValid_error');
+  debugStart?.call('CWLWS_Wallet_keyValid_error');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final secret_key_string_ = secret_key_string.toNativeUtf8().cast<Char>();
     final address_string_ = address_string.toNativeUtf8().cast<Char>();
     final strPtr = lib!
-        .MONERO_Wallet_keyValid_error(
+        .CWLWS_Wallet_keyValid_error(
             secret_key_string_, address_string_, isViewKey, nettype)
         .cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
+    CWLWS_free(strPtr.cast());
     calloc.free(secret_key_string_);
     calloc.free(address_string_);
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_keyValid_error', e);
-    debugEnd?.call('MONERO_Wallet_keyValid_error');
+    errorHandler?.call('CWLWS_Wallet_keyValid_error', e);
+    debugEnd?.call('CWLWS_Wallet_keyValid_error');
     return "";
   }
 }
@@ -2447,30 +2447,30 @@ String Wallet_keyValid_error(
 @Deprecated("TODO")
 String Wallet_paymentIdFromAddress(
     {required String strarg, required int nettype}) {
-  debugStart?.call('MONERO_Wallet_paymentIdFromAddress');
+  debugStart?.call('CWLWS_Wallet_paymentIdFromAddress');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strarg_ = strarg.toNativeUtf8().cast<Char>();
     final strPtr =
-        lib!.MONERO_Wallet_paymentIdFromAddress(strarg_, nettype).cast<Utf8>();
+        lib!.CWLWS_Wallet_paymentIdFromAddress(strarg_, nettype).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
+    CWLWS_free(strPtr.cast());
     calloc.free(strarg_);
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_paymentIdFromAddress', e);
-    debugEnd?.call('MONERO_Wallet_paymentIdFromAddress');
+    errorHandler?.call('CWLWS_Wallet_paymentIdFromAddress', e);
+    debugEnd?.call('CWLWS_Wallet_paymentIdFromAddress');
     return "";
   }
 }
 
 @Deprecated("TODO")
 int Wallet_maximumAllowedAmount() {
-  debugStart?.call('MONERO_Wallet_maximumAllowedAmount');
+  debugStart?.call('CWLWS_Wallet_maximumAllowedAmount');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
-  final s = lib!.MONERO_Wallet_maximumAllowedAmount();
-  debugEnd?.call('MONERO_Wallet_maximumAllowedAmount');
+  final s = lib!.CWLWS_Wallet_maximumAllowedAmount();
+  debugEnd?.call('CWLWS_Wallet_maximumAllowedAmount');
   return s;
 }
 
@@ -2482,37 +2482,37 @@ void Wallet_init3(
   required String logPath,
   required bool console,
 }) {
-  debugStart?.call('MONERO_Wallet_init3');
+  debugStart?.call('CWLWS_Wallet_init3');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final argv0_ = argv0.toNativeUtf8().cast<Char>();
   final defaultLogBaseName_ = defaultLogBaseName.toNativeUtf8().cast<Char>();
   final logPath_ = logPath.toNativeUtf8().cast<Char>();
   final s = lib!
-      .MONERO_Wallet_init3(ptr, argv0_, defaultLogBaseName_, logPath_, console);
+      .CWLWS_Wallet_init3(ptr, argv0_, defaultLogBaseName_, logPath_, console);
   calloc.free(argv0_);
   calloc.free(defaultLogBaseName_);
   calloc.free(logPath_);
-  debugEnd?.call('MONERO_Wallet_init3');
+  debugEnd?.call('CWLWS_Wallet_init3');
   return s;
 }
 
 @Deprecated("TODO")
 String Wallet_getPolyseed(wallet ptr, {required String passphrase}) {
-  debugStart?.call('MONERO_Wallet_getPolyseed');
+  debugStart?.call('CWLWS_Wallet_getPolyseed');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final passphrase_ = passphrase.toNativeUtf8().cast<Char>();
     final strPtr =
-        lib!.MONERO_Wallet_getPolyseed(ptr, passphrase_).cast<Utf8>();
+        lib!.CWLWS_Wallet_getPolyseed(ptr, passphrase_).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
+    CWLWS_free(strPtr.cast());
     calloc.free(passphrase_);
-    debugEnd?.call('MONERO_Wallet_getPolyseed');
+    debugEnd?.call('CWLWS_Wallet_getPolyseed');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_getPolyseed', e);
-    debugEnd?.call('MONERO_Wallet_getPolyseed');
+    errorHandler?.call('CWLWS_Wallet_getPolyseed', e);
+    debugEnd?.call('CWLWS_Wallet_getPolyseed');
     return "";
   }
 }
@@ -2521,156 +2521,156 @@ String Wallet_getPolyseed(wallet ptr, {required String passphrase}) {
 String Wallet_createPolyseed({
   String language = "English",
 }) {
-  debugStart?.call('MONERO_Wallet_createPolyseed');
+  debugStart?.call('CWLWS_Wallet_createPolyseed');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final language_ = language.toNativeUtf8();
     final strPtr =
-        lib!.MONERO_Wallet_createPolyseed(language_.cast()).cast<Utf8>();
+        lib!.CWLWS_Wallet_createPolyseed(language_.cast()).cast<Utf8>();
     calloc.free(language_);
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_createPolyseed');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_createPolyseed');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_createPolyseed', e);
-    debugEnd?.call('MONERO_Wallet_createPolyseed');
+    errorHandler?.call('CWLWS_Wallet_createPolyseed', e);
+    debugEnd?.call('CWLWS_Wallet_createPolyseed');
     return "";
   }
 }
 
 @Deprecated("TODO")
 void Wallet_startRefresh(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_startRefresh');
+  debugStart?.call('CWLWS_Wallet_startRefresh');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final startRefresh = lib!.MONERO_Wallet_startRefresh(ptr);
-  debugEnd?.call('MONERO_Wallet_startRefresh');
+  final startRefresh = lib!.CWLWS_Wallet_startRefresh(ptr);
+  debugEnd?.call('CWLWS_Wallet_startRefresh');
   return startRefresh;
 }
 
 @Deprecated("TODO")
 void Wallet_pauseRefresh(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_pauseRefresh');
+  debugStart?.call('CWLWS_Wallet_pauseRefresh');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final pauseRefresh = lib!.MONERO_Wallet_pauseRefresh(ptr);
-  debugEnd?.call('MONERO_Wallet_pauseRefresh');
+  final pauseRefresh = lib!.CWLWS_Wallet_pauseRefresh(ptr);
+  debugEnd?.call('CWLWS_Wallet_pauseRefresh');
   return pauseRefresh;
 }
 
 @Deprecated("TODO")
 bool Wallet_refresh(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_refresh');
+  debugStart?.call('CWLWS_Wallet_refresh');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final refresh = lib!.MONERO_Wallet_refresh(ptr);
-  debugEnd?.call('MONERO_Wallet_refresh');
+  final refresh = lib!.CWLWS_Wallet_refresh(ptr);
+  debugEnd?.call('CWLWS_Wallet_refresh');
   return refresh;
 }
 
 @Deprecated("TODO")
 void Wallet_refreshAsync(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_refreshAsync');
+  debugStart?.call('CWLWS_Wallet_refreshAsync');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final refreshAsync = lib!.MONERO_Wallet_refreshAsync(ptr);
-  debugEnd?.call('MONERO_Wallet_refreshAsync');
+  final refreshAsync = lib!.CWLWS_Wallet_refreshAsync(ptr);
+  debugEnd?.call('CWLWS_Wallet_refreshAsync');
   return refreshAsync;
 }
 
 @Deprecated("TODO")
 bool Wallet_rescanBlockchain(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_rescanBlockchain');
+  debugStart?.call('CWLWS_Wallet_rescanBlockchain');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final rescanBlockchain = lib!.MONERO_Wallet_rescanBlockchain(ptr);
-  debugEnd?.call('MONERO_Wallet_rescanBlockchain');
+  final rescanBlockchain = lib!.CWLWS_Wallet_rescanBlockchain(ptr);
+  debugEnd?.call('CWLWS_Wallet_rescanBlockchain');
   return rescanBlockchain;
 }
 
 @Deprecated("TODO")
 void Wallet_rescanBlockchainAsync(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_rescanBlockchainAsync');
+  debugStart?.call('CWLWS_Wallet_rescanBlockchainAsync');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final rescanBlockchainAsync = lib!.MONERO_Wallet_rescanBlockchainAsync(ptr);
-  debugEnd?.call('MONERO_Wallet_rescanBlockchainAsync');
+  final rescanBlockchainAsync = lib!.CWLWS_Wallet_rescanBlockchainAsync(ptr);
+  debugEnd?.call('CWLWS_Wallet_rescanBlockchainAsync');
   return rescanBlockchainAsync;
 }
 
 @Deprecated("TODO")
 void Wallet_setAutoRefreshInterval(wallet ptr, {required int millis}) {
-  debugStart?.call('MONERO_Wallet_setAutoRefreshInterval');
+  debugStart?.call('CWLWS_Wallet_setAutoRefreshInterval');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final setAutoRefreshInterval =
-      lib!.MONERO_Wallet_setAutoRefreshInterval(ptr, millis);
-  debugEnd?.call('MONERO_Wallet_setAutoRefreshInterval');
+      lib!.CWLWS_Wallet_setAutoRefreshInterval(ptr, millis);
+  debugEnd?.call('CWLWS_Wallet_setAutoRefreshInterval');
   return setAutoRefreshInterval;
 }
 
 @Deprecated("TODO")
 int Wallet_autoRefreshInterval(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_autoRefreshInterval');
+  debugStart?.call('CWLWS_Wallet_autoRefreshInterval');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final autoRefreshInterval = lib!.MONERO_Wallet_autoRefreshInterval(ptr);
-  debugEnd?.call('MONERO_Wallet_autoRefreshInterval');
+  final autoRefreshInterval = lib!.CWLWS_Wallet_autoRefreshInterval(ptr);
+  debugEnd?.call('CWLWS_Wallet_autoRefreshInterval');
   return autoRefreshInterval;
 }
 
 @Deprecated("TODO")
 void Wallet_addSubaddress(wallet ptr,
     {required int accountIndex, String label = ""}) {
-  debugStart?.call('MONERO_Wallet_addSubaddress');
+  debugStart?.call('CWLWS_Wallet_addSubaddress');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final label_ = label.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_addSubaddress(ptr, accountIndex, label_);
+  final s = lib!.CWLWS_Wallet_addSubaddress(ptr, accountIndex, label_);
   calloc.free(label_);
-  debugEnd?.call('MONERO_Wallet_addSubaddress');
+  debugEnd?.call('CWLWS_Wallet_addSubaddress');
   return s;
 }
 
 @Deprecated("TODO")
 void Wallet_addSubaddressAccount(wallet ptr, {String label = ""}) {
-  debugStart?.call('MONERO_Wallet_addSubaddressAccount');
+  debugStart?.call('CWLWS_Wallet_addSubaddressAccount');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final label_ = label.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_addSubaddressAccount(ptr, label_);
+  final s = lib!.CWLWS_Wallet_addSubaddressAccount(ptr, label_);
   calloc.free(label_);
-  debugEnd?.call('MONERO_Wallet_addSubaddressAccount');
+  debugEnd?.call('CWLWS_Wallet_addSubaddressAccount');
   return s;
 }
 
 @Deprecated("TODO")
 int Wallet_numSubaddressAccounts(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_numSubaddressAccounts');
+  debugStart?.call('CWLWS_Wallet_numSubaddressAccounts');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final numSubaddressAccounts = lib!.MONERO_Wallet_numSubaddressAccounts(ptr);
-  debugEnd?.call('MONERO_Wallet_numSubaddressAccounts');
+  final numSubaddressAccounts = lib!.CWLWS_Wallet_numSubaddressAccounts(ptr);
+  debugEnd?.call('CWLWS_Wallet_numSubaddressAccounts');
   return numSubaddressAccounts;
 }
 
 @Deprecated("TODO")
 int Wallet_numSubaddresses(wallet ptr, {required int accountIndex}) {
-  debugStart?.call('MONERO_Wallet_numSubaddresses');
+  debugStart?.call('CWLWS_Wallet_numSubaddresses');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final numSubaddresses = lib!.MONERO_Wallet_numSubaddresses(ptr, accountIndex);
-  debugEnd?.call('MONERO_Wallet_numSubaddresses');
+  final numSubaddresses = lib!.CWLWS_Wallet_numSubaddresses(ptr, accountIndex);
+  debugEnd?.call('CWLWS_Wallet_numSubaddresses');
   return numSubaddresses;
 }
 
 @Deprecated("TODO")
 String Wallet_getSubaddressLabel(wallet ptr,
     {required int accountIndex, required int addressIndex}) {
-  debugStart?.call('MONERO_Wallet_getSubaddressLabel');
+  debugStart?.call('CWLWS_Wallet_getSubaddressLabel');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr = lib!
-        .MONERO_Wallet_getSubaddressLabel(ptr, accountIndex, addressIndex)
+        .CWLWS_Wallet_getSubaddressLabel(ptr, accountIndex, addressIndex)
         .cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_getSubaddressLabel');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_getSubaddressLabel');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_getSubaddressLabel', e);
-    debugEnd?.call('MONERO_Wallet_getSubaddressLabel');
+    errorHandler?.call('CWLWS_Wallet_getSubaddressLabel', e);
+    debugEnd?.call('CWLWS_Wallet_getSubaddressLabel');
     return "";
   }
 }
@@ -2680,39 +2680,39 @@ void Wallet_setSubaddressLabel(wallet ptr,
     {required int accountIndex,
     required int addressIndex,
     required String label}) {
-  debugStart?.call('MONERO_Wallet_setSubaddressLabel');
+  debugStart?.call('CWLWS_Wallet_setSubaddressLabel');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final label_ = label.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_setSubaddressLabel(
+  final s = lib!.CWLWS_Wallet_setSubaddressLabel(
       ptr, accountIndex, addressIndex, label_);
   calloc.free(label_);
-  debugEnd?.call('MONERO_Wallet_setSubaddressLabel');
+  debugEnd?.call('CWLWS_Wallet_setSubaddressLabel');
   return s;
 }
 
 @Deprecated("TODO")
 MultisigState Wallet_multisig(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_multisig');
+  debugStart?.call('CWLWS_Wallet_multisig');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final s = lib!.MONERO_Wallet_multisig(ptr);
-  debugEnd?.call('MONERO_Wallet_multisig');
+  final s = lib!.CWLWS_Wallet_multisig(ptr);
+  debugEnd?.call('CWLWS_Wallet_multisig');
   return s;
 }
 
 @Deprecated("TODO")
 String Wallet_getMultisigInfo(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_getMultisigInfo');
+  debugStart?.call('CWLWS_Wallet_getMultisigInfo');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_Wallet_getMultisigInfo(ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_getMultisigInfo(ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_getMultisigInfo');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_getMultisigInfo');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_getMultisigInfo', e);
-    debugEnd?.call('MONERO_Wallet_getMultisigInfo');
+    errorHandler?.call('CWLWS_Wallet_getMultisigInfo', e);
+    debugEnd?.call('CWLWS_Wallet_getMultisigInfo');
     return "";
   }
 }
@@ -2723,12 +2723,12 @@ String Wallet_makeMultisig(
   required List<String> info,
   required int threshold,
 }) {
-  debugStart?.call('MONERO_Wallet_makeMultisig');
+  debugStart?.call('CWLWS_Wallet_makeMultisig');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final infoStr = info.join(defaultSeparatorStr).toNativeUtf8();
     final strPtr = lib!
-        .MONERO_Wallet_makeMultisig(
+        .CWLWS_Wallet_makeMultisig(
           ptr,
           infoStr.cast(),
           defaultSeparator.cast(),
@@ -2737,12 +2737,12 @@ String Wallet_makeMultisig(
         .cast<Utf8>();
     final str = strPtr.toDartString();
     calloc.free(infoStr);
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_makeMultisig');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_makeMultisig');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_makeMultisig', e);
-    debugEnd?.call('MONERO_Wallet_makeMultisig');
+    errorHandler?.call('CWLWS_Wallet_makeMultisig', e);
+    debugEnd?.call('CWLWS_Wallet_makeMultisig');
     return "";
   }
 }
@@ -2753,12 +2753,12 @@ String Wallet_exchangeMultisigKeys(
   required List<String> info,
   required bool force_update_use_with_caution,
 }) {
-  debugStart?.call('MONERO_Wallet_exchangeMultisigKeys');
+  debugStart?.call('CWLWS_Wallet_exchangeMultisigKeys');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final infoStr = info.join(defaultSeparatorStr).toNativeUtf8();
     final strPtr = lib!
-        .MONERO_Wallet_exchangeMultisigKeys(
+        .CWLWS_Wallet_exchangeMultisigKeys(
           ptr,
           infoStr.cast(),
           defaultSeparator.cast(),
@@ -2767,12 +2767,12 @@ String Wallet_exchangeMultisigKeys(
         .cast<Utf8>();
     final str = strPtr.toDartString();
     calloc.free(infoStr);
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_exchangeMultisigKeys');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_exchangeMultisigKeys');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_exchangeMultisigKeys', e);
-    debugEnd?.call('MONERO_Wallet_exchangeMultisigKeys');
+    errorHandler?.call('CWLWS_Wallet_exchangeMultisigKeys', e);
+    debugEnd?.call('CWLWS_Wallet_exchangeMultisigKeys');
     return "";
   }
 }
@@ -2783,24 +2783,24 @@ List<String> Wallet_exportMultisigImages(
   required List<String> info,
   required bool force_update_use_with_caution,
 }) {
-  debugStart?.call('MONERO_Wallet_exportMultisigImages');
+  debugStart?.call('CWLWS_Wallet_exportMultisigImages');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final infoStr = info.join(defaultSeparatorStr).toNativeUtf8();
     final strPtr = lib!
-        .MONERO_Wallet_exportMultisigImages(
+        .CWLWS_Wallet_exportMultisigImages(
           ptr,
           defaultSeparator.cast(),
         )
         .cast<Utf8>();
     final str = strPtr.toDartString();
     calloc.free(infoStr);
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_exportMultisigImages');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_exportMultisigImages');
     return str.split(defaultSeparatorStr);
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_exportMultisigImages', e);
-    debugEnd?.call('MONERO_Wallet_exportMultisigImages');
+    errorHandler?.call('CWLWS_Wallet_exportMultisigImages', e);
+    debugEnd?.call('CWLWS_Wallet_exportMultisigImages');
     return [];
   }
 }
@@ -2810,27 +2810,27 @@ int Wallet_importMultisigImages(
   wallet ptr, {
   required List<String> info,
 }) {
-  debugStart?.call('MONERO_Wallet_importMultisigImages');
+  debugStart?.call('CWLWS_Wallet_importMultisigImages');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final infoStr = info.join(defaultSeparatorStr).toNativeUtf8();
-  final ret = lib!.MONERO_Wallet_importMultisigImages(
+  final ret = lib!.CWLWS_Wallet_importMultisigImages(
     ptr,
     infoStr.cast(),
     defaultSeparator.cast(),
   );
   calloc.free(infoStr);
-  debugEnd?.call('MONERO_Wallet_importMultisigImages');
+  debugEnd?.call('CWLWS_Wallet_importMultisigImages');
   return ret;
 }
 
 @Deprecated("TODO")
 int Wallet_hasMultisigPartialKeyImages(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_hasMultisigPartialKeyImages');
+  debugStart?.call('CWLWS_Wallet_hasMultisigPartialKeyImages');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final ret = lib!.MONERO_Wallet_hasMultisigPartialKeyImages(
+  final ret = lib!.CWLWS_Wallet_hasMultisigPartialKeyImages(
     ptr,
   );
-  debugEnd?.call('MONERO_Wallet_hasMultisigPartialKeyImages');
+  debugEnd?.call('CWLWS_Wallet_hasMultisigPartialKeyImages');
   return ret;
 }
 
@@ -2839,15 +2839,15 @@ PendingTransaction Wallet_restoreMultisigTransaction(
   wallet ptr, {
   required String signData,
 }) {
-  debugStart?.call('MONERO_Wallet_restoreMultisigTransaction');
+  debugStart?.call('CWLWS_Wallet_restoreMultisigTransaction');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final signData_ = signData.toNativeUtf8();
-  final ret = lib!.MONERO_Wallet_restoreMultisigTransaction(
+  final ret = lib!.CWLWS_Wallet_restoreMultisigTransaction(
     ptr,
     signData_.cast(),
   );
   calloc.free(signData_);
-  debugEnd?.call('MONERO_Wallet_restoreMultisigTransaction');
+  debugEnd?.call('CWLWS_Wallet_restoreMultisigTransaction');
   return ret;
 }
 
@@ -2863,7 +2863,7 @@ PendingTransaction Wallet_createTransactionMultDest(
   required int subaddr_account,
   List<String> preferredInputs = const [],
 }) {
-  debugStart?.call('MONERO_Wallet_createTransactionMultDest');
+  debugStart?.call('CWLWS_Wallet_createTransactionMultDest');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final dst_addr_list = dstAddr.join(defaultSeparatorStr).toNativeUtf8();
   final payment_id = paymentId.toNativeUtf8();
@@ -2871,7 +2871,7 @@ PendingTransaction Wallet_createTransactionMultDest(
       amounts.map((e) => e.toString()).join(defaultSeparatorStr).toNativeUtf8();
   final preferredInputs_ =
       preferredInputs.join(defaultSeparatorStr).toNativeUtf8();
-  final ret = lib!.MONERO_Wallet_createTransactionMultDest(
+  final ret = lib!.CWLWS_Wallet_createTransactionMultDest(
     wptr,
     dst_addr_list.cast(),
     defaultSeparator,
@@ -2889,7 +2889,7 @@ PendingTransaction Wallet_createTransactionMultDest(
   calloc.free(payment_id);
   calloc.free(amount_list);
   calloc.free(preferredInputs_);
-  debugEnd?.call('MONERO_Wallet_createTransactionMultDest');
+  debugEnd?.call('CWLWS_Wallet_createTransactionMultDest');
   return ret;
 }
 
@@ -2902,14 +2902,14 @@ PendingTransaction Wallet_createTransaction(wallet ptr,
     required int pendingTransactionPriority,
     required int subaddr_account,
     List<String> preferredInputs = const []}) {
-  debugStart?.call('MONERO_Wallet_createTransaction');
+  debugStart?.call('CWLWS_Wallet_createTransaction');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final dst_addr_ = dst_addr.toNativeUtf8().cast<Char>();
   final payment_id_ = payment_id.toNativeUtf8().cast<Char>();
   final preferredInputs_ =
       preferredInputs.join(defaultSeparatorStr).toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_createTransaction(
+  final s = lib!.CWLWS_Wallet_createTransaction(
     ptr,
     dst_addr_,
     payment_id_,
@@ -2923,78 +2923,78 @@ PendingTransaction Wallet_createTransaction(wallet ptr,
   calloc.free(dst_addr_);
   calloc.free(payment_id_);
   calloc.free(preferredInputs_);
-  debugEnd?.call('MONERO_Wallet_createTransaction');
+  debugEnd?.call('CWLWS_Wallet_createTransaction');
   return s;
 }
 
 @Deprecated("TODO")
 UnsignedTransaction Wallet_loadUnsignedTx(wallet ptr,
     {required String unsigned_filename}) {
-  debugStart?.call('MONERO_Wallet_loadUnsignedTx');
+  debugStart?.call('CWLWS_Wallet_loadUnsignedTx');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final unsigned_filename_ = unsigned_filename.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_loadUnsignedTx(ptr, unsigned_filename_);
+  final s = lib!.CWLWS_Wallet_loadUnsignedTx(ptr, unsigned_filename_);
   calloc.free(unsigned_filename_);
-  debugEnd?.call('MONERO_Wallet_loadUnsignedTx');
+  debugEnd?.call('CWLWS_Wallet_loadUnsignedTx');
   return s;
 }
 
 @Deprecated("TODO")
 UnsignedTransaction Wallet_loadUnsignedTxUR(wallet ptr,
     {required String input}) {
-  debugStart?.call('MONERO_Wallet_loadUnsignedTxUR');
+  debugStart?.call('CWLWS_Wallet_loadUnsignedTxUR');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final input_ = input.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_loadUnsignedTxUR(ptr, input_);
+  final s = lib!.CWLWS_Wallet_loadUnsignedTxUR(ptr, input_);
   calloc.free(input_);
-  debugEnd?.call('MONERO_Wallet_loadUnsignedTxUR');
+  debugEnd?.call('CWLWS_Wallet_loadUnsignedTxUR');
   return s;
 }
 
 @Deprecated("TODO")
 bool Wallet_submitTransaction(wallet ptr, String filename) {
-  debugStart?.call('MONERO_Wallet_submitTransaction');
+  debugStart?.call('CWLWS_Wallet_submitTransaction');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final filename_ = filename.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_submitTransaction(ptr, filename_);
+  final s = lib!.CWLWS_Wallet_submitTransaction(ptr, filename_);
   calloc.free(filename_);
-  debugEnd?.call('MONERO_Wallet_submitTransaction');
+  debugEnd?.call('CWLWS_Wallet_submitTransaction');
   return s;
 }
 
 @Deprecated("TODO")
 bool Wallet_submitTransactionUR(wallet ptr, String input) {
-  debugStart?.call('MONERO_Wallet_submitTransactionUR');
+  debugStart?.call('CWLWS_Wallet_submitTransactionUR');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final input_ = input.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_submitTransactionUR(ptr, input_);
+  final s = lib!.CWLWS_Wallet_submitTransactionUR(ptr, input_);
   calloc.free(input_);
-  debugEnd?.call('MONERO_Wallet_submitTransactionUR');
+  debugEnd?.call('CWLWS_Wallet_submitTransactionUR');
   return s;
 }
 
 @Deprecated("TODO")
 bool Wallet_hasUnknownKeyImages(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_hasUnknownKeyImages');
+  debugStart?.call('CWLWS_Wallet_hasUnknownKeyImages');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final s = lib!.MONERO_Wallet_hasUnknownKeyImages(ptr);
-  debugEnd?.call('MONERO_Wallet_hasUnknownKeyImages');
+  final s = lib!.CWLWS_Wallet_hasUnknownKeyImages(ptr);
+  debugEnd?.call('CWLWS_Wallet_hasUnknownKeyImages');
   return s;
 }
 
 @Deprecated("TODO")
 bool Wallet_exportKeyImages(wallet ptr, String filename, {required bool all}) {
-  debugStart?.call('MONERO_Wallet_exportKeyImages');
+  debugStart?.call('CWLWS_Wallet_exportKeyImages');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final filename_ = filename.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_exportKeyImages(ptr, filename_, all);
+  final s = lib!.CWLWS_Wallet_exportKeyImages(ptr, filename_, all);
   calloc.free(filename_);
-  debugEnd?.call('MONERO_Wallet_exportKeyImages');
+  debugEnd?.call('CWLWS_Wallet_exportKeyImages');
   return s;
 }
 
@@ -3004,56 +3004,56 @@ String Wallet_exportKeyImagesUR(
   int max_fragment_length = 130,
   bool all = false,
 }) {
-  debugStart?.call('MONERO_Wallet_exportKeyImagesUR');
+  debugStart?.call('CWLWS_Wallet_exportKeyImagesUR');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr = lib!
-        .MONERO_Wallet_exportKeyImagesUR(ptr, max_fragment_length, all)
+        .CWLWS_Wallet_exportKeyImagesUR(ptr, max_fragment_length, all)
         .cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_exportKeyImagesUR');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_exportKeyImagesUR');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_exportKeyImagesUR', e);
-    debugEnd?.call('MONERO_Wallet_exportKeyImagesUR');
+    errorHandler?.call('CWLWS_Wallet_exportKeyImagesUR', e);
+    debugEnd?.call('CWLWS_Wallet_exportKeyImagesUR');
     return "";
   }
 }
 
 @Deprecated("TODO")
 bool Wallet_importKeyImages(wallet ptr, String filename) {
-  debugStart?.call('MONERO_Wallet_importKeyImages');
+  debugStart?.call('CWLWS_Wallet_importKeyImages');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final filename_ = filename.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_importKeyImages(ptr, filename_);
+  final s = lib!.CWLWS_Wallet_importKeyImages(ptr, filename_);
   calloc.free(filename_);
-  debugEnd?.call('MONERO_Wallet_importKeyImages');
+  debugEnd?.call('CWLWS_Wallet_importKeyImages');
   return s;
 }
 
 @Deprecated("TODO")
 bool Wallet_importKeyImagesUR(wallet ptr, String input) {
-  debugStart?.call('MONERO_Wallet_importKeyImagesUR');
+  debugStart?.call('CWLWS_Wallet_importKeyImagesUR');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final input_ = input.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_importKeyImagesUR(ptr, input_);
+  final s = lib!.CWLWS_Wallet_importKeyImagesUR(ptr, input_);
   calloc.free(input_);
-  debugEnd?.call('MONERO_Wallet_importKeyImagesUR');
+  debugEnd?.call('CWLWS_Wallet_importKeyImagesUR');
   return s;
 }
 
 @Deprecated("TODO")
 bool Wallet_exportOutputs(wallet ptr, String filename, {required bool all}) {
-  debugStart?.call('MONERO_Wallet_exportOutputs');
+  debugStart?.call('CWLWS_Wallet_exportOutputs');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final filename_ = filename.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_exportOutputs(ptr, filename_, all);
+  final s = lib!.CWLWS_Wallet_exportOutputs(ptr, filename_, all);
   calloc.free(filename_);
-  debugEnd?.call('MONERO_Wallet_exportOutputs');
+  debugEnd?.call('CWLWS_Wallet_exportOutputs');
   return s;
 }
 
@@ -3063,44 +3063,44 @@ String Wallet_exportOutputsUR(
   int max_fragment_length = 130,
   bool all = false,
 }) {
-  debugStart?.call('MONERO_Wallet_exportOutputsUR');
+  debugStart?.call('CWLWS_Wallet_exportOutputsUR');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr = lib!
-        .MONERO_Wallet_exportOutputsUR(ptr, max_fragment_length, all)
+        .CWLWS_Wallet_exportOutputsUR(ptr, max_fragment_length, all)
         .cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_exportOutputsUR');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_exportOutputsUR');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_exportOutputsUR', e);
-    debugEnd?.call('MONERO_Wallet_exportOutputsUR');
+    errorHandler?.call('CWLWS_Wallet_exportOutputsUR', e);
+    debugEnd?.call('CWLWS_Wallet_exportOutputsUR');
     return "";
   }
 }
 
 @Deprecated("TODO")
 bool Wallet_importOutputs(wallet ptr, String filename) {
-  debugStart?.call('MONERO_Wallet_importOutputs');
+  debugStart?.call('CWLWS_Wallet_importOutputs');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final filename_ = filename.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_importOutputs(ptr, filename_);
+  final s = lib!.CWLWS_Wallet_importOutputs(ptr, filename_);
   calloc.free(filename_);
-  debugEnd?.call('MONERO_Wallet_importOutputs');
+  debugEnd?.call('CWLWS_Wallet_importOutputs');
   return s;
 }
 
 @Deprecated("TODO")
 bool Wallet_importOutputsUR(wallet ptr, String input) {
-  debugStart?.call('MONERO_Wallet_importOutputsUR');
+  debugStart?.call('CWLWS_Wallet_importOutputsUR');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final input_ = input.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_importOutputsUR(ptr, input_);
+  final s = lib!.CWLWS_Wallet_importOutputsUR(ptr, input_);
   calloc.free(input_);
-  debugEnd?.call('MONERO_Wallet_importOutputsUR');
+  debugEnd?.call('CWLWS_Wallet_importOutputsUR');
   return s;
 }
 
@@ -3111,159 +3111,159 @@ bool Wallet_setupBackgroundSync(
   required String walletPassword,
   required String backgroundCachePassword,
 }) {
-  debugStart?.call('MONERO_Wallet_setupBackgroundSync');
+  debugStart?.call('CWLWS_Wallet_setupBackgroundSync');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final walletPassword_ = walletPassword.toNativeUtf8().cast<Char>();
   final backgroundCachePassword_ =
       backgroundCachePassword.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_Wallet_setupBackgroundSync(
+  final s = lib!.CWLWS_Wallet_setupBackgroundSync(
       ptr, backgroundSyncType, walletPassword_, backgroundCachePassword_);
   calloc.free(walletPassword_);
   calloc.free(backgroundCachePassword_);
-  debugEnd?.call('MONERO_Wallet_setupBackgroundSync');
+  debugEnd?.call('CWLWS_Wallet_setupBackgroundSync');
   return s;
 }
 
 @Deprecated("TODO")
 int Wallet_getBackgroundSyncType(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_getBackgroundSyncType');
+  debugStart?.call('CWLWS_Wallet_getBackgroundSyncType');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Wallet_getBackgroundSyncType(ptr);
-  debugEnd?.call('MONERO_Wallet_getBackgroundSyncType');
+  final v = lib!.CWLWS_Wallet_getBackgroundSyncType(ptr);
+  debugEnd?.call('CWLWS_Wallet_getBackgroundSyncType');
   return v;
 }
 
 @Deprecated("TODO")
 bool Wallet_startBackgroundSync(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_startBackgroundSync');
+  debugStart?.call('CWLWS_Wallet_startBackgroundSync');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Wallet_startBackgroundSync(ptr);
-  debugEnd?.call('MONERO_Wallet_startBackgroundSync');
+  final v = lib!.CWLWS_Wallet_startBackgroundSync(ptr);
+  debugEnd?.call('CWLWS_Wallet_startBackgroundSync');
   return v;
 }
 
 @Deprecated("TODO")
 bool Wallet_stopBackgroundSync(wallet ptr, String walletPassword) {
-  debugStart?.call('MONERO_Wallet_stopBackgroundSync');
+  debugStart?.call('CWLWS_Wallet_stopBackgroundSync');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final walletPassword_ = walletPassword.toNativeUtf8().cast<Char>();
-  final v = lib!.MONERO_Wallet_stopBackgroundSync(ptr, walletPassword_);
+  final v = lib!.CWLWS_Wallet_stopBackgroundSync(ptr, walletPassword_);
   calloc.free(walletPassword_);
-  debugEnd?.call('MONERO_Wallet_stopBackgroundSync');
+  debugEnd?.call('CWLWS_Wallet_stopBackgroundSync');
   return v;
 }
 
 @Deprecated("TODO")
 bool Wallet_isBackgroundSyncing(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_isBackgroundSyncing');
+  debugStart?.call('CWLWS_Wallet_isBackgroundSyncing');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Wallet_isBackgroundSyncing(ptr);
-  debugEnd?.call('MONERO_Wallet_isBackgroundSyncing');
+  final v = lib!.CWLWS_Wallet_isBackgroundSyncing(ptr);
+  debugEnd?.call('CWLWS_Wallet_isBackgroundSyncing');
   return v;
 }
 
 @Deprecated("TODO")
 bool Wallet_isBackgroundWallet(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_isBackgroundWallet');
+  debugStart?.call('CWLWS_Wallet_isBackgroundWallet');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Wallet_isBackgroundWallet(ptr);
-  debugEnd?.call('MONERO_Wallet_isBackgroundWallet');
+  final v = lib!.CWLWS_Wallet_isBackgroundWallet(ptr);
+  debugEnd?.call('CWLWS_Wallet_isBackgroundWallet');
   return v;
 }
 
 @Deprecated("TODO")
 TransactionHistory Wallet_history(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_history');
+  debugStart?.call('CWLWS_Wallet_history');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final history = lib!.MONERO_Wallet_history(ptr);
-  debugEnd?.call('MONERO_Wallet_history');
+  final history = lib!.CWLWS_Wallet_history(ptr);
+  debugEnd?.call('CWLWS_Wallet_history');
   return history;
 }
 
 @Deprecated("TODO")
 AddressBook Wallet_addressBook(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_addressBook');
+  debugStart?.call('CWLWS_Wallet_addressBook');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final history = lib!.MONERO_Wallet_addressBook(ptr);
-  debugEnd?.call('MONERO_Wallet_addressBook');
+  final history = lib!.CWLWS_Wallet_addressBook(ptr);
+  debugEnd?.call('CWLWS_Wallet_addressBook');
   return history;
 }
 
 @Deprecated("TODO")
 AddressBook Wallet_coins(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_coins');
+  debugStart?.call('CWLWS_Wallet_coins');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final history = lib!.MONERO_Wallet_coins(ptr);
-  debugEnd?.call('MONERO_Wallet_coins');
+  final history = lib!.CWLWS_Wallet_coins(ptr);
+  debugEnd?.call('CWLWS_Wallet_coins');
   return history;
 }
 
 @Deprecated("TODO")
 AddressBook Wallet_subaddress(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_subaddress');
+  debugStart?.call('CWLWS_Wallet_subaddress');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final history = lib!.MONERO_Wallet_subaddress(ptr);
-  debugEnd?.call('MONERO_Wallet_subaddress');
+  final history = lib!.CWLWS_Wallet_subaddress(ptr);
+  debugEnd?.call('CWLWS_Wallet_subaddress');
   return history;
 }
 
 @Deprecated("TODO")
 AddressBook Wallet_subaddressAccount(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_subaddressAccount');
+  debugStart?.call('CWLWS_Wallet_subaddressAccount');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final history = lib!.MONERO_Wallet_subaddressAccount(ptr);
-  debugEnd?.call('MONERO_Wallet_subaddressAccount');
+  final history = lib!.CWLWS_Wallet_subaddressAccount(ptr);
+  debugEnd?.call('CWLWS_Wallet_subaddressAccount');
   return history;
 }
 
 @Deprecated("TODO")
 int Wallet_defaultMixin(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_defaultMixin');
+  debugStart?.call('CWLWS_Wallet_defaultMixin');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Wallet_defaultMixin(ptr);
-  debugEnd?.call('MONERO_Wallet_defaultMixin');
+  final v = lib!.CWLWS_Wallet_defaultMixin(ptr);
+  debugEnd?.call('CWLWS_Wallet_defaultMixin');
   return v;
 }
 
 @Deprecated("TODO")
 void Wallet_setDefaultMixin(wallet ptr, int arg) {
-  debugStart?.call('MONERO_Wallet_setDefaultMixin');
+  debugStart?.call('CWLWS_Wallet_setDefaultMixin');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Wallet_setDefaultMixin(ptr, arg);
-  debugEnd?.call('MONERO_Wallet_setDefaultMixin');
+  final v = lib!.CWLWS_Wallet_setDefaultMixin(ptr, arg);
+  debugEnd?.call('CWLWS_Wallet_setDefaultMixin');
   return v;
 }
 
 @Deprecated("TODO")
 bool Wallet_setCacheAttribute(wallet ptr,
     {required String key, required String value}) {
-  debugStart?.call('MONERO_Wallet_setCacheAttribute');
+  debugStart?.call('CWLWS_Wallet_setCacheAttribute');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final key_ = key.toNativeUtf8().cast<Char>();
   final value_ = value.toNativeUtf8().cast<Char>();
-  final v = lib!.MONERO_Wallet_setCacheAttribute(ptr, key_, value_);
+  final v = lib!.CWLWS_Wallet_setCacheAttribute(ptr, key_, value_);
   calloc.free(key_);
   calloc.free(value_);
-  debugEnd?.call('MONERO_Wallet_setCacheAttribute');
+  debugEnd?.call('CWLWS_Wallet_setCacheAttribute');
   return v;
 }
 
 @Deprecated("TODO")
 String Wallet_getCacheAttribute(wallet ptr, {required String key}) {
-  debugStart?.call('MONERO_Wallet_getCacheAttribute');
+  debugStart?.call('CWLWS_Wallet_getCacheAttribute');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final key_ = key.toNativeUtf8().cast<Char>();
-    final strPtr = lib!.MONERO_Wallet_getCacheAttribute(ptr, key_).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_getCacheAttribute(ptr, key_).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
+    CWLWS_free(strPtr.cast());
     calloc.free(key_);
-    debugEnd?.call('MONERO_Wallet_getCacheAttribute');
+    debugEnd?.call('CWLWS_Wallet_getCacheAttribute');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_getCacheAttribute', e);
-    debugEnd?.call('MONERO_Wallet_getCacheAttribute');
+    errorHandler?.call('CWLWS_Wallet_getCacheAttribute', e);
+    debugEnd?.call('CWLWS_Wallet_getCacheAttribute');
     return "";
   }
 }
@@ -3271,51 +3271,51 @@ String Wallet_getCacheAttribute(wallet ptr, {required String key}) {
 @Deprecated("TODO")
 bool Wallet_setUserNote(wallet ptr,
     {required String txid, required String note}) {
-  debugStart?.call('MONERO_Wallet_setUserNote');
+  debugStart?.call('CWLWS_Wallet_setUserNote');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final txid_ = txid.toNativeUtf8().cast<Char>();
   final note_ = note.toNativeUtf8().cast<Char>();
-  final v = lib!.MONERO_Wallet_setUserNote(ptr, txid_, note_);
+  final v = lib!.CWLWS_Wallet_setUserNote(ptr, txid_, note_);
   calloc.free(txid_);
   calloc.free(note_);
-  debugEnd?.call('MONERO_Wallet_setUserNote');
+  debugEnd?.call('CWLWS_Wallet_setUserNote');
   return v;
 }
 
 @Deprecated("TODO")
 String Wallet_getUserNote(wallet ptr, {required String txid}) {
-  debugStart?.call('MONERO_Wallet_getUserNote');
+  debugStart?.call('CWLWS_Wallet_getUserNote');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final txid_ = txid.toNativeUtf8().cast<Char>();
-    final strPtr = lib!.MONERO_Wallet_getUserNote(ptr, txid_).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_getUserNote(ptr, txid_).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
+    CWLWS_free(strPtr.cast());
     calloc.free(txid_);
-    debugEnd?.call('MONERO_Wallet_getUserNote');
+    debugEnd?.call('CWLWS_Wallet_getUserNote');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_getUserNote', e);
-    debugEnd?.call('MONERO_Wallet_getUserNote');
+    errorHandler?.call('CWLWS_Wallet_getUserNote', e);
+    debugEnd?.call('CWLWS_Wallet_getUserNote');
     return "";
   }
 }
 
 @Deprecated("TODO")
 String Wallet_getTxKey(wallet ptr, {required String txid}) {
-  debugStart?.call('MONERO_Wallet_getTxKey');
+  debugStart?.call('CWLWS_Wallet_getTxKey');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final txid_ = txid.toNativeUtf8().cast<Char>();
-    final strPtr = lib!.MONERO_Wallet_getTxKey(ptr, txid_).cast<Utf8>();
+    final strPtr = lib!.CWLWS_Wallet_getTxKey(ptr, txid_).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
+    CWLWS_free(strPtr.cast());
     calloc.free(txid_);
-    debugEnd?.call('MONERO_Wallet_getTxKey');
+    debugEnd?.call('CWLWS_Wallet_getTxKey');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_getTxKey', e);
-    debugEnd?.call('MONERO_Wallet_getTxKey');
+    errorHandler?.call('CWLWS_Wallet_getTxKey', e);
+    debugEnd?.call('CWLWS_Wallet_getTxKey');
     return "";
   }
 }
@@ -3326,22 +3326,22 @@ String Wallet_signMessage(
   required String message,
   required String address,
 }) {
-  debugStart?.call('MONERO_Wallet_signMessage');
+  debugStart?.call('CWLWS_Wallet_signMessage');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final message_ = message.toNativeUtf8().cast<Char>();
     final address_ = address.toNativeUtf8().cast<Char>();
     final strPtr =
-        lib!.MONERO_Wallet_signMessage(ptr, message_, address_).cast<Utf8>();
+        lib!.CWLWS_Wallet_signMessage(ptr, message_, address_).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
+    CWLWS_free(strPtr.cast());
     calloc.free(message_);
     calloc.free(address_);
-    debugEnd?.call('MONERO_Wallet_signMessage');
+    debugEnd?.call('CWLWS_Wallet_signMessage');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_signMessage', e);
-    debugEnd?.call('MONERO_Wallet_signMessage');
+    errorHandler?.call('CWLWS_Wallet_signMessage', e);
+    debugEnd?.call('CWLWS_Wallet_signMessage');
     return "";
   }
 }
@@ -3353,254 +3353,254 @@ bool Wallet_verifySignedMessage(
   required String address,
   required String signature,
 }) {
-  debugStart?.call('MONERO_Wallet_verifySignedMessage');
+  debugStart?.call('CWLWS_Wallet_verifySignedMessage');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final message_ = message.toNativeUtf8().cast<Char>();
   final address_ = address.toNativeUtf8().cast<Char>();
   final signature_ = signature.toNativeUtf8().cast<Char>();
   final v = lib!
-      .MONERO_Wallet_verifySignedMessage(ptr, message_, address_, signature_);
+      .CWLWS_Wallet_verifySignedMessage(ptr, message_, address_, signature_);
   calloc.free(message_);
   calloc.free(address_);
   calloc.free(signature_);
-  debugEnd?.call('MONERO_Wallet_verifySignedMessage');
+  debugEnd?.call('CWLWS_Wallet_verifySignedMessage');
   return v;
 }
 
 @Deprecated("TODO")
 bool Wallet_rescanSpent(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_rescanSpent');
+  debugStart?.call('CWLWS_Wallet_rescanSpent');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Wallet_rescanSpent(ptr);
-  debugEnd?.call('MONERO_Wallet_rescanSpent');
+  final v = lib!.CWLWS_Wallet_rescanSpent(ptr);
+  debugEnd?.call('CWLWS_Wallet_rescanSpent');
   return v;
 }
 
 @Deprecated("TODO")
 void Wallet_setOffline(wallet ptr, {required bool offline}) {
-  debugStart?.call('MONERO_Wallet_setOffline');
+  debugStart?.call('CWLWS_Wallet_setOffline');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final setOffline = lib!.MONERO_Wallet_setOffline(ptr, offline);
-  debugEnd?.call('MONERO_Wallet_setOffline');
+  final setOffline = lib!.CWLWS_Wallet_setOffline(ptr, offline);
+  debugEnd?.call('CWLWS_Wallet_setOffline');
   return setOffline;
 }
 
 @Deprecated("TODO")
 bool Wallet_isOffline(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_isOffline');
+  debugStart?.call('CWLWS_Wallet_isOffline');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final isOffline = lib!.MONERO_Wallet_isOffline(ptr);
-  debugEnd?.call('MONERO_Wallet_isOffline');
+  final isOffline = lib!.CWLWS_Wallet_isOffline(ptr);
+  debugEnd?.call('CWLWS_Wallet_isOffline');
   return isOffline;
 }
 
 @Deprecated("TODO")
 void Wallet_segregatePreForkOutputs(wallet ptr, {required bool segregate}) {
-  debugStart?.call('MONERO_Wallet_segregatePreForkOutputs');
+  debugStart?.call('CWLWS_Wallet_segregatePreForkOutputs');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Wallet_segregatePreForkOutputs(ptr, segregate);
-  debugEnd?.call('MONERO_Wallet_segregatePreForkOutputs');
+  final v = lib!.CWLWS_Wallet_segregatePreForkOutputs(ptr, segregate);
+  debugEnd?.call('CWLWS_Wallet_segregatePreForkOutputs');
   return v;
 }
 
 @Deprecated("TODO")
 void Wallet_segregationHeight(wallet ptr, {required int height}) {
-  debugStart?.call('MONERO_Wallet_segregationHeight');
+  debugStart?.call('CWLWS_Wallet_segregationHeight');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Wallet_segregationHeight(ptr, height);
-  debugEnd?.call('MONERO_Wallet_segregationHeight');
+  final v = lib!.CWLWS_Wallet_segregationHeight(ptr, height);
+  debugEnd?.call('CWLWS_Wallet_segregationHeight');
   return v;
 }
 
 @Deprecated("TODO")
 void Wallet_keyReuseMitigation2(wallet ptr, {required bool mitigation}) {
-  debugStart?.call('MONERO_Wallet_keyReuseMitigation2');
+  debugStart?.call('CWLWS_Wallet_keyReuseMitigation2');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Wallet_keyReuseMitigation2(ptr, mitigation);
-  debugEnd?.call('MONERO_Wallet_keyReuseMitigation2');
+  final v = lib!.CWLWS_Wallet_keyReuseMitigation2(ptr, mitigation);
+  debugEnd?.call('CWLWS_Wallet_keyReuseMitigation2');
   return v;
 }
 
 @Deprecated("TODO")
 bool Wallet_lockKeysFile(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_lockKeysFile');
+  debugStart?.call('CWLWS_Wallet_lockKeysFile');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Wallet_lockKeysFile(ptr);
-  debugEnd?.call('MONERO_Wallet_lockKeysFile');
+  final v = lib!.CWLWS_Wallet_lockKeysFile(ptr);
+  debugEnd?.call('CWLWS_Wallet_lockKeysFile');
   return v;
 }
 
 @Deprecated("TODO")
 bool Wallet_unlockKeysFile(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_unlockKeysFile');
+  debugStart?.call('CWLWS_Wallet_unlockKeysFile');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Wallet_unlockKeysFile(ptr);
-  debugEnd?.call('MONERO_Wallet_unlockKeysFile');
+  final v = lib!.CWLWS_Wallet_unlockKeysFile(ptr);
+  debugEnd?.call('CWLWS_Wallet_unlockKeysFile');
   return v;
 }
 
 @Deprecated("TODO")
 bool Wallet_isKeysFileLocked(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_isKeysFileLocked');
+  debugStart?.call('CWLWS_Wallet_isKeysFileLocked');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Wallet_isKeysFileLocked(ptr);
-  debugEnd?.call('MONERO_Wallet_isKeysFileLocked');
+  final v = lib!.CWLWS_Wallet_isKeysFileLocked(ptr);
+  debugEnd?.call('CWLWS_Wallet_isKeysFileLocked');
   return v;
 }
 
 @Deprecated("TODO")
 int Wallet_getDeviceType(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_getDeviceType');
+  debugStart?.call('CWLWS_Wallet_getDeviceType');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Wallet_getDeviceType(ptr);
-  debugEnd?.call('MONERO_Wallet_getDeviceType');
+  final v = lib!.CWLWS_Wallet_getDeviceType(ptr);
+  debugEnd?.call('CWLWS_Wallet_getDeviceType');
   return v;
 }
 
 @Deprecated("TODO")
 int Wallet_coldKeyImageSync(wallet ptr,
     {required int spent, required int unspent}) {
-  debugStart?.call('MONERO_Wallet_coldKeyImageSync');
+  debugStart?.call('CWLWS_Wallet_coldKeyImageSync');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final v = lib!.MONERO_Wallet_coldKeyImageSync(ptr, spent, unspent);
-  debugEnd?.call('MONERO_Wallet_coldKeyImageSync');
+  final v = lib!.CWLWS_Wallet_coldKeyImageSync(ptr, spent, unspent);
+  debugEnd?.call('CWLWS_Wallet_coldKeyImageSync');
   return v;
 }
 
 @Deprecated("TODO")
 String Wallet_deviceShowAddress(wallet ptr,
     {required int accountIndex, required int addressIndex}) {
-  debugStart?.call('MONERO_Wallet_deviceShowAddress');
+  debugStart?.call('CWLWS_Wallet_deviceShowAddress');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final strPtr = lib!
-        .MONERO_Wallet_deviceShowAddress(ptr, accountIndex, addressIndex)
+        .CWLWS_Wallet_deviceShowAddress(ptr, accountIndex, addressIndex)
         .cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_Wallet_deviceShowAddress');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_Wallet_deviceShowAddress');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_Wallet_deviceShowAddress', e);
-    debugEnd?.call('MONERO_Wallet_deviceShowAddress');
+    errorHandler?.call('CWLWS_Wallet_deviceShowAddress', e);
+    debugEnd?.call('CWLWS_Wallet_deviceShowAddress');
     return "";
   }
 }
 
 @Deprecated("TODO")
 bool Wallet_reconnectDevice(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_reconnectDevice');
+  debugStart?.call('CWLWS_Wallet_reconnectDevice');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final ret = lib!.MONERO_Wallet_reconnectDevice(ptr);
-  debugEnd?.call('MONERO_Wallet_reconnectDevice');
+  final ret = lib!.CWLWS_Wallet_reconnectDevice(ptr);
+  debugEnd?.call('CWLWS_Wallet_reconnectDevice');
   return ret;
 }
 
 @Deprecated("TODO")
 int Wallet_getBytesReceived(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_getBytesReceived');
+  debugStart?.call('CWLWS_Wallet_getBytesReceived');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final getBytesReceived = lib!.MONERO_Wallet_getBytesReceived(ptr);
-  debugEnd?.call('MONERO_Wallet_getBytesReceived');
+  final getBytesReceived = lib!.CWLWS_Wallet_getBytesReceived(ptr);
+  debugEnd?.call('CWLWS_Wallet_getBytesReceived');
   return getBytesReceived;
 }
 
 @Deprecated("TODO")
-int MONERO_Wallet_getBytesSent(wallet ptr) {
-  debugStart?.call('MONERO_Wallet_getBytesSent');
+int CWLWS_Wallet_getBytesSent(wallet ptr) {
+  debugStart?.call('CWLWS_Wallet_getBytesSent');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final getBytesSent = lib!.MONERO_Wallet_getBytesSent(ptr);
-  debugEnd?.call('MONERO_Wallet_getBytesSent');
+  final getBytesSent = lib!.CWLWS_Wallet_getBytesSent(ptr);
+  debugEnd?.call('CWLWS_Wallet_getBytesSent');
   return getBytesSent;
 }
 
 @Deprecated("TODO")
 bool Wallet_getStateIsConnected() {
-  debugStart?.call('MONERO_Wallet_getStateIsConnected');
+  debugStart?.call('CWLWS_Wallet_getStateIsConnected');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final ret = lib!.MONERO_Wallet_getStateIsConnected();
-  debugEnd?.call('MONERO_Wallet_getStateIsConnected');
+  final ret = lib!.CWLWS_Wallet_getStateIsConnected();
+  debugEnd?.call('CWLWS_Wallet_getStateIsConnected');
   return ret;
 }
 
 @Deprecated("TODO")
 Pointer<UnsignedChar> Wallet_getSendToDevice() {
-  debugStart?.call('MONERO_Wallet_getSendToDevice');
+  debugStart?.call('CWLWS_Wallet_getSendToDevice');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final ret = lib!.MONERO_Wallet_getSendToDevice();
-  debugEnd?.call('MONERO_Wallet_getSendToDevice');
+  final ret = lib!.CWLWS_Wallet_getSendToDevice();
+  debugEnd?.call('CWLWS_Wallet_getSendToDevice');
   return ret;
 }
 
 @Deprecated("TODO")
 int Wallet_getSendToDeviceLength() {
-  debugStart?.call('MONERO_Wallet_getSendToDeviceLength');
+  debugStart?.call('CWLWS_Wallet_getSendToDeviceLength');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final ret = lib!.MONERO_Wallet_getSendToDeviceLength();
-  debugEnd?.call('MONERO_Wallet_getSendToDeviceLength');
+  final ret = lib!.CWLWS_Wallet_getSendToDeviceLength();
+  debugEnd?.call('CWLWS_Wallet_getSendToDeviceLength');
   return ret;
 }
 
 @Deprecated("TODO")
 Pointer<UnsignedChar> Wallet_getReceivedFromDevice() {
-  debugStart?.call('MONERO_Wallet_getReceivedFromDevice');
+  debugStart?.call('CWLWS_Wallet_getReceivedFromDevice');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final ret = lib!.MONERO_Wallet_getReceivedFromDevice();
-  debugEnd?.call('MONERO_Wallet_getReceivedFromDevice');
+  final ret = lib!.CWLWS_Wallet_getReceivedFromDevice();
+  debugEnd?.call('CWLWS_Wallet_getReceivedFromDevice');
   return ret;
 }
 
 @Deprecated("TODO")
 int Wallet_getReceivedFromDeviceLength() {
-  debugStart?.call('MONERO_Wallet_getReceivedFromDeviceLength');
+  debugStart?.call('CWLWS_Wallet_getReceivedFromDeviceLength');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final ret = lib!.MONERO_Wallet_getReceivedFromDeviceLength();
-  debugEnd?.call('MONERO_Wallet_getReceivedFromDeviceLength');
+  final ret = lib!.CWLWS_Wallet_getReceivedFromDeviceLength();
+  debugEnd?.call('CWLWS_Wallet_getReceivedFromDeviceLength');
   return ret;
 }
 
 @Deprecated("TODO")
 bool Wallet_getWaitsForDeviceSend() {
-  debugStart?.call('MONERO_Wallet_getWaitsForDeviceSend');
+  debugStart?.call('CWLWS_Wallet_getWaitsForDeviceSend');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final ret = lib!.MONERO_Wallet_getWaitsForDeviceSend();
-  debugEnd?.call('MONERO_Wallet_getWaitsForDeviceSend');
+  final ret = lib!.CWLWS_Wallet_getWaitsForDeviceSend();
+  debugEnd?.call('CWLWS_Wallet_getWaitsForDeviceSend');
   return ret;
 }
 
 @Deprecated("TODO")
 bool Wallet_getWaitsForDeviceReceive() {
-  debugStart?.call('MONERO_Wallet_getWaitsForDeviceReceive');
+  debugStart?.call('CWLWS_Wallet_getWaitsForDeviceReceive');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final ret = lib!.MONERO_Wallet_getWaitsForDeviceReceive();
-  debugEnd?.call('MONERO_Wallet_getWaitsForDeviceReceive');
+  final ret = lib!.CWLWS_Wallet_getWaitsForDeviceReceive();
+  debugEnd?.call('CWLWS_Wallet_getWaitsForDeviceReceive');
   return ret;
 }
 
 @Deprecated("TODO")
 void Wallet_setDeviceReceivedData(Pointer<UnsignedChar> data, int len) {
-  debugStart?.call('MONERO_Wallet_setDeviceReceivedData');
+  debugStart?.call('CWLWS_Wallet_setDeviceReceivedData');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final ret = lib!.MONERO_Wallet_setDeviceReceivedData(data, len);
-  debugEnd?.call('MONERO_Wallet_setDeviceReceivedData');
+  final ret = lib!.CWLWS_Wallet_setDeviceReceivedData(data, len);
+  debugEnd?.call('CWLWS_Wallet_setDeviceReceivedData');
   return ret;
 }
 
 @Deprecated("TODO")
 void Wallet_setDeviceSendData(Pointer<UnsignedChar> data, int len) {
-  debugStart?.call('MONERO_Wallet_setDeviceSendData');
+  debugStart?.call('CWLWS_Wallet_setDeviceSendData');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final ret = lib!.MONERO_Wallet_setDeviceSendData(data, len);
-  debugEnd?.call('MONERO_Wallet_setDeviceSendData');
+  final ret = lib!.CWLWS_Wallet_setDeviceSendData(data, len);
+  debugEnd?.call('CWLWS_Wallet_setDeviceSendData');
   return ret;
 }
 
 @Deprecated("TODO")
 void Wallet_setLedgerCallback(Pointer<NativeFunction<Void Function(Pointer<UnsignedChar>, UnsignedInt)>> callback) {
-  debugStart?.call('MONERO_Wallet_setDeviceSendData');
+  debugStart?.call('CWLWS_Wallet_setDeviceSendData');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final ret = lib!.MONERO_Wallet_setLedgerCallback(callback);
-  debugEnd?.call('MONERO_Wallet_setDeviceSendData');
+  final ret = lib!.CWLWS_Wallet_setLedgerCallback(callback);
+  debugEnd?.call('CWLWS_Wallet_setDeviceSendData');
   return ret;
 }
 
@@ -3627,17 +3627,17 @@ wallet WalletManager_createWallet(
   String language = "English",
   int networkType = 0,
 }) {
-  debugStart?.call('MONERO_WalletManager_createWallet');
+  debugStart?.call('CWLWS_WalletManager_createWallet');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final path_ = path.toNativeUtf8().cast<Char>();
   final password_ = password.toNativeUtf8().cast<Char>();
   final language_ = language.toNativeUtf8().cast<Char>();
-  final w = lib!.MONERO_WalletManager_createWallet(
+  final w = lib!.CWLWS_WalletManager_createWallet(
       wm_ptr, path_, password_, language_, networkType);
   calloc.free(path_);
   calloc.free(password_);
   calloc.free(language_);
-  debugEnd?.call('MONERO_WalletManager_createWallet');
+  debugEnd?.call('CWLWS_WalletManager_createWallet');
   return w;
 }
 
@@ -3648,15 +3648,15 @@ wallet WalletManager_openWallet(
   required String password,
   int networkType = 0,
 }) {
-  debugStart?.call('MONERO_WalletManager_openWallet');
+  debugStart?.call('CWLWS_WalletManager_openWallet');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final path_ = path.toNativeUtf8().cast<Char>();
   final password_ = password.toNativeUtf8().cast<Char>();
   final w = lib!
-      .MONERO_WalletManager_openWallet(wm_ptr, path_, password_, networkType);
+      .CWLWS_WalletManager_openWallet(wm_ptr, path_, password_, networkType);
   calloc.free(path_);
   calloc.free(password_);
-  debugEnd?.call('MONERO_WalletManager_openWallet');
+  debugEnd?.call('CWLWS_WalletManager_openWallet');
   return w;
 }
 
@@ -3671,19 +3671,19 @@ wallet WalletManager_recoveryWallet(
   int kdfRounds = 0,
   required String seedOffset,
 }) {
-  debugStart?.call('MONERO_WalletManager_recoveryWallet');
+  debugStart?.call('CWLWS_WalletManager_recoveryWallet');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final path_ = path.toNativeUtf8().cast<Char>();
   final password_ = password.toNativeUtf8().cast<Char>();
   final mnemonic_ = mnemonic.toNativeUtf8().cast<Char>();
   final seedOffset_ = seedOffset.toNativeUtf8().cast<Char>();
-  final w = lib!.MONERO_WalletManager_recoveryWallet(wm_ptr, path_, password_,
+  final w = lib!.CWLWS_WalletManager_recoveryWallet(wm_ptr, path_, password_,
       mnemonic_, networkType, restoreHeight, kdfRounds, seedOffset_);
   calloc.free(path_);
   calloc.free(password_);
   calloc.free(mnemonic_);
   calloc.free(seedOffset_);
-  debugEnd?.call('MONERO_WalletManager_recoveryWallet');
+  debugEnd?.call('CWLWS_WalletManager_recoveryWallet');
   return w;
 }
 
@@ -3701,7 +3701,7 @@ wallet WalletManager_createWalletFromKeys(
   int kdf_rounds = 1,
 }) {
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  debugStart?.call('MONERO_WalletManager_createWalletFromKeys');
+  debugStart?.call('CWLWS_WalletManager_createWalletFromKeys');
 
   final path_ = path.toNativeUtf8().cast<Char>();
   final password_ = password.toNativeUtf8().cast<Char>();
@@ -3710,7 +3710,7 @@ wallet WalletManager_createWalletFromKeys(
   final viewKeyString_ = viewKeyString.toNativeUtf8().cast<Char>();
   final spendKeyString_ = spendKeyString.toNativeUtf8().cast<Char>();
 
-  final w = lib!.MONERO_WalletManager_createWalletFromKeys(
+  final w = lib!.CWLWS_WalletManager_createWalletFromKeys(
     wm_ptr,
     path_,
     password_,
@@ -3728,7 +3728,7 @@ wallet WalletManager_createWalletFromKeys(
   calloc.free(addressString_);
   calloc.free(viewKeyString_);
   calloc.free(spendKeyString_);
-  debugEnd?.call('MONERO_WalletManager_createWalletFromKeys');
+  debugEnd?.call('CWLWS_WalletManager_createWalletFromKeys');
   return w;
 }
 
@@ -3745,13 +3745,13 @@ wallet WalletManager_createDeterministicWalletFromSpendKey(
   int kdfRounds = 1,
 }) {
   debugStart
-      ?.call('MONERO_WalletManager_createDeterministicWalletFromSpendKey');
+      ?.call('CWLWS_WalletManager_createDeterministicWalletFromSpendKey');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final path_ = path.toNativeUtf8().cast<Char>();
   final password_ = password.toNativeUtf8().cast<Char>();
   final language_ = language.toNativeUtf8().cast<Char>();
   final spendKeyString_ = spendKeyString.toNativeUtf8().cast<Char>();
-  final w = lib!.MONERO_WalletManager_createDeterministicWalletFromSpendKey(
+  final w = lib!.CWLWS_WalletManager_createDeterministicWalletFromSpendKey(
       wm_ptr,
       path_,
       password_,
@@ -3764,7 +3764,7 @@ wallet WalletManager_createDeterministicWalletFromSpendKey(
   calloc.free(password_);
   calloc.free(language_);
   calloc.free(spendKeyString_);
-  debugEnd?.call('MONERO_WalletManager_createDeterministicWalletFromSpendKey');
+  debugEnd?.call('CWLWS_WalletManager_createDeterministicWalletFromSpendKey');
   return w;
 }
 
@@ -3779,13 +3779,13 @@ wallet WalletManager_createWalletFromDevice(
   String subaddressLookahead = "",
   int kdfRounds = 1,
 }) {
-  debugStart?.call('MONERO_WalletManager_createWalletFromDevice');
+  debugStart?.call('CWLWS_WalletManager_createWalletFromDevice');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final path_ = path.toNativeUtf8().cast<Char>();
   final password_ = password.toNativeUtf8().cast<Char>();
   final deviceName_ = deviceName.toNativeUtf8().cast<Char>();
   final subaddressLookahead_ = subaddressLookahead.toNativeUtf8().cast<Char>();
-  final w = lib!.MONERO_WalletManager_createWalletFromDevice(
+  final w = lib!.CWLWS_WalletManager_createWalletFromDevice(
       wm_ptr,
       path_,
       password_,
@@ -3800,7 +3800,7 @@ wallet WalletManager_createWalletFromDevice(
   calloc.free(password_);
   calloc.free(deviceName_);
   calloc.free(subaddressLookahead_);
-  debugEnd?.call('MONERO_WalletManager_createWalletFromDevice');
+  debugEnd?.call('CWLWS_WalletManager_createWalletFromDevice');
   return w;
 }
 
@@ -3816,13 +3816,13 @@ wallet WalletManager_createWalletFromPolyseed(
   required int restoreHeight,
   required int kdfRounds,
 }) {
-  debugStart?.call('MONERO_WalletManager_createWalletFromPolyseed');
+  debugStart?.call('CWLWS_WalletManager_createWalletFromPolyseed');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final path_ = path.toNativeUtf8().cast<Char>();
   final password_ = password.toNativeUtf8().cast<Char>();
   final mnemonic_ = mnemonic.toNativeUtf8().cast<Char>();
   final seedOffset_ = seedOffset.toNativeUtf8().cast<Char>();
-  final w = lib!.MONERO_WalletManager_createWalletFromPolyseed(
+  final w = lib!.CWLWS_WalletManager_createWalletFromPolyseed(
       wm_ptr,
       path_,
       password_,
@@ -3836,27 +3836,27 @@ wallet WalletManager_createWalletFromPolyseed(
   calloc.free(password_);
   calloc.free(mnemonic_);
   calloc.free(seedOffset_);
-  debugEnd?.call('MONERO_WalletManager_createWalletFromPolyseed');
+  debugEnd?.call('CWLWS_WalletManager_createWalletFromPolyseed');
   return w;
 }
 
 @Deprecated("TODO")
 bool WalletManager_closeWallet(WalletManager wm_ptr, wallet ptr, bool store) {
-  debugStart?.call('MONERO_WalletManager_closeWallet');
+  debugStart?.call('CWLWS_WalletManager_closeWallet');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final closeWallet = lib!.MONERO_WalletManager_closeWallet(wm_ptr, ptr, store);
-  debugEnd?.call('MONERO_WalletManager_closeWallet');
+  final closeWallet = lib!.CWLWS_WalletManager_closeWallet(wm_ptr, ptr, store);
+  debugEnd?.call('CWLWS_WalletManager_closeWallet');
   return closeWallet;
 }
 
 @Deprecated("TODO")
 bool WalletManager_walletExists(WalletManager wm_ptr, String path) {
-  debugStart?.call('MONERO_WalletManager_walletExists');
+  debugStart?.call('CWLWS_WalletManager_walletExists');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final path_ = path.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_WalletManager_walletExists(wm_ptr, path_);
+  final s = lib!.CWLWS_WalletManager_walletExists(wm_ptr, path_);
   calloc.free(path_);
-  debugEnd?.call('MONERO_WalletManager_walletExists');
+  debugEnd?.call('CWLWS_WalletManager_walletExists');
   return s;
 }
 
@@ -3868,15 +3868,15 @@ bool WalletManager_verifyWalletPassword(
   required bool noSpendKey,
   required int kdfRounds,
 }) {
-  debugStart?.call('MONERO_WalletManager_verifyWalletPassword');
+  debugStart?.call('CWLWS_WalletManager_verifyWalletPassword');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final keysFileName_ = keysFileName.toNativeUtf8().cast<Char>();
   final password_ = password.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_WalletManager_verifyWalletPassword(
+  final s = lib!.CWLWS_WalletManager_verifyWalletPassword(
       wm_ptr, keysFileName_, password_, noSpendKey, kdfRounds);
   calloc.free(keysFileName_);
   calloc.free(password_);
-  debugEnd?.call('MONERO_WalletManager_verifyWalletPassword');
+  debugEnd?.call('CWLWS_WalletManager_verifyWalletPassword');
   return s;
 }
 
@@ -3887,122 +3887,122 @@ int WalletManager_queryWalletDevice(
       required String password,
       required int kdfRounds,
     }) {
-  debugStart?.call('MONERO_WalletManager_queryWalletDevice');
+  debugStart?.call('CWLWS_WalletManager_queryWalletDevice');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final keysFileName_ = keysFileName.toNativeUtf8().cast<Char>();
   final password_ = password.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_WalletManager_queryWalletDevice(
+  final s = lib!.CWLWS_WalletManager_queryWalletDevice(
       wm_ptr, keysFileName_, password_, kdfRounds);
   calloc.free(keysFileName_);
   calloc.free(password_);
-  debugEnd?.call('MONERO_WalletManager_queryWalletDevice');
+  debugEnd?.call('CWLWS_WalletManager_queryWalletDevice');
   return s;
 }
 
 @Deprecated("TODO")
 List<String> WalletManager_findWallets(WalletManager wm_ptr,
     {required String path}) {
-  debugStart?.call('MONERO_WalletManager_findWallets');
+  debugStart?.call('CWLWS_WalletManager_findWallets');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final path_ = path.toNativeUtf8().cast<Char>();
     final strPtr = lib!
-        .MONERO_WalletManager_findWallets(wm_ptr, path_, defaultSeparator)
+        .CWLWS_WalletManager_findWallets(wm_ptr, path_, defaultSeparator)
         .cast<Utf8>();
     final str = strPtr.toDartString();
     calloc.free(path_);
     if (str.isNotEmpty) {
-      MONERO_free(strPtr.cast());
+      CWLWS_free(strPtr.cast());
     }
-    debugEnd?.call('MONERO_WalletManager_findWallets');
+    debugEnd?.call('CWLWS_WalletManager_findWallets');
     return str.split(";");
   } catch (e) {
-    errorHandler?.call('MONERO_WalletManager_findWallets', e);
-    debugEnd?.call('MONERO_WalletManager_findWallets');
+    errorHandler?.call('CWLWS_WalletManager_findWallets', e);
+    debugEnd?.call('CWLWS_WalletManager_findWallets');
     return [];
   }
 }
 
 @Deprecated("TODO")
 String WalletManager_errorString(WalletManager wm_ptr) {
-  debugStart?.call('MONERO_WalletManager_errorString');
+  debugStart?.call('CWLWS_WalletManager_errorString');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
-    final strPtr = lib!.MONERO_WalletManager_errorString(wm_ptr).cast<Utf8>();
+    final strPtr = lib!.CWLWS_WalletManager_errorString(wm_ptr).cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_WalletManager_errorString');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_WalletManager_errorString');
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_WalletManager_errorString', e);
-    debugEnd?.call('MONERO_WalletManager_errorString');
+    errorHandler?.call('CWLWS_WalletManager_errorString', e);
+    debugEnd?.call('CWLWS_WalletManager_errorString');
     return "";
   }
 }
 
 @Deprecated("TODO")
 void WalletManager_setDaemonAddress(WalletManager wm_ptr, String address) {
-  debugStart?.call('MONERO_WalletManager_setDaemonAddress');
+  debugStart?.call('CWLWS_WalletManager_setDaemonAddress');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final address_ = address.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_WalletManager_setDaemonAddress(wm_ptr, address_);
+  final s = lib!.CWLWS_WalletManager_setDaemonAddress(wm_ptr, address_);
   calloc.free(address_);
-  debugEnd?.call('MONERO_WalletManager_setDaemonAddress');
+  debugEnd?.call('CWLWS_WalletManager_setDaemonAddress');
   return s;
 }
 
 @Deprecated("TODO")
 int WalletManager_blockchainHeight(WalletManager wm_ptr) {
-  debugStart?.call('MONERO_WalletManager_blockchainHeight');
+  debugStart?.call('CWLWS_WalletManager_blockchainHeight');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final s = lib!.MONERO_WalletManager_blockchainHeight(wm_ptr);
-  debugEnd?.call('MONERO_WalletManager_blockchainHeight');
+  final s = lib!.CWLWS_WalletManager_blockchainHeight(wm_ptr);
+  debugEnd?.call('CWLWS_WalletManager_blockchainHeight');
   return s;
 }
 
 @Deprecated("TODO")
 int WalletManager_blockchainTargetHeight(WalletManager wm_ptr) {
-  debugStart?.call('MONERO_WalletManager_blockchainTargetHeight');
+  debugStart?.call('CWLWS_WalletManager_blockchainTargetHeight');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final s = lib!.MONERO_WalletManager_blockchainTargetHeight(wm_ptr);
-  debugEnd?.call('MONERO_WalletManager_blockchainTargetHeight');
+  final s = lib!.CWLWS_WalletManager_blockchainTargetHeight(wm_ptr);
+  debugEnd?.call('CWLWS_WalletManager_blockchainTargetHeight');
   return s;
 }
 
 @Deprecated("TODO")
 int WalletManager_networkDifficulty(WalletManager wm_ptr) {
-  debugStart?.call('MONERO_WalletManager_networkDifficulty');
+  debugStart?.call('CWLWS_WalletManager_networkDifficulty');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final s = lib!.MONERO_WalletManager_networkDifficulty(wm_ptr);
-  debugEnd?.call('MONERO_WalletManager_networkDifficulty');
+  final s = lib!.CWLWS_WalletManager_networkDifficulty(wm_ptr);
+  debugEnd?.call('CWLWS_WalletManager_networkDifficulty');
   return s;
 }
 
 @Deprecated("TODO")
 double WalletManager_miningHashRate(WalletManager wm_ptr) {
-  debugStart?.call('MONERO_WalletManager_miningHashRate');
+  debugStart?.call('CWLWS_WalletManager_miningHashRate');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final s = lib!.MONERO_WalletManager_miningHashRate(wm_ptr);
-  debugEnd?.call('MONERO_WalletManager_miningHashRate');
+  final s = lib!.CWLWS_WalletManager_miningHashRate(wm_ptr);
+  debugEnd?.call('CWLWS_WalletManager_miningHashRate');
   return s;
 }
 
 @Deprecated("TODO")
 int WalletManager_blockTarget(WalletManager wm_ptr) {
-  debugStart?.call('MONERO_WalletManager_blockTarget');
+  debugStart?.call('CWLWS_WalletManager_blockTarget');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final s = lib!.MONERO_WalletManager_blockTarget(wm_ptr);
-  debugEnd?.call('MONERO_WalletManager_blockTarget');
+  final s = lib!.CWLWS_WalletManager_blockTarget(wm_ptr);
+  debugEnd?.call('CWLWS_WalletManager_blockTarget');
   return s;
 }
 
 @Deprecated("TODO")
 bool WalletManager_isMining(WalletManager wm_ptr) {
-  debugStart?.call('MONERO_WalletManager_isMining');
+  debugStart?.call('CWLWS_WalletManager_isMining');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final s = lib!.MONERO_WalletManager_isMining(wm_ptr);
-  debugEnd?.call('MONERO_WalletManager_isMining');
+  final s = lib!.CWLWS_WalletManager_isMining(wm_ptr);
+  debugEnd?.call('CWLWS_WalletManager_isMining');
   return s;
 }
 
@@ -4014,24 +4014,24 @@ bool WalletManager_startMining(
   required bool backgroundMining,
   required bool ignoreBattery,
 }) {
-  debugStart?.call('MONERO_WalletManager_startMining');
+  debugStart?.call('CWLWS_WalletManager_startMining');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final address_ = address.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_WalletManager_startMining(
+  final s = lib!.CWLWS_WalletManager_startMining(
       wm_ptr, address_, threads, backgroundMining, ignoreBattery);
   calloc.free(address_);
-  debugEnd?.call('MONERO_WalletManager_startMining');
+  debugEnd?.call('CWLWS_WalletManager_startMining');
   return s;
 }
 
 @Deprecated("TODO")
 bool WalletManager_stopMining(WalletManager wm_ptr, String address) {
-  debugStart?.call('MONERO_WalletManager_stopMining');
+  debugStart?.call('CWLWS_WalletManager_stopMining');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final address_ = address.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_WalletManager_stopMining(wm_ptr, address_);
+  final s = lib!.CWLWS_WalletManager_stopMining(wm_ptr, address_);
   calloc.free(address_);
-  debugEnd?.call('MONERO_WalletManager_stopMining');
+  debugEnd?.call('CWLWS_WalletManager_stopMining');
   return s;
 }
 
@@ -4041,63 +4041,71 @@ String WalletManager_resolveOpenAlias(
   required String address,
   required bool dnssecValid,
 }) {
-  debugStart?.call('MONERO_WalletManager_resolveOpenAlias');
+  debugStart?.call('CWLWS_WalletManager_resolveOpenAlias');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   try {
     final address_ = address.toNativeUtf8().cast<Char>();
     final strPtr = lib!
-        .MONERO_WalletManager_resolveOpenAlias(wm_ptr, address_, dnssecValid)
+        .CWLWS_WalletManager_resolveOpenAlias(wm_ptr, address_, dnssecValid)
         .cast<Utf8>();
     final str = strPtr.toDartString();
-    MONERO_free(strPtr.cast());
-    debugEnd?.call('MONERO_WalletManager_resolveOpenAlias');
+    CWLWS_free(strPtr.cast());
+    debugEnd?.call('CWLWS_WalletManager_resolveOpenAlias');
     calloc.free(address_);
     return str;
   } catch (e) {
-    errorHandler?.call('MONERO_WalletManager_resolveOpenAlias', e);
-    debugEnd?.call('MONERO_WalletManager_resolveOpenAlias');
+    errorHandler?.call('CWLWS_WalletManager_resolveOpenAlias', e);
+    debugEnd?.call('CWLWS_WalletManager_resolveOpenAlias');
     return "";
   }
 }
 
 @Deprecated("TODO")
 bool WalletManager_setProxy(WalletManager wm_ptr, String address) {
-  debugStart?.call('MONERO_WalletManager_setProxy');
+  debugStart?.call('CWLWS_WalletManager_setProxy');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
   final address_ = address.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_WalletManager_setProxy(wm_ptr, address_);
+  final s = lib!.CWLWS_WalletManager_setProxy(wm_ptr, address_);
   calloc.free(address_);
-  debugEnd?.call('MONERO_WalletManager_setProxy');
+  debugEnd?.call('CWLWS_WalletManager_setProxy');
   return s;
 }
 
 @Deprecated("TODO")
 void WalletManagerFactory_setLogLevel(int level) {
-  debugStart?.call('MONERO_WalletManagerFactory_setLogLevel');
+  debugStart?.call('CWLWS_WalletManagerFactory_setLogLevel');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final s = lib!.MONERO_WalletManagerFactory_setLogLevel(level);
-  debugEnd?.call('MONERO_WalletManagerFactory_setLogLevel');
+  final s = lib!.CWLWS_WalletManagerFactory_setLogLevel(level);
+  debugEnd?.call('CWLWS_WalletManagerFactory_setLogLevel');
   return s;
 }
 
 @Deprecated("TODO")
 void WalletManagerFactory_setLogCategories(String categories) {
-  debugStart?.call('MONERO_WalletManagerFactory_setLogCategories');
+  debugStart?.call('CWLWS_WalletManagerFactory_setLogCategories');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
   final categories_ = categories.toNativeUtf8().cast<Char>();
-  final s = lib!.MONERO_WalletManagerFactory_setLogCategories(categories_);
+  final s = lib!.CWLWS_WalletManagerFactory_setLogCategories(categories_);
   calloc.free(categories_);
-  debugEnd?.call('MONERO_WalletManagerFactory_setLogCategories');
+  debugEnd?.call('CWLWS_WalletManagerFactory_setLogCategories');
   return s;
 }
 
 @Deprecated("TODO")
 WalletManager WalletManagerFactory_getWalletManager() {
-  debugStart?.call('MONERO_WalletManagerFactory_getWalletManager');
+  debugStart?.call('CWLWS_WalletManagerFactory_getWalletManager');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  final s = lib!.MONERO_WalletManagerFactory_getWalletManager();
-  debugEnd?.call('MONERO_WalletManagerFactory_getWalletManager');
+  final s = lib!.CWLWS_WalletManagerFactory_getWalletManager();
+  debugEnd?.call('CWLWS_WalletManagerFactory_getWalletManager');
+  return s;
+}
+
+WalletManager WalletManagerFactory_getLWSFWalletManager() {
+  debugStart?.call('LWSF_WalletManagerFactory_getWalletManager');
+  lib ??= MoneroC(DynamicLibrary.open(libPath));
+  final s = lib!.LWSF_WalletManagerFactory_getWalletManager();
+  debugEnd?.call('LWSF_WalletManagerFactory_getWalletManager');
   return s;
 }
 
@@ -4185,13 +4193,13 @@ class libOk {
 @Deprecated("TODO")
 libOk isLibOk() {
   lib ??= MoneroC(DynamicLibrary.open(libPath));
-  lib!.MONERO_DEBUG_test0();
-  final test1 = lib!.MONERO_DEBUG_test1(true);
-  final test2 = lib!.MONERO_DEBUG_test2(-1);
-  final test3 = lib!.MONERO_DEBUG_test3(1);
-  final test4 = lib!.MONERO_DEBUG_test4(1);
-  final test5 = lib!.MONERO_DEBUG_test5();
-  final test5_std = lib!.MONERO_DEBUG_test5_std();
+  lib!.CWLWS_DEBUG_test0();
+  final test1 = lib!.CWLWS_DEBUG_test1(true);
+  final test2 = lib!.CWLWS_DEBUG_test2(-1);
+  final test3 = lib!.CWLWS_DEBUG_test3(1);
+  final test4 = lib!.CWLWS_DEBUG_test4(1);
+  final test5 = lib!.CWLWS_DEBUG_test5();
+  final test5_std = lib!.CWLWS_DEBUG_test5_std();
   return libOk(test1, test2, test3, test4, test5, test5_std);
 }
 
@@ -4201,100 +4209,100 @@ libOk isLibOk() {
 typedef WalletListener = Pointer<Void>;
 
 @Deprecated("TODO")
-WalletListener MONERO_cw_getWalletListener(wallet wptr) {
-  debugStart?.call('MONERO_cw_getWalletListener');
+WalletListener CWLWS_cw_getWalletListener(wallet wptr) {
+  debugStart?.call('CWLWS_cw_getWalletListener');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
-  final s = lib!.MONERO_cw_getWalletListener(wptr);
-  debugEnd?.call('MONERO_cw_getWalletListener');
+  final s = lib!.CWLWS_cw_getWalletListener(wptr);
+  debugEnd?.call('CWLWS_cw_getWalletListener');
   return s;
 }
 
-void MONERO_cw_WalletListener_resetNeedToRefresh(WalletListener wlptr) {
-  debugStart?.call('MONERO_cw_WalletListener_resetNeedToRefresh');
+void CWLWS_cw_WalletListener_resetNeedToRefresh(WalletListener wlptr) {
+  debugStart?.call('CWLWS_cw_WalletListener_resetNeedToRefresh');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
-  final s = lib!.MONERO_cw_WalletListener_resetNeedToRefresh(wlptr);
-  debugEnd?.call('MONERO_cw_WalletListener_resetNeedToRefresh');
-  return s;
-}
-
-@Deprecated("TODO")
-bool MONERO_cw_WalletListener_isNeedToRefresh(WalletListener wlptr) {
-  debugStart?.call('MONERO_cw_WalletListener_isNeedToRefresh');
-  lib ??= MoneroC(DynamicLibrary.open(libPath));
-
-  final s = lib!.MONERO_cw_WalletListener_isNeedToRefresh(wlptr);
-  debugEnd?.call('MONERO_cw_WalletListener_isNeedToRefresh');
+  final s = lib!.CWLWS_cw_WalletListener_resetNeedToRefresh(wlptr);
+  debugEnd?.call('CWLWS_cw_WalletListener_resetNeedToRefresh');
   return s;
 }
 
 @Deprecated("TODO")
-bool MONERO_cw_WalletListener_isNewTransactionExist(WalletListener wlptr) {
-  debugStart?.call('MONERO_cw_WalletListener_isNewTransactionExist');
+bool CWLWS_cw_WalletListener_isNeedToRefresh(WalletListener wlptr) {
+  debugStart?.call('CWLWS_cw_WalletListener_isNeedToRefresh');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
-  final s = lib!.MONERO_cw_WalletListener_isNewTransactionExist(wlptr);
-  debugEnd?.call('MONERO_cw_WalletListener_isNewTransactionExist');
+  final s = lib!.CWLWS_cw_WalletListener_isNeedToRefresh(wlptr);
+  debugEnd?.call('CWLWS_cw_WalletListener_isNeedToRefresh');
   return s;
 }
 
 @Deprecated("TODO")
-void MONERO_cw_WalletListener_resetIsNewTransactionExist(WalletListener wlptr) {
-  debugStart?.call('MONERO_cw_WalletListener_resetIsNewTransactionExist');
+bool CWLWS_cw_WalletListener_isNewTransactionExist(WalletListener wlptr) {
+  debugStart?.call('CWLWS_cw_WalletListener_isNewTransactionExist');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
-  final s = lib!.MONERO_cw_WalletListener_resetIsNewTransactionExist(wlptr);
-  debugEnd?.call('MONERO_cw_WalletListener_resetIsNewTransactionExist');
+  final s = lib!.CWLWS_cw_WalletListener_isNewTransactionExist(wlptr);
+  debugEnd?.call('CWLWS_cw_WalletListener_isNewTransactionExist');
   return s;
 }
 
 @Deprecated("TODO")
-int MONERO_cw_WalletListener_height(WalletListener wlptr) {
-  debugStart?.call('MONERO_cw_WalletListener_height');
+void CWLWS_cw_WalletListener_resetIsNewTransactionExist(WalletListener wlptr) {
+  debugStart?.call('CWLWS_cw_WalletListener_resetIsNewTransactionExist');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
-  final s = lib!.MONERO_cw_WalletListener_height(wlptr);
-  debugEnd?.call('MONERO_cw_WalletListener_height');
+  final s = lib!.CWLWS_cw_WalletListener_resetIsNewTransactionExist(wlptr);
+  debugEnd?.call('CWLWS_cw_WalletListener_resetIsNewTransactionExist');
   return s;
 }
 
 @Deprecated("TODO")
-String MONERO_checksum_wallet2_api_c_h() {
-  debugStart?.call('MONERO_checksum_wallet2_api_c_h');
+int CWLWS_cw_WalletListener_height(WalletListener wlptr) {
+  debugStart?.call('CWLWS_cw_WalletListener_height');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
-  final s = lib!.MONERO_checksum_wallet2_api_c_h();
-  debugEnd?.call('MONERO_checksum_wallet2_api_c_h');
+  final s = lib!.CWLWS_cw_WalletListener_height(wlptr);
+  debugEnd?.call('CWLWS_cw_WalletListener_height');
+  return s;
+}
+
+@Deprecated("TODO")
+String CWLWS_checksum_wallet2_api_c_h() {
+  debugStart?.call('CWLWS_checksum_wallet2_api_c_h');
+  lib ??= MoneroC(DynamicLibrary.open(libPath));
+
+  final s = lib!.CWLWS_checksum_wallet2_api_c_h();
+  debugEnd?.call('CWLWS_checksum_wallet2_api_c_h');
   return s.cast<Utf8>().toDartString();
 }
 
 @Deprecated("TODO")
-String MONERO_checksum_wallet2_api_c_cpp() {
-  debugStart?.call('MONERO_checksum_wallet2_api_c_cpp');
+String CWLWS_checksum_wallet2_api_c_cpp() {
+  debugStart?.call('CWLWS_checksum_wallet2_api_c_cpp');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
-  final s = lib!.MONERO_checksum_wallet2_api_c_cpp();
-  debugEnd?.call('MONERO_checksum_wallet2_api_c_cpp');
+  final s = lib!.CWLWS_checksum_wallet2_api_c_cpp();
+  debugEnd?.call('CWLWS_checksum_wallet2_api_c_cpp');
   return s.cast<Utf8>().toDartString();
 }
 
 @Deprecated("TODO")
-String MONERO_checksum_wallet2_api_c_exp() {
-  debugStart?.call('MONERO_checksum_wallet2_api_c_exp');
+String CWLWS_checksum_wallet2_api_c_exp() {
+  debugStart?.call('CWLWS_checksum_wallet2_api_c_exp');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
-  final s = lib!.MONERO_checksum_wallet2_api_c_exp();
-  debugEnd?.call('MONERO_checksum_wallet2_api_c_exp');
+  final s = lib!.CWLWS_checksum_wallet2_api_c_exp();
+  debugEnd?.call('CWLWS_checksum_wallet2_api_c_exp');
   return s.cast<Utf8>().toDartString();
 }
 
 @Deprecated("TODO")
-void MONERO_free(Pointer<Void> wlptr) {
-  debugStart?.call('MONERO_free');
+void CWLWS_free(Pointer<Void> wlptr) {
+  debugStart?.call('CWLWS_free');
   lib ??= MoneroC(DynamicLibrary.open(libPath));
 
-  final s = lib!.MONERO_free(wlptr);
-  debugEnd?.call('MONERO_free');
+  final s = lib!.CWLWS_free(wlptr);
+  debugEnd?.call('CWLWS_free');
   return s;
 }

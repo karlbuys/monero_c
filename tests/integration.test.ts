@@ -33,14 +33,14 @@ async function syncBlockchain(wallet: Wallet): Promise<bigint> {
 
 // TODO: Change for custom address on CI
 const WOWNERO_NODE_URL = "https://node3.monerodevs.org:34568";
-const MONERO_NODE_URL = "https://nodes.hashvault.pro:18081";
-const NODE_URL = coin === "monero" ? MONERO_NODE_URL : WOWNERO_NODE_URL;
+const CWLWS_NODE_URL = "https://nodes.hashvault.pro:18081";
+const NODE_URL = coin === "monero" ? CWLWS_NODE_URL : WOWNERO_NODE_URL;
 
 const WOWNERO_DESTINATION_ADDRESS =
   "WW3Zetw4Gg5Rk88ViCm8H8Ft8BqgAQ5DbTLZC1whv8GNFJPSoGfLViW3dAAb4Bcqpz2M1y31pZykd4ZKd8GH1UyF1fwEFg5mS";
-const MONERO_DESTINATION_ADDRESS =
+const CWLWS_DESTINATION_ADDRESS =
   "89BoVWjqdGVe68wdxbYurXR8sXaEb96eWKYRPxdT6wSCfZYK6XSHoj5ZRXQLtd7GzL2B2PD7Lb7GSKupkXMWjQVFAEb1CK8";
-const DESTINATION_ADDRESS = coin === "monero" ? MONERO_DESTINATION_ADDRESS : WOWNERO_DESTINATION_ADDRESS;
+const DESTINATION_ADDRESS = coin === "monero" ? CWLWS_DESTINATION_ADDRESS : WOWNERO_DESTINATION_ADDRESS;
 
 const BILLION = 10n ** 9n;
 
