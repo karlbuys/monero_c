@@ -8,7 +8,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        coin: [monero, wownero]
+        coin: [monero]
         target: [x86_64-w64-mingw32, i686-w64-mingw32]
     runs-on: ubuntu-latest
     container:
@@ -28,8 +28,6 @@ jobs:
           git config --global user.email "ci@mrcyjanek.net"
           git config --global user.name "CI mrcyjanek.net"
           ./apply_patches.sh monero
-          ./apply_patches.sh wownero
-          ./apply_patches.sh zano
       - name: ccache
         uses: hendrikmuhs/ccache-action@v1.2
         with:
@@ -60,7 +58,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        coin: [monero, wownero, zano]
+        coin: [monero]
         target: [x86_64-linux-android, armv7a-linux-androideabi, aarch64-linux-android]
     runs-on: ubuntu-22.04
     steps:
@@ -89,8 +87,6 @@ jobs:
           git config --global user.email "ci@mrcyjanek.net"
           git config --global user.name "CI mrcyjanek.net"
           ./apply_patches.sh monero
-          ./apply_patches.sh wownero
-          ./apply_patches.sh zano
       - name: ccache
         uses: hendrikmuhs/ccache-action@v1.2
         with:
@@ -125,7 +121,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        coin: [monero, wownero, zano]
+        coin: [monero]
         target: [x86_64-linux-gnu, aarch64-linux-gnu, i686-linux-gnu]
     runs-on: ubuntu-latest
     container:
@@ -145,8 +141,6 @@ jobs:
           git config --global user.email "ci@mrcyjanek.net"
           git config --global user.name "CI mrcyjanek.net"
           ./apply_patches.sh monero
-          ./apply_patches.sh wownero
-          ./apply_patches.sh zano
       - name: ccache
         uses: hendrikmuhs/ccache-action@v1.2
         with:
@@ -177,7 +171,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        coin: [monero, wownero, zano]
+        coin: [monero]
         target: [aarch64-apple-darwin, x86_64-apple-darwin]
     name: macos build
     runs-on: macos-15
@@ -200,8 +194,6 @@ jobs:
           git config --global user.email "ci@mrcyjanek.net"
           git config --global user.name "CI mrcyjanek.net"
           ./apply_patches.sh monero
-          ./apply_patches.sh wownero
-          ./apply_patches.sh zano
       - name: ccache
         uses: hendrikmuhs/ccache-action@v1.2
         with:
@@ -232,7 +224,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        coin: [monero, wownero, zano]
+        coin: [monero]
         target: [aarch64-apple-ios, aarch64-apple-iossimulator]
     name: ios build
     runs-on: macos-15
@@ -255,8 +247,6 @@ jobs:
           git config --global user.email "ci@mrcyjanek.net"
           git config --global user.name "CI mrcyjanek.net"
           ./apply_patches.sh monero
-          ./apply_patches.sh wownero
-          ./apply_patches.sh zano
       - name: ccache
         uses: hendrikmuhs/ccache-action@v1.2
         with:
@@ -289,12 +279,10 @@ jobs:
     needs: [lib_mingw, lib_android, lib_linux, lib_macos, lib_ios]
     strategy:
       matrix:
-        coin: [monero, wownero, zano]
+        coin: [monero]
         platform: [android, ios, linux, macos]
         include:
           - coin: monero
-            platform: mingw
-          - coin: wownero
             platform: mingw
     steps:
       - name: Create release directory
@@ -333,7 +321,7 @@ jobs:
           merge-multiple: true
       
       - name: Download MinGW artifacts
-        if: matrix.platform == 'mingw' && (matrix.coin == 'monero' || matrix.coin == 'wownero')
+        if: matrix.platform == 'mingw' && (matrix.coin == 'monero')
         uses: actions/download-artifact@v4
         with:
           pattern: mingw-${{ matrix.coin }}-*
@@ -358,7 +346,7 @@ jobs:
     needs: [bulk_lib_release]
     steps:
       - name: Create release directory
-        run: mkdir -p release/{monero,wownero,zano}
+        run: mkdir -p release/{monero}
       
       - name: Download all consolidated artifacts
         uses: actions/download-artifact@v4
@@ -369,7 +357,7 @@ jobs:
       - name: Reorganize artifacts
         run: |
           # Move all artifacts to their respective coin directories
-          for coin in monero wownero zano; do
+          for coin in monero; do
             find temp-all -name "*-${coin}-all" -type d | while read dir; do
               if [ -d "$dir" ]; then
                 cp -r "$dir"/* "release/${coin}/" 2>/dev/null || true
@@ -433,7 +421,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        coin: [monero, wownero]
+        coin: [monero]
     needs: [lib_linux]
     runs-on: ubuntu-24.04
     steps:
@@ -464,7 +452,7 @@ jobs:
     name: macos regression tests
     strategy:
       matrix:
-        coin: [monero, wownero]
+        coin: [monero]
     needs: [lib_macos]
     runs-on: macos-15
     steps:
@@ -495,7 +483,7 @@ jobs:
     name: linux integration tests
     strategy:
       matrix:
-        coin: [monero, wownero]
+        coin: [monero]
     needs: [lib_linux]
     runs-on: ubuntu-24.04
     steps:
@@ -530,7 +518,7 @@ jobs:
     name: macos integration tests
     strategy:
       matrix:
-        coin: [monero, wownero]
+        coin: [monero]
     needs: [lib_macos]
     runs-on: macos-15
     steps:
