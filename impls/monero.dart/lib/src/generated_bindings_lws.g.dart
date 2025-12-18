@@ -4,17 +4,17 @@
 // ignore_for_file: type=lint
 import 'dart:ffi' as ffi;
 
-/// monero_c bindings
-class MoneroC {
+/// monero_lws bindings
+class LwsC {
   /// Holds the symbol lookup function.
   final ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
       _lookup;
 
   /// The symbols are looked up in [dynamicLibrary].
-  MoneroC(ffi.DynamicLibrary dynamicLibrary) : _lookup = dynamicLibrary.lookup;
+  LwsC(ffi.DynamicLibrary dynamicLibrary) : _lookup = dynamicLibrary.lookup;
 
   /// The symbols are looked up with [lookup].
-  MoneroC.fromLookup(
+  LwsC.fromLookup(
       ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
           lookup)
       : _lookup = lookup;
@@ -5146,17 +5146,6 @@ class MoneroC {
   late final _CWLWS_WalletManagerFactory_setLogCategories =
       _CWLWS_WalletManagerFactory_setLogCategoriesPtr.asFunction<
           void Function(ffi.Pointer<ffi.Char>)>();
-
-  ffi.Pointer<ffi.Void> LWSF_WalletManagerFactory_getWalletManager() {
-    return _LWSF_WalletManagerFactory_getWalletManager();
-  }
-
-  late final _LWSF_WalletManagerFactory_getWalletManagerPtr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>(
-          'LWSF_WalletManagerFactory_getWalletManager');
-  late final _LWSF_WalletManagerFactory_getWalletManager =
-      _LWSF_WalletManagerFactory_getWalletManagerPtr.asFunction<
-          ffi.Pointer<ffi.Void> Function()>();
 
   void CWLWS_DEBUG_test0() {
     return _CWLWS_DEBUG_test0();

@@ -1,0 +1,12 @@
+name: LwsC
+description: monero_lws bindings
+output: 'lib/src/generated_bindings_lws.g.dart'
+headers:
+  entry-points:
+    - '../../monero_libwallet2_api_c/src/main/cpp/wallet2_api_c.h'
+
+exclude-all-by-default: true
+functions:
+  include:
+    - "CWLWS_.+"
+    # - "LWSF_.+"
